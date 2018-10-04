@@ -102,3 +102,22 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+*.json
+*.tmp
+*.pyc
+localsettings.py
+*.db
+*.bak
+*.graphml
+*.gt
+*.sublime*
+local_settings.py
+accesoserver.txt
+*.npz
+*.pickle
+*.json
+*.out
+*.ipynb_checkpoints
+*.lda
+*.lda.state
