@@ -30,7 +30,7 @@ else:
     NOTAUTHORIZED = set()
 
 
-NOTFOUND_FNAME = "./temp/notauthorizedids.pickle"
+NOTFOUND_FNAME = "./temp/notfound.pickle"
 
 if os.path.exists(NOTFOUND_FNAME):
     with open(NOTFOUND_FNAME, 'rb') as f:
