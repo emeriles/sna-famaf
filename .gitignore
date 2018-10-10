@@ -121,3 +121,6 @@ accesoserver.txt
 *.ipynb_checkpoints
 *.lda
 *.lda.state
+
+db/
+.idea/

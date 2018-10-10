@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 from tweepy import AppAuthHandler, API
 from tweepy.error import TweepError
 from random import choice
@@ -90,40 +89,45 @@ class APIHandler(object):
                         self.get_fresh_connection()
         return fids
 
-
-    def traer_timeline(self, user_id, desde=None, hasta=None, dia=None, limite=None, tweets=[]):
+    def traer_timeline(self, user_id, desde=None, hasta=None, dia=None, limite=None, tweets=[], since_id=None):
         page = 1
         if dia:
             desde = dia
             hasta = dia
+        stop_sign = False
 
-        while True:
-            print(len(tweets))
+        while True and not stop_sign:
+            print('tweets len: %d' % len(tweets), end="\r")
             if limite and len(tweets) >= limite:
                 break
 
             try:
-                page_tweets = self.conn_.user_timeline(user_id=user_id, page=page)
+                page_tweets = self.conn_.user_timeline(user_id=user_id, page=page, since_id=since_id)
                 if len(page_tweets) == 0:
                     break
 
                 for tw in page_tweets:
-                    # print(tw.text)
                     if desde and tw.created_at.date() < desde:
+                        stop_sign = True
                         break
                     if hasta and tw.created_at.date() > hasta:
                         continue
 
                     tweets.append(tw._json) # =dia or >= desde
                 page += 1
-            except Exception as e:
-                if e.message == u'Not authorized.':
+            except TweepError as e:
+                print(type(e.reason))
+                if 'Not authorized.' in e.reason:
+                    print('Not authorized!')
                     break
-                else:
-                    print("Error: %s" % e.message)
-                    print("waiting...")
-                    time.sleep(30)
-                    continue
+                elif 'Sorry, that page does not exist.' in e.reason:
+                    print('Not found!')
+                    break
+            except Exception as e:
+                print("Error. Something really bad happened: %s" % e)
+                print("waiting...")
+                time.sleep(30)
+                continue
 
         return tweets
 
