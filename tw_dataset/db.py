@@ -84,7 +84,7 @@ class DBHandler(object):
         try:
             # if not empty tweets save them
             if request:
-                save_status = self.tweet_collection.bulk_write(request, ordered=False)
+                save_status = self.users_ids_collection.bulk_write(request, ordered=False)
         except BulkWriteError as e:
             # TODO: extract this to function?
             write_errors = e.details['writeErrors']
@@ -94,7 +94,6 @@ class DBHandler(object):
             print('Errors with non duplicates: {}. '.format(len(non_duplicates)))
             pprint.pprint(set([x['errmsg'] for x in non_duplicates]))
             print('End errors with non duplicates.')
-        self.users_ids_collection.insert_many(d_ids)
         return 0
 
     def get_users_ids(self):
