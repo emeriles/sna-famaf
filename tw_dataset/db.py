@@ -50,7 +50,7 @@ class DBHandler(object):
 
         elapsed_time = time.time() - start_time
         print("Done fetch for user {}. Took {}.1f secs to fetch {} tweets" .format(user_id, elapsed_time, len(tweets)))
-        print('New saved tweets: {}'.format(save_status['nInserted'] if save_status is not None else 0))
+        print('New saved tweets: {}'.format(save_status.inserted_count if save_status is not None else 0))
         return 0
 
     def save_users_timelines(self, desde=None, hasta=None, dia=None, limite=None):
