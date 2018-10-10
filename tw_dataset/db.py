@@ -16,7 +16,9 @@ class DBHandler(object):
         self._db_name = 'tweets'
         self.api_handler = API_HANDLER
 
+        print('conecting to db')
         self.db = MongoClient(self._host, self._port).twitter
+        print('conected to db')
         self.tweet_collection = self.db.tweet
         self.users_ids_collection = self.db.user_id
 
