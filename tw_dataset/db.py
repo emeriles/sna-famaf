@@ -80,6 +80,20 @@ class DBHandler(object):
         # convert to dict
         # _id is default primary key, so it will be overridden.
         d_ids = [{'_id': x} for x in user_ids]
+        request = [InsertOne(x) for x in d_ids]
+        try:
+            # if not empty tweets save them
+            if request:
+                save_status = self.tweet_collection.bulk_write(request, ordered=False)
+        except BulkWriteError as e:
+            # TODO: extract this to function?
+            write_errors = e.details['writeErrors']
+            # duplicates = [x for x in write_errors if 'duplicate key error' in x['errmsg']]
+            non_duplicates = [x for x in write_errors if 'duplicate key error' not in x['errmsg']]
+
+            print('Errors with non duplicates: {}. '.format(len(non_duplicates)))
+            pprint.pprint(set([x['errmsg'] for x in non_duplicates]))
+            print('End errors with non duplicates.')
         self.users_ids_collection.insert_many(d_ids)
         return 0
 
