@@ -22,8 +22,9 @@ class DBHandler(object):
         self.tweet_collection = self.db.tweet
         self.users_ids_collection = self.db.user_id
 
-        # set tweet collection's primary key as 'id'
-        self.tweet_collection.create_index('id', unique=True)
+        # set tweet collection's primary key as 'id'. this corrupts bd! 'id' not unique in twitter?
+        # very dificul
+        # self.tweet_collection.create_index('id', unique=True)
 
     def save_timeline_for_user(self, user_id, desde=None, hasta=None, dia=None, limite=None):
 
