@@ -1,3 +1,4 @@
+import sys
 import datetime
 
 import networkx as nx
@@ -36,9 +37,17 @@ class Action(object):
     @staticmethod
     def get_and_save_yesterdays_tweets_for_all_users():
         db_handler = DBHandler()
-        db_handler.save_users_timelines(dia=datetime.date.today())
+        day = datetime.date.today() - datetime.timedelta(days=1)
+        db_handler.save_users_timelines(dia=day)
 
 
 if __name__ == '__main__':
-    Action.move_graph_users_to_db()
-    Action.get_and_save_tweets_for_all_users()
+    # Action.move_graph_users_to_db() # just for empty db. users will be consumed from db.
+    # Action.get_and_save_tweets_for_all_users()
+    args = sys.argv
+    if len(args) > 1:
+        if args[1] == 'get_today':
+            Action.get_and_save_today_tweets_for_all_users()
+        if args[1] == 'get_yesterday':
+            Action.get_and_save_yesterdays_tweets_for_all_users()
+

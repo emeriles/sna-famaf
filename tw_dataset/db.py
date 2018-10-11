@@ -74,7 +74,7 @@ class DBHandler(object):
                 'Avance: %{}; {}/{}\t\t\tProcesando para guardar timeline del usuario {}'.format(percentage, to_process, len(users_ids), u_id)
             )
 
-            self.save_timeline_for_user(user_id=u_id)
+            self.save_timeline_for_user(user_id=u_id, desde=desde, hasta=hasta, dia=dia, limite=limite)
         elapsed_time = time.time() - start_time
         print("Done saving users timelines. Took: {}.1f secs".format(elapsed_time))
         return 0
