@@ -109,8 +109,10 @@ class GraphUpdate(object):
     #     else:
     #         graph = nx.DiGraph()
 
-graph = GraphUpdate(GRAPH_PATH)
-graph.update_edges()
+
+if __name__ == '__main__':
+    graph = GraphUpdate(GRAPH_PATH)
+    graph.update_edges()
 
 #
 #

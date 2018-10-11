@@ -89,7 +89,8 @@ class APIHandler(object):
                         self.get_fresh_connection()
         return fids
 
-    def traer_timeline(self, user_id, desde=None, hasta=None, dia=None, limite=None, tweets=[], since_id=None):
+    def traer_timeline(self, user_id, desde=None, hasta=None, dia=None, limite=None, since_id=None):
+        tweets = []
         page = 1
         if dia:
             desde = dia
