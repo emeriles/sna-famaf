@@ -117,7 +117,6 @@ class APIHandler(object):
                     tweets.append(tw._json) # =dia or >= desde
                 page += 1
             except TweepError as e:
-                print(type(e.reason))
                 if 'Not authorized.' in e.reason:
                     print('Not authorized!')
                     break

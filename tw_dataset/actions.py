@@ -40,6 +40,13 @@ class Action(object):
         day = datetime.date.today() - datetime.timedelta(days=1)
         db_handler.save_users_timelines(dia=day)
 
+    @staticmethod
+    def get_and_save_tweets_for_all_users():
+        "Saves all posible tweets for all users"
+        db_handler = DBHandler()
+        day = datetime.date.today() - datetime.timedelta(days=1)
+        db_handler.save_users_timelines(dia=day, use_milestones=True)
+
 
 if __name__ == '__main__':
     # Action.move_graph_users_to_db() # just for empty db. users will be consumed from db.
@@ -50,4 +57,5 @@ if __name__ == '__main__':
             Action.get_and_save_today_tweets_for_all_users()
         if args[1] == 'get_yesterday':
             Action.get_and_save_yesterdays_tweets_for_all_users()
-
+        if args[1] == 'get_em_all':
+            Action.get_and_save_tweets_for_all_users()

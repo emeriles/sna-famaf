@@ -1,3 +1,5 @@
+import os
+import pickle
 import pprint
 
 import time
@@ -6,6 +8,14 @@ from pymongo import MongoClient, InsertOne
 from pymongo.errors import BulkWriteError
 
 from twitter_api import API_HANDLER
+
+
+TMP_SEEN_USERS = './temp/seen_users.pickle'
+
+SEEN_USERS = set()
+if os.path.exists(TMP_SEEN_USERS):
+    with open(TMP_SEEN_USERS, 'rb') as f:
+        SEEN_USERS = pickle.load(f)
 
 
 class DBHandler(object):
@@ -56,15 +66,17 @@ class DBHandler(object):
         print('New saved tweets: {}'.format(save_status.inserted_count if save_status is not None else 0))
         return 0
 
-    def save_users_timelines(self, desde=None, hasta=None, dia=None, limite=None):
+    def save_users_timelines(self, desde=None, hasta=None, dia=None, limite=None, use_milestones=False):
         start_time = time.time()
         print("Saving user timeline: desde: {desde}\thasta: {hasta}\t dia: {dia}\t limite: {limite}".format(
             desde=desde, hasta=hasta, dia=dia, limite=limite
         ))
-        users_ids = self.get_users_ids()
+        users_ids = set(self.get_users_ids())
+
+        if use_milestones:
+            users_ids = users_ids.difference(SEEN_USERS)
 
         to_process = len(users_ids)
-        percentage = 0
 
         for u_id in users_ids:
             # advance notification
@@ -75,6 +87,11 @@ class DBHandler(object):
             )
 
             self.save_timeline_for_user(user_id=u_id, desde=desde, hasta=hasta, dia=dia, limite=limite)
+
+            SEEN_USERS.add(u_id)
+            with open(TMP_SEEN_USERS, 'wb') as f:
+                pickle.dump(SEEN_USERS, f)
+
         elapsed_time = time.time() - start_time
         print("Done saving users timelines. Took: {}.1f secs".format(elapsed_time))
         return 0
