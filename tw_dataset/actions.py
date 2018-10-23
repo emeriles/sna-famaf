@@ -44,8 +44,7 @@ class Action(object):
     def get_and_save_tweets_for_all_users():
         "Saves all posible tweets for all users"
         db_handler = DBHandler()
-        day = datetime.date.today() - datetime.timedelta(days=1)
-        db_handler.save_users_timelines(dia=day, use_milestones=True)
+        db_handler.save_users_timelines(use_milestones=True)
 
 
 if __name__ == '__main__':
