@@ -1,13 +1,12 @@
 import os
 import pickle
 import pprint
+import pymongo
 
 import time
 
 from pymongo import MongoClient, InsertOne
 from pymongo.errors import BulkWriteError
-
-from twitter_api import API_HANDLER
 
 
 TMP_SEEN_USERS = './temp/seen_users.pickle'
@@ -20,15 +19,15 @@ if os.path.exists(TMP_SEEN_USERS):
 
 class DBHandler(object):
 
-    def __init__(self):
+    def __init__(self, port=27017):
+        from twitter_api import API_HANDLER
         self._host = 'localhost'
-        self._port = 27017
+        self._port = port
         self._db_name = 'tweets'
         self.api_handler = API_HANDLER
 
         print('conecting to db')
         self.db = MongoClient(self._host, self._port).twitter
-        print('conected to db')
         self.tweet_collection = self.db.tweet
         self.users_ids_collection = self.db.user_id
 
@@ -119,3 +118,64 @@ class DBHandler(object):
     def get_users_ids(self):
         as_list = [x.get('_id', None) for x in self.users_ids_collection.find()]
         return as_list
+
+    def get_min_max_values(self, field):
+        """
+        Returns min and max values for given field.
+
+        :param field:
+        :return:
+        """
+        cursor = self.tweet_collection.aggregate([
+            { '$group': {
+                '_id': None,
+                'max': {'$max': '$' + field},
+                'min': {'$min': '$' + field},
+            }
+            }
+        ])
+        return list(cursor)[0]
+
+    def get_n_max_registry(self, field_name, n=1):
+        """
+        Returns `n` max tweets for a given field
+        :param field_name:
+        :param n:
+        :return:
+        """
+        return list(self.tweet_collection.find().sort([
+            (field_name, pymongo.DESCENDING)
+        ]).limit(n))
+
+    def query_tweets(self, filters=None, select_fields=None, only_retweets=False):
+        """
+        Simple abstraction of tweet query.
+        Example:
+         `h.query_tweets(only_retweets=True, select_fields=['created_at', 'retweeted_status.created_at'])`
+
+        :param filters:
+        :param select_fields:
+        :param only_retweets:
+        :return:
+        """
+        # set up filters
+        if filters and not isinstance(filters, dict):
+            raise Exception('Argument `filters` should be a dict!')
+        if not filters:
+            filters = {}
+        if only_retweets:
+            rt_status = filters.get('retweeted_status', None)
+            if not rt_status:
+                filters.update({'retweeted_status':
+                                {'$ne': None}
+                                })
+            else:
+                # TODO: check this. not full support for filters...
+                rt_status.update({'$ne': None})
+
+        # set up projections
+        projection = {}
+        projection.update({key: 1 for key in select_fields} if projection is not None else {})
+
+        cursor = self.tweet_collection.find(filter=filters, projection=projection)
+        return cursor

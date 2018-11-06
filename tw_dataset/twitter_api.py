@@ -11,7 +11,6 @@ class APIHandler(object):
         self.auth_data = auth_data
         self.index = choice(range(len(auth_data)))
         self.max_nreqs = max_nreqs
-        self.get_fresh_connection()
 
     def conn(self):
         if self.nreqs == self.max_nreqs:
