@@ -51,3 +51,22 @@ count: 7747919
 created at:
  'max': 'Wed Sep 30 23:59:42 +0000 2015'
  'min': 'Fri Apr 01 00:00:01 +0000 2016'
+
+db pt2: 
+count: 171128
+created at:
+ 'max': 'Wed Sep 30 23:02:47 +0000 2015'
+ 'min': 'Fri Apr 01 00:04:17 +0000 2016'
+
+
+db full:
+count:  15462707  (faltan 7990 al sumar pt1 + pt2) 
+count:  15633833
+created at:
+ 'max': ''
+ 'min': ''
+
+
+export dataset as csv
+`mongoexport -h localhost -d twitter -c tweet --type=csv --fields created_at,user.id_str,id_str,text,retweeted_status.id_str,retweeted_status.user.id_str,retweeted_status.created_at,retweet_count,in_reply_to_status_id_str --out dayli_col.csv`
+

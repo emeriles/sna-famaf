@@ -2,12 +2,12 @@ import os
 import pickle
 import pprint
 import pymongo
+import pandas as pd
 
 import time
 
 from pymongo import MongoClient, InsertOne
-from pymongo.errors import BulkWriteError
-
+from pymongo.errors import BulkWriteError, DuplicateKeyError
 
 TMP_SEEN_USERS = './temp/seen_users.pickle'
 
@@ -179,3 +179,33 @@ class DBHandler(object):
 
         cursor = self.tweet_collection.find(filter=filters, projection=projection)
         return cursor
+
+    @staticmethod
+    def move_tweets_to_db(handler_from, handler_to):
+        projection = {'created_at':1,
+                      'user.id_str': 1,
+                      'id_str': 1,
+                      'text': 1,
+                      'retweeted_status.id_str': 1,
+                      'retweeted_status.user.id_str': 1,
+                      'retweeted_status.created_at': 1,
+                      'retweet_count': 1,
+                      'in_reply_to_status_id_str': 1} ########## THISSSSSSSSSSSSSSSS
+        for t in handler_from.tweet_collection.find(projection=projection):
+            try:
+                handler_to.tweet_collection.insert_one(t)
+            except DuplicateKeyError:
+                pass
+
+    # def plot_tweets_histogram(self, **kwargs):
+    #     """
+    #     Plot tweets histogram.
+    #
+    #     :param kwargs: kwargs for `DBHandler.query_tweets`
+    #     :return:
+    #     """
+    #     cursor = self.query_tweets(select_fields=['created_at'], **kwargs)
+    #     df = pd.DataFrame(data=list(cursor))
+    #     for_plt = df.set_index('created_at', drop=False, inplace=False)
+    #     for_plt.created_at.groupby(pd.Grouper(freq='H')).count().plot(kind='bar', figsize=(20, 6))
+    #     # df.plot(kind='hist', x='created_at')
