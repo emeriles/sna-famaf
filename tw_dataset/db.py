@@ -190,7 +190,8 @@ class DBHandler(object):
                       'retweeted_status.user.id_str': 1,
                       'retweeted_status.created_at': 1,
                       'retweet_count': 1,
-                      'in_reply_to_status_id_str': 1} ########## THISSSSSSSSSSSSSSSS
+                      'in_reply_to_status_id_str': 1}
+        # TODO: set new bd index!!
         for t in handler_from.tweet_collection.find(projection=projection):
             try:
                 handler_to.tweet_collection.insert_one(t)

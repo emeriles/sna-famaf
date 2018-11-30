@@ -88,7 +88,7 @@ class APIHandler(object):
                         self.get_fresh_connection()
         return fids
 
-    def traer_timeline(self, user_id, desde=None, hasta=None, dia=None, limite=None, since_id=None):
+    def traer_timeline(self, user_id, desde=None, hasta=None, dia=None, limite=None, since_id=None, screen_name=None):
         tweets = []
         page = 1
         if dia:
@@ -102,7 +102,7 @@ class APIHandler(object):
                 break
 
             try:
-                page_tweets = self.conn_.user_timeline(user_id=user_id, page=page, since_id=since_id)
+                page_tweets = self.conn_.user_timeline(user_id=user_id, page=page, since_id=since_id, screen_name=screen_name)
                 if len(page_tweets) == 0:
                     break
 
@@ -172,5 +172,8 @@ class APIHandler(object):
                         conns_tried = 0 # restart count
                     else:
                         self.get_fresh_connection()
+
+    def get_user(self, screen_name=None):
+        return self.conn_.get_user(screen_name=screen_name)
 
 API_HANDLER = APIHandler(AUTH_DATA)

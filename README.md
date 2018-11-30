@@ -10,7 +10,10 @@ pip install -r requirements.txt
 ```
 
 
-\
+# Usefull stuff
+
+export dataset as csv
+`mongoexport -h localhost -d twitter -c tweet --type=csv --fields created_at,user.id_str,id_str,text,retweeted_status.id_str,retweeted_status.user.id_str,retweeted_status.created_at,retweet_count,quoted_status_id_str --out dayli_col.csv`
 \
 \
 \
@@ -65,8 +68,3 @@ count:  15633833
 created at:
  'max': ''
  'min': ''
-
-
-export dataset as csv
-`mongoexport -h localhost -d twitter -c tweet --type=csv --fields created_at,user.id_str,id_str,text,retweeted_status.id_str,retweeted_status.user.id_str,retweeted_status.created_at,retweet_count,in_reply_to_status_id_str --out dayli_col.csv`
-
