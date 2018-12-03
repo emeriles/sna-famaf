@@ -12,7 +12,7 @@ def generate_notebook(dataset_path):
     print("Computing %s" % out_nb_fname)
     nb = nbf.read(open(notebook_name), as_version=4)
     nb['cells'][0]['source'] = 'csv_path ="{}"'.format(dataset_path)
-    ep = ExecutePreprocessor(timeout=1200, kernel_name='python3')
+    ep = ExecutePreprocessor(timeout=None, kernel_name='python3')
     ep.preprocess(nb, {'metadata': {'path': './'}})
     with codecs.open(out_nb_fname, 'w', encoding='utf-8') as f:
         nbf.write(nb, f)
