@@ -106,7 +106,6 @@ venv.bak/
 *.json
 *.tmp
 *.pyc
-localsettings.py
 *.db
 *.bak
 *.graphml
@@ -125,3 +124,11 @@ accesoserver.txt
 db/
 .idea/
 .project/
+
+datasets_tmp
+*.gpickle
+
+private_settings.py
+
+data/raw/csvs
+data/raw/mongodbs

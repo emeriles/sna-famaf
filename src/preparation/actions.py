@@ -4,9 +4,10 @@ import datetime
 import networkx as nx
 import time
 
-from db import DBHandler
+from preparation.db import DBHandler
 
 GRAPH_PATH = './graphs/subgraph.gpickle'
+
 
 class Action(object):
 

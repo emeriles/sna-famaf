@@ -68,3 +68,11 @@ count:  15633833
 created at:
  'max': ''
  'min': ''
+
+
+
+En dataset de juguete:
+    antes del reciclaje:
+    8% RT; 91% originales
+    despues del reciclaje:
+    16% RT; 83% originales

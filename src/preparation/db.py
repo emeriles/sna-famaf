@@ -9,7 +9,7 @@ import time
 from pymongo import MongoClient, InsertOne
 from pymongo.errors import BulkWriteError, DuplicateKeyError
 
-TMP_SEEN_USERS = './temp/seen_users.pickle'
+TMP_SEEN_USERS = './preparation/temp/seen_users.pickle'
 
 SEEN_USERS = set()
 if os.path.exists(TMP_SEEN_USERS):
@@ -20,7 +20,7 @@ if os.path.exists(TMP_SEEN_USERS):
 class DBHandler(object):
 
     def __init__(self, port=27017):
-        from twitter_api import API_HANDLER
+        from preparation.twitter_api import API_HANDLER
         self._host = 'localhost'
         self._port = port
         self._db_name = 'tweets'

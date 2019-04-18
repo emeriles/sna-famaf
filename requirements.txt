@@ -7,3 +7,4 @@ nbformat==4.4.0
 nbconvert==5.4.0
 SQLAlchemy==1.2.11
 SQLAlchemy-Utils==0.33.3
+sklearn

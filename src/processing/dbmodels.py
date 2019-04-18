@@ -1,25 +1,16 @@
 from sqlalchemy import create_engine, Table, Column, ForeignKey
 import pandas as pd
-
-# column types
-from sqlalchemy import (Integer, SmallInteger, String, Date, DateTime, Float, Boolean)
-
+from sqlalchemy import (Integer, String, DateTime, Boolean)
 from sqlalchemy.ext.declarative import declarative_base
-# from sqlalchemy.engine.url import URL
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy_utils.functions import drop_database, database_exists, create_database
-
 import time
-from datetime import timedelta, datetime, date
-import pickle
 
-# from tw_dataset.settings import PROJECT_PATH, SQLITE_CONNECTION, SQLITE_CONNECTION1, SQLITE_CONNECTION2
-# from ....experiments.local_settings import SQLITE_CONNECTION
-from local_settings import SQLITE_CONNECTION
+from settings import SQLITE_CONNECTION, CSV_SMALL
 
-DATE_LOWER_LIMIT = datetime(year=2015, month=8, day=24)
-
-DATE_UPPER_LIMIT = datetime(year=2015, month=9, day=24)
+# DATE_LOWER_LIMIT = datetime(year=2015, month=8, day=24)
+#
+# DATE_UPPER_LIMIT = datetime(year=2015, month=9, day=24)
 
 
 Base = declarative_base()
@@ -217,7 +208,7 @@ class User(Base):
 
 if __name__ == '__main__':
     initialize_db()
-    csv_path = '../../database/full_full/full_dataset.csv'
+    csv_path = CSV_SMALL
     
     import networkx as nx
     graph = nx.read_gpickle('graphs/subgraph.gpickle')
@@ -234,6 +225,12 @@ if __name__ == '__main__':
     session.add_all(users)
     session.close()
 
+    reached = False
     for user in users:
+        # while user.id
+        if user.id != 4010871 and not reached:
+            continue
+        else:
+            reached = True
         user.fetch_timeline(session, csv_path=csv_path)
         # user.fetch_favorites(session)

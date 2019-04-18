@@ -1,7 +1,7 @@
 from tweepy import AppAuthHandler, API
 from tweepy.error import TweepError
 from random import choice
-from local_settings import AUTH_DATA
+from private_settings import AUTH_DATA
 import time
 
 # Used to switch between tokens to avoid exceeding rate limits

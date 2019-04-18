@@ -32,12 +32,17 @@
 #SBATCH --ntasks-per-node=1
 
 ### Available cores per node (1-12)
+### Cores visibles por nodo
+### En mendieta: <= 16
+### En jupiterace: <= 6
+### En zx81: <= 12
 #SBATCH --cpus-per-task=1
 
 ### execution time. Format: days-hours:minutes:seconds -- Max: three days
-#SBATCH --time 1-00:00:00
+#SBATCH --time 2-10:00:00
 
 ### Check invocation line
+echo `dirname $1`
 if [ $# -ne 1 ] || [ ! -f $1 ]
 then
 	echo "[ERROR] Must invoke through \"enqueue_job.sh\""
