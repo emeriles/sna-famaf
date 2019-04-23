@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy_utils.functions import drop_database, database_exists, create_database
 import time
 
-from settings import SQLITE_CONNECTION, CSV_SMALL
+from settings import SQLITE_CONNECTION, CSV_CUTTED, NX_GRAPH_PATH
 
 # DATE_LOWER_LIMIT = datetime(year=2015, month=8, day=24)
 #
@@ -139,11 +139,11 @@ class User(Base):
         #             time.sleep(10)
         #             continue
         dtypes = {
-            'user.id_str': str,
+            'user__id_str': str,
             'id_str': str,
             'text': str,
-            'retweeted_status.id_str': str,
-            'retweeted_status.user.id_str': str,
+            'retweeted_status__id_str': str,
+            'retweeted_status__user__id_str': str,
             'retweet_count': int,
             'quoted_status_id_str': str,
         }
@@ -153,7 +153,7 @@ class User(Base):
         # print(id_s)
         # print(type(id_s))
         # print(df['user.id_str'] == '51864127')
-        df_filtered = df[(df['user.id_str'] == id_s) | (df['retweeted_status.user.id_str'] == id_s)]
+        df_filtered = df[(df['user__id_str'] == id_s) | (df['retweeted_status__user__id_str'] == id_s)]
         # for t in df:
         #     if not tweets:
         #         # All done
@@ -164,15 +164,15 @@ class User(Base):
             #     continue
             # elif t.created_at > DATE_LOWER_LIMIT:
             isretweet = False
-            if not pd.isna(getattr(t, 'retweeted_status.id_str')):
-                t_id = getattr(t, 'retweeted_status.id_str')
+            if not pd.isna(getattr(t, 'retweeted_status__id_str')):
+                t_id = getattr(t, 'retweeted_status__id_str')
                 isretweet = True
             else:
                 t_id = t.id_str
 
             t_id = int(t_id)
             tweet = session.query(Tweet).get(t_id)
-            pepe = getattr(t, 'retweeted_status.created_at') if hasattr(t, 'retweeted_status.created_at') else t.created_at
+            pepe = getattr(t, 'retweeted_status__created_at') if hasattr(t, 'retweeted_status__created_at') else t.created_at
             if not tweet:
                 tweet_data = {
                     'id': t_id,
@@ -185,7 +185,7 @@ class User(Base):
                 }
                 # tweet = Tweet(**{f: t.__getattribute__(f) for f in TWEET_FIELDS})
                 tweet = Tweet(**tweet_data)
-                pepe2 = getattr(t, 'retweeted_status.user.id_str') if hasattr(t, 'retweeted_status.user.id_str') else getattr(t, 'user.id_str')
+                pepe2 = getattr(t, 'retweeted_status__user__id_str') if hasattr(t, 'retweeted_status__user__id_str') else getattr(t, 'user__id_str')
                 tweet.author_id = pepe2
                 session.add(tweet)
             if isretweet:
@@ -206,12 +206,12 @@ class User(Base):
         return self.timeline
 
 
-if __name__ == '__main__':
+def reset_sqlite_db():
     initialize_db()
-    csv_path = CSV_SMALL
+    csv_path = CSV_CUTTED
     
     import networkx as nx
-    graph = nx.read_gpickle('graphs/subgraph.gpickle')
+    graph = nx.read_gpickle(NX_GRAPH_PATH)
     user_ids = graph.nodes()
     users = [User(id=int(uid), username=uid) for uid in user_ids]
 
@@ -225,12 +225,13 @@ if __name__ == '__main__':
     session.add_all(users)
     session.close()
 
-    reached = False
+    to_process = len(users)
+    percentage = 0
     for user in users:
-        # while user.id
-        if user.id != 4010871 and not reached:
-            continue
-        else:
-            reached = True
+        to_process -= 1
+        percentage = 100 - int(to_process / len(users) * 100)
+        print(
+            'Avance: %{}'.format(percentage)
+        )
         user.fetch_timeline(session, csv_path=csv_path)
         # user.fetch_favorites(session)

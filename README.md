@@ -76,3 +76,9 @@ En dataset de juguete:
     8% RT; 91% originales
     despues del reciclaje:
     16% RT; 83% originales
+
+
+daily make cut1 (?)
+real	211m16.106s
+user	188m41.022s
+sys	2m55.341s

@@ -1,5 +1,5 @@
+import json
 import os
-from os.path import dirname, abspath, join
 
 
 # GLOBAL = {
@@ -10,16 +10,30 @@ VERBOSE = False
 
 DATASETS_FOLDER_RAW = '../data/processed/'
 
+DATASET_SIZE_TYPE = os.environ.get('DATASET_SIZE_TYPE')
+SQLITE_CONNECTION = None
+CSV_RAW = None
+CSV_CUTTED = None
+
+if DATASET_SIZE_TYPE == 'SMALL':
+    SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_daily.db'
+    CSV_RAW = '../data/raw/csvs/dayli_col.csv'
+    CSV_CUTTED = '../data/raw/csvs/cut1_dayli_col.csv'
+
+if DATASET_SIZE_TYPE == 'FULL':
+    SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_daily.db'
+    CSV_RAW = '../data/raw/csvs/full.csv'
+    CSV_CUTTED = '../data/raw/csvs/cut1_dayli_col.csv'
+
 XY_CACHE_FOLDER = "./processing/xy_cache/"
 
 GT_GRAPH_PATH = '../data/graphs/subgraph.gt'
 
-NX_GRAPH_PATH = '../data/graphs/subgraph.gpickle'
+NX_GRAPH_PATH = '../data/graphs/subgraph_new_downloaded.gpickle'
 
-SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample.db'
+tu_path = "../data/processed/active_and_central.json"
+TEST_USERS_ALL = json.load(open(tu_path))
 
-SQLITE_CONNECTION_SMALL = 'sqlite:///../data/processed/twitter_sample_daily.db'
+MODELS_FOLDER_1_ = "../model/_1_one_user_learn_neighbours"
 
-CSV_SMALL = '../data/csvs/dayli_col.csv'
-
-CSV_FULL = '../data/csvs/full.csv'
+SCORES_FOLDER_1_ =  "modeling/_1_one_user_learn_neighbours/scores"

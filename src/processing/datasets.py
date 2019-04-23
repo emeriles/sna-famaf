@@ -1,24 +1,15 @@
-from datetime import timedelta
-
 import numpy as np
 import pickle
 import os
-import sys
 import pandas as pd
 from os.path import join
 from os import remove
-import json
 from random import sample
 from sklearn.model_selection import train_test_split
 
-from processing.dbmodels import open_session, User, Tweet
-from processing.utils import get_level2_neighbours, transform_ngfeats_to_bucketfeats, load_gt_graph, \
-    get_most_central_twids, load_nx_graph
+from processing.dbmodels import open_session, User
+from processing.utils import get_level2_neighbours, transform_ngfeats_to_bucketfeats
 from settings import XY_CACHE_FOLDER
-
-
-tu_path = "../data/processed/active_and_central.json"
-TEST_USERS_ALL = json.load(open(tu_path))
 
 
 def get_active_user(sess):
@@ -111,7 +102,7 @@ def load_or_create_dataset(uid):
             tweets.update(u.timeline)
 
         # exclude tweets from central user or not in Spanish
-        tweets = [t for t in tweets if t.author_id != uid and t.lang == 'es']
+        tweets = [t for t in tweets if t.author_id != uid ]  # and t.lang == 'es'   all tweets in spanish?
 
         X, y = extract_features(tweets, neighbours, user)
         s.close()
@@ -196,6 +187,18 @@ def load_or_create_combined_dataset_small(nbuckets, test_size=0.3):
     return dataset
 
 
+def load_or_create_dataframe_validation(uid):
+    print('Load_or_create_dataframe_validation for user: ', uid)
+    result = load_dataframe(uid)
+    if not result:
+        print('Creating dataframe for user: ', uid)
+        repartition_dataframe(uid)  # se guarda x_valid
+        X_train, X_valid, X_test, y_train, y_valid, y_test = reduce_dataset(uid)  # se guardan los x_valid_small
+        return X_train, X_valid, X_test, y_train, y_valid, y_test
+    print('Returning loaded model.')
+    return result
+
+
 def load_dataframe(uid):
     Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d_small.pickle" % uid)
     Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d_small.pickle" % uid)
@@ -210,8 +213,9 @@ def load_dataframe(uid):
     except Exception as e:
         return None
 
+
 def repartition_dataframe(uid):
-    ds = load_dataframe(uid)
+    ds = load_or_create_dataframe(uid)  # load_dataframe(uid)
 
     if ds:
         X_train, X_test, y_train, y_test = ds
@@ -277,6 +281,7 @@ def reduce_dataset(uid):
 
     return X_train, X_valid, X_test, y_train, y_valid, y_test
 
+
 def load_small_validation_dataframe(uid):
     Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d_small.pickle" % uid)
     Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d_small.pickle" % uid)
@@ -318,7 +323,7 @@ def load_or_create_dataframe(uid):
             tweets.update(u.timeline)
 
         # exclude tweets from central user or not in Spanish
-        tweets = [t for t in tweets if t.author_id != uid and t.lang == 'es']
+        tweets = [t for t in tweets if t.author_id != uid]  # and t.lang == 'es']
 
         tweet_ids = [t.id for t in tweets]
         neighbour_ids = [u.id for u in neighbours]
@@ -335,205 +340,202 @@ def load_or_create_dataframe(uid):
     return X_train, X_test, y_train, y_test
 
 
+# def build_full_graph_dataset():
+#     # sample users uniformly by katz centrality
+#     sample_uids = get_full_graph_usersample()
+#
+#     # Each point consists of a uid and a set of up to 300 tweets
+#     # in their neighborhood from first 20 days of sample
+#     datapoints = build_datapoints(sample_uids)
+#
+#     # Now for each user and all its corresponding datapoints
+#     # we build
+#     build_dataframe_from_datapoints()
 
 
+# def get_full_graph_usersample(size=0.7):
+#     fname = join(XY_CACHE_FOLDER, 'train_sample_uids.pickle')
+#     if os.path.exists(fname):
+#         sample_uids = pickle.load(open(fname, 'rb'))
+#     else:
+#         g = load_gt_graph()
+#         nusers = g.num_vertices()
+#         nsample = int(nusers * size)
+#         sorted_twids = get_most_central_twids(N=nusers)
+#         sample_inds = np.random.choice(nusers, nsample, replace=False)
+#         sample_uids = [sorted_twids[i] for i in sample_inds]
+#
+#         s = open_session()
+#         sample_uids = [id for id in sample_uids if s.query(User).get(id)]
+#         s.close()
+#
+#         pickle.dump(sample_uids, open(fname, 'wb'))
+#
+#     return sample_uids
+
+#
+# def build_datapoints(sample_uids, njob):
+#     fnames = {}
+#     datapoints = {}
+#
+#     for set_type in ["train", "test"]:
+#         fnames[set_type] = join(XY_CACHE_FOLDER, 'datapoints_%s_%d.pickle' % (set_type, njob))
+#         datapoints[set_type] = {}
+#
+#     s = open_session()
+#     g = load_nx_graph()
+#
+#     for i, uid in enumerate(sample_uids):
+#         if i % 50 == 0:
+#             progress = i * 100 / len(sample_uids)
+#             print("%.2f %%" % progress)
+#         user = s.query(User).get(uid)
+#         user_rts = set([t for t in user.timeline if t.author_id != int(uid)])
+#
+#         # Ignore users with less than 30 retweets
+#         if len(user_rts) < 30:
+#             continue
+#
+#         # Fetch tweet universe
+#         # (timeline of ownuser + followed)
+#         neighbours = get_level2_neighbours(user, s)
+#         tweets_from_neighbours = set()
+#         for u in neighbours:
+#             tweets_from_neighbours.update(u.timeline)
+#
+#         # Keep only RTs that are shared with at least one neighbour
+#         # ( due to changes in followers it can happen that
+#         #   an RT is not shared with any neighbour )
+#         user_rts = [t for t in user_rts if t in tweets_from_neighbours]
+#
+#         # Make sure that positives (tweets from user) are at
+#         # least 10% of the sample
+#         max_followed_tweets = 9 * len(user_rts)
+#         if len(tweets_from_neighbours) > max_followed_tweets:
+#             tweets_from_neighbours = sample(tweets_from_neighbours, max_followed_tweets)
+#
+#         tweets = set()
+#         tweets.update(user_rts)
+#         tweets.update(tweets_from_neighbours)
+#
+#         # Reduce sample to 300 per user
+#         if len(tweets) > 300:
+#             tweets = sample(tweets, 300)
+#
+#         # train/test split
+#         upper_date_limit = DATE_LOWER_LIMIT + timedelta(days=20)
+#         datapoints["train"][uid] = [t.id for t in tweets if t.created_at <= upper_date_limit]
+#
+#         lower_date_limit = DATE_LOWER_LIMIT + timedelta(days=20)
+#         datapoints["test"][uid] = [t.id for t in tweets if t.created_at > lower_date_limit]
+#
+#     s.close()
+#
+#     for set_type in ["train", "test"]:
+#         with open(fnames[set_type], 'wb') as f:
+#             pickle.dump(datapoints[set_type], f)
+#
+#     return datapoints
+#
+#
+# def build_datapoints_job():
+#     njob = int(sys.argv[1])
+#
+#     sample_uids = get_full_graph_usersample()
+#     # part_size = len(sample_uids) / njob         ######################################### 8?
+#     # uids = sample_uids[part_size * njob: part_size * (njob + 1)]
+#     uids = sample_uids
+#     build_datapoints(uids, njob)
+#
+#
+# def combine_datapoints():
+#     fnames = [join(XY_CACHE_FOLDER, 'datapoints%d.pickle' % i) for i in range(6)]
+#     parts = [pd.read_pickle(f) for f in fnames]
+#     datapoints = pd.concat(parts)
+#     return datapoints
+#
+#
+# def build_dataset_from_datapoints(njob, set_type, nbuckets=20, nmostsimilar=30):
+#     '''
+#         Given a dictionary of points (users and associated tweets)
+#         this generates a dataframe of features for those points
+#         and a vector y of output values. (1 = retweeted, 0 = not retweeted )
+#     '''
+#     fname = join(XY_CACHE_FOLDER, 'datapoints_%s_%d.pickle' % (set_type, njob))
+#     dp = pickle.load(open(fname, 'rb'))
+#     s = open_session()
+#     dfs = []
+#     ys = []
+#
+#     for uid in dp:
+#         user = s.query(User).get(uid)
+#         neighbours = get_level2_neighbours(user, s)
+#
+#         if len(neighbours) < nmostsimilar + 1:
+#             continue
+#
+#         ngids = [n.id for n in neighbours]
+#
+#         tweets = s.query(Tweet).filter(Tweet.id.in_(dp[uid])).all()
+#         df_index = [(uid, t.id) for t in tweets]
+#
+#         Xb, y = extract_features(tweets, neighbours, user)
+#         X = transform_ngfeats_to_bucketfeats(uid, ngids, Xb, nmostsimilar, nbuckets)
+#
+#         df = pd.DataFrame(data=X, index=df_index, columns=range(X.shape[1]))
+#         dfs.append(df)
+#         ys.append(y)
+#     s.close()
+#     dfX = pd.concat(dfs)
+#     y = np.hstack(ys)
+#
+#     xfname = join(XY_CACHE_FOLDER, 'dataset_X_%s_%d.pickle' % (set_type, njob))
+#     yfname = join(XY_CACHE_FOLDER, 'dataset_y_%s_%d.pickle' % (set_type, njob))
+#
+#     dfX.to_pickle(xfname)
+#     pickle.dump(y, open(yfname, 'wb'))
+#
+#     return dfX, y
+#
+#
+# def load_large_dataset_piece(npiece, set_type):
+#     xfname = join(XY_CACHE_FOLDER, 'dataset_X_%s_%d.pickle' % (set_type, npiece))
+#     yfname = join(XY_CACHE_FOLDER, 'dataset_y_%s_%d.pickle' % (set_type, npiece))
+#
+#     dfX = pd.read_pickle(xfname)
+#     y = pickle.load(open(yfname,'rb'))
+#
+#     return dfX, y
+#
+#
+# def load_large_dataset_full(set_type="train"):
+#     dfs = []
+#     ys = []
+#     for npiece in range(8):
+#         _dfX, _y = load_large_dataset_piece(npiece, set_type)
+#         dfs.append(_dfX)
+#         ys.append(_y)
+#
+#     dfX = pd.concat(dfs)
+#     y = np.hstack(ys)
+#
+#     return dfX, y
 
 
-def build_full_graph_dataset():
-    # sample users uniformly by katz centrality
-    sample_uids = get_full_graph_usersample()
-
-    # Each point consists of a uid and a set of up to 300 tweets
-    # in their neighborhood from first 20 days of sample
-    datapoints = build_datapoints(sample_uids)
-
-    # Now for each user and all its corresponding datapoints
-    # we build
-    build_dataframe_from_datapoints()
+# def build_dataset_from_datapoints_job():
+#     njob = int(sys.argv[1])
+#     set_type = sys.argv[2]
+#
+#     build_dataset_from_datapoints(njob=njob, set_type=set_type)
 
 
-def get_full_graph_usersample(size=0.7):
-    fname = join(XY_CACHE_FOLDER, 'train_sample_uids.pickle')
-    if os.path.exists(fname):
-        sample_uids = pickle.load(open(fname, 'rb'))
-    else:
-        g = load_gt_graph()
-        nusers = g.num_vertices()
-        nsample = int(nusers * size)
-        sorted_twids = get_most_central_twids(N=nusers)
-        sample_inds = np.random.choice(nusers, nsample, replace=False)
-        sample_uids = [sorted_twids[i] for i in sample_inds]
-        
-        s = open_session()
-        sample_uids = [id for id in sample_uids if s.query(User).get(id)]
-        s.close()
+# def load_or_create_dataframe_job():
+#     njob = int(sys.argv[1])
+#     test_users = TEST_USERS[2 * njob: 2 * njob + 2]
+#     for uid, _, _ in test_users:
+#         print("Creating dataframe for %d" % uid)
+#         load_or_create_dataframe(uid)
 
-        pickle.dump(sample_uids, open(fname, 'wb'))
-    
-    return sample_uids
-
-
-def build_datapoints(sample_uids, njob):
-    fnames = {}
-    datapoints = {}
-
-    for set_type in ["train", "test"]:
-        fnames[set_type] = join(XY_CACHE_FOLDER, 'datapoints_%s_%d.pickle' % (set_type, njob))
-        datapoints[set_type] = {}
-    
-    s = open_session()
-    g = load_nx_graph()
-
-    for i, uid in enumerate(sample_uids):
-        if i % 50 == 0:
-            progress = i * 100 / len(sample_uids)
-            print("%.2f %%" % progress)
-        user = s.query(User).get(uid)                    
-        user_rts = set([t for t in user.timeline if t.author_id != int(uid)])
-        
-        # Ignore users with less than 30 retweets
-        if len(user_rts) < 30:
-            continue
-
-        # Fetch tweet universe 
-        # (timeline of ownuser + followed)
-        neighbours = get_level2_neighbours(user, s)
-        tweets_from_neighbours = set()
-        for u in neighbours:
-            tweets_from_neighbours.update(u.timeline)
-
-        # Keep only RTs that are shared with at least one neighbour
-        # ( due to changes in followers it can happen that 
-        #   an RT is not shared with any neighbour )
-        user_rts = [t for t in user_rts if t in tweets_from_neighbours]
-        
-        # Make sure that positives (tweets from user) are at
-        # least 10% of the sample
-        max_followed_tweets = 9 * len(user_rts)
-        if len(tweets_from_neighbours) > max_followed_tweets:
-            tweets_from_neighbours = sample(tweets_from_neighbours, max_followed_tweets)
-
-        tweets = set()
-        tweets.update(user_rts)
-        tweets.update(tweets_from_neighbours)
-
-        # Reduce sample to 300 per user
-        if len(tweets) > 300:
-            tweets = sample(tweets, 300)
-
-        # train/test split
-        upper_date_limit = DATE_LOWER_LIMIT + timedelta(days=20)
-        datapoints["train"][uid] = [t.id for t in tweets if t.created_at <= upper_date_limit]
-
-        lower_date_limit = DATE_LOWER_LIMIT + timedelta(days=20)
-        datapoints["test"][uid] = [t.id for t in tweets if t.created_at > lower_date_limit]
-        
-    s.close()
-    
-    for set_type in ["train", "test"]:
-        with open(fnames[set_type], 'wb') as f:
-            pickle.dump(datapoints[set_type], f)
-
-    return datapoints
-
-
-def build_datapoints_job():
-    njob = int(sys.argv[1])
-
-    sample_uids = get_full_graph_usersample()
-    # part_size = len(sample_uids) / njob         ######################################### 8?
-    # uids = sample_uids[part_size * njob: part_size * (njob + 1)]
-    uids = sample_uids
-    build_datapoints(uids, njob)
-
-
-def combine_datapoints():
-    fnames = [join(XY_CACHE_FOLDER, 'datapoints%d.pickle' % i) for i in range(6)]
-    parts = [pd.read_pickle(f) for f in fnames]
-    datapoints = pd.concat(parts)
-    return datapoints
-
-
-def build_dataset_from_datapoints(njob, set_type, nbuckets=20, nmostsimilar=30):
-    '''
-        Given a dictionary of points (users and associated tweets)
-        this generates a dataframe of features for those points
-        and a vector y of output values. (1 = retweeted, 0 = not retweeted )
-    '''
-    fname = join(XY_CACHE_FOLDER, 'datapoints_%s_%d.pickle' % (set_type, njob))
-    dp = pickle.load(open(fname, 'rb'))
-    s = open_session()
-    dfs = []
-    ys = []
-
-    for uid in dp:
-        user = s.query(User).get(uid)        
-        neighbours = get_level2_neighbours(user, s)
-
-        if len(neighbours) < nmostsimilar + 1:
-            continue
-
-        ngids = [n.id for n in neighbours]
-
-        tweets = s.query(Tweet).filter(Tweet.id.in_(dp[uid])).all()
-        df_index = [(uid, t.id) for t in tweets]
-
-        Xb, y = extract_features(tweets, neighbours, user)
-        X = transform_ngfeats_to_bucketfeats(uid, ngids, Xb, nmostsimilar, nbuckets)
-
-        df = pd.DataFrame(data=X, index=df_index, columns=range(X.shape[1]))
-        dfs.append(df)
-        ys.append(y)
-    s.close()
-    dfX = pd.concat(dfs)
-    y = np.hstack(ys)
-
-    xfname = join(XY_CACHE_FOLDER, 'dataset_X_%s_%d.pickle' % (set_type, njob))
-    yfname = join(XY_CACHE_FOLDER, 'dataset_y_%s_%d.pickle' % (set_type, njob))
-            
-    dfX.to_pickle(xfname)
-    pickle.dump(y, open(yfname, 'wb'))
-    
-    return dfX, y
-
-
-def load_large_dataset_piece(npiece, set_type):
-    xfname = join(XY_CACHE_FOLDER, 'dataset_X_%s_%d.pickle' % (set_type, npiece))
-    yfname = join(XY_CACHE_FOLDER, 'dataset_y_%s_%d.pickle' % (set_type, npiece))
-
-    dfX = pd.read_pickle(xfname)
-    y = pickle.load(open(yfname,'rb'))
-
-    return dfX, y
-
-
-def load_large_dataset_full(set_type="train"):
-    dfs = []
-    ys = []
-    for npiece in range(8):
-        _dfX, _y = load_large_dataset_piece(npiece, set_type)
-        dfs.append(_dfX)
-        ys.append(_y)
-    
-    dfX = pd.concat(dfs)
-    y = np.hstack(ys)
-
-    return dfX, y
-
-
-def build_dataset_from_datapoints_job():
-    njob = int(sys.argv[1])
-    set_type = sys.argv[2]
-
-    build_dataset_from_datapoints(njob=njob, set_type=set_type)
-
-
-def load_or_create_dataframe_job():
-    njob = int(sys.argv[1])
-    test_users = TEST_USERS[2 * njob: 2 * njob + 2]
-    for uid, _, _ in test_users:
-        print("Creating dataframe for %d" % uid)
-        load_or_create_dataframe(uid)
 
 # if __name__ == '__main__':
 #     # build_datapoints_job()
