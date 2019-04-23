@@ -134,13 +134,21 @@ class CSVDataframe(object):
     def _load_df(self):
         print('Loading df')
         dtypes = {
-            'user.id_str': str,
+            'created_at': str,
+            'user__id_str': str,
             'id_str': str,
             'text': str,
-            'retweeted_status.id_str': str,
-            'retweeted_status.user.id_str': str,
-            'retweet_count': int,
+            'retweeted_status__id_str': str,
+            'retweeted_status__user__id_str': str,
+            'retweeted_status__created_at': str,
+            'retweet_count': str,
             'quoted_status_id_str': str,
+            'retweeted_status__new_created_at': str,
+            'retweeted_status__new_user__id_str': str,
+            'retweeted_status__new_id_str': str,
+            'retweeted_status__old_created_at': str,
+            'retweeted_status__old_user__id_str': str,
+            'retweeted_status__old_id_str': str,
         }
         df = pd.read_csv(self.df_path, dtype=dtypes)
 
