@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy_utils.functions import drop_database, database_exists, create_database
 import time
 
+from processing.preprocess_csv import CSVDataframe
 from settings import SQLITE_CONNECTION, CSV_CUTTED, NX_GRAPH_PATH
 
 # DATE_LOWER_LIMIT = datetime(year=2015, month=8, day=24)
@@ -115,9 +116,8 @@ class User(Base):
         secondary=users_retweets
     )
 
-    def fetch_timeline(self, session, csv_path):
+    def fetch_timeline(self, session, df):
         print("Saving timeline for user %d" % self.id)
-        start_time = time.time()
         # authenticating here ensures a different set of credentials
         # everytime we start processing a new county, to prevent hitting the rate limit
         self.timeline = []
@@ -138,17 +138,17 @@ class User(Base):
         #             print "waiting..."
         #             time.sleep(10)
         #             continue
-        dtypes = {
-            'user__id_str': str,
-            'id_str': str,
-            'text': str,
-            'retweeted_status__id_str': str,
-            'retweeted_status__user__id_str': str,
-            'retweet_count': int,
-            'quoted_status_id_str': str,
-        }
-        df = pd.read_csv(csv_path, dtype=dtypes)
-        ## FILTER ON USER
+        # dtypes = {
+        #     'user__id_str': str,
+        #     'id_str': str,
+        #     'text': str,
+        #     'retweeted_status__id_str': str,
+        #     'retweeted_status__user__id_str': str,
+        #     'retweet_count': int,
+        #     'quoted_status_id_str': str,
+        # }
+        # df = pd.read_csv(csv_path, dtype=dtypes)
+        # ## FILTER ON USER
         id_s = str(self.id)
         # print(id_s)
         # print(type(id_s))
@@ -226,6 +226,7 @@ def reset_sqlite_db():
     session.close()
 
     to_process = len(users)
+    csv_df = CSVDataframe(csv_path)
     percentage = 0
     for user in users:
         to_process -= 1
@@ -233,5 +234,5 @@ def reset_sqlite_db():
         print(
             'Avance: %{}'.format(percentage)
         )
-        user.fetch_timeline(session, csv_path=csv_path)
+        user.fetch_timeline(session, csv_df.df)
         # user.fetch_favorites(session)

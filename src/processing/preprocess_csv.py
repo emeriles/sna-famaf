@@ -123,3 +123,33 @@ class PreprocessCSV(object):
         p = PreprocessCSV()
         p.df_cut1()
         p.save_cut1()
+
+
+class CSVDataframe(object):
+
+    def __init__(self, df_path):
+        self.df_path = df_path
+        self.df = self._load_df()
+
+    def _load_df(self):
+        print('Loading df')
+        dtypes = {
+            'user.id_str': str,
+            'id_str': str,
+            'text': str,
+            'retweeted_status.id_str': str,
+            'retweeted_status.user.id_str': str,
+            'retweet_count': int,
+            'quoted_status_id_str': str,
+        }
+        df = pd.read_csv(self.df_path, dtype=dtypes)
+
+        # parse dates
+        datetime_cols = [c for c in df.columns if 'created_at' in c]
+        for c in datetime_cols:
+            df[c] = pd.to_datetime(df[c])
+
+        # reemplazar nombre de columnas: . por __ para sintactic sugar de pandas.
+        df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)
+        print('Loading df finished')
+        return df

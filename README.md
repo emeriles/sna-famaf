@@ -82,3 +82,8 @@ daily make cut1 (?)
 real	211m16.106s
 user	188m41.022s
 sys	2m55.341s
+
+
+Cant lineas 
+14207279 cut1_full_col.csv
+18314824 full.csv
