@@ -116,7 +116,7 @@ class PreprocessCSV(object):
 
     def save_cut1(self, filename=CSV_CUTTED):
         print('Saving dataframe {}'.format(filename))
-        self.cut1.to_csv(filename, line_terminator='\n', index=False)
+        self.cut1.to_csv(filename, line_terminator='\xfe', index=False)
 
     @staticmethod
     def create_and_save_csv_cutted():
@@ -150,7 +150,7 @@ class CSVDataframe(object):
             'retweeted_status__old_user__id_str': str,
             'retweeted_status__old_id_str': str,
         }
-        df = pd.read_csv(self.df_path, dtype=dtypes)
+        df = pd.read_csv(self.df_path, dtype=dtypes, lineterminator='\xfe')
 
         # parse dates
         datetime_cols = [c for c in df.columns if 'created_at' in c]

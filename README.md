@@ -87,3 +87,9 @@ sys	2m55.341s
 Cant lineas 
 14207279 cut1_full_col.csv
 18314824 full.csv
+
+
+create and save csv cutted full:
+real	60m4.848s
+user	55m58.257s
+sys	4m7.879s
