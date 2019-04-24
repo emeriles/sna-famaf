@@ -150,7 +150,11 @@ class CSVDataframe(object):
             'retweeted_status__old_user__id_str': str,
             'retweeted_status__old_id_str': str,
         }
-        df = pd.read_csv(self.df_path, dtype=dtypes, lineterminator='\xfe')
+        use_cols = [
+            'created_at', 'user__id_str', 'id_str', 'text', 'retweeted_status__id_str',
+            'retweeted_status__user__id_str', 'retweeted_status__created_at', 'retweet_count', 'quoted_status_id_str'
+        ]
+        df = pd.read_csv(self.df_path, dtype=dtypes, lineterminator='\xfe', usecols=use_cols)
 
         # parse dates
         datetime_cols = [c for c in df.columns if 'created_at' in c]
