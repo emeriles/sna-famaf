@@ -116,7 +116,7 @@ class PreprocessCSV(object):
 
     def save_cut1(self, filename=CSV_CUTTED):
         print('Saving dataframe {}'.format(filename))
-        self.cut1.to_csv(filename)
+        self.cut1.to_csv(filename, line_terminator='\n', index=False)
 
     @staticmethod
     def create_and_save_csv_cutted():
