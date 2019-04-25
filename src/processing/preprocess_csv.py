@@ -109,14 +109,18 @@ class PreprocessCSV(object):
             data_f['retweeted_status__new_id_str'], data_f['retweeted_status__id_str']
 
         result = data_f[original_tweets_on_ds | retweeted_by_my_users | tweet_w_more_than_one_rt]
-        new_df = result.copy(deep=True)
+        use_cols = [
+            'created_at', 'user__id_str', 'id_str', 'text', 'retweeted_status__id_str',
+            'retweeted_status__user__id_str', 'retweeted_status__created_at', 'retweet_count', 'quoted_status_id_str'
+        ]
+        new_df = result[use_cols].copy(deep=True)
         self.cut1 = new_df
         print('Performing cut1 done.')
         return new_df
 
     def save_cut1(self, filename=CSV_CUTTED):
         print('Saving dataframe {}'.format(filename))
-        self.cut1.to_csv(filename, line_terminator='\xfe', index=False)
+        self.cut1.to_csv(filename, index=False)
 
     @staticmethod
     def create_and_save_csv_cutted():
@@ -132,7 +136,7 @@ class CSVDataframe(object):
         self.df = self._load_df()
 
     def _load_df(self):
-        print('Loading df')
+        print('Loading CSV DF: ', self.df_path)
         dtypes = {
             'created_at': str,
             'user__id_str': str,
@@ -143,23 +147,19 @@ class CSVDataframe(object):
             'retweeted_status__created_at': str,
             'retweet_count': str,
             'quoted_status_id_str': str,
-            'retweeted_status__new_created_at': str,
-            'retweeted_status__new_user__id_str': str,
-            'retweeted_status__new_id_str': str,
-            'retweeted_status__old_created_at': str,
-            'retweeted_status__old_user__id_str': str,
-            'retweeted_status__old_id_str': str,
+            # 'retweeted_status__new_created_at': str,
+            # 'retweeted_status__new_user__id_str': str,
+            # 'retweeted_status__new_id_str': str,
+            # 'retweeted_status__old_created_at': str,
+            # 'retweeted_status__old_user__id_str': str,
+            # 'retweeted_status__old_id_str': str,
         }
-        use_cols = [
-            'created_at', 'user__id_str', 'id_str', 'text', 'retweeted_status__id_str',
-            'retweeted_status__user__id_str', 'retweeted_status__created_at', 'retweet_count', 'quoted_status_id_str'
-        ]
-        df = pd.read_csv(self.df_path, dtype=dtypes, lineterminator='\xfe', usecols=use_cols)
+        df = pd.read_csv(self.df_path, index_col=False, dtype=dtypes)
 
         # parse dates
-        datetime_cols = [c for c in df.columns if 'created_at' in c]
-        for c in datetime_cols:
-            df[c] = pd.to_datetime(df[c])
+        # datetime_cols = [c for c in df.columns if 'created_at' in c]
+        # for c in datetime_cols:
+        #     df[c] = pd.to_datetime(df[c])
 
         # reemplazar nombre de columnas: . por __ para sintactic sugar de pandas.
         df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)

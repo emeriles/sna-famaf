@@ -25,6 +25,7 @@ def db_connect(connection=SQLITE_CONNECTION):
     return create_engine(connection)
 
 def open_session(connection=SQLITE_CONNECTION, engine=None):
+    print('SQLite connection: ', SQLITE_CONNECTION)
     if engine is None:
         engine = db_connect(connection)
     Session = sessionmaker(bind=engine)
@@ -117,52 +118,13 @@ class User(Base):
     )
 
     def fetch_timeline(self, session, df):
-        print("Saving timeline for user %d" % self.id)
-        # authenticating here ensures a different set of credentials
-        # everytime we start processing a new county, to prevent hitting the rate limit
+        # print("Saving timeline for user %d" % self.id)
         self.timeline = []
         self.retweets = []
 
-        # page = 1
-        # done = False
-        # while not done:
-        #     TW_API = API_HANDLER.get_fresh_connection()
-        #     try:
-        #         tweets = TW_API.user_timeline(user_id=self.id, page=page)
-        #     except Exception, e:
-        #         if e.message == u'Not authorized.':
-        #             self.is_authorized = False
-        #             break
-        #         else:
-        #             print("Error: %s" % e.message)
-        #             print "waiting..."
-        #             time.sleep(10)
-        #             continue
-        # dtypes = {
-        #     'user__id_str': str,
-        #     'id_str': str,
-        #     'text': str,
-        #     'retweeted_status__id_str': str,
-        #     'retweeted_status__user__id_str': str,
-        #     'retweet_count': int,
-        #     'quoted_status_id_str': str,
-        # }
-        # df = pd.read_csv(csv_path, dtype=dtypes)
-        # ## FILTER ON USER
         id_s = str(self.id)
-        # print(id_s)
-        # print(type(id_s))
-        # print(df['user.id_str'] == '51864127')
         df_filtered = df[(df['user__id_str'] == id_s) | (df['retweeted_status__user__id_str'] == id_s)]
-        # for t in df:
-        #     if not tweets:
-        #         # All done
-        #         break
-        #     else:
         for idx, t in df_filtered.iterrows():
-            # if t.created_at > DATE_UPPER_LIMIT:
-            #     continue
-            # elif t.created_at > DATE_LOWER_LIMIT:
             isretweet = False
             if not pd.isna(getattr(t, 'retweeted_status__id_str')):
                 t_id = getattr(t, 'retweeted_status__id_str')
@@ -191,18 +153,9 @@ class User(Base):
             if isretweet:
                 self.retweets.append(tweet)
             self.timeline.append(tweet)
-            # if t.favorited:
-            #     self.favs.append(tweet)
-            # else:
-            #     done = True
-            #     break
-        # page += 1  # next page
 
-
-        # elapsed_time =  time.time() - start_time
-        # print "Done. Took %.1f secs to fetch %d tweets" % (elapsed_time, len(self.timeline))
         session.commit()
-        
+
         return self.timeline
 
 
@@ -228,11 +181,12 @@ def reset_sqlite_db():
     to_process = len(users)
     csv_df = CSVDataframe(csv_path)
     percentage = 0
+    print('Saveing user timelines to sqlite')
     for user in users:
         to_process -= 1
         percentage = 100 - int(to_process / len(users) * 100)
         print(
-            'Avance: %{}'.format(percentage)
+            '\r\nAvance: %{}'.format(percentage)
         )
         user.fetch_timeline(session, csv_df.df)
         # user.fetch_favorites(session)
