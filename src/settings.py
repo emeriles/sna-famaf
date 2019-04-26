@@ -27,7 +27,7 @@ if DATASET_SIZE_TYPE == 'FULL':
     SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_full.db'
     CSV_RAW = '../data/raw/csvs/full.csv'
     CSV_CUTTED = '../data/raw/csvs/cut1_full_col.csv'
-    print("""SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_daily.db'
+    print("""SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_full.db'
     CSV_RAW = '../data/raw/csvs/full.csv'
     CSV_CUTTED = '../data/raw/csvs/cut1_full_col.csv'""")
 
