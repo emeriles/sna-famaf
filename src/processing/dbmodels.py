@@ -44,7 +44,7 @@ def initialize_db():
         drop_database(engine.url)
     create_database(engine.url)
     create_tables(engine)
-    
+
 
 def create_tables(engine):
     Base.metadata.create_all(engine)
@@ -159,10 +159,34 @@ class User(Base):
         return self.timeline
 
 
+def bulk_save_db(user, df):
+    id_s = str(user.id)
+    df_filtered = df[(df['user__id_str'] == id_s) | (df['retweeted_status__user__id_str'] == id_s)]
+    to_insert = [
+        {
+            'id': t.id_str if hasattr(t, 'retweeted_status__id_str') else getattr(t, 'retweeted_status__id_str'),
+            'created_at': t.user__id_str if not pd.isna(hasattr(t, 'retweeted_status__user__id_str'))
+                            else pd.to_datetime(getattr(t, 'retweeted_status__user__id_str')),
+            'retweet_count': 0,
+            'favorite_count': 0,
+            'text': t.text,
+            'lang': '',
+            'is_quote_status': False,
+        }
+        for _, t in df_filtered.iterrows()
+    ]
+
+    engine = db_connect()
+
+    engine.execute(Tweet.__table__.insert(), to_insert)
+
+    # TODO: ... add user timelines and retweets
+
+
 def reset_sqlite_db():
     initialize_db()
     csv_path = CSV_CUTTED
-    
+
     import networkx as nx
     graph = nx.read_gpickle(NX_GRAPH_PATH)
     user_ids = graph.nodes()
@@ -181,7 +205,7 @@ def reset_sqlite_db():
     to_process = len(users)
     csv_df = CSVDataframe(csv_path)
     percentage = 0
-    print('Saveing user timelines to sqlite')
+    print('Saving user timelines to sqlite')
     for user in users:
         to_process -= 1
         percentage = 100 - int(to_process / len(users) * 100)
@@ -189,4 +213,5 @@ def reset_sqlite_db():
             '\r\nAvance: %{}'.format(percentage)
         )
         user.fetch_timeline(session, csv_df.df)
+        # bulk_save_db(user, csv_df.df)
         # user.fetch_favorites(session)

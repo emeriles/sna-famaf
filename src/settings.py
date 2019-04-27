@@ -17,8 +17,8 @@ CSV_CUTTED = None
 
 if DATASET_SIZE_TYPE == 'SMALL':
     SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_daily.db'
-    CSV_RAW = '../data/raw/csvs/dayli_col.csv'
-    CSV_CUTTED = '../data/raw/csvs/cut1_dayli_col.csv'
+    CSV_RAW = '../data/raw/csvs/dayli.csv'
+    CSV_CUTTED = '../data/raw/csvs/cut1_dayli.csv'
     print("""SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_daily.db'
     CSV_RAW = '../data/raw/csvs/dayli_col.csv'
     CSV_CUTTED = '../data/raw/csvs/cut1_dayli_col.csv'""")
@@ -26,7 +26,7 @@ if DATASET_SIZE_TYPE == 'SMALL':
 if DATASET_SIZE_TYPE == 'FULL':
     SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_full.db'
     CSV_RAW = '../data/raw/csvs/full.csv'
-    CSV_CUTTED = '../data/raw/csvs/cut1_full_col.csv'
+    CSV_CUTTED = '../data/raw/csvs/cut1_full.csv'
     print("""SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_full.db'
     CSV_RAW = '../data/raw/csvs/full.csv'
     CSV_CUTTED = '../data/raw/csvs/cut1_full_col.csv'""")
