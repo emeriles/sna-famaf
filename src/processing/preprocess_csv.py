@@ -16,7 +16,6 @@ class PreprocessCSV(object):
         dtypes = {
             'user.id_str': str,
             'id_str': str,
-            'text': str,
             'retweeted_status.id_str': str,
             'retweeted_status.user.id_str': str,
             'retweet_count': int,
@@ -110,7 +109,7 @@ class PreprocessCSV(object):
 
         result = data_f[original_tweets_on_ds | retweeted_by_my_users | tweet_w_more_than_one_rt]
         use_cols = [
-            'created_at', 'user__id_str', 'id_str', 'text', 'retweeted_status__id_str',
+            'created_at', 'user__id_str', 'id_str', 'retweeted_status__id_str',
             'retweeted_status__user__id_str', 'retweeted_status__created_at', 'retweet_count', 'quoted_status_id_str'
         ]
         new_df = result[use_cols].copy(deep=True)
@@ -141,7 +140,6 @@ class CSVDataframe(object):
             'created_at': str,
             'user__id_str': str,
             'id_str': str,
-            'text': str,
             'retweeted_status__id_str': str,
             'retweeted_status__user__id_str': str,
             'retweeted_status__created_at': str,
