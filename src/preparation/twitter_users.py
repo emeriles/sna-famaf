@@ -60,7 +60,8 @@ class GraphUpdate(object):
             to_process -= 1
             percentage = 100 - int(to_process / self.g.number_of_nodes() * 100)
             print(
-                'Avance: %{}; {}/{}\t\t\tTrayendo a {}'.format(percentage, to_process, self.g.number_of_nodes(), u_id)
+                'Avance: %{}; {}/{}\t\t\tTrayendo a {}'.format(percentage, to_process, self.g.number_of_nodes(), u_id),
+                end='\r'
             )
 
             retries = 0

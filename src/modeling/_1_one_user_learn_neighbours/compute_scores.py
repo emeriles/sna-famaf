@@ -3,7 +3,7 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 import json
 
 from modeling._1_one_user_learn_neighbours.model import OneUserModel
-from processing.datasets import load_or_create_dataframe_validation
+from processing.datasets import Datasets
 from settings import TEST_USERS_ALL, SCORES_FOLDER_1_
 
 
@@ -12,7 +12,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     """worker function"""
     print("Largamos para %d" % uid)
     
-    X_train, X_valid, X_testv, y_train, y_valid, y_testv = load_or_create_dataframe_validation(uid)
+    X_train, X_valid, X_testv, y_train, y_valid, y_testv = Datasets.load_or_create_dataframe_validation(uid)
     clf = OneUserModel.load_or_build_model(uid, 'svc')
     print('datafff', X_train, X_valid, X_testv, y_train, y_valid, y_testv)
 

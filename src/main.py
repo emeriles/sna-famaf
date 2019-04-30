@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     print('RUNNING {}'.format(args.action))
     if args.action == 'test_all_clfs':
-        OneUserModel.test_all_clfs()
+        OneUserModel.test_all_clfs(uid=42976687)
     if args.action == 'try_some_users':
         try_some_users()
     if args.action == 'compute_scores':

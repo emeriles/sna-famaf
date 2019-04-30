@@ -75,30 +75,32 @@ def get_followers(user, session, g):
     return follower_users
 
 
-def get_level2_neighbours(user, session):
-    """
-        An ordered list of up to level-2 neighbours is created
-        (followed and their followed)
-    """
-    # g = load_gt_graph()
-    g = load_nx_graph()
-    # v = get_vertex_by_twid(g, user.id)
-    uid = str(user.id)
-
-    # neighbourhood = set(v.out_neighbours())
-    neighbourhood = set(list(g.successors(uid)))
-
-    for nid in g.successors(uid):
-        neighbourhood.update(g.successors(nid))
-
-    # neighbourhood_twids = [get_twitter_id(g, n) for n in neighbourhood]
-    # neighbour_users = [session.query(User).get(twid) for twid in neighbourhood_twids]
-    neighbour_users = [session.query(User).get(twid) for twid in neighbourhood]
-
-    # Remove None elements and own user (TODO: see why this happens)
-    neighbour_users = [u for u in neighbour_users if u and u.id != user.id]
-    
-    return neighbour_users
+# def get_level2_neighbours(user, session):
+#     """
+#         An ordered list of up to level-2 neighbours is created
+#         (followed and their followed)
+#     """
+#     uid = str(user)
+#     # g = load_gt_graph()
+#     g = load_nx_graph()
+#     # v = get_vertex_by_twid(g, user.id)
+#     # uid = str(user.id)
+#
+#     # neighbourhood = set(v.out_neighbours())
+#     neighbourhood = set(list(g.successors(uid)))
+#     print(list(neighbourhood)[:20])
+#     for nid in g.successors(uid):
+#         neighbourhood.update(g.successors(nid))
+#
+#     # neighbourhood_twids = [get_twitter_id(g, n) for n in neighbourhood]
+#     # neighbour_users = [session.query(User).get(twid) for twid in neighbourhood_twids]
+#     # neighbour_users = [session.query(User).get(twid) for twid in neighbourhood]
+#
+#
+#     # Remove None elements and own user (TODO: see why this happens)
+#     neighbour_users = [u for u in neighbourhood if u and u.id != user.id]
+#
+#     return neighbour_users
 
 # Feature transformations
 def transform_ngfeats_to_bucketfeats(uid, ngids, Xfeats, nmostsimilar=30, nbuckets=20):

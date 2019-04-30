@@ -11,7 +11,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 import numpy as np
 
-from processing.datasets import load_or_create_dataset
+from processing.db_csv import Dataset
 from settings import MODELS_FOLDER_1_
 
 
@@ -278,10 +278,10 @@ class OneUserModel(object):
         return clf
 
     @staticmethod
-    def test_all_clfs(save=True, uid=42976687):
+    def test_all_clfs(uid, save=True):
         # from create_clesa_datasets import *
         # uid=37226353
-        dataset = load_or_create_dataset(uid)
+        dataset = Dataset.load_or_create_dataset(uid)
         clf1 = OneUserModel.model_select_rdf(dataset)
         clf2 = OneUserModel.model_select_svc(dataset)
         clf3 = OneUserModel.model_select_svc2(dataset)

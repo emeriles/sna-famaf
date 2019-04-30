@@ -210,7 +210,7 @@ def reset_sqlite_db():
         to_process -= 1
         percentage = 100 - int(to_process / len(users) * 100)
         print(
-            '\r\nAvance: %{}'.format(percentage)
+            'Avance: %{}'.format(percentage), end='\r'
         )
         user.fetch_timeline(session, csv_df.df)
         # bulk_save_db(user, csv_df.df)

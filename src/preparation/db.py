@@ -82,7 +82,8 @@ class DBHandler(object):
             to_process -= 1
             percentage = 100 - int(to_process / len(users_ids) * 100)
             print(
-                'Avance: %{}; {}/{}\t\t\tProcesando para guardar timeline del usuario {}'.format(percentage, to_process, len(users_ids), u_id)
+                'Avance: %{}; {}/{}\t\t\tProcesando para guardar timeline del usuario {}'.format(percentage, to_process, len(users_ids), u_id),
+                end='\r'
             )
 
             self.save_timeline_for_user(user_id=u_id, desde=desde, hasta=hasta, dia=dia, limite=limite)
