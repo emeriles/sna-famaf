@@ -12,6 +12,10 @@ class PreprocessCSV(object):
         self.cut1: pd.DataFrame = None
 
     def _load_df(self):
+        """
+        Loads and FILTERS dataframe on time constraints with retweet-time elapsed from original tweet.
+        :return:
+        """
         print('Loading df')
         dtypes = {
             'user.id_str': str,
@@ -36,7 +40,7 @@ class PreprocessCSV(object):
 
     def df_cut1(self):
         """
-        Returns a new dataframe with altered data: recicling of tweets and included interaction among our users only.
+        Returns a new dataframe with altered data: Recicling of tweets and included interaction among our users only.
         :param data_f:
         :return:
         """

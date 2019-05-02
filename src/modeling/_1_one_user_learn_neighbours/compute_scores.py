@@ -8,13 +8,13 @@ from settings import TEST_USERS_ALL, SCORES_FOLDER_1_
 
 
 def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_valid, precisions_testv,
-    recalls_train, recalls_valid, recalls_testv, lock):
+    recalls_train, recalls_valid, recalls_testv, lock, delta_minutes):
     """worker function"""
     print("Largamos para %d" % uid)
     
-    X_train, X_valid, X_testv, y_train, y_valid, y_testv = Dataset.load_or_create_dataset_validation(uid)
-    clf = OneUserModel.load_or_build_model(uid, 'svc')
-    print('datafff', X_train, X_valid, X_testv, y_train, y_valid, y_testv)
+    X_train, X_valid, X_testv, y_train, y_valid, y_testv = Dataset.\
+                                                        load_or_create_dataset(uid, delta_minutes_filter=delta_minutes)
+    clf = OneUserModel.load_or_build_model(uid, 'svc', delta_minutes)
 
     y_true, y_pred = y_train, clf.predict(X_train)
     lock.acquire()
@@ -38,7 +38,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     lock.release()
 
 
-def compute_scores():
+def compute_scores(delta_minutes):
 
     uids = [u[0] for u in TEST_USERS_ALL]
 
@@ -64,7 +64,7 @@ def compute_scores():
         worker(uid, f1s_train, f1s_valid, f1s_testv,
                                        precisions_train, precisions_valid, precisions_testv,
                                        recalls_train, recalls_valid, recalls_testv,
-                                       lock)
+                                       lock, delta_minutes)
     pool.close()
     pool.join()
 

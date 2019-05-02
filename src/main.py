@@ -15,10 +15,15 @@ if __name__ == '__main__':
     parser.add_argument('action', metavar='ACTION', type=str,
                         help='action to be performed. One of {}'.format(action_choices), choices=action_choices)
     data_choices = ['small', 'full']
-    parser.add_argument('--data', metavar='data', type=str,
+    parser.add_argument('--data', metavar='DATA', type=str,
                         help='data to be loaded. Small sample or full', choices=data_choices)
+    delta_minutes_choices = [0, 240]
+    parser.add_argument('delta_minutes', metavar='DELTA_MINUTES', type=int,
+                        help='delta minutes to consider', choices=delta_minutes_choices)
 
     args = parser.parse_args()
+
+    delta_minutes = args.delta_minutes if args.delta_minutes != 0 else None
 
     if args.data == 'full':
         os.environ.setdefault('DATASET_SIZE_TYPE', 'FULL')
@@ -37,7 +42,7 @@ if __name__ == '__main__':
     if args.action == 'try_some_users':
         try_some_users()
     if args.action == 'compute_scores':
-        compute_scores()
+        compute_scores(delta_minutes=delta_minutes)
     if args.action == 'create_and_save_csv_cutted':
         PreprocessCSV.create_and_save_csv_cutted()
     if args.action == 'reset_sqlite_db':

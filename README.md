@@ -93,3 +93,15 @@ create and save csv cutted full:
 real	60m4.848s
 user	55m58.257s
 sys	4m7.879s
+
+
+migrate csv cutted to sqlite (**DEPRACATED**)
+real    2413m28.159s
+user    2248m50.022s
+sys     76m44.152s
+
+
+FEATURES MATIX:
+    dayli: Extracting features. X shape is :            (123824, 5173)
+    full: Extracting features. X shape is :           (12219685, 5173)
+          Extracting features Optimized. X shape is :  (9087871, 3572)

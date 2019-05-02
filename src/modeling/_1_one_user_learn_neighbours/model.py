@@ -278,24 +278,25 @@ class OneUserModel(object):
         return clf
 
     @staticmethod
-    def test_all_clfs(uid, save=True):
+    def test_all_clfs(uid, time_delta_filter, save=True):
         # from create_clesa_datasets import *
         # uid=37226353
-        X_train, X_test, X_valid, y_train, y_test, y_valid = Dataset.load_or_create_dataset(uid)
-        dataset = X_valid, X_train, y_valid, y_train
+        X_train, X_test, X_valid, y_train, y_test, y_valid = Dataset.\
+                                                    load_or_create_dataset(uid, delta_minutes_filter=time_delta_filter)
+        dataset = X_valid, X_train, y_valid, y_train           ## THIS SAME AS  ... mirar mas abajo.
         clf1 = OneUserModel.model_select_rdf(dataset)
         clf2 = OneUserModel.model_select_svc(dataset)
         clf3 = OneUserModel.model_select_svc2(dataset)
         clf4 = OneUserModel.model_select_sgd(dataset)
         if save:
-            OneUserModel.save_model(clf1, uid, 'rdf')
-            OneUserModel.save_model(clf2, uid, 'svc')
-            OneUserModel.save_model(clf3, uid, 'svc2')
-            OneUserModel.save_model(clf4, uid, 'sgd')
+            OneUserModel.save_model(clf1, uid, 'rdf', time_delta_filter)
+            OneUserModel.save_model(clf2, uid, 'svc', time_delta_filter)
+            OneUserModel.save_model(clf3, uid, 'svc2', time_delta_filter)
+            OneUserModel.save_model(clf4, uid, 'sgd', time_delta_filter)
 
     @staticmethod
-    def load_model(uid, model_type):
-        model_path = join(MODELS_FOLDER_1_, "{}_{}.pickle".format(model_type, uid))
+    def load_model(uid, model_type, time_delta_filter):
+        model_path = join(MODELS_FOLDER_1_, "{}_{}_{}.pickle".format(model_type, uid, time_delta_filter))
         try:
             clf = joblib.load(model_path)
         except FileNotFoundError:
@@ -303,17 +304,19 @@ class OneUserModel(object):
         return clf
 
     @staticmethod
-    def save_model(clf, uid, model_type):
-        model_path = join(MODELS_FOLDER_1_, "{}_{}.pickle".format(model_type, uid, ))
+    def save_model(clf, uid, model_type, time_delta_filter):
+        model_path = join(MODELS_FOLDER_1_, "{}_{}_{}.pickle".format(model_type, uid, time_delta_filter))
         joblib.dump(clf, model_path)
 
     @staticmethod
-    def load_or_build_model(uid, model_type, save=True):
-        print('Load or build')
-        clf = OneUserModel.load_model(uid, model_type)
-        dataset = load_or_create_dataset(uid)  # ESTO SOBRE QUE CONJNTO VA??????????
+    def load_or_build_model(uid, model_type, time_delta_filter, save=True):
+        print('Load or build model. For {}, model type: {}, time_delta: {}'.format(uid, model_type, time_delta_filter))
+        clf = OneUserModel.load_model(uid, model_type, time_delta_filter)
+        dataset = Dataset.load_or_create_dataset(uid, time_delta_filter)
+        X_train, X_test, X_valid, y_train, y_test, y_valid = dataset
+        dataset = X_valid, X_train, y_valid, y_train   ###### SAME AS THIS
         if not clf:
             clf = getattr(OneUserModel, 'model_select_{}'.format(model_type))(dataset)
             if save:
-                OneUserModel.save_model(clf, uid, model_type)
+                OneUserModel.save_model(clf, uid, model_type, time_delta_filter)
         return clf

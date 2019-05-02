@@ -1,6 +1,6 @@
 import os
 import pickle
-from datetime import datetime
+import datetime
 from os.path import join
 
 import pandas as pd
@@ -13,11 +13,12 @@ from settings import CSV_CUTTED, XY_CACHE_FOLDER
 
 class _Dataset(object):
 
-    def __init__(self, csv_path=CSV_CUTTED):
+    def __init__(self, csv_path=CSV_CUTTED, delta_minutes_filter=None):
         self.csv_path = csv_path
         self.df: pd.DataFrame = pd.DataFrame()
+        self.delta_minutes = delta_minutes_filter
 
-    def _load_df(self, parse_dates=True):
+    def _load_df(self):
         print('Loading df')
         dtypes = {
             'user__id_str': str,
@@ -28,17 +29,27 @@ class _Dataset(object):
             'quoted_status_id_str': str,
         }
         df = pd.read_csv(self.csv_path, dtype=dtypes)
+        original_shape = df.shape
 
         # parse dates
-        if parse_dates:
-            datetime_cols = [c for c in df.columns if 'created_at' in c]
-            for c in datetime_cols:
-                df[c] = pd.to_datetime(df[c])
+        datetime_cols = [c for c in df.columns if 'created_at' in c]
+        for c in datetime_cols:
+            df[c] = pd.to_datetime(df[c])
 
         # reemplazar nombre de columnas: . por __ para sintactic sugar de pandas.
         df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)
         df.drop_duplicates(subset='id_str', inplace=True)
+
+        if self.delta_minutes:
+            print('Filtering by time')
+            df_filtered = df[
+                (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=240)) |
+                np.isnat(df.retweeted_status__created_at)]
+            df = df_filtered.copy()
+
         self.df = df
+        print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
+              format(df.shape, original_shape, self.delta_minutes))
         return df
 
     def get_level2_neighbours(self, user_id):
@@ -163,7 +174,7 @@ class _Dataset(object):
         """
         nrows = tweets.shape[0]
         nfeats = len(neighbour_users)
-        start = datetime.now()
+        start = datetime.datetime.now()
         X = np.empty((nrows, nfeats), dtype=np.int8)
         y = np.empty(nrows)
         print('Extracting features Optimized. X shape is :', X.shape)
@@ -180,7 +191,7 @@ class _Dataset(object):
 
         own_tl_filtered = self.get_user_timeline(own_user)
         y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
-        end = datetime.now() - start
+        end = datetime.datetime.now() - start
         print('Done Extracting Features', end)
         return X, y
 
@@ -195,41 +206,41 @@ class _Dataset(object):
         """
         if not timedelta:
             return self._extract_features_full(tweets, neighbour_users, own_user)
-        nrows = tweets.shape[0]
-        nfeats = len(neighbour_users)
-        start = datetime.now()
-        X = np.empty((nrows, nfeats), dtype=np.int8)
-        y = np.empty(nrows)
-        print('Extracting features. X shape is :', X.shape)
-
-        to_process = tweets.shape[0]
-        # RARO: neighbour_users son 5173
-        t_delta = np.timedelta64(timedelta, 'm')
-        plus_time_delta = (tweets[:, 1].astype("datetime64[m]") + t_delta)
-        for j, u in enumerate(neighbour_users):
-            to_process -= 1
-            percentage = 100.0 - (to_process / tweets.shape[0]) * 100
-            print('Avance: {}'.format(percentage), end='\r')
-
-            # traigo timeline del vecino
-            n_tl = self.get_user_timeline(u)
-            # selecciono solo los tweets de n_tl que estan en `tweets`
-            tweets_found_on_tl = n_tl[np.isin(n_tl[:, 0], tweets[:, 0])]
-            # sacar los indices que corresponden con la lista de tweets
-            idx_with_rt = np.where(np.isin(tweets[:, 0], n_tl[:, 0]))[0]
-            # create empty column for X
-            x_col_datetime = np.full_like(tweets[:, 1], np.datetime64('nat'), dtype='datetime64[m]')
-            # fill x_col_datetime on idx_with_rt with values from tweets_found_on_tl
-            # import ipdb; ipdb.set_trace()
-            x_col_datetime[idx_with_rt] = tweets_found_on_tl[:, 1]
-            # x_col_datetime = x_col_datetime.astype("datetime64[m]") + t_delta
-            X[:, j] = (plus_time_delta - x_col_datetime) >= np.timedelta64(0, 'm')
-
-        own_tl_filtered = self.get_user_timeline(own_user)
-        y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
-        end = datetime.now() - start
-        print('Done Extracting Features', end)
-        return X, y
+        # nrows = tweets.shape[0]
+        # nfeats = len(neighbour_users)
+        # start = datetime.datetime.now()
+        # X = np.empty((nrows, nfeats), dtype=np.int8)
+        # y = np.empty(nrows)
+        # print('Extracting features. X shape is :', X.shape)
+        #
+        # to_process = tweets.shape[0]
+        # # RARO: neighbour_users son 5173
+        # t_delta = np.timedelta64(timedelta, 'm')
+        # plus_time_delta = (tweets[:, 1].astype("datetime64[m]") + t_delta)
+        # for j, u in enumerate(neighbour_users):
+        #     to_process -= 1
+        #     percentage = 100.0 - (to_process / tweets.shape[0]) * 100
+        #     print('Avance: {}'.format(percentage), end='\r')
+        #
+        #     # traigo timeline del vecino
+        #     n_tl = self.get_user_timeline(u)
+        #     # selecciono solo los tweets de n_tl que estan en `tweets`
+        #     tweets_found_on_tl = n_tl[np.isin(n_tl[:, 0], tweets[:, 0])]
+        #     # sacar los indices que corresponden con la lista de tweets
+        #     idx_with_rt = np.where(np.isin(tweets[:, 0], n_tl[:, 0]))[0]
+        #     # create empty column for X
+        #     x_col_datetime = np.full_like(tweets[:, 1], np.datetime64('nat'), dtype='datetime64[m]')
+        #     # fill x_col_datetime on idx_with_rt with values from tweets_found_on_tl
+        #     # import ipdb; ipdb.set_trace()
+        #     x_col_datetime[idx_with_rt] = tweets_found_on_tl[:, 1]
+        #     # x_col_datetime = x_col_datetime.astype("datetime64[m]") + t_delta
+        #     X[:, j] = (plus_time_delta - x_col_datetime) >= np.timedelta64(0, 'm')
+        #
+        # own_tl_filtered = self.get_user_timeline(own_user)
+        # y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
+        # end = datetime.datetime.now() - start
+        # print('Done Extracting Features', end)
+        # return X, y
 
     def get_neighbourhood(self, uid):
         neighbours = self.get_level2_neighbours(uid)
@@ -238,11 +249,13 @@ class _Dataset(object):
 
         return neighbours
 
-    def load_or_create_dataset(self, uid, time_delta=None):
-        fname = join(XY_CACHE_FOLDER, "dataset_%d.pickle" % uid)
+    def load_or_create_dataset(self, uid, delta_minutes_filter):
+        self.delta_minutes = delta_minutes_filter
+        fname = join(XY_CACHE_FOLDER, "dataset_{}_{}.pickle".format(uid, self.delta_minutes))
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
         else:
+            self._load_df()
             uid = str(uid)
             neighbours = self.get_level2_neighbours(uid)
             # remove central user from neighbours
@@ -250,10 +263,7 @@ class _Dataset(object):
 
             # Fetch tweet universe (timelines of ownuser and neighbours)
             own_tweets = list(self.get_user_timeline(uid))
-            print(uid)
-            print('OWN : {}'.format(own_tweets[:10]))
             n_tweets = list(self.get_user_timeline(neighbours))
-            print('N NNNNNN : {}'.format(n_tweets[:10]))
             tweets = [(t, c) for (t, c) in n_tweets if t not in [i for (i,c) in own_tweets]] # n_tweets.difference(own_tweets)  # TODO: add language selection?
             tweets = np.array(tweets)
             # exclude tweets from central user or not in Spanish
