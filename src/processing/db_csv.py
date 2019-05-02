@@ -166,7 +166,7 @@ class _Dataset(object):
         start = datetime.now()
         X = np.empty((nrows, nfeats), dtype=np.int8)
         y = np.empty(nrows)
-        print('Extracting features. X shape is :', X.shape)
+        print('Extracting features Optimized. X shape is :', X.shape)
 
         to_process = tweets.shape[0]
         for j, u in enumerate(neighbour_users):
