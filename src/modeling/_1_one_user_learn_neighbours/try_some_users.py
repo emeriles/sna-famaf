@@ -1,11 +1,11 @@
 from modeling._1_one_user_learn_neighbours.model import OneUserModel
-from processing.datasets import Datasets
+from processing.db_csv import Dataset
 
 
 def worker(user_id):
     # try:
         # clf = train_and_evaluate(user_id)
-    X_train, X_valid, X_test, y_train, y_valid, y_test = Datasets.load_or_create_dataframe_validation(user_id)
+    X_train, X_valid, X_test, y_train, y_valid, y_test = Dataset.load_or_create_dataset(user_id)
     dataset = X_train, X_valid, y_train, y_valid
     clf = OneUserModel.model_select_svc(dataset)
     OneUserModel.save_model(clf, user_id, 'svc')

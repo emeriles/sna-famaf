@@ -37,6 +37,7 @@ class _Dataset(object):
 
         # reemplazar nombre de columnas: . por __ para sintactic sugar de pandas.
         df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)
+        df.drop_duplicates(subset='id_str', inplace=True)
         self.df = df
         return df
 
@@ -81,7 +82,7 @@ class _Dataset(object):
         rts.rename({'retweeted_status__id_str': 'id_str',
                     'retweeted_status__created_at': 'created_at'},
                    axis='columns', inplace=True)
-        timeline = pd.concat([own_twets, rts]).dropna().drop_duplicates().values
+        timeline = pd.concat([own_twets, rts]).dropna().drop_duplicates(subset='id_str').values
         return timeline
 
     # def extract_features(tweets, neighbour_users, own_user):
@@ -98,20 +99,20 @@ class _Dataset(object):
     #     X = np.empty((nrows, nfeats))
     #     y = np.empty(nrows)
     #
-        # own_tl_full = [(t.id, t.created_at) for t in own_user.timeline]
-        # for j, u in enumerate(neighbour_users):
-        #     tl_full = [(t.id, t.created_at) for t in u.timeline]
-        #     for i, t in enumerate(tweets):
-        #         # additional filtering on time constraints
-        #         tl_ids = [tw.id for (tw, c) in tl_full if c > t.created_at]
-        #         X[i, j] = 1 if t.id in tl_ids else 0
-        #
-        # for i, t in enumerate(tweets):
-        #     # additional filtering on time constraints
-        #     own_tl_ids = [tw.id for (tw, c) in own_tl_full if tw.created_at > t.created_at]
-        #     y[i] = 1 if t.id in own_tl_ids else 0
-        #
-        # return X, y
+    #     own_tl_full = [(t.id, t.created_at) for t in own_user.timeline]
+    #     for j, u in enumerate(neighbour_users):
+    #         tl_full = [(t.id, t.created_at) for t in u.timeline]
+    #         for i, t in enumerate(tweets):
+    #             # additional filtering on time constraints
+    #             tl_ids = [tw.id for (tw, c) in tl_full if c > t.created_at]
+    #             X[i, j] = 1 if t.id in tl_ids else 0
+    #
+    #     for i, t in enumerate(tweets):
+    #         # additional filtering on time constraints
+    #         own_tl_ids = [tw.id for (tw, c) in own_tl_full if tw.created_at > t.created_at]
+    #         y[i] = 1 if t.id in own_tl_ids else 0
+    #
+    #     return X, y
 
     # def extract_features(self, tweets, neighbour_users, own_user):
     #     """
@@ -133,20 +134,25 @@ class _Dataset(object):
     #         tl_full = self.get_user_timeline(u)
     #         for i, t in enumerate(tweets):
     #             # additional filtering on time constraints
-    #             tl_ids = [tw for (tw, c) in tl_full if c > t[1]]  # TIME DELTA
-    #             X[i, j] = 1 if t[0] in tl_ids else 0
+    #             # tl_ids = [tw for (tw, c) in tl_full if c > t[1]]  # TIME DELTA
+    #             n_tl_filtered = self.get_user_timeline(u)  # FILTER HERE
+    #
+    #             X[i, j] = np.isin(t[0], n_tl_filtered[:, 0])
+    #             # tl_ids = [tw for (tw, c) in tl_full if c > t[1]]  # TIME DELTA
+    #             # X[i, j] = 1 if t[0] in tl_ids else 0
     #
     #     own_tl_full = self.get_user_timeline(own_user)
     #     for i, t in enumerate(tweets):
     #         # additional filtering on time constraints
-    #         own_tl_ids = [tw for (tw, c) in own_tl_full if tw[1] > t[1]]
-    #         y[i] = 1 if t[0] in own_tl_ids else 0
+    #         own_tl_filtered = own_tl_full # FILTER HERE
+    #         y[i] = np.isin(t[0], own_tl_filtered[:, 0])
+    #         # own_tl_ids = [tw for (tw, c) in own_tl_full if tw[1] > t[1]]
+    #         # y[i] = 1 if t[0] in own_tl_ids else 0
     #     end = datetime.now() - start
     #     print('Done Extracting Features', end)
     #     return X, y
 
-
-    def extract_features(self, tweets, neighbour_users, own_user):
+    def _extract_features_full(self, tweets, neighbour_users, own_user):
         """
         Given tweets and neighbour_users, we extract
         'neighbour activity' features for each tweet
@@ -158,38 +164,73 @@ class _Dataset(object):
         nrows = tweets.shape[0]
         nfeats = len(neighbour_users)
         start = datetime.now()
-        print('Extracting features', nrows, nfeats)
         X = np.empty((nrows, nfeats), dtype=np.int8)
         y = np.empty(nrows)
+        print('Extracting features. X shape is :', X.shape)
 
-        percentage = 0
-        to_process = len(neighbour_users)
+        to_process = tweets.shape[0]
         for j, u in enumerate(neighbour_users):
             to_process -= 1
-            percentage = 100 - int((to_process / len(neighbour_users)) * 100)
-            print(
-                'Avance: %{}'.format(percentage), end='\r'
-            )
-            # additional filtering on time constraints
-            n_tl_filtered = self.get_user_timeline(u)  # FILTER ON TIME
-            # import ipdb; ipdb.set_trace()
-            # print(tweets[:5], n_tl_filtered[:5])
+            percentage = 100.0 - ((to_process / tweets.shape[0]) * 100)
+            print('Avance: %{}'.format(percentage), end='\r')
+
+            n_tl_filtered = self.get_user_timeline(u)
             col = np.isin(tweets[:, 0], n_tl_filtered[:, 0])
-            # tl_ids = [tw for (tw, c) in tl_full if c > t[1]]  # TIME DELTA
             X[:, j] = col
 
-        own_tl_filtered = self.get_user_timeline(own_user) # FILTER ON TIME
+        own_tl_filtered = self.get_user_timeline(own_user)
         y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
-        # y = np.isin
-        # for i, t in enumerate(tweets):
-        #     # additional filtering on time constraints
-        #     own_tl_ids = [tw for (tw, c) in own_tl_full if tw[1] > t[1]]
-        #     y[i] = 1 if t[0] in own_tl_ids else 0
         end = datetime.now() - start
         print('Done Extracting Features', end)
         return X, y
 
-    n1 = ['1057277373417168898','1057269914191519744','1057265600756637697','1057226333472915456','1057225175966588929','1057221770976129024','1057096423508979713']
+    def extract_features(self, tweets, neighbour_users, own_user, timedelta=None):
+        """
+        Given tweets and neighbour_users, we extract
+        'neighbour activity' features for each tweet
+
+        These are obtained as follows:
+            - for each of these users a boolean feature is created
+            indicating if the tweet is authored/retweeted by that user
+        """
+        if not timedelta:
+            return self._extract_features_full(tweets, neighbour_users, own_user)
+        nrows = tweets.shape[0]
+        nfeats = len(neighbour_users)
+        start = datetime.now()
+        X = np.empty((nrows, nfeats), dtype=np.int8)
+        y = np.empty(nrows)
+        print('Extracting features. X shape is :', X.shape)
+
+        to_process = tweets.shape[0]
+        # RARO: neighbour_users son 5173
+        t_delta = np.timedelta64(timedelta, 'm')
+        plus_time_delta = (tweets[:, 1].astype("datetime64[m]") + t_delta)
+        for j, u in enumerate(neighbour_users):
+            to_process -= 1
+            percentage = 100.0 - (to_process / tweets.shape[0]) * 100
+            print('Avance: {}'.format(percentage), end='\r')
+
+            # traigo timeline del vecino
+            n_tl = self.get_user_timeline(u)
+            # selecciono solo los tweets de n_tl que estan en `tweets`
+            tweets_found_on_tl = n_tl[np.isin(n_tl[:, 0], tweets[:, 0])]
+            # sacar los indices que corresponden con la lista de tweets
+            idx_with_rt = np.where(np.isin(tweets[:, 0], n_tl[:, 0]))[0]
+            # create empty column for X
+            x_col_datetime = np.full_like(tweets[:, 1], np.datetime64('nat'), dtype='datetime64[m]')
+            # fill x_col_datetime on idx_with_rt with values from tweets_found_on_tl
+            # import ipdb; ipdb.set_trace()
+            x_col_datetime[idx_with_rt] = tweets_found_on_tl[:, 1]
+            # x_col_datetime = x_col_datetime.astype("datetime64[m]") + t_delta
+            X[:, j] = (plus_time_delta - x_col_datetime) >= np.timedelta64(0, 'm')
+
+        own_tl_filtered = self.get_user_timeline(own_user)
+        y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
+        end = datetime.now() - start
+        print('Done Extracting Features', end)
+        return X, y
+
     def get_neighbourhood(self, uid):
         neighbours = self.get_level2_neighbours(uid)
         # remove central user from neighbours
@@ -197,8 +238,7 @@ class _Dataset(object):
 
         return neighbours
 
-    # from former datasets.py
-    def load_or_create_dataset(self, uid):
+    def load_or_create_dataset(self, uid, time_delta=None):
         fname = join(XY_CACHE_FOLDER, "dataset_%d.pickle" % uid)
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
@@ -211,8 +251,6 @@ class _Dataset(object):
             # Fetch tweet universe (timelines of ownuser and neighbours)
             own_tweets = list(self.get_user_timeline(uid))
             print(uid)
-            print(uid)
-            print(uid)
             print('OWN : {}'.format(own_tweets[:10]))
             n_tweets = list(self.get_user_timeline(neighbours))
             print('N NNNNNN : {}'.format(n_tweets[:10]))
@@ -223,159 +261,106 @@ class _Dataset(object):
 
             X, y = self.extract_features(tweets, neighbours, uid)
 
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-            dataset = (X_train, X_test, y_train, y_test)
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+            X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42, stratify=y_test)
+            dataset = (X_train, X_test, X_valid, y_train, y_test, y_valid)
 
             pickle.dump(dataset, open(fname, 'wb'))
 
-        (X_train, X_test, y_train, y_test) = dataset
-        print((X_train[:5], y_train[:5]))
+        (X_train, X_test, X_valid, y_train, y_test, y_valid) = dataset
         return dataset
 
-    def load_or_create_dataframe_validation(self, uid):
-        print('Load_or_create_dataframe_validation for user: ', uid)
-        result = self.load_dataframe(uid)
-        if not result:
-            print('Creating dataframe for user: ', uid)
-            self.repartition_dataframe(uid)  # se guarda x_valid
-            X_train, X_valid, X_test, y_train, y_valid, y_test = self.reduce_dataset(uid)  # se guardan los x_valid_small
-            return X_train, X_valid, X_test, y_train, y_valid, y_test
-        print('Returning loaded model.')
-        return result
+    # def load_or_create_dataset_validation(self, uid):
+    #     print('Load_or_create_dataframe_validation for user: ', uid)
+    #     result = self.load_validation_dataset(uid)
+    #     if not result:
+    #         print('Creating dataframe for user: ', uid)
+    #         self.repartition_dataframe(uid)  # se guarda x_valid
+    #         X_train, X_valid, X_test, y_train, y_valid, y_test = self.reduce_dataset(uid)  # se guardan los x_valid_small
+    #         return X_train, X_valid, X_test, y_train, y_valid, y_test
+    #     print('Returning loaded model.')
+    #     return result
 
-    def load_dataframe(self, uid):
-        Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d_small.pickle" % uid)
-        Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d_small.pickle" % uid)
-        Xtest_fname = join(XY_CACHE_FOLDER, "dfXtestv_%d_small.pickle" % uid)
-        ys_fname = join(XY_CACHE_FOLDER, "ysv_%d_small.pickle" % uid)
-        try:
-            X_train = pd.read_pickle(Xtrain_fname)
-            X_valid = pd.read_pickle(Xvalid_fname)
-            X_test = pd.read_pickle(Xtest_fname)
-            y_train, y_valid, y_test = pickle.load(open(ys_fname, 'rb'))
-            return X_train, X_valid, X_test, y_train, y_valid, y_test
-        except Exception as e:
-            return None
+    # def reduce_dataset(self, uid):
+    #     ds = self.load_or_create_dataset(uid)
+    #     X_train, X_test, y_train, y_test = ds
+    #
+    #     X = np.concatenate((X_train,X_test))
+    #     y = np.concatenate((y_train,y_test))
+    #
+    #     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    #     X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42)
+    #
+    #     Xtrain_fname = join(XY_CACHE_FOLDER, "Xtrain_%d_small.pickle" % uid)
+    #     Xvalid_fname = join(XY_CACHE_FOLDER, "Xvalid_%d_small.pickle" % uid)
+    #     Xtest_fname = join(XY_CACHE_FOLDER, "Xtestv_%d_small.pickle" % uid)
+    #     ys_fname = join(XY_CACHE_FOLDER, "ysv_%d_small.pickle" % uid)
+    #
+    #     np.save(Xtrain_fname, X_train)
+    #     np.save(Xvalid_fname, X_valid)
+    #     np.save(Xtest_fname, X_test)
+    #     pickle.dump((y_train, y_valid, y_test), open(ys_fname, 'wb'))
+    #
+    #     return X_train, X_valid, X_test, y_train, y_valid, y_test
 
-    def repartition_dataframe(self, uid):
-        ds = self.load_or_create_dataframe(uid)  # load_dataframe(uid)
+    # def load_validation_dataset(self, uid):
+    #     X_train, X_test, X_valid, y_train, y_test, y_valid = self.load_or_create_dataset(uid)
+    #     return X_valid, y_valid
 
-        if ds:
-            X_train, X_test, y_train, y_test = ds
-            X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test,
-                                                    test_size=0.6667, random_state=42)
+    # def load_dataframe(self, uid):
+    #     Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d_small.pickle" % uid)
+    #     Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d_small.pickle" % uid)
+    #     Xtest_fname = join(XY_CACHE_FOLDER, "dfXtestv_%d_small.pickle" % uid)
+    #     ys_fname = join(XY_CACHE_FOLDER, "ysv_%d_small.pickle" % uid)
+    #     try:
+    #         X_train = np.load(Xtrain_fname)
+    #         X_valid = np.load(Xvalid_fname)
+    #         X_test = np.load(Xtest_fname)
+    #         y_train, y_valid, y_test = pickle.load(open(ys_fname, 'rb'))
+    #         return X_train, X_valid, X_test, y_train, y_valid, y_test
+    #     except Exception as e:
+    #         return None
 
-            Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d.pickle" % uid)
-            Xtest_fname = join(XY_CACHE_FOLDER, "dfXtestv_%d.pickle" % uid)
-            ys_fname = join(XY_CACHE_FOLDER, "ysv_%d.pickle" % uid)
+    # def repartition_dataframe(self, uid):
+    #     ds = self.load_or_create_dataset(uid)  # load_dataframe(uid)
+    #
+    #     if ds:
+    #         X_train, X_test, y_train, y_test = ds
+    #         X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test,
+    #                                                 test_size=0.6667, random_state=42)
+    #
+    #         # Xvalid_fname = join(XY_CACHE_FOLDER, "Xvalid_%d.pickle" % uid)
+    #         Xvalid_fname = join(XY_CACHE_FOLDER, "Xvalid_%d.npy" % uid)
+    #         # Xtest_fname = join(XY_CACHE_FOLDER, "Xtestv_%d.pickle" % uid)
+    #         Xtest_fname = join(XY_CACHE_FOLDER, "Xtestv_%d.npy" % uid)
+    #         # ys_fname = join(XY_CACHE_FOLDER, "ysv_%d.pickle" % uid)
+    #         ys_fname = join(XY_CACHE_FOLDER, "ysv_%d.npy" % uid)
+    #
+    #         Xtest_fname_old = join(XY_CACHE_FOLDER, "Xtest_%d.npy" % uid)
+    #
+    #         # X_train.to_pickle(Xtrain_fname)
+    #         np.save(Xvalid_fname, X_valid)
+    #         np.save(Xtest_fname, X_test)
+    #         np.save(Xtest_fname, X_test)
+    #         pickle.dump((y_train, y_valid, y_test), open(ys_fname, 'wb'))
+    #
+    #         try:
+    #             remove(Xtest_fname_old)
+    #         except FileNotFoundError:
+    #             pass
 
-            Xtest_fname_old = join(XY_CACHE_FOLDER, "dfXtest_%d.pickle" % uid)
+    # def load_small_validation_dataframe(self, uid):
+    #     Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d_small.pickle" % uid)
+    #     Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d_small.pickle" % uid)
+    #     Xtest_fname = join(XY_CACHE_FOLDER, "dfXtestv_%d_small.pickle" % uid)
+    #     ys_fname = join(XY_CACHE_FOLDER, "ysv_%d_small.pickle" % uid)
+    #
+    #     X_train = pd.read_pickle(Xtrain_fname)
+    #     X_valid = pd.read_pickle(Xvalid_fname)
+    #     X_test = pd.read_pickle(Xtest_fname)
+    #     y_train, y_valid, y_test = pickle.load(open(ys_fname, 'rb'))
+    #
+    #     return X_train, X_valid, X_test, y_train, y_valid, y_test
 
-            # X_train.to_pickle(Xtrain_fname)
-            X_valid.to_pickle(Xvalid_fname)
-            X_test.to_pickle(Xtest_fname)
-            pickle.dump((y_train, y_valid, y_test), open(ys_fname, 'wb'))
-
-            remove(Xtest_fname_old)
-
-    def load_validation_dataframe(self, uid):
-        Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d.pickle" % uid)
-        Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d.pickle" % uid)
-        Xtest_fname = join(XY_CACHE_FOLDER, "dfXtestv_%d.pickle" % uid)
-        ys_fname = join(XY_CACHE_FOLDER, "ysv_%d.pickle" % uid)
-
-        X_train = pd.read_pickle(Xtrain_fname)
-        X_valid = pd.read_pickle(Xvalid_fname)
-        X_test = pd.read_pickle(Xtest_fname)
-        y_train, y_valid, y_test = pickle.load(open(ys_fname, 'rb'))
-
-        return X_train, X_valid, X_test, y_train, y_valid, y_test
-
-    def reduce_dataset(self, uid):
-        ds = self.load_validation_dataframe(uid)
-        X_train, X_valid, X_test, y_train, y_valid, y_test = ds
-
-        X=pd.concat((X_train,X_valid,X_test))
-        y=np.concatenate((y_train,y_valid,y_test))
-
-        if len(y) > 5000:
-            neg_inds = [i for i, v in enumerate(y) if v==0]
-            pos_inds = [i for i, v in enumerate(y) if v==1]
-
-            n_neg = 5000 - len(pos_inds)
-            neg_inds = sample(neg_inds, n_neg)
-            inds = sorted(neg_inds + pos_inds)
-            X = X.iloc[inds,:]
-            y = y[inds]
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-            X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42)
-
-        Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d_small.pickle" % uid)
-        Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d_small.pickle" % uid)
-        Xtest_fname = join(XY_CACHE_FOLDER, "dfXtestv_%d_small.pickle" % uid)
-        ys_fname = join(XY_CACHE_FOLDER, "ysv_%d_small.pickle" % uid)
-
-        X_train.to_pickle(Xtrain_fname)
-        X_valid.to_pickle(Xvalid_fname)
-        X_test.to_pickle(Xtest_fname)
-        pickle.dump((y_train, y_valid, y_test), open(ys_fname, 'wb'))
-
-        return X_train, X_valid, X_test, y_train, y_valid, y_test
-
-    def load_small_validation_dataframe(self, uid):
-        Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d_small.pickle" % uid)
-        Xvalid_fname = join(XY_CACHE_FOLDER, "dfXvalid_%d_small.pickle" % uid)
-        Xtest_fname = join(XY_CACHE_FOLDER, "dfXtestv_%d_small.pickle" % uid)
-        ys_fname = join(XY_CACHE_FOLDER, "ysv_%d_small.pickle" % uid)
-
-        X_train = pd.read_pickle(Xtrain_fname)
-        X_valid = pd.read_pickle(Xvalid_fname)
-        X_test = pd.read_pickle(Xtest_fname)
-        y_train, y_valid, y_test = pickle.load(open(ys_fname, 'rb'))
-
-        return X_train, X_valid, X_test, y_train, y_valid, y_test
-
-    def load_or_create_dataframe(self, uid):
-        Xtrain_fname = join(XY_CACHE_FOLDER, "dfXtrain_%d.pickle" % uid)
-        Xtest_fname = join(XY_CACHE_FOLDER, "dfXtest_%d.pickle" % uid)
-        ys_fname = join(XY_CACHE_FOLDER, "ys_%d.pickle" % uid)
-        exists = False
-        if os.path.exists(Xtrain_fname):
-            try:
-                X_train = pd.read_pickle(Xtrain_fname)
-                X_test = pd.read_pickle(Xtest_fname)
-                y_train, y_test = pickle.load(open(ys_fname, 'rb'))
-                exists = True
-            except Exception as e:
-                pass
-
-        if not exists:
-            s = open_session()
-            user = s.query(User).get(uid)
-            neighbours = get_level2_neighbours(user, s)
-            # remove central user from neighbours
-            neighbours = [u for u in neighbours if u.id != user.id]
-
-            # Fetch tweet universe (timelines of ownuser and neighbours)
-            tweets = set(user.timeline)
-            for u in neighbours:
-                tweets.update(u.timeline)
-
-            # exclude tweets from central user or not in Spanish
-            tweets = [t for t in tweets if t.author_id != uid]  # and t.lang == 'es']
-
-            tweet_ids = [t.id for t in tweets]
-            neighbour_ids = [u.id for u in neighbours]
-            X, y = self.extract_features(tweets, neighbours, user)
-            s.close()
-
-            X = pd.DataFrame(data=X, index=tweet_ids, columns=neighbour_ids)
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-            X_train.to_pickle(Xtrain_fname)
-            X_test.to_pickle(Xtest_fname)
-            pickle.dump((y_train, y_test), open(ys_fname, 'wb'))
-
-        return X_train, X_test, y_train, y_test
 
 Dataset = _Dataset()

@@ -126,7 +126,7 @@ class OneUserModel(object):
 
         for score in scores:
             print("# Tuning hyper-parameters for %s" % score)
-            print()
+            print(X_train.shape, X_test.shape, True in y_train, True in y_test)
 
             clf = GridSearchCV(
                 SVC(max_iter=max_iter),

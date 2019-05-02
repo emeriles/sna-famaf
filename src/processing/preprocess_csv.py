@@ -30,6 +30,7 @@ class PreprocessCSV(object):
 
         # reemplazar nombre de columnas: . por __ para sintactic sugar de pandas.
         df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)
+        df.drop_duplicates(subset='id_str', inplace=True)
         print('Loading df finished')
         return df
 
