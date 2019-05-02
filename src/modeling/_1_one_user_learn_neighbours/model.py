@@ -281,7 +281,8 @@ class OneUserModel(object):
     def test_all_clfs(uid, save=True):
         # from create_clesa_datasets import *
         # uid=37226353
-        dataset = Dataset.load_or_create_dataset(uid)
+        X_train, X_test, X_valid, y_train, y_test, y_valid = Dataset.load_or_create_dataset(uid)
+        dataset = X_valid, X_train, y_valid, y_train
         clf1 = OneUserModel.model_select_rdf(dataset)
         clf2 = OneUserModel.model_select_svc(dataset)
         clf3 = OneUserModel.model_select_svc2(dataset)
