@@ -17,9 +17,10 @@ if __name__ == '__main__':
     data_choices = ['small', 'full']
     parser.add_argument('--data', metavar='DATA', type=str,
                         help='data to be loaded. Small sample or full', choices=data_choices)
-    delta_minutes_choices = [0, 240]
+    delta_minutes_choices = [0, 75, 150, 225, 500]  # quartiles to 5 hours
     parser.add_argument('delta_minutes', metavar='DELTA_MINUTES', type=int,
-                        help='delta minutes to consider', choices=delta_minutes_choices)
+                        help='delta minutes to consider, zero means use the COMPLETE dataset',
+                        choices=delta_minutes_choices)
 
     args = parser.parse_args()
 
