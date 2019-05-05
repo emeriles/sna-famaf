@@ -88,13 +88,30 @@ class _Dataset(object):
             uid = [uid]
         filtered = self.df[(self.df.user__id_str.isin(uid)) | (self.df.retweeted_status__user__id_str.isin(uid))]
         tweets = filtered.copy()
-        own_twets = tweets.loc[:, ('id_str', 'created_at')]
+        own_tweets = tweets.loc[:, ('id_str', 'created_at')]
         rts = tweets.loc[:, ('retweeted_status__id_str', 'retweeted_status__created_at')]
         rts.rename({'retweeted_status__id_str': 'id_str',
                     'retweeted_status__created_at': 'created_at'},
                    axis='columns', inplace=True)
-        timeline = pd.concat([own_twets, rts]).dropna().drop_duplicates(subset='id_str').values
+        timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
         return timeline
+
+    def get_tweets_universe(self, uid, neighbours):
+        universe_of_tweets = self.df[
+                                 ~((self.df.user__id_str == uid) & pd.isna(self.df.retweeted_status__id_str))  # no tweets originales de uid
+                                 & (self.df.user__id_str.isin(neighbours) | self.df.retweeted_status__user__id_str.isin(neighbours))  # tweets en neighbours
+                             ]
+
+        # join tweets and retweets in same columns
+        tweets = universe_of_tweets.loc[:, ('id_str', 'created_at')]
+        rts = universe_of_tweets.loc[:, ('retweeted_status__id_str', 'retweeted_status__created_at')]
+        rts.rename({'retweeted_status__id_str': 'id_str',
+                    'retweeted_status__created_at': 'created_at'},
+                   axis='columns', inplace=True)
+        result = pd.concat([tweets, rts]).dropna().drop_duplicates(subset='id_str').values
+
+        return result
+        # return tweets
 
     # def extract_features(tweets, neighbour_users, own_user):
     #     '''
@@ -108,6 +125,7 @@ class _Dataset(object):
     #     nrows = len(tweets)
     #     nfeats = len(neighbour_users)
     #     X = np.empty((nrows, nfeats))
+    #     print('X SIZE (MB): ', X.nbytes  * 1000000)
     #     y = np.empty(nrows)
     #
     #     own_tl_full = [(t.id, t.created_at) for t in own_user.timeline]
@@ -134,32 +152,37 @@ class _Dataset(object):
     #         - for each of these users a boolean feature is created
     #         indicating if the tweet is authored/retweeted by that user
     #     """
-    #     nrows = len(tweets)
+    #     nrows = tweets.shape[0]
     #     nfeats = len(neighbour_users)
-    #     start = datetime.now()
-    #     print('Extracting features', nrows, nfeats)
+    #     start = datetime.datetime.now()
+    #     print('Extracting features. X shape is: ', nrows, nfeats, )
     #     X = np.empty((nrows, nfeats), dtype=np.int8)
+    #     print('X SIZE (MB): ', X.nbytes * 1000000)
     #     y = np.empty(nrows)
     #
+    #     to_process = tweets.shape[0]
     #     for j, u in enumerate(neighbour_users):
+    #         to_process -= 1
+    #         percentage = 100.0 - ((to_process / tweets.shape[0]) * 100)
+    #         print('Avance: %{}'.format(percentage), end='\r')
     #         tl_full = self.get_user_timeline(u)
     #         for i, t in enumerate(tweets):
     #             # additional filtering on time constraints
     #             # tl_ids = [tw for (tw, c) in tl_full if c > t[1]]  # TIME DELTA
-    #             n_tl_filtered = self.get_user_timeline(u)  # FILTER HERE
+    #             # n_tl_filtered = self.get_user_timeline(u)  # FILTER HERE
     #
-    #             X[i, j] = np.isin(t[0], n_tl_filtered[:, 0])
+    #             X[i, j] = np.isin(t[0], tl_full[:, 0])
     #             # tl_ids = [tw for (tw, c) in tl_full if c > t[1]]  # TIME DELTA
     #             # X[i, j] = 1 if t[0] in tl_ids else 0
     #
     #     own_tl_full = self.get_user_timeline(own_user)
     #     for i, t in enumerate(tweets):
     #         # additional filtering on time constraints
-    #         own_tl_filtered = own_tl_full # FILTER HERE
+    #         own_tl_filtered = own_tl_full  # FILTER HERE
     #         y[i] = np.isin(t[0], own_tl_filtered[:, 0])
     #         # own_tl_ids = [tw for (tw, c) in own_tl_full if tw[1] > t[1]]
     #         # y[i] = 1 if t[0] in own_tl_ids else 0
-    #     end = datetime.now() - start
+    #     end = datetime.datetime.now() - start
     #     print('Done Extracting Features', end)
     #     return X, y
 
@@ -176,6 +199,7 @@ class _Dataset(object):
         nfeats = len(neighbour_users)
         start = datetime.datetime.now()
         X = np.empty((nrows, nfeats), dtype=np.int8)
+        print('X SIZE (MB): ', X.nbytes  * 1000000)
         y = np.empty(nrows)
         print('Extracting features Optimized. X shape is :', X.shape)
 
@@ -206,41 +230,42 @@ class _Dataset(object):
         """
         if not timedelta:
             return self._extract_features_full(tweets, neighbour_users, own_user)
-        # nrows = tweets.shape[0]
-        # nfeats = len(neighbour_users)
-        # start = datetime.datetime.now()
-        # X = np.empty((nrows, nfeats), dtype=np.int8)
-        # y = np.empty(nrows)
-        # print('Extracting features. X shape is :', X.shape)
-        #
-        # to_process = tweets.shape[0]
-        # # RARO: neighbour_users son 5173
-        # t_delta = np.timedelta64(timedelta, 'm')
-        # plus_time_delta = (tweets[:, 1].astype("datetime64[m]") + t_delta)
-        # for j, u in enumerate(neighbour_users):
-        #     to_process -= 1
-        #     percentage = 100.0 - (to_process / tweets.shape[0]) * 100
-        #     print('Avance: {}'.format(percentage), end='\r')
-        #
-        #     # traigo timeline del vecino
-        #     n_tl = self.get_user_timeline(u)
-        #     # selecciono solo los tweets de n_tl que estan en `tweets`
-        #     tweets_found_on_tl = n_tl[np.isin(n_tl[:, 0], tweets[:, 0])]
-        #     # sacar los indices que corresponden con la lista de tweets
-        #     idx_with_rt = np.where(np.isin(tweets[:, 0], n_tl[:, 0]))[0]
-        #     # create empty column for X
-        #     x_col_datetime = np.full_like(tweets[:, 1], np.datetime64('nat'), dtype='datetime64[m]')
-        #     # fill x_col_datetime on idx_with_rt with values from tweets_found_on_tl
-        #     # import ipdb; ipdb.set_trace()
-        #     x_col_datetime[idx_with_rt] = tweets_found_on_tl[:, 1]
-        #     # x_col_datetime = x_col_datetime.astype("datetime64[m]") + t_delta
-        #     X[:, j] = (plus_time_delta - x_col_datetime) >= np.timedelta64(0, 'm')
-        #
-        # own_tl_filtered = self.get_user_timeline(own_user)
-        # y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
-        # end = datetime.datetime.now() - start
-        # print('Done Extracting Features', end)
-        # return X, y
+    # nrows = tweets.shape[0]
+    # nfeats = len(neighbour_users)
+    # start = datetime.datetime.now()
+    # X = np.empty((nrows, nfeats), dtype=np.int8)
+    # print('X SIZE (MB): ', X.nbytes  * 1000000)
+    # y = np.empty(nrows)
+    # print('Extracting features. X shape is :', X.shape)
+    #
+    # to_process = tweets.shape[0]
+    # # RARO: neighbour_users son 5173
+    # t_delta = np.timedelta64(timedelta, 'm')
+    # plus_time_delta = (tweets[:, 1].astype("datetime64[m]") + t_delta)
+    # for j, u in enumerate(neighbour_users):
+    #     to_process -= 1
+    #     percentage = 100.0 - (to_process / tweets.shape[0]) * 100
+    #     print('Avance: {}'.format(percentage), end='\r')
+    #
+    #     # traigo timeline del vecino
+    #     n_tl = self.get_user_timeline(u)
+    #     # selecciono solo los tweets de n_tl que estan en `tweets`
+    #     tweets_found_on_tl = n_tl[np.isin(n_tl[:, 0], tweets[:, 0])]
+    #     # sacar los indices que corresponden con la lista de tweets
+    #     idx_with_rt = np.where(np.isin(tweets[:, 0], n_tl[:, 0]))[0]
+    #     # create empty column for X
+    #     x_col_datetime = np.full_like(tweets[:, 1], np.datetime64('nat'), dtype='datetime64[m]')
+    #     # fill x_col_datetime on idx_with_rt with values from tweets_found_on_tl
+    #     # import ipdb; ipdb.set_trace()
+    #     x_col_datetime[idx_with_rt] = tweets_found_on_tl[:, 1]
+    #     # x_col_datetime = x_col_datetime.astype("datetime64[m]") + t_delta
+    #     X[:, j] = (plus_time_delta - x_col_datetime) >= np.timedelta64(0, 'm')
+    #
+    # own_tl_filtered = self.get_user_timeline(own_user)
+    # y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
+    # end = datetime.datetime.now() - start
+    # print('Done Extracting Features', end)
+    # return X, y
 
     def get_neighbourhood(self, uid):
         neighbours = self.get_level2_neighbours(uid)
@@ -261,18 +286,13 @@ class _Dataset(object):
             # remove central user from neighbours
             neighbours = [u for u in neighbours if u != uid]
 
-            # Fetch tweet universe (timelines of ownuser and neighbours)
-            own_tweets = list(self.get_user_timeline(uid))
-            n_tweets = list(self.get_user_timeline(neighbours))
-            tweets = [(t, c) for (t, c) in n_tweets if t not in [i for (i,c) in own_tweets]] # n_tweets.difference(own_tweets)  # TODO: add language selection?
-            tweets = np.array(tweets)
-            # exclude tweets from central user or not in Spanish
-            # tweets = [t for t in tweets if t.author_id != uid ]  # and t.lang == 'es'   all tweets in spanish?
+            tweets = self.get_tweets_universe(uid, neighbours)
 
             X, y = self.extract_features(tweets, neighbours, uid)
 
             X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
-            X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42, stratify=y_test)
+            X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42,
+                                                                stratify=y_test)
             dataset = (X_train, X_test, X_valid, y_train, y_test, y_valid)
 
             pickle.dump(dataset, open(fname, 'wb'))
