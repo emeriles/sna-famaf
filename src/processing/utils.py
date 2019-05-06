@@ -12,6 +12,7 @@ from settings import NX_GRAPH_PATH, GT_GRAPH_PATH
 def load_nx_graph():
     return nx.read_gpickle(NX_GRAPH_PATH)
 
+
 # def load_gt_graph():
 #     return gt.load_graph(GT_GRAPH_PATH)
 #
@@ -33,15 +34,6 @@ def load_nx_graph():
 #
 #     return central_twid, followed_twids
 
-def get_most_central_twids(N=100):
-    g = gt.load_graph(GT_GRAPH_PATH)
-    katzc = gt.katz(g)
-    katzc_array = katzc.get_array()
-    katzc_sorted = sorted(enumerate(katzc_array), key=lambda v: v[1])
-    most_central = [id for (id, c) in katzc_sorted][:N]
-    most_central_twids = [get_twitter_id(g,id) for id in most_central]
-    
-    return most_central_twids
 
 def get_retweets(user_ids):
     s = open_session()
@@ -54,6 +46,7 @@ def get_retweets(user_ids):
 
     return retweets
 
+
 def get_followed(user, session, g):
     uid = str(user.id)
     followed = set(g.successors(uid))
@@ -63,6 +56,7 @@ def get_followed(user, session, g):
     followed_users = [u for u in followed_users if u and u.id != user.id]
     
     return followed_users
+
 
 def get_followers(user, session, g):
     uid = str(user.id)
@@ -151,6 +145,7 @@ def transform_ngfeats_to_bucketfeats(uid, ngids, Xfeats, nmostsimilar=30, nbucke
 
     return grXfeats
 
+
 def get_unique_rows(a):
     """
         Given a numpy array, it returns
@@ -207,6 +202,7 @@ def count_doomed_samples(X, y):
     details = sorted(details, key=lambda y: -min(y[1].values()))
 
     return miss_clf_counts, details
+
 
 def merge_Xy(X, y):
     Xy = np.hstack((X, np.zeros((X.shape[0],1))))

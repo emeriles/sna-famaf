@@ -48,3 +48,21 @@ if __name__ == '__main__':
         PreprocessCSV.create_and_save_csv_cutted()
     if args.action == 'reset_sqlite_db':
         reset_sqlite_db()
+
+"""
+Notes:
+
+quantity of level2neighbours:
+    In [8]: len(ds.get_level2_neighbours(42976687))                                                                                                                                 
+    Out[8]: 3573
+    
+    In [9]: len(ds.get_level2_neighbours(74153376))                                                                                                                                 
+    Out[9]: 5174
+    
+    In [10]: len(ds.get_level2_neighbours(1622441))                                                                                                                                 
+    Out[10]: 125
+    
+    In [11]: len(ds.get_level2_neighbours(117335842))                                                                                                                               
+    Out[11]: 4304
+
+"""

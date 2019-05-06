@@ -18,6 +18,13 @@ class _Dataset(object):
         self.df: pd.DataFrame = pd.DataFrame()
         self.delta_minutes = delta_minutes_filter
 
+    def get_most_active_users(self, N=1000, just_ids=True):
+        most_active = sorted(self.df.id_str.groupby(self.df.user__id_str).count().iteritems(),
+                             reverse=True, key=lambda x: x[1])
+        if just_ids:
+            return [id_ for id_, counts in most_active][:N]
+        return most_active[:N]
+
     def _load_df(self):
         print('Loading df')
         dtypes = {
@@ -94,23 +101,27 @@ class _Dataset(object):
                     'retweeted_status__created_at': 'created_at'},
                    axis='columns', inplace=True)
         timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
-        return timeline
+        return timeline[:10000]
 
     def get_tweets_universe(self, uid, neighbours):
-        universe_of_tweets = self.df[
-                                 ~((self.df.user__id_str == uid) & pd.isna(self.df.retweeted_status__id_str))  # no tweets originales de uid
-                                 & (self.df.user__id_str.isin(neighbours) | self.df.retweeted_status__user__id_str.isin(neighbours))  # tweets en neighbours
-                             ]
+        # universe_of_tweets = self.df[
+        #                          ~((self.df.user__id_str == uid) & pd.isna(self.df.retweeted_status__id_str))  # no tweets originales de uid
+        #                          & (self.df.user__id_str.isin(neighbours) | self.df.retweeted_status__user__id_str.isin(neighbours))  # tweets en neighbours
+        #                      ]
+        #
+        # # join tweets and retweets in same columns
+        # tweets = universe_of_tweets.loc[:, ('id_str', 'created_at')]
+        # rts = universe_of_tweets.loc[:, ('retweeted_status__id_str', 'retweeted_status__created_at')]
+        # rts.rename({'retweeted_status__id_str': 'id_str',
+        #             'retweeted_status__created_at': 'created_at'},
+        #            axis='columns', inplace=True)
+        # result = pd.concat([tweets, rts]).dropna().drop_duplicates(subset='id_str').values
+        tweets = np.empty((0,2))
+        for u in neighbours:
+            tweets = np.concatenate((tweets, self.get_user_timeline(u)))
 
-        # join tweets and retweets in same columns
-        tweets = universe_of_tweets.loc[:, ('id_str', 'created_at')]
-        rts = universe_of_tweets.loc[:, ('retweeted_status__id_str', 'retweeted_status__created_at')]
-        rts.rename({'retweeted_status__id_str': 'id_str',
-                    'retweeted_status__created_at': 'created_at'},
-                   axis='columns', inplace=True)
-        result = pd.concat([tweets, rts]).dropna().drop_duplicates(subset='id_str').values
-
-        return result
+        print('done getting tweets universe. Shape is ', tweets.shape)
+        return tweets
         # return tweets
 
     # def extract_features(tweets, neighbour_users, own_user):
