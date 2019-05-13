@@ -209,8 +209,8 @@ class _Dataset(object):
         """
         nrows = tweets.shape[0]
         nfeats = len(neighbour_users)
-        start = datetime.now()
-        X = scipy.sparse.csr_matrix((nrows, nfeats))
+        start = datetime.datetime.now()
+        X = scipy.sparse.lil_matrix((nrows, nfeats))
         #         X = np.empty((nrows, nfeats), dtype=np.int8)
         #         print('X SIZE (MB): ', X.nbytes  * 1000000)
         y = np.empty(nrows)
@@ -225,12 +225,12 @@ class _Dataset(object):
             n_tl_filtered = self.get_user_timeline(u)
             col = np.isin(tweets[:, 0], n_tl_filtered[:, 0])
             #             print(X[:, j].shape, col.reshape((11,1)))
-            X[:, j] = col.reshape((11, 1))
+            X[:, j] = col.reshape((nrows, 1))
             # print(X[:, j])
 
         own_tl_filtered = self.get_user_timeline(own_user)
         y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
-        end = datetime.now() - start
+        end = datetime.datetime.now() - start
         print('Done Extracting Features', end)
         return X, y
 
