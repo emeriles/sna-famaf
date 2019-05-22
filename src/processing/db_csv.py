@@ -125,6 +125,8 @@ class _Dataset(object):
         print('Len of own retweets is {}'.format(tweets.shape))
         for u in neighbours:
             tweets = np.concatenate((tweets, self.get_user_timeline(u)))
+            if len(tweets) > 10000:
+                break
 
         print('done getting tweets universe. Shape is ', tweets.shape)
 
