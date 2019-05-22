@@ -1,4 +1,6 @@
 # import graph_tool.all as gt
+import pickle
+
 import networkx as nx
 # from experiments.relatedness import finite_katz_measures
 from collections import defaultdict
@@ -6,7 +8,7 @@ from collections import defaultdict
 import numpy as np
 
 from processing.dbmodels import open_session, User
-from settings import NX_GRAPH_PATH, GT_GRAPH_PATH
+from settings import NX_GRAPH_PATH, ACTIVE_AND_CENTRAL
 
 
 def load_nx_graph():
@@ -209,3 +211,7 @@ def merge_Xy(X, y):
     Xy[:,-1] = y
 
     return Xy
+
+
+def get_test_users_ids():
+    return pickle.load(open(ACTIVE_AND_CENTRAL, 'rb'))

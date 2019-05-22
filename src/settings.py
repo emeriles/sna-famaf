@@ -1,4 +1,3 @@
-import json
 import os
 
 
@@ -35,8 +34,7 @@ GT_GRAPH_PATH = '../data/graphs/subgraph.gt'
 
 NX_GRAPH_PATH = '../data/graphs/subgraph_new_downloaded.gpickle'
 
-tu_path = "../data/processed/active_and_central.json"
-TEST_USERS_ALL = json.load(open(tu_path))
+ACTIVE_AND_CENTRAL = "../data/processed/active_and_central.pickle"
 
 MODELS_FOLDER_1_ = "../model/_1_one_user_learn_neighbours"
 

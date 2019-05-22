@@ -20,6 +20,8 @@ class _Dataset(object):
         self.delta_minutes = delta_minutes_filter
 
     def get_most_active_users(self, N=1000, just_ids=True):
+        if self.df.empty:
+            self._load_df()
         most_active = sorted(self.df.id_str.groupby(self.df.user__id_str).count().iteritems(),
                              reverse=True, key=lambda x: x[1])
         if just_ids:
@@ -102,7 +104,7 @@ class _Dataset(object):
                     'retweeted_status__created_at': 'created_at'},
                    axis='columns', inplace=True)
         timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
-        return timeline[:10000]
+        return timeline
 
     def get_tweets_universe(self, uid, neighbours):
         # universe_of_tweets = self.df[
@@ -117,12 +119,14 @@ class _Dataset(object):
         #             'retweeted_status__created_at': 'created_at'},
         #            axis='columns', inplace=True)
         # result = pd.concat([tweets, rts]).dropna().drop_duplicates(subset='id_str').values
-        tweets = np.empty((0,2))
+        tweets = np.empty((0, 2))
         for u in neighbours:
             tweets = np.concatenate((tweets, self.get_user_timeline(u)))
 
         print('done getting tweets universe. Shape is ', tweets.shape)
-        return tweets
+
+        # prune to max of 10000
+        return tweets[:10000]
         # return tweets
 
     # def extract_features(tweets, neighbour_users, own_user):

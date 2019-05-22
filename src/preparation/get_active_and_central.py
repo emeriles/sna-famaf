@@ -4,6 +4,8 @@ from processing.db_csv import Dataset
 from processing.utils import load_nx_graph
 import networkx as nx
 
+from settings import ACTIVE_AND_CENTRAL
+
 
 class ActiveAndCentral(object):
 
@@ -32,5 +34,5 @@ class ActiveAndCentral(object):
         most_active_ids = ActiveAndCentral.get_most_active_users()
         active_and_central_ids = list(set(most_active_ids).intersection(set(most_central_ids)))
         print('Got {} from most active and central intersection.'.format(len(active_and_central_ids)))
-        pickle.dump(active_and_central_ids, open('active_and_central.pickle', 'w'))
+        pickle.dump(active_and_central_ids, open(ACTIVE_AND_CENTRAL, 'wb'))
         return

@@ -4,7 +4,8 @@ import json
 
 from modeling._1_one_user_learn_neighbours.model import OneUserModel
 from processing.db_csv import Dataset
-from settings import TEST_USERS_ALL, SCORES_FOLDER_1_
+from processing.utils import get_test_users_ids
+from settings import SCORES_FOLDER_1_
 
 
 def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_valid, precisions_testv,
@@ -40,7 +41,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
 
 def compute_scores(delta_minutes):
 
-    uids = [u[0] for u in TEST_USERS_ALL]
+    uids = [u for u in get_test_users_ids()]
 
     pool = Pool(processes=7)
 

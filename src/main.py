@@ -10,7 +10,8 @@ if __name__ == '__main__':
         'try_some_users',
         'compute_scores',
         'create_and_save_csv_cutted',
-        'reset_sqlite_db'
+        'reset_sqlite_db',
+        'active_and_central'
     ]
     parser.add_argument('action', metavar='ACTION', type=str,
                         help='action to be performed. One of {}'.format(action_choices), choices=action_choices)
@@ -36,6 +37,7 @@ if __name__ == '__main__':
     from modeling._1_one_user_learn_neighbours.try_some_users import try_some_users
     from processing.preprocess_csv import PreprocessCSV
     from processing.dbmodels import reset_sqlite_db
+    from preparation.get_active_and_central import ActiveAndCentral
 
     print('RUNNING {}'.format(args.action))
     if args.action == 'test_all_clfs':
@@ -48,21 +50,5 @@ if __name__ == '__main__':
         PreprocessCSV.create_and_save_csv_cutted()
     if args.action == 'reset_sqlite_db':
         reset_sqlite_db()
-
-"""
-Notes:
-
-quantity of level2neighbours:
-    In [8]: len(ds.get_level2_neighbours(42976687))                                                                                                                                 
-    Out[8]: 3573
-    
-    In [9]: len(ds.get_level2_neighbours(74153376))                                                                                                                                 
-    Out[9]: 5174
-    
-    In [10]: len(ds.get_level2_neighbours(1622441))                                                                                                                                 
-    Out[10]: 125
-    
-    In [11]: len(ds.get_level2_neighbours(117335842))                                                                                                                               
-    Out[11]: 4304
-
-"""
+    if args.action == 'active_and_central':
+        ActiveAndCentral.get_most_central_and_active()
