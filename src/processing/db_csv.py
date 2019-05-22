@@ -88,7 +88,7 @@ class _Dataset(object):
 
     def get_user_timeline(self, uid):
         """
-        Returns [(tweet_id, creted_at)}
+        Returns [(tweet_id, creted_at)]
         :param uid:
         :return:
         """
@@ -120,6 +120,9 @@ class _Dataset(object):
         #            axis='columns', inplace=True)
         # result = pd.concat([tweets, rts]).dropna().drop_duplicates(subset='id_str').values
         tweets = np.empty((0, 2))
+        own_retweets = self.df[(self.df.user__id_str == uid) & pd.notna(self.df.retweeted_status__id_str)]
+        tweets = np.concatenate((tweets, own_retweets.loc[:, ('id_str', 'created_at')]))
+        print('Len of own retweets is {}'.format(tweets.shape))
         for u in neighbours:
             tweets = np.concatenate((tweets, self.get_user_timeline(u)))
 
