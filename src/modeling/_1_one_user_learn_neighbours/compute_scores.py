@@ -11,7 +11,7 @@ from settings import SCORES_FOLDER_1_
 def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_valid, precisions_testv,
     recalls_train, recalls_valid, recalls_testv, lock, delta_minutes):
     """worker function"""
-    print("Largamos para %d" % uid)
+    print("Largamos para {}".format(uid))
     
     X_train, X_valid, X_testv, y_train, y_valid, y_testv = Dataset.\
                                                         load_or_create_dataset(uid, delta_minutes_filter=delta_minutes)
