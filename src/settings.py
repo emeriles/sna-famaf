@@ -30,12 +30,17 @@ CSV_CUTTED = {}""".format(SQLITE_CONNECTION, CSV_RAW, CSV_CUTTED))
 
 XY_CACHE_FOLDER = "./processing/xy_cache/"
 
-GT_GRAPH_PATH = '../data/graphs/subgraph.gt'
-
 NX_GRAPH_PATH = '../data/graphs/subgraph_new_downloaded.gpickle'
+
+NX_GRAPH_FOLDER = '../data/graphs/'
 
 ACTIVE_AND_CENTRAL = "../data/processed/active_and_central.pickle"
 
 MODELS_FOLDER_1_ = "../model/_1_one_user_learn_neighbours"
 
 SCORES_FOLDER_1_ =  "modeling/_1_one_user_learn_neighbours/scores"
+
+CENTRAL_USER_DATA = {
+    'id': 393285785,
+    'screen_name': 'PCelayes'
+}

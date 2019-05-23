@@ -4,13 +4,16 @@ from random import choice
 from private_settings import AUTH_DATA
 import time
 
+
 # Used to switch between tokens to avoid exceeding rate limits
 class APIHandler(object):
     """docstring for APIHandler"""
     def __init__(self, auth_data, max_nreqs=10):
         self.auth_data = auth_data
         self.index = choice(range(len(auth_data)))
+        self.nreqs = 0
         self.max_nreqs = max_nreqs
+        self.conn_ = self.get_fresh_connection()
 
     def conn(self):
         if self.nreqs == self.max_nreqs:
@@ -41,7 +44,7 @@ class APIHandler(object):
         cursor = -1
         while cursor:
             try:
-                fs, (_, cursor) = self.conn_.followers_ids(count=5000, cursor=cursor, **kwargs)
+                fs, (_, cursor) = self.conn().followers_ids(count=5000, cursor=cursor, **kwargs)
                 fids += [str(x) for x in fs]
                 # if not fids:
                 #     # terminamos
@@ -64,14 +67,13 @@ class APIHandler(object):
 
         return fids
 
-
     def traer_seguidos(self, **kwargs):
         conns_tried = 0
         fids = []
         cursor = -1
         while cursor:
             try:
-                fs, (_, cursor) = self.conn_.friends_ids(count=5000, cursor=cursor, **kwargs)
+                fs, (_, cursor) = self.conn().friends_ids(count=5000, cursor=cursor, **kwargs)
                 fids += [str(x) for x in fs]
                 # print "fetched %d followers so far." % len(fids)
             except TweepError as e:
@@ -130,7 +132,6 @@ class APIHandler(object):
 
         return tweets
 
-
     def statuses_lookup(self, twids, tweets=[]):
         for start in range(0, len(twids), 100):
             batch = twids[start: start + 100]
@@ -147,7 +148,7 @@ class APIHandler(object):
                         print(e)
                         print("Rate limit reached for all connections. Waiting %d mins..." % nmins)
                         time.sleep(60 * nmins)
-                        conns_tried = 0 # restart count
+                        conns_tried = 0  # restart count
                     else:
                         self.get_fresh_connection()
 
@@ -173,7 +174,7 @@ class APIHandler(object):
                     else:
                         self.get_fresh_connection()
 
-    def get_user(self, screen_name=None):
-        return self.conn_.get_user(screen_name=screen_name)
+    def get_user(self, **kwargs):
+        return self.conn_.get_user(**kwargs)
 
 API_HANDLER = APIHandler(AUTH_DATA)

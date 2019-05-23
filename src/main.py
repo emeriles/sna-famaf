@@ -11,7 +11,8 @@ if __name__ == '__main__':
         'compute_scores',
         'create_and_save_csv_cutted',
         'reset_sqlite_db',
-        'active_and_central'
+        'active_and_central',
+        'build_users_subgraph'
     ]
     parser.add_argument('action', metavar='ACTION', type=str,
                         help='action to be performed. One of {}'.format(action_choices), choices=action_choices)
@@ -38,6 +39,7 @@ if __name__ == '__main__':
     from processing.preprocess_csv import PreprocessCSV
     from processing.dbmodels import reset_sqlite_db
     from preparation.get_active_and_central import ActiveAndCentral
+    from preparation.twitter_users import GraphHandler
 
     print('RUNNING {}'.format(args.action))
     if args.action == 'test_all_clfs':
@@ -52,3 +54,5 @@ if __name__ == '__main__':
         reset_sqlite_db()
     if args.action == 'active_and_central':
         ActiveAndCentral.get_most_central_and_active()
+    if args.action == 'build_users_subgraph':
+        GraphHandler.build_graph()
