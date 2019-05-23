@@ -45,7 +45,7 @@ if __name__ == '__main__':
     if args.action == 'test_all_clfs':
         OneUserModel.test_all_clfs(uid=42976687)
     if args.action == 'try_some_users':
-        try_some_users()
+        try_some_users(delta_minutes=delta_minutes)
     if args.action == 'compute_scores':
         compute_scores(delta_minutes=delta_minutes)
     if args.action == 'create_and_save_csv_cutted':

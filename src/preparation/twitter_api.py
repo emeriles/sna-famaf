@@ -13,7 +13,7 @@ class APIHandler(object):
         self.index = choice(range(len(auth_data)))
         self.nreqs = 0
         self.max_nreqs = max_nreqs
-        self.conn_ = self.get_fresh_connection()
+        self.conn_ = None
 
     def conn(self):
         if self.nreqs == self.max_nreqs:
@@ -39,6 +39,8 @@ class APIHandler(object):
                 time.sleep(10)
 
     def traer_seguidores(self, **kwargs):
+        if self.conn_ is None:
+            self.get_fresh_connection()
         conns_tried = 0
         fids = []
         cursor = -1
@@ -68,6 +70,8 @@ class APIHandler(object):
         return fids
 
     def traer_seguidos(self, **kwargs):
+        if self.conn_ is None:
+            self.get_fresh_connection()
         conns_tried = 0
         fids = []
         cursor = -1
@@ -91,6 +95,8 @@ class APIHandler(object):
         return fids
 
     def traer_timeline(self, user_id, desde=None, hasta=None, dia=None, limite=None, since_id=None, screen_name=None):
+        if self.conn_ is None:
+            self.get_fresh_connection()
         tweets = []
         page = 1
         if dia:
@@ -133,6 +139,8 @@ class APIHandler(object):
         return tweets
 
     def statuses_lookup(self, twids, tweets=[]):
+        if self.conn_ is None:
+            self.get_fresh_connection()
         for start in range(0, len(twids), 100):
             batch = twids[start: start + 100]
             try:
@@ -155,6 +163,8 @@ class APIHandler(object):
         return tweets
 
     def get_status(self, twid, **kwargs):
+        if self.conn_ is None:
+            self.get_fresh_connection()
         conns_tried = 0
         while True:
             try:
@@ -175,6 +185,8 @@ class APIHandler(object):
                         self.get_fresh_connection()
 
     def get_user(self, **kwargs):
+        if self.conn_ is None:
+            self.get_fresh_connection()
         return self.conn_.get_user(**kwargs)
 
 API_HANDLER = APIHandler(AUTH_DATA)
