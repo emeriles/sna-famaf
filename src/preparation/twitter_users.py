@@ -81,8 +81,9 @@ class GraphHandler(object):
         # COMENZAR BIEN EL LOOP
 
         for l in range(1, level + 1):
-            print('Now running level 1')
+            print('Now running level {}; EDGES: {}\tNODES: {}'.format(l, len(self.g.edges), len(self.g.nodes)))
             outer_layer_ids = self.extend_followed_graph(outer_layer_ids, l, save=True)
+            print('Done running level {}; EDGES: {}\tNODES: {}'.format(l, len(self.g.edges), len(self.g.nodes)))
         self.g = graph
 
     def extend_followed_graph(self, outer_layer_ids, level, save=False):
@@ -152,7 +153,7 @@ class GraphHandler(object):
                 followed = API_HANDLER.traer_seguidos(user_id=user_id)
                 # GRAPH.add_edges_from([(user_id, f_id) for f_id in followed])
                 return followed
-            except TweepError as e:
+            except Exception as e:
                 print(e)
                 if e.message == 'Not authorized.':
                     NOTAUTHORIZED.add(user_id)
@@ -183,7 +184,7 @@ class GraphHandler(object):
                 with open(self.relevant_filepath, 'w') as f:
                     json.dump(self.relevant_users, f)
                 return relevant
-            except TweepError as e:
+            except Exception as e:
                 print(e)
                 print("Error in is_relevant for %s" % user_id)
                 retries += 1

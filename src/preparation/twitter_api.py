@@ -70,6 +70,7 @@ class APIHandler(object):
         return fids
 
     def traer_seguidos(self, **kwargs):
+        print('Traer seguidos ', kwargs, end='\r')
         if self.conn_ is None:
             self.get_fresh_connection()
         conns_tried = 0
@@ -185,8 +186,26 @@ class APIHandler(object):
                         self.get_fresh_connection()
 
     def get_user(self, **kwargs):
+        print('get user ', kwargs, end='\r')
         if self.conn_ is None:
             self.get_fresh_connection()
-        return self.conn_.get_user(**kwargs)
+        conns_tried = 0
+        while True:
+            try:
+                user = self.conn_.get_user(**kwargs)
+                return user
+            except TweepError as e:
+                if not 'rate limit' in e.reason.lower():
+                    raise e
+                else:
+                    conns_tried += 1
+                    if conns_tried == len(self.auth_data):
+                        nmins = 5
+                        print(e)
+                        print("Rate limit reached for all connections. Waiting %d mins..." % nmins)
+                        time.sleep(60 * nmins)
+                        conns_tried = 0 # restart count
+                    else:
+                        self.get_fresh_connection()
 
 API_HANDLER = APIHandler(AUTH_DATA)
