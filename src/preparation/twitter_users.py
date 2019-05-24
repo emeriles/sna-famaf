@@ -104,7 +104,9 @@ class GraphHandler(object):
         if os.path.exists(fname_current):  # load if already calculed
             self.g = nx.read_gpickle(fname_current)
             # with open('layer%d.pickle' % level, 'rb') as fl:
-            new_outer_layer = pickle.load(fname_outer_layer)
+            with open(fname_outer_layer, 'rb') as fl:
+                new_outer_layer = pickle.load(fl)
+            # new_outer_layer = pickle.load(open(fname_outer_layer, 'rb'))
             return new_outer_layer
         # else:
         #     # start from previous
@@ -182,6 +184,7 @@ class GraphHandler(object):
                     json.dump(self.relevant_users, f)
                 return relevant
             except TweepError as e:
+                print(e)
                 print("Error in is_relevant for %s" % user_id)
                 retries += 1
                 if retries == 5:
