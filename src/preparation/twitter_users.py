@@ -40,30 +40,49 @@ else:
 
 class GraphHandler(object):
     """Networkx graph handling based on other existing graph, nodes will be reused!"""
-    def __init__(self, folder_path, central_uid, level=4):
+    def __init__(self, folder_path, central_uid, level=3):
         self.api = API_HANDLER
         self.level = level
         self.graph_path_folder = folder_path
         self.uid = central_uid
-        graph_path = self._get_file_path(self.uid, self.level)
+
+        # attempt to load full graph
+        graph_path = self._get_file_path_full_graph(self.uid, self.level)
+        print(graph_path)
+        print(graph_path)
+        print(graph_path)
+        print(graph_path)
         if os.path.exists(graph_path):
             self.g = nx.read_gpickle(graph_path)
         else:
             print('WARNING: No pre-existing graph found! to load')
 
-        self.relevant_filepath = self._get_file_path(self.uid, level=0) + 'relevantdit.json'
+        # attempt to load subgraph
+        graph_path = self._get_file_path_k_closure(self.uid)
+        if os.path.exists(graph_path):
+            self.subg = nx.read_gpickle(graph_path)
+        else:
+            print('WARNING: No pre-existing sub graph found! to load')
+
+        # load dict of relevant users
+        self.relevant_filepath = self._get_file_path_full_graph(self.uid, level=0) + 'relevantdit.json'
         if os.path.exists(self.relevant_filepath):
             with open(self.relevant_filepath, 'r') as f:
                 self.relevant_users = json.load(f)
         else:
-            print('relevant users not found')
+            print('Relevant users not found to load')
             self.relevant_users = {}
 
-    def _get_file_path(self, central_uid=None, level=None):
+    def _get_file_path_full_graph(self, central_uid=None, level=None):
         central_uid = central_uid if central_uid is not None else self.uid
         level = level if level is not None else self.level
 
         return self.graph_path_folder + '{}_{}.gpickle'.format(central_uid, level)
+
+    def _get_file_path_k_closure(self, central_uid=None):
+        central_uid = central_uid if central_uid is not None else self.uid
+
+        return self.graph_path_folder + '{}_subgraph.gpickle'.format(central_uid)
 
     def build_graph_to_level(self, level=None):
         level = level if level is not None else self.level
@@ -72,7 +91,7 @@ class GraphHandler(object):
         self.g = graph
         outer_layer_ids = set([self.uid])
 
-        fname_current = self._get_file_path(level=level)
+        fname_current = self._get_file_path_full_graph(level=level)
         fname_outer_layer = fname_current + 'outer_layer.pickle'
         nx.write_gpickle(self.g, fname_current)
         with open(fname_outer_layer, 'wb') as fl:
@@ -100,7 +119,7 @@ class GraphHandler(object):
             After that, level N + 1 is the extension of level N
             by one more step in the followed relation
         """
-        fname_current = self._get_file_path(level=level)
+        fname_current = self._get_file_path_full_graph(level=level)
         fname_outer_layer = fname_current + 'outer_layer.pickle'
         if os.path.exists(fname_current):  # load if already calculed
             self.g = nx.read_gpickle(fname_current)
@@ -142,10 +161,10 @@ class GraphHandler(object):
 
     def get_followed_user_ids(self, user_id):
 
-        # if GRAPH.out_degree(user_id):
-        #     followed = GRAPH.successors(user_id)
-        #     return followed
-        # else:
+        if self.g.out_degree(user_id):
+            followed = self.g.successors(user_id)
+            return followed
+
         retries = 0
         while True:
             try:
@@ -153,18 +172,17 @@ class GraphHandler(object):
                 followed = API_HANDLER.traer_seguidos(user_id=user_id)
                 # GRAPH.add_edges_from([(user_id, f_id) for f_id in followed])
                 return followed
-            except Exception as e:
-                print(e)
-                if e.message == 'Not authorized.':
+            except TweepError as e:
+                if e.response == 'Not authorized.':
                     NOTAUTHORIZED.add(user_id)
                     with open(NOTAUTHORIZED_FNAME, 'wb') as f:
                         pickle.dump(NOTAUTHORIZED, f)
                     return []
                 else:
-                    print("Error for user %d: %s" % (user_id, e.message))
+                    print("Error for user {}: {}".format(user_id, e.response))
                     retries += 1
                     if retries == 5:
-                        print("Gave up retrying for user %d" % user_id)
+                        print("Gave up retrying for user {}".format(user_id))
                         return []
                     else:
                         print("waiting...")
@@ -195,6 +213,82 @@ class GraphHandler(object):
                 else:
                     print("waiting...")
                     time.sleep(10)
+
+    def build_subgraph_k_degree_closure(self, K=50):
+        """
+            Partiendo de mi central_uid,
+            voy agregando para cada usuario sus 50 seguidos más similares,
+            incluyendo sólo usuarios relevantes ( >40 followers, >40 followed filtrados en build_graph_to_level)
+
+            Creamos además un grafo auxiliar con los nodos ya visitados
+            (útil para calcular relevancias y similaridades)
+        """
+        # try:
+        #     graph = nx.read_gpickle('graph2.gpickle')
+        # except IOError:
+        #     pass
+        self.subg = nx.DiGraph()
+
+        visited = set([x for x in self.subg.nodes() if self.subg.out_degree(x)])
+
+        # if self.subg.number_of_nodes():
+        #     unvisited = set([x for x in self.subg.nodes() if self.subg.out_degree(x) == 0])
+        # else:
+        unvisited = [str(self.uid)]
+
+        # try:
+        #     failed = set(json.load(open('failed.json')))
+        # except IOError:
+        failed = set()
+
+        while unvisited:
+            new_unvisited = set()
+            for uid in unvisited:
+                followed = self.get_followed_user_ids(user_id=uid)
+
+                if followed is None:
+                    failed.add(int(uid))
+                    continue
+
+                followed = followed  # All nodes in universe are assumed relevant
+                scored = []
+                for f in followed:
+                    f_followed = self.get_followed_user_ids(user_id=f)
+                    if f_followed is None:
+                        failed.add(int(f))
+                        continue
+
+                    common = len(set(f_followed).intersection(set(followed)))
+                    # print(type(followed), type(f_followed), end='\r')
+                    # print(followed, f_followed)
+                    total = len(followed) + len(list(f_followed)) - common
+                    score = common * 1.0 / total
+                    scored.append((f, score))
+
+                most_similar = sorted(scored, key=lambda u_s: -u_s[1])[:K]
+                most_similar = [u for (u, s) in most_similar]
+
+                self.subg.add_edges_from([(uid, f_id) for f_id in most_similar])
+                nx.write_gpickle(self.subg, self._get_file_path_k_closure(self.uid))
+
+                new_unvisited.update(most_similar)
+
+                visited.add(uid)
+
+            new_unvisited = new_unvisited - visited
+            unvisited = new_unvisited
+
+            n_nodes = self.subg.number_of_nodes()
+            n_edges = self.subg.number_of_edges()
+            print("%d nodes, %d edges" % (n_nodes, n_edges))
+
+            # save progress
+            nx.write_gpickle(self.subg, self._get_file_path_k_closure(self.uid))
+
+            # with open('failed.json', 'w') as f:
+            #     json.dump(list(failed), f)
+
+        return self.subg
 
     # def update_edges(self):
     #     to_process = self.g.number_of_nodes()
@@ -261,3 +355,8 @@ class GraphHandler(object):
         graph = GraphHandler(NX_GRAPH_FOLDER, central_uid=central_uid)
         graph.build_graph_to_level()
 
+    @staticmethod
+    def build_k_closure_graph():
+        central_uid = CENTRAL_USER_DATA['id']
+        graph = GraphHandler(NX_GRAPH_FOLDER, central_uid=central_uid)
+        graph.build_subgraph_k_degree_closure()

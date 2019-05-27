@@ -12,7 +12,8 @@ if __name__ == '__main__':
         'create_and_save_csv_cutted',
         'reset_sqlite_db',
         'active_and_central',
-        'build_users_subgraph'
+        'build_users_graph',
+        'build_k_degree_subgraph',
     ]
     parser.add_argument('action', metavar='ACTION', type=str,
                         help='action to be performed. One of {}'.format(action_choices), choices=action_choices)
@@ -54,5 +55,7 @@ if __name__ == '__main__':
         reset_sqlite_db()
     if args.action == 'active_and_central':
         ActiveAndCentral.get_most_central_and_active()
-    if args.action == 'build_users_subgraph':
+    if args.action == 'build_users_graph':
         GraphHandler.build_graph()
+    if args.action == 'build_k_degree_subgraph':
+        GraphHandler.build_k_closure_graph()
