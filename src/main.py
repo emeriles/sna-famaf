@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     print('RUNNING {}'.format(args.action))
     if args.action == 'test_all_clfs':
-        OneUserModel.test_all_clfs(uid=42976687)
+        OneUserModel.test_all_clfs(uid=76133133, time_delta_filter=delta_minutes)
     if args.action == 'try_some_users':
         try_some_users(delta_minutes=delta_minutes)
     if args.action == 'compute_scores':
