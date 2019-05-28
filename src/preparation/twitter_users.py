@@ -202,7 +202,7 @@ class GraphHandler(object):
                 with open(self.relevant_filepath, 'w') as f:
                     json.dump(self.relevant_users, f)
                 return relevant
-            except Exception as e:
+            except TweepError as e:
                 print(e)
                 print("Error in is_relevant for %s" % user_id)
                 retries += 1
@@ -261,7 +261,7 @@ class GraphHandler(object):
                     common = len(set(f_followed).intersection(set(followed)))
                     # print(type(followed), type(f_followed), end='\r')
                     # print(followed, f_followed)
-                    total = len(followed) + len(list(f_followed)) - common
+                    total = len(list(followed)) + len(list(f_followed)) - common
                     score = common * 1.0 / total
                     scored.append((f, score))
 
