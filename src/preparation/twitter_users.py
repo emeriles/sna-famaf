@@ -186,7 +186,7 @@ class GraphHandler(object):
                         return []
                     else:
                         print("waiting...")
-                        time.sleep(10)
+                        # time.sleep(10)
 
     def _is_relevant_user(self, user_id):
         user_id = str(user_id)
@@ -212,7 +212,7 @@ class GraphHandler(object):
                     return False
                 else:
                     print("waiting...")
-                    time.sleep(10)
+                    # time.sleep(10)
 
     def build_subgraph_k_degree_closure(self, K=50):
         """
