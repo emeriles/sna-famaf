@@ -437,7 +437,7 @@ class GraphHandler(object):
 
             n_nodes = self.subg.number_of_nodes()
             n_edges = self.subg.number_of_edges()
-            print("%d nodes, %d edges" % (n_nodes, n_edges))
+            print("UPDATED GRAPH: %d nodes, %d edges" % (n_nodes, n_edges))
 
             # save progress
             nx.write_gpickle(self.subg, 'graph2.gpickle')
