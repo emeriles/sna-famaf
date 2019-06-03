@@ -14,6 +14,7 @@ if __name__ == '__main__':
         'active_and_central',
         'build_users_graph',
         'build_k_degree_subgraph',
+        'build_k_degree_subgraph_2'
     ]
     parser.add_argument('action', metavar='ACTION', type=str,
                         help='action to be performed. One of {}'.format(action_choices), choices=action_choices)
@@ -59,3 +60,5 @@ if __name__ == '__main__':
         GraphHandler.build_graph()
     if args.action == 'build_k_degree_subgraph':
         GraphHandler.build_k_closure_graph()
+    if args.action == 'build_k_degree_subgraph_2':
+        GraphHandler.build_k_closure_graph_2()

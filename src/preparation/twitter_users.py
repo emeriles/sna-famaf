@@ -161,10 +161,13 @@ class GraphHandler(object):
 
     def get_followed_user_ids(self, user_id):
 
+        print(user_id)
         if self.g.out_degree(user_id):
             followed = self.g.successors(user_id)
+            print('fetched followed user_ids from loaded graph')
             return followed
 
+        print('fetched from internet')
         retries = 0
         while True:
             try:
@@ -234,7 +237,7 @@ class GraphHandler(object):
         # if self.subg.number_of_nodes():
         #     unvisited = set([x for x in self.subg.nodes() if self.subg.out_degree(x) == 0])
         # else:
-        unvisited = [str(self.uid)]
+        unvisited = [str(x) for x in self.g.nodes]
 
         # try:
         #     failed = set(json.load(open('failed.json')))
@@ -269,12 +272,14 @@ class GraphHandler(object):
                 most_similar = [u for (u, s) in most_similar]
 
                 self.subg.add_edges_from([(uid, f_id) for f_id in most_similar])
+                print('added {} edges to graph'.format(len(most_similar)))
                 nx.write_gpickle(self.subg, self._get_file_path_k_closure(self.uid))
 
                 new_unvisited.update(most_similar)
 
                 visited.add(uid)
 
+            # import ipdb;ipdb.set_trace()
             new_unvisited = new_unvisited - visited
             unvisited = new_unvisited
 
@@ -290,64 +295,64 @@ class GraphHandler(object):
 
         return self.subg
 
-    # def update_edges(self):
-    #     to_process = self.g.number_of_nodes()
-    #     percentage = 0
-    #     for u_id in self.g.nodes():
-    #
-    #         # advance notification
-    #         to_process -= 1
-    #         percentage = 100 - int(to_process / self.g.number_of_nodes() * 100)
-    #         print(
-    #             'Avance: %{}; {}/{}\t\t\tTrayendo a {}'.format(percentage, to_process, self.g.number_of_nodes(), u_id),
-    #             end='\r'
-    #         )
-    #
-    #         retries = 0
-    #         fetched = False
-    #         while retries <= 4 and not fetched:
-    #             try:
-    #                 follows = self.api.traer_seguidos(user_id=u_id)
-    #                 fetched = True
-    #             except TweepError as e:
-    #                 if e.reason == 'Not authorized.':
-    #                     NOTAUTHORIZED.add(u_id)
-    #                     with open(NOTAUTHORIZED_FNAME, 'wb') as f:
-    #                         pickle.dump(NOTAUTHORIZED, f)
-    #                     print('Not authorized length: {}'.format(len(NOTAUTHORIZED)))
-    #                     retries = 5
-    #                 elif 'Sorry, that page does not exist.' in e.reason:
-    #                     NOTFOUND.add(u_id)
-    #                     with open(NOTFOUND_FNAME, 'wb') as f:
-    #                         pickle.dump(NOTFOUND, f)
-    #                     print('Not found length: {}'.format(len(NOTFOUND)))
-    #                     retries = 5
-    #                 else:
-    #                     print(
-    #                         "Error for user %d: %s" % (u_id, e.reason))
-    #                     retries += 1
-    #                     if retries == 5:
-    #                         print(
-    #                             "Gave up retrying for user %d" % u_id)
-    #                     else:
-    #                         print(
-    #                             "waiting...",
-    #                             time.sleep(10))
-    #
-    #
-    #         # self._partial_save(graph=self.g)
-    #         print('Fetched users: {}'.format(len(follows)))
-    #         follows_filtered = set(follows).intersection(self.g.nodes())
-    #         # print(follows_filtered)
-    #         self.g.add_edges_from([(u_id, f_id) for f_id in follows_filtered])
-    #     nx.write_gpickle(self.g, UPDATED_GAPH_PATH)
-    #
-    # def _partial_save(self, graph):
-    #     if os.path.exists(TMP_GRAPH_PATH):
-    #         with open(TMP_GRAPH_PATH, 'rb') as f:
-    #             graph = nx.read_gpickle(self.g, UPDATED_GAPH_PATH)
-    #     else:
-    #         graph = nx.DiGraph()
+    def update_edges(self):
+        to_process = self.g.number_of_nodes()
+        percentage = 0
+        for u_id in self.g.nodes():
+
+            # advance notification
+            to_process -= 1
+            percentage = 100 - int(to_process / self.g.number_of_nodes() * 100)
+            print(
+                'Avance: %{}; {}/{}\t\t\tTrayendo a {}'.format(percentage, to_process, self.g.number_of_nodes(), u_id),
+                end='\r'
+            )
+
+            retries = 0
+            fetched = False
+            while retries <= 4 and not fetched:
+                try:
+                    follows = self.api.traer_seguidos(user_id=u_id)
+                    fetched = True
+                except TweepError as e:
+                    if e.reason == 'Not authorized.':
+                        NOTAUTHORIZED.add(u_id)
+                        with open(NOTAUTHORIZED_FNAME, 'wb') as f:
+                            pickle.dump(NOTAUTHORIZED, f)
+                        print('Not authorized length: {}'.format(len(NOTAUTHORIZED)))
+                        retries = 5
+                    elif 'Sorry, that page does not exist.' in e.reason:
+                        NOTFOUND.add(u_id)
+                        with open(NOTFOUND_FNAME, 'wb') as f:
+                            pickle.dump(NOTFOUND, f)
+                        print('Not found length: {}'.format(len(NOTFOUND)))
+                        retries = 5
+                    else:
+                        print(
+                            "Error for user %d: %s" % (u_id, e.reason))
+                        retries += 1
+                        if retries == 5:
+                            print(
+                                "Gave up retrying for user %d" % u_id)
+                        else:
+                            print(
+                                "waiting...",
+                                time.sleep(10))
+
+
+            # self._partial_save(graph=self.g)
+            print('Fetched users: {}'.format(len(follows)))
+            follows_filtered = set(follows).intersection(self.g.nodes())
+            # print(follows_filtered)
+            self.g.add_edges_from([(u_id, f_id) for f_id in follows_filtered])
+        nx.write_gpickle(self.g, UPDATED_GAPH_PATH)
+
+    def _partial_save(self, graph):
+        if os.path.exists(TMP_GRAPH_PATH):
+            with open(TMP_GRAPH_PATH, 'rb') as f:
+                graph = nx.read_gpickle(self.g, UPDATED_GAPH_PATH)
+        else:
+            graph = nx.DiGraph()
 
     @staticmethod
     def build_graph():
@@ -357,6 +362,87 @@ class GraphHandler(object):
 
     @staticmethod
     def build_k_closure_graph():
-        central_uid = CENTRAL_USER_DATA['id']
+        central_uid = '137548920'
         graph = GraphHandler(NX_GRAPH_FOLDER, central_uid=central_uid)
         graph.build_subgraph_k_degree_closure()
+
+    @staticmethod
+    def build_k_closure_graph_2():
+        central_uid = '137548920'
+        graph = GraphHandler(NX_GRAPH_FOLDER, central_uid=central_uid)
+        graph.build_k_closure_graph_from_scratch()
+
+    def build_k_closure_graph_from_scratch(self, K=50):
+        """
+            Partiendo de mi usuario,
+            voy agregando para cada usuario sus 50 seguidos más similares,
+            incluyendo sólo usuarios relevantes ( >40 followers, >40 followed )
+
+            Creamos además un grafo auxiliar con los nodos ya visitados
+            (útil para calcular relevancias y similaridades)
+        """
+        # try:
+        #     graph = nx.read_gpickle('graph2.gpickle')
+        # except IOError:
+        self.subg = nx.DiGraph()
+
+        visited = set([x for x in self.subg.nodes() if self.subg.out_degree(x)])
+        #
+        # if graph.number_of_nodes():
+        #     unvisited = set([x for x in graph.nodes() if graph.out_degree(x) == 0])
+        # else:
+        unvisited = [str(CENTRAL_USER_DATA['id'])]
+
+        try:
+            failed = set(json.load(open('failed.json')))
+        except IOError:
+            failed = set()
+
+        while unvisited:
+            new_unvisited = set()
+            for uid in unvisited:
+                followed = self.get_followed_user_ids(user_id=uid)
+
+                if followed is None:
+                    failed.add(int(uid))
+                    continue
+
+                # r_followed = [f for f in followed if is_relevant(f)]
+                r_followed = followed  # All nodes in universe are assumed relevant
+                scored = []
+                for f in r_followed:
+                    f_followed = self.get_followed_user_ids(user_id=f)
+                    if f_followed is None:
+                        failed.add(int(f))
+                        continue
+
+                    common = len(set(f_followed).intersection(set(followed)))
+                    total = len(list(followed)) + len(list(f_followed)) - common
+                    score = common * 1.0 / total
+                    scored.append((f, score))
+
+                most_similar = sorted(scored, key=lambda u_s: -u_s[1])[:K]
+                most_similar = [u for (u, s) in most_similar]
+
+                self.subg.add_edges_from([(uid, f_id) for f_id in most_similar])
+                nx.write_gpickle(self.subg, 'graph2.gpickle')
+
+                new_unvisited.update(most_similar)
+                print('new_unvisited', new_unvisited)
+
+                visited.add(uid)
+
+            new_unvisited = new_unvisited - visited
+            unvisited = new_unvisited
+
+            n_nodes = self.subg.number_of_nodes()
+            n_edges = self.subg.number_of_edges()
+            print("%d nodes, %d edges" % (n_nodes, n_edges))
+
+            # save progress
+            nx.write_gpickle(self.subg, 'graph2.gpickle')
+
+            # with open('failed.json', 'w') as f:
+            #     json.dump(list(failed), f)
+
+        return self.subg
