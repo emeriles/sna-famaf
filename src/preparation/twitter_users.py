@@ -55,6 +55,7 @@ class GraphHandler(object):
         if os.path.exists(graph_path):
             self.g = nx.read_gpickle(graph_path)
         else:
+            self.g = nx.DiGraph()
             print('WARNING: No pre-existing graph found! to load')
 
         # attempt to load subgraph
@@ -62,6 +63,7 @@ class GraphHandler(object):
         if os.path.exists(graph_path):
             self.subg = nx.read_gpickle(graph_path)
         else:
+            self.subg = nx.DiGraph()
             print('WARNING: No pre-existing sub graph found! to load')
 
         # load dict of relevant users
