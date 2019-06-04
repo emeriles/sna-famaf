@@ -62,3 +62,6 @@ if __name__ == '__main__':
         GraphHandler.build_k_closure_graph()
     if args.action == 'build_k_degree_subgraph_2':
         GraphHandler.build_k_closure_graph_2()
+
+
+# most central user in katz (new_downloaded):    297144638
