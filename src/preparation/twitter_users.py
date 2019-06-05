@@ -422,7 +422,7 @@ class GraphHandler(object):
 
             # import ipdb;ipdb.set_trace()
             new_unvisited = new_unvisited - visited
-            to_visit = new_unvisited
+            to_visit += list(new_unvisited)
 
             n_nodes = self.subg.number_of_nodes()
             n_edges = self.subg.number_of_edges()
