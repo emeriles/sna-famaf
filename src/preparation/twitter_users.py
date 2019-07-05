@@ -409,7 +409,7 @@ class GraphHandler(object):
                     # print(type(followed), type(f_followed), end='\r')
                     # print(followed, f_followed)
                     total = len(list(followed)) + len(list(f_followed)) - common
-                    score = common * 1.0 / total  # if total != 0 else common * 0.0
+                    score = common * 1.0 / total if total != 0 else common * 0.0
                     scored.append((f, score))
 
                 print('Scored len: ', len(scored))
