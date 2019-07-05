@@ -383,9 +383,13 @@ class GraphHandler(object):
         #     failed = set(json.load(open('failed.json')))
         # except IOError:
         failed = set()
+        counter = 20
 
         while visited != all_users:
             new_unvisited = set()
+
+            last_visited_len = len(visited)
+
             for uid in to_visit:
                 followed = self.get_followed_user_ids(user_id=uid)
 
@@ -405,7 +409,7 @@ class GraphHandler(object):
                     # print(type(followed), type(f_followed), end='\r')
                     # print(followed, f_followed)
                     total = len(list(followed)) + len(list(f_followed)) - common
-                    score = common * 1.0 / total if total != 0 else common * 0.0
+                    score = common * 1.0 / total  # if total != 0 else common * 0.0
                     scored.append((f, score))
 
                 print('Scored len: ', len(scored))
@@ -427,6 +431,16 @@ class GraphHandler(object):
             n_nodes = self.subg.number_of_nodes()
             n_edges = self.subg.number_of_edges()
             print("%d nodes, %d edges" % (n_nodes, n_edges))
+
+            print('LEN VISITED: {}'.format(len(visited)))
+            if len(visited) == last_visited_len:
+                counter -= 1
+                print('To_visit :::::::::::', to_visit)
+                if counter == 0:
+                    print('Muerte por snu snu!')
+                    break
+            else:
+                counter = 20
 
             # save progress
             nx.write_gpickle(self.subg, self._get_file_path_k_closure(self.uid))
