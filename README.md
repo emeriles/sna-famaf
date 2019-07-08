@@ -12,8 +12,21 @@ pip install -r requirements.txt
 
 # Usefull stuff
 
-export dataset as csv
+Export dataset as csv.
+(as it is really hard to work with text on csvs, you may want to omit text field)
 `mongoexport -h localhost -d twitter -c tweet --type=csv --fields created_at,user.id_str,id_str,text,retweeted_status.id_str,retweeted_status.user.id_str,retweeted_status.created_at,retweet_count,quoted_status_id_str --out dayli_col.csv`
+
+Export text fiedls to pandas dataframe:
+put mongo docker up, then
+`ipython` from src
+```python
+from preparation.db import DBHandler 
+import pandas as pd
+dbh = DBHandler()
+r = dbh.tweet_collection.find({}, {'id_str':1, 'text': 1, '_id': 0, 'retweeted_status.id_str': 1, 'retweeted_status.text': 1})
+df = pd.DataFrame(list(r))
+
+```
 \
 \
 \
@@ -102,6 +115,60 @@ sys     76m44.152s
 
 
 FEATURES MATIX:
-    dayli: Extracting features. X shape is :            (123824, 5173)
-    full: Extracting features. X shape is :           (12219685, 5173)
-          Extracting features Optimized. X shape is :  (9087871, 3572)
+    dayli: Extracting features. X shape is :                       (123824, 5173)
+    full: Extracting features. X shape is :                      (12219685, 5173)
+          Extracting features Optimized. X shape is :             (9087871, 3572)
+
+Dataframe loading:
+    full:
+        Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8))           Time delta is: 75 mins
+                                                               (12702867, 2)
+        
+        12219685
+        11902427
+
+
+time python main.py --data full compute_scores 75
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8))           Time delta is: 75 mins
+done getting tweets universe. Shape is  (4786053, 2)
+X SIZE (MB):  24241358445000000
+Extracting features Optimized. X shape is : (4786053, 5065)
+Avance: %0.00190135796657386935
+	real    697m19.818s
+	user    691m35.054s
+	sys     6m39.975s
+     
+   
+## SPARK
+
+to install it took to follow this guide:
+https://medium.com/datos-y-ciencia/c%C3%B3mo-usar-pyspark-en-tu-computadora-dee7978d1a40
+
+and to add to bashrc:
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+export SPARK_HOME=/home/mmeriles/spark/spark-2_4_3-bin-hadoop2_7
+export PATH=$SPARK_HOME/bin:$PATH
+
+export PYSPARK_DRIVER_PYTHON=jupyter
+```
+
+test example:
+
+```python
+import findspark
+import os
+findspark.init(os.environ.get('SPARK_HOME'))
+import random
+from pyspark import SparkContext
+sc = SparkContext(appName="EstimatePi")
+def inside(p):
+    x, y = random.random(), random.random()
+    return x*x + y*y < 1
+NUM_SAMPLES = 1000000
+count = sc.parallelize(range(0, NUM_SAMPLES)) \
+             .filter(inside).count()
+print("Pi is roughly %f" % (4.0 * count / NUM_SAMPLES))
+sc.stop()
+```

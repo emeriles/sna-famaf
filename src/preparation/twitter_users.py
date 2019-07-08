@@ -1,6 +1,5 @@
 import json
 import os
-import time
 
 import networkx as nx
 import pickle
@@ -10,14 +9,6 @@ from tweepy import TweepError
 from preparation.twitter_api import API_HANDLER
 
 
-# TMP_GRAPH_PATH = './preparation/temp/subgraph_new_tmp.gpickle'
-# TMP_SEEN_USERS = './preparation/temp/seen_users.pickle'
-#
-# if os.path.exists(TMP_SEEN_USERS):
-#     with open(TMP_SEEN_USERS, 'rb') as f:
-#         SEEN_USERS = pickle.load(f)
-# else:
-#     SEEN_USERS = set()
 from settings import CENTRAL_USER_DATA, NX_GRAPH_FOLDER
 
 NOTAUTHORIZED_FNAME = "./temp/notauthorizedids.pickle"
@@ -39,7 +30,9 @@ else:
 
 
 class GraphHandler(object):
-    """Networkx graph handling based on other existing graph, nodes will be reused!"""
+    """This class handles graphs. Main graph (self.g) is the main and complete one.
+    Subgraph (self.subg) is the k-closure graph.
+    """
     def __init__(self, folder_path, central_uid, level=3):
         self.api = API_HANDLER
         self.level = level
@@ -48,10 +41,7 @@ class GraphHandler(object):
 
         # attempt to load full graph
         graph_path = self._get_file_path_full_graph(self.uid, self.level)
-        print(graph_path)
-        print(graph_path)
-        print(graph_path)
-        print(graph_path)
+        print('Graph path: ', graph_path)
         if os.path.exists(graph_path):
             self.g = nx.read_gpickle(graph_path)
         else:
@@ -60,6 +50,7 @@ class GraphHandler(object):
 
         # attempt to load subgraph
         graph_path = self._get_file_path_k_closure(self.uid)
+        print('Subgraph path: ', graph_path)
         if os.path.exists(graph_path):
             self.subg = nx.read_gpickle(graph_path)
         else:
@@ -87,6 +78,11 @@ class GraphHandler(object):
         return self.graph_path_folder + '{}_subgraph.gpickle'.format(central_uid)
 
     def build_graph_to_level(self, level=None):
+        """
+        build complete graph starting from central user. Level indicates the reach of neighbour relation.
+        :param level:
+        :return:
+        """
         level = level if level is not None else self.level
 
         graph = nx.DiGraph()
@@ -99,7 +95,6 @@ class GraphHandler(object):
         with open(fname_outer_layer, 'wb') as fl:
             pickle.dump(outer_layer_ids, fl)
         print('Done level 0 graph')
-        # COMENZAR BIEN EL LOOP
 
         for l in range(1, level + 1):
             print('Now running level {}; EDGES: {}\tNODES: {}'.format(l, len(self.g.edges), len(self.g.nodes)))
@@ -125,10 +120,8 @@ class GraphHandler(object):
         fname_outer_layer = fname_current + 'outer_layer.pickle'
         if os.path.exists(fname_current):  # load if already calculed
             self.g = nx.read_gpickle(fname_current)
-            # with open('layer%d.pickle' % level, 'rb') as fl:
             with open(fname_outer_layer, 'rb') as fl:
                 new_outer_layer = pickle.load(fl)
-            # new_outer_layer = pickle.load(open(fname_outer_layer, 'rb'))
             return new_outer_layer
         # else:
         #     # start from previous
@@ -163,19 +156,16 @@ class GraphHandler(object):
 
     def get_followed_user_ids(self, user_id):
 
-        # print(user_id)
         if self.g.out_degree(user_id):
             followed = self.g.successors(user_id)
             print('fetched followed user_ids from loaded graph', end='\r')
             return followed
 
-        print('fetched from internet', end='\r')
+        print('fetch from internet', end='\r')
         retries = 0
         while True:
             try:
-                # API_HANDLER.get_fresh_connection()
                 followed = API_HANDLER.traer_seguidos(user_id=user_id)
-                # GRAPH.add_edges_from([(user_id, f_id) for f_id in followed])
                 return followed
             except TweepError as e:
                 if e.response == 'Not authorized.':
@@ -189,9 +179,6 @@ class GraphHandler(object):
                     if retries == 5:
                         print("Gave up retrying for user {}".format(user_id))
                         return []
-                    else:
-                        print("waiting...")
-                        # time.sleep(10)
 
     def _is_relevant_user(self, user_id):
         user_id = str(user_id)
@@ -200,7 +187,6 @@ class GraphHandler(object):
         retries = 0
         while True:
             try:
-                # API_HANDLER.get_fresh_connection()
                 u = API_HANDLER.get_user(user_id=user_id)
                 relevant = u.followers_count > 40 and u.friends_count > 40
                 self.relevant_users[user_id] = relevant
@@ -208,7 +194,6 @@ class GraphHandler(object):
                     json.dump(self.relevant_users, f)
                 return relevant
             except TweepError as e:
-                print(e)
                 print("Error in is_relevant for %s" % user_id)
                 retries += 1
                 if retries == 5:
@@ -217,7 +202,6 @@ class GraphHandler(object):
                     return False
                 else:
                     print("waiting...")
-                    # time.sleep(10)
 
     def build_subgraph_k_degree_closure(self, K=50):
         """
@@ -297,6 +281,7 @@ class GraphHandler(object):
 
         return self.subg
 
+    ### TODO: fix this function to get it working. It was used to build complete graph of users (self.g)
     # def update_edges(self):
     #     to_process = self.g.number_of_nodes()
     #     percentage = 0
@@ -385,7 +370,7 @@ class GraphHandler(object):
         failed = set()
         counter = 20
 
-        while visited != all_users:
+        while visited <= all_users:
             new_unvisited = set()
 
             last_visited_len = len(visited)

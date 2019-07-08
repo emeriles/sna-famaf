@@ -48,6 +48,7 @@ class Action(object):
         db_handler.save_users_timelines(use_milestones=True)
 
 
+# TODO: make this functionalities available from src/main.py
 if __name__ == '__main__':
     # Action.move_graph_users_to_db() # just for empty db. users will be consumed from db.
     # Action.get_and_save_tweets_for_all_users()
