@@ -36,6 +36,8 @@ XY_CACHE_FOLDER = "./processing/xy_cache/"
 
 NX_GRAPH_PATH = '../data/graphs/subgraph_new_downloaded.gpickle'
 
+NX_SUBGRAPH_PATH = '../data/graphs/latest_subgraph.gpickle'
+
 NX_GRAPH_FOLDER = '../data/graphs/'
 
 ACTIVE_AND_CENTRAL = "../data/processed/active_and_central.pickle"

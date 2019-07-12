@@ -6,11 +6,11 @@ from os.path import join
 
 import pandas as pd
 import numpy as np
+import networkx as nx
 from sklearn.model_selection import train_test_split
 
 from processing.db_csv import _Dataset
-from processing.utils import load_nx_graph
-from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER
+from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER, NX_SUBGRAPH_PATH
 
 
 class _DatasetOneUserModel(_Dataset):
@@ -18,12 +18,15 @@ class _DatasetOneUserModel(_Dataset):
     def __init__(self, csv_path=CSV_CUTTED, txt_path=JSON_TEXTS, delta_minutes_filter=None):
         super().__init__(csv_path=csv_path, txt_path=txt_path, delta_minutes_filter=delta_minutes_filter)
 
+    def load_nx_subgraph(self):
+        return nx.read_gpickle(NX_SUBGRAPH_PATH)
+
     def get_level2_neighbours(self, user_id):
         """
         An ordered list of up to level-2 neighbours is created
         (followed and their followed)
         """
-        g = load_nx_graph()
+        g = self.load_nx_subgraph()
         uid = str(user_id)
 
         neighbourhood = set(list(g.successors(uid)))
