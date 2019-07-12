@@ -1,6 +1,6 @@
 import pickle
 
-from processing.db_csv import Dataset
+from processing._1_user_model.db_csv import DatasetOneUserModel
 from processing.utils import load_nx_graph
 import networkx as nx
 
@@ -26,7 +26,7 @@ class ActiveAndCentral(object):
 
     @staticmethod
     def get_most_active_users(N=1000, just_ids=True):
-        return Dataset.get_most_active_users(N=N, just_ids=just_ids)
+        return DatasetOneUserModel.get_most_active_users(N=N, just_ids=just_ids)
 
     @staticmethod
     def get_most_central_and_active():

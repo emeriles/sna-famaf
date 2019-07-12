@@ -10,7 +10,7 @@ if __name__ == '__main__':
         'try_some_users',
         'compute_scores',
         'create_and_save_csv_cutted',
-        'reset_sqlite_db',
+        # 'reset_sqlite_db',
         'active_and_central',
         'build_users_graph',
         'build_k_degree_subgraph',
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     from modeling._1_one_user_learn_neighbours.model import OneUserModel
     from modeling._1_one_user_learn_neighbours.try_some_users import try_some_users
     from processing.preprocess_csv import PreprocessCSV
-    from processing.dbmodels import reset_sqlite_db
+    # from processing.dbmodels import reset_sqlite_db
     from preparation.get_active_and_central import ActiveAndCentral
     from preparation.twitter_users import GraphHandler
 
@@ -52,8 +52,8 @@ if __name__ == '__main__':
         compute_scores(delta_minutes=delta_minutes)
     if args.action == 'create_and_save_csv_cutted':
         PreprocessCSV.create_and_save_csv_cutted()
-    if args.action == 'reset_sqlite_db':
-        reset_sqlite_db()
+    # if args.action == 'reset_sqlite_db':
+    #     reset_sqlite_db()
     if args.action == 'active_and_central':
         ActiveAndCentral.get_most_central_and_active()
     if args.action == 'build_users_graph':
@@ -64,4 +64,9 @@ if __name__ == '__main__':
         GraphHandler.build_k_closure_graph_2()
 
 
+# we need 5589 users
+
 # most central user in katz (new_downloaded):    297144638
+# 297144638_subgraph.gpickle -> number_of_nodes() == 4075
+# 1357911_subgraph.gpickle -> number_of_nodes() == 4849 ...
+

@@ -1,0 +1,133 @@
+(sna-famaf-ve) mmeriles@zx81:~/sna-famaf/src$ time python -W ignore main.py try_some_users 500 --data full
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+RUNNING try_some_users
+Try some users for user 76133133
+Loading df
+Filtering by time
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8))           Time delta is: 500 mins
+Len of own retweets is (31, 2)
+done getting tweets universe. Shape is  (10177, 2)
+Extracting features Optimized. X shape is : (10000, 5454)
+Done Extracting Features 1:00:21.166680
+                        START SVC
+# Tuning hyper-parameters for f1
+(7000, 5454) (2000, 5454) True True
+
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6978
+        True       1.00      1.00      1.00        22
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1994
+        True       1.00      1.00      1.00         6
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+                        END SVC
+Try some users for user 33524608
+Loading df
+Filtering by time
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8))           Time delta is: 500 mins
+Len of own retweets is (430, 2)
+done getting tweets universe. Shape is  (10576, 2)
+Extracting features Optimized. X shape is : (10000, 5454)
+Done Extracting Features 1:00:15.541549
+                        START SVC
+# Tuning hyper-parameters for f1
+(7000, 5454) (2000, 5454) True True
+
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6699
+        True       1.00      1.00      1.00       301
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1914
+        True       1.00      1.00      1.00        86
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+                        END SVC
+Try some users for user 85861402
+Loading df
+Filtering by time
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8))           Time delta is: 500 mins
+Len of own retweets is (1076, 2)
+done getting tweets universe. Shape is  (11222, 2)
+Extracting features Optimized. X shape is : (10000, 5454)
+Done Extracting Features 1:00:45.751750
+                        START SVC
+# Tuning hyper-parameters for f1
+(7000, 5454) (2000, 5454) True True
+
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6185
+        True       1.00      0.88      0.94       815
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.94      0.96      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      1767
+        True       1.00      0.89      0.94       233
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.95      0.97      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+                        END SVC
+
+real    183m43.447s
+user    185m5.262s
+sys     0m43.203s
+# ULTIMO

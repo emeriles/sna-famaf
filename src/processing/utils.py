@@ -215,3 +215,5 @@ def merge_Xy(X, y):
 
 def get_test_users_ids():
     return pickle.load(open(ACTIVE_AND_CENTRAL, 'rb'))
+    # 208 con primer grafo que calculé (todos los lados posibles enter los usuarios dados) (194 en el paper)
+    # ????? entre el subgrafo calculado despues.

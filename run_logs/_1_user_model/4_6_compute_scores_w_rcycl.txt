@@ -1,0 +1,75 @@
+(sna-famaf-ve) mmeriles@zx81:~/sna-famaf/src$ time python main.py --data full compute_scores 500
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+RUNNING compute_scores
+Largamos para 81289660
+Loading df
+Filtering by time
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8))           Time delta is: 500 mins
+Len of own retweets is (608, 2)
+done getting tweets universe. Shape is  (12459, 2)
+Extracting features Optimized. X shape is : (10000, 5312)
+Done Extracting Features 1:11:34.026332
+Load or build model. For 81289660, model type: svc, time_delta: 500
+                        START SVC
+# Tuning hyper-parameters for f1
+(1000, 5312) (7000, 5312) True True
+
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00       987
+        True       1.00      1.00      1.00        13
+
+   micro avg       1.00      1.00      1.00      1000
+   macro avg       1.00      1.00      1.00      1000
+weighted avg       1.00      1.00      1.00      1000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6909
+        True       1.00      1.00      1.00        91
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+                        END SVC
+Largamos para 1756721
+Loading df
+Filtering by time
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8))           Time delta is: 500 mins
+Len of own retweets is (4, 2)
+done getting tweets universe. Shape is  (11855, 2)
+Extracting features Optimized. X shape is : (10000, 5276)
+Done Extracting Features 1:13:39.497361
+Traceback (most recent call last):
+  File "main.py", line 52, in <module>
+    compute_scores(delta_minutes=delta_minutes)
+  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 68, in compute_scores
+    lock, delta_minutes)
+  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 17, in worker
+    load_or_create_dataset(uid, delta_minutes_filter=delta_minutes)
+  File "/home/mmeriles/sna-famaf/src/processing/db_csv.py", line 319, in load_or_create_dataset
+    stratify=y_test)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/model_selection/_split.py", line 2209, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/model_selection/_split.py", line 1315, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/model_selection/_split.py", line 1695, in _iter_indices
+    raise ValueError("The least populated class in y has only 1"
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+
+real    219m11.815s
+user    218m44.669s
+sys     2m57.134s

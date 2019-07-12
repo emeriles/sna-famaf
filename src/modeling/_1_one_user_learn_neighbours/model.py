@@ -11,7 +11,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 import numpy as np
 
-from processing.db_csv import Dataset
+from processing._1_user_model.db_csv import DatasetOneUserModel
 from settings import MODELS_FOLDER_1_
 
 
@@ -281,7 +281,7 @@ class OneUserModel(object):
     def test_all_clfs(uid, time_delta_filter, save=True):
         # from create_clesa_datasets import *
         # uid=37226353
-        X_train, X_test, X_valid, y_train, y_test, y_valid = Dataset.\
+        X_train, X_test, X_valid, y_train, y_test, y_valid = DatasetOneUserModel.\
                                                     load_or_create_dataset(uid, delta_minutes_filter=time_delta_filter)
         dataset = X_valid, X_train, y_valid, y_train           ## THIS SAME AS  ... mirar mas abajo.
         clf1 = OneUserModel.model_select_rdf(dataset)
@@ -312,7 +312,7 @@ class OneUserModel(object):
     def load_or_build_model(uid, model_type, time_delta_filter, save=True):
         print('Load or build model. For {}, model type: {}, time_delta: {}'.format(uid, model_type, time_delta_filter))
         clf = OneUserModel.load_model(uid, model_type, time_delta_filter)
-        dataset = Dataset.load_or_create_dataset(uid, time_delta_filter)
+        dataset = DatasetOneUserModel.load_or_create_dataset(uid, time_delta_filter)
         X_train, X_test, X_valid, y_train, y_test, y_valid = dataset
         dataset = X_valid, X_train, y_valid, y_train   ###### SAME AS THIS
         if not clf:

@@ -1,11 +1,13 @@
 from modeling._1_one_user_learn_neighbours.model import OneUserModel
-from processing.db_csv import Dataset
+from processing._1_user_model.db_csv import DatasetOneUserModel
+from processing.utils import get_test_users_ids
 
 
 def worker(user_id, delta_minutes):
     # try:
         # clf = train_and_evaluate(user_id)
-    X_train, X_valid, X_test, y_train, y_valid, y_test = Dataset.load_or_create_dataset(user_id, delta_minutes_filter=delta_minutes)
+    X_train, X_valid, X_test, y_train, y_valid, y_test = DatasetOneUserModel\
+        .load_or_create_dataset(user_id, delta_minutes_filter=delta_minutes)
     dataset = X_train, X_valid, y_train, y_valid
     clf = OneUserModel.model_select_svc(dataset)
     OneUserModel.save_model(clf, user_id, 'svc', time_delta_filter=delta_minutes)
@@ -33,7 +35,8 @@ def try_some_users(delta_minutes):
 
     # pending_user_ids = [uid for uid,_,_ in TEST_USERS_ALL]
 
-    for user_id in [#74153376, 1622441, 117335842,
-                    76133133, 33524608, 85861402]:
+    for user_id in get_test_users_ids()[:3]:
+            # [#74153376, 1622441, 117335842,
+            #         76133133, 33524608, 85861402]:
         print('Try some users for user {}'.format(user_id))
         worker(user_id, delta_minutes=delta_minutes)

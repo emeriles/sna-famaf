@@ -1,10 +1,13 @@
+"""
+This file is kept just to check previous work's database.
+"""
+
 from sqlalchemy import create_engine, Table, Column, ForeignKey
 import pandas as pd
 from sqlalchemy import (Integer, String, DateTime, Boolean)
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy_utils.functions import drop_database, database_exists, create_database
-import time
 
 from processing.preprocess_csv import CSVDataframe
 from settings import SQLITE_CONNECTION, CSV_CUTTED, NX_GRAPH_PATH
