@@ -156,12 +156,12 @@ class GraphHandler(object):
 
     def get_followed_user_ids(self, user_id):
 
-        if self.g.out_degree(user_id):
-            followed = self.g.successors(user_id)
-            print('fetched followed user_ids from loaded graph', end='\r')
-            return followed
+        # if self.g.out_degree(user_id):
+        #     followed = self.g.successors(user_id)
+        #     # print('fetched followed user_ids from loaded graph', end='\r')
+        #     return followed
 
-        print('fetch from internet', end='\r')
+        # print('fetch from internet', end='\r')
         retries = 0
         while True:
             try:
@@ -455,7 +455,7 @@ class GraphHandler(object):
 
     def build_k_closure_graph_from_scratch(self, K=50):
         """
-            Partiendo de mi usuario,
+            Partiendo de los usuarios con out-degree = 50,
             voy agregando para cada usuario sus 50 seguidos más similares,
             incluyendo sólo usuarios relevantes ( >40 followers, >40 followed )
 
@@ -467,12 +467,16 @@ class GraphHandler(object):
         # except IOError:
         self.subg = nx.DiGraph()
 
-        visited = set([x for x in self.subg.nodes() if self.subg.out_degree(x)])
+        # visited = set([x for x in self.subg.nodes() if self.subg.out_degree(x)])
+        visited = set([])
         #
         # if graph.number_of_nodes():
         #     unvisited = set([x for x in graph.nodes() if graph.out_degree(x) == 0])
         # else:
-        unvisited = [str(CENTRAL_USER_DATA['id'])]
+        # unvisited = [str(CENTRAL_USER_DATA['id'])]
+
+        unvisited = set([str(x) for x in self.g.nodes() if self.g.out_degree(x) == 50])
+        print('Starting with {} users with out degree = 50'.format(len(unvisited)))
 
         try:
             failed = set(json.load(open('failed.json')))
@@ -499,7 +503,7 @@ class GraphHandler(object):
 
                     common = len(set(f_followed).intersection(set(followed)))
                     total = len(list(followed)) + len(list(f_followed)) - common
-                    score = common * 1.0 / total
+                    score = common * 1.0 / total if total != 0 else 0
                     scored.append((f, score))
 
                 most_similar = sorted(scored, key=lambda u_s: -u_s[1])[:K]
@@ -509,7 +513,6 @@ class GraphHandler(object):
                 nx.write_gpickle(self.subg, 'graph2.gpickle')
 
                 new_unvisited.update(most_similar)
-                print('new_unvisited', new_unvisited)
 
                 visited.add(uid)
 
