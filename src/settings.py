@@ -40,7 +40,7 @@ NX_SUBGRAPH_PATH = '../data/graphs/latest_subgraph.gpickle'
 
 NX_GRAPH_FOLDER = '../data/graphs/'
 
-ACTIVE_AND_CENTRAL = "../data/processed/active_and_central.pickle"
+ACTIVE_AND_CENTRAL = "../data/processed/active_and_central.pickle"  # 206 users
 
 MODELS_FOLDER_1_ = "../model/_1_one_user_learn_neighbours"
 

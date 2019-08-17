@@ -478,6 +478,8 @@ class GraphHandler(object):
         unvisited = set([str(x) for x in self.g.nodes() if self.g.out_degree(x) == 50])
         print('Starting with {} users with out degree = 50'.format(len(unvisited)))
 
+        universe_of_users = self.g.nodes
+
         try:
             failed = set(json.load(open('failed.json')))
         except IOError:
@@ -493,7 +495,8 @@ class GraphHandler(object):
                     continue
 
                 # r_followed = [f for f in followed if is_relevant(f)]
-                r_followed = followed  # All nodes in universe are assumed relevant
+
+                r_followed = list(set(followed).intersection(universe_of_users))  # All nodes in universe are assumed relevant
                 scored = []
                 for f in r_followed:
                     f_followed = self.get_followed_user_ids(user_id=f)

@@ -28,7 +28,7 @@ class APIHandler(object):
             try:
                 self.index = (self.index + 1) % len(self.auth_data)
                 d = self.auth_data[self.index]
-                print("Switching to API Credentials #%d" % self.index)
+                # print("Switching to API Credentials #%d" % self.index)
 
                 auth = AppAuthHandler(d['consumer_key'], d['consumer_secret'])
                 self.conn_ = API(auth_handler=auth, wait_on_rate_limit=False, wait_on_rate_limit_notify=True)
