@@ -9,7 +9,7 @@ from tweepy import TweepError
 from preparation.twitter_api import API_HANDLER
 
 
-from settings import CENTRAL_USER_DATA, NX_GRAPH_FOLDER
+from settings import CENTRAL_USER_DATA, NX_GRAPH_FOLDER, NX_SUBGRAPH_PATH, USERS_FOLLOWED_DATA
 
 NOTAUTHORIZED_FNAME = "./temp/notauthorizedids.pickle"
 
@@ -153,6 +153,23 @@ class GraphHandler(object):
             pickle.dump(new_outer_layer, fl)
 
         return new_outer_layer
+
+    @staticmethod
+    def get_users_followed_data():
+        print('Fetching users followed data')
+        central_uid = '137548920'
+        graph = GraphHandler(NX_GRAPH_FOLDER, central_uid=central_uid)
+        users = graph.g.nodes
+        users_followed = {}
+        total = len(users)
+        current = 0
+        for u in users:
+            print('Fetching users {} of {}'.format(current, total), end='\r')
+            followed_list = graph.get_followed_user_ids(u)
+            users_followed[u] = followed_list
+            current += 1
+            with open(USERS_FOLLOWED_DATA, 'wb') as save_file:
+                pickle.dump(users_followed, save_file)
 
     def get_followed_user_ids(self, user_id):
 
@@ -513,7 +530,7 @@ class GraphHandler(object):
                 most_similar = [u for (u, s) in most_similar]
 
                 self.subg.add_edges_from([(uid, f_id) for f_id in most_similar])
-                nx.write_gpickle(self.subg, 'graph2.gpickle')
+                nx.write_gpickle(self.subg, NX_SUBGRAPH_PATH)
 
                 new_unvisited.update(most_similar)
 
@@ -527,7 +544,7 @@ class GraphHandler(object):
             print("UPDATED GRAPH: %d nodes, %d edges" % (n_nodes, n_edges))
 
             # save progress
-            nx.write_gpickle(self.subg, 'graph2.gpickle')
+            nx.write_gpickle(self.subg, NX_SUBGRAPH_PATH)
 
             # with open('failed.json', 'w') as f:
             #     json.dump(list(failed), f)

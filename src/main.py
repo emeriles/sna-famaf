@@ -14,7 +14,11 @@ if __name__ == '__main__':
         'active_and_central',
         'build_users_graph',
         'build_k_degree_subgraph',
-        'build_k_degree_subgraph_2'
+        'build_k_degree_subgraph_2',
+        'save_graph_as_graphml',
+        'build_influence_points',
+        'get_users_followed_data',
+        'develop',
     ]
     parser.add_argument('action', metavar='ACTION', type=str,
                         help='action to be performed. One of {}'.format(action_choices), choices=action_choices)
@@ -42,6 +46,7 @@ if __name__ == '__main__':
     # from processing.dbmodels import reset_sqlite_db
     from preparation.get_active_and_central import ActiveAndCentral
     from preparation.twitter_users import GraphHandler
+    from processing._influencers_model.influence import InfluenceActions
 
     print('RUNNING {}'.format(args.action))
     if args.action == 'test_all_clfs':
@@ -62,6 +67,12 @@ if __name__ == '__main__':
         GraphHandler.build_k_closure_graph()
     if args.action == 'build_k_degree_subgraph_2':
         GraphHandler.build_k_closure_graph_2()
+    if args.action == 'save_graph_as_graphml':
+        InfluenceActions.save_graph_as_graphml()
+    if args.action == 'build_influence_points':
+        InfluenceActions.build_influence_points()
+    if args.action == 'get_users_followed_data':
+        GraphHandler.get_users_followed_data()
 
 
 # we need 5589 users
@@ -69,4 +80,3 @@ if __name__ == '__main__':
 # most central user in katz (new_downloaded):    297144638
 # 297144638_subgraph.gpickle -> number_of_nodes() == 4075
 # 1357911_subgraph.gpickle -> number_of_nodes() == 4849 ...
-

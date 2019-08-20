@@ -10,3 +10,4 @@ SQLAlchemy-Utils==0.33.3
 sklearn
 spacy==2.1.4
 nltk==3.4.1
+python-igraph==0.7.1.post6

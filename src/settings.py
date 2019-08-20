@@ -38,9 +38,13 @@ NX_GRAPH_PATH = '../data/graphs/subgraph_new_downloaded.gpickle'
 
 NX_SUBGRAPH_PATH = '../data/graphs/latest_subgraph.gpickle'
 
+NX_SUBGRAPH_PATH_ML = '../data/graphs/latest_subgraph.graphml'
+
 NX_GRAPH_FOLDER = '../data/graphs/'
 
 ACTIVE_AND_CENTRAL = "../data/processed/active_and_central.pickle"  # 206 users
+
+INFLUENCE_POINTS = '../data/processed/influence_points_new.pickle'
 
 MODELS_FOLDER_1_ = "../model/_1_one_user_learn_neighbours"
 
@@ -50,3 +54,24 @@ CENTRAL_USER_DATA = {
     'id': 393285785, ## NOT IN NEW_DOWNLOADED.gpickle!!!!!!!!!!!
     'screen_name': 'PCelayes'
 }
+
+USERS_FOLLOWED_DATA = '../data/graphs/users_followed_data.pickle'
+
+
+# Mati's
+GAMMA = .22
+C = 1.25
+#GAMMA = 0.45
+#C = 0.2
+#GAMMA = .45
+#C = .83
+#GAMMA = .22
+#C = .75
+MIN_INFLUENCERS = 100
+MAX_INFLUENCERS = 400
+STEP_INFLUENCERS = 25
+AVG_RANDOM_REPETITIONS_NEEDED = 5
+MAX_INFLUENCERS_PERCENT = .25
+EVAL_TRAIN = False
+GRIDSEARCH = False
+ALPHA = .5 #Participation of activity

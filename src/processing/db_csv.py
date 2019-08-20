@@ -85,7 +85,7 @@ class _Dataset(object):
             self._load_df()
         if isinstance(uid, str) or isinstance(uid, int):
             uid = [str(uid)]
-        filtered = self.df[(self.df.user__id_str.isin(uid)) | (self.df.retweeted_status__user__id_str.isin(uid))]
+        filtered = self.df[(self.df.user__id_str.isin(uid))]
         tweets = filtered.copy()
         own_tweets = tweets.loc[:, ('id_str', 'created_at')]
         rts = tweets.loc[:, ('retweeted_status__id_str', 'retweeted_status__created_at')]

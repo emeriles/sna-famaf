@@ -41,12 +41,12 @@ class _DatasetOneUserModel(_Dataset):
 
     def get_tweets_universe(self, uid, neighbours):
         """Override by child classes. Returns all tweets to be considered for training.
-        That is: uid's tweets and retweets, plus neighbours tweets in timeline.
+        That is: uid's retweets, plus neighbours tweets in timeline.
         All this pruned to 10000"""
         tweets = np.empty((0, 2))
         own_retweets = self.df[(self.df.user__id_str == uid) & pd.notna(self.df.retweeted_status__id_str)]
         tweets = np.concatenate((tweets, own_retweets.loc[:, ('id_str', 'created_at')]))
-        print('Len of own retweets is {}'.format(tweets.shape))
+        print('Len of own retweets (positive examples) is {}'.format(tweets.shape))
 
         for u in neighbours:
             tweets = np.concatenate((tweets, self.get_user_timeline(u)))
