@@ -29,7 +29,7 @@ class _DatasetInfluencersModel(_Dataset):
         self.tweets = None
         self.tt_min_score = None
 
-        self.get_tt_min_score()
+        # self.get_tt_min_score()
 
     def load_nx_subgraph(self):
         return nx.read_gpickle(NX_SUBGRAPH_PATH)
