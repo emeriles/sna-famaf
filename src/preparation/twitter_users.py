@@ -38,6 +38,7 @@ class GraphHandler(object):
         self.level = level
         self.graph_path_folder = folder_path
         self.uid = central_uid
+        self.followed_d = None
 
         # attempt to load full graph
         graph_path = self._get_file_path_full_graph(self.uid, self.level)
@@ -171,14 +172,22 @@ class GraphHandler(object):
             with open(USERS_FOLLOWED_DATA, 'wb') as save_file:
                 pickle.dump(users_followed, save_file)
 
+    def load_users_followed_data(self):
+        with open(USERS_FOLLOWED_DATA, 'rb') as f:
+            self.followed_d = pickle.load(f)
+        return self.followed_d
+
     def get_followed_user_ids(self, user_id):
 
-        # if self.g.out_degree(user_id):
-        #     followed = self.g.successors(user_id)
-        #     # print('fetched followed user_ids from loaded graph', end='\r')
-        #     return followed
+        if not self.followed_d:
+            self.load_users_followed_data()
 
-        # print('fetch from internet', end='\r')
+        if user_id in self.followed_d.keys():
+            followed = self.followed_d[user_id]
+            # print('fetched followed user_ids from loaded graph', end='\r')
+            return followed
+
+        print('fetch from internet', end='\r')
         retries = 0
         while True:
             try:
