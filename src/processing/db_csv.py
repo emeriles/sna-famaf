@@ -21,6 +21,8 @@ class _Dataset(object):
             self._load_df()
         most_active = sorted(self.df.user__id_str.groupby(self.df.user__id_str).count().iteritems(),
                              reverse=True, key=lambda x: x[1])
+        print('Sample of first 20 most active users:')
+        print(list(most_active)[:20])
         if just_ids:
             return [id_ for id_, counts in most_active][:N]
         return most_active[:N]
