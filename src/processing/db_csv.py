@@ -19,7 +19,7 @@ class _Dataset(object):
     def get_most_active_users(self, N=1000, just_ids=True):
         if self.df.empty:
             self._load_df()
-        most_active = sorted(self.df.id_str.groupby(self.df.user__id_str).count().iteritems(),
+        most_active = sorted(self.df.user__id_str.groupby(self.df.user__id_str).count().iteritems(),
                              reverse=True, key=lambda x: x[1])
         if just_ids:
             return [id_ for id_, counts in most_active][:N]
