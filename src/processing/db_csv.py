@@ -58,7 +58,7 @@ class _Dataset(object):
         print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
               format(df.shape, original_shape, self.delta_minutes))
 
-        self._load_text_df()
+        # self._load_text_df()
         return df
 
     def _load_text_df(self):
