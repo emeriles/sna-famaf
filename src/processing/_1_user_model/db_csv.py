@@ -19,6 +19,7 @@ class _DatasetOneUserModel(_Dataset):
         super().__init__(csv_path=csv_path, txt_path=txt_path, delta_minutes_filter=delta_minutes_filter)
 
     def load_nx_subgraph(self):
+        print('Loading graph from {}'.format(NX_SUBGRAPH_PATH))
         return nx.read_gpickle(NX_SUBGRAPH_PATH)
 
     def get_level2_neighbours(self, user_id):
@@ -37,6 +38,7 @@ class _DatasetOneUserModel(_Dataset):
         # Remove None elements and own user (TODO: see why this happens)
         neighbour_users = [u_id for u_id in neighbourhood if u_id and u_id != user_id]
 
+        print('Fetched {} level 2 neighbourhs for user {}.'.format(len(neighbour_users), user_id))
         return neighbour_users
 
     def get_tweets_universe(self, uid, neighbours):
@@ -102,6 +104,15 @@ class _DatasetOneUserModel(_Dataset):
         y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
         end = datetime.datetime.now() - start
         print('Done Extracting Features', end)
+
+        x_sum = sum(sum(X))
+        y_sum = sum(y)
+        print('\tSum of X :{}\n\tSum of y: {}'.format(x_sum, y_sum))
+        if sum(sum(X)) == 0:
+            raise Exception("Zero matrix X")
+        if sum(y) == 0:
+            raise Exception("Zero matrix y")
+
         return X, y
 
     def extract_features(self, tweets, neighbour_users, own_user, timedelta=None):
