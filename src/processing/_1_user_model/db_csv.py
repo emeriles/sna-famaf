@@ -105,13 +105,13 @@ class _DatasetOneUserModel(_Dataset):
         end = datetime.datetime.now() - start
         print('Done Extracting Features', end)
 
-        x_sum = sum(sum(X))
-        y_sum = sum(y)
-        print('\tSum of X :{}\n\tSum of y: {}'.format(x_sum, y_sum))
-        if sum(sum(X)) == 0:
-            raise Exception("Zero matrix X")
-        if sum(y) == 0:
-            raise Exception("Zero matrix y")
+        # x_sum = sum(sum(X))
+        # y_sum = sum(y)
+        # print('\tSum of X :{}\n\tSum of y: {}'.format(x_sum, y_sum))
+        # if sum(sum(X)) == 0:
+        #     raise Exception("Zero matrix X")
+        # if sum(y) == 0:
+        #     raise Exception("Zero matrix y")
 
         return X, y
 
