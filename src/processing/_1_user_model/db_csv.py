@@ -55,6 +55,8 @@ class _DatasetOneUserModel(_Dataset):
 
         print('done getting tweets universe. Shape is ', tweets.shape)
         # prune to max of 10000
+        if len(tweets) > 10000:
+            print('\tDataset was truncated to 10000 tweets')
         return tweets[:10000]
 
     def get_neighbourhood(self, uid):
