@@ -23,7 +23,10 @@ class InfluenceNode(object):
         # if self.user==None:
         #     print(self.user_id)
         # else:
-        self.activity = counts[str(self.user_id)]
+        try:
+            self.activity = counts[str(self.user_id)]
+        except KeyError:
+            self.activity = 0
         # self.activity = user_instance.retweets.count()
         # s.close()
 
@@ -49,9 +52,9 @@ class Grafo(object):
         nodes = []
         eigen = self.graph.eigenvector_centrality()
         betw = self.graph.betweenness()
-        betw = map(lambda x: x / max(betw), betw)
-        eccentricity = g.graph.eccentricity()
-        eccentricity = map(lambda x: x / max(eccentricity), eccentricity)
+        betw = list(map(lambda x: x / max(betw), betw))
+        eccentricity = self.graph.eccentricity()
+        eccentricity = list(map(lambda x: x / max(eccentricity), eccentricity))
         for i, node in enumerate(self.graph.vs):
             nodes.append(InfluenceNode(node_id=node['id'],
                                        centrality=dict(
@@ -79,7 +82,8 @@ class InfluenceActions(object):
         g = Grafo()
         influence_points = g.get_influence_nodes()
         print("-Calculating influence of each node..")
-        df = DatasetInfluencersModel.df_filtered
+        DatasetInfluencersModel._load_df()
+        df = DatasetInfluencersModel.df
         counts = df.user__id_str.groupby(df.user__id_str).count()
         for point in influence_points:
             point.load_user_counts(counts)
@@ -99,4 +103,3 @@ class InfluenceActions(object):
         with open(filename, 'r+') as f:
             influencers = pickle.load(f)
         return influencers
-

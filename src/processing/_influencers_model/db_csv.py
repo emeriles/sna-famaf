@@ -238,6 +238,12 @@ class _DatasetInfluencersModel(_Dataset):
             X[:, j] = col.reshape((nrows, 1))
             # print(X[:, j])
 
+        rts_counts = self.df.retweeted_status__id_str.groupby(self.df.retweeted_status__id_str).count()
+
+        y = rts_counts[dataset[:, 0]]
+
+        # y[idx] = 1 if len(users_with_tweet) >= self.tt_min_score else 0
+
         # for idx, tweet in enumerate(dataset):
         #     users_with_tweet = tweet.users_retweeted
         #     users_ids = [str(u.id) for u in users_with_tweet]
@@ -254,10 +260,10 @@ class _DatasetInfluencersModel(_Dataset):
         #         X[idx, nfeats:] = ft_sentence_vectors[idx].split(" ")[:-1]
         #     y[idx] = 1 if len(users_with_tweet) >= self.tt_min_score else 0
 
-        if sum(sum(X)) == 0:
-            raise Exception("Zero matrix X")
-        if sum(y) == 0:
-            raise Exception("Zero matrix y")
+        # if sum(sum(X)) == 0:
+        #     raise Exception("Zero matrix X")
+        # if sum(y) == 0:
+        #     raise Exception("Zero matrix y")
         return X, y
 
     # def extract_features(self, tweets, neighbour_users, own_user, timedelta=None):
