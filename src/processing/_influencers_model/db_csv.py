@@ -28,6 +28,9 @@ class _DatasetInfluencersModel(_Dataset):
         self.influencers_ids = None
         self.tweets = None
         self.tt_min_score = None
+        self.lda = None
+        self.tw_lda = None
+        self.fasttext = None
 
         # self.get_tt_min_score()
 
@@ -64,11 +67,13 @@ class _DatasetInfluencersModel(_Dataset):
         return users_considered
 
     def load_tweets_filtered(self, min_rt_allowed=4, percentage=100):
+        if self.df.empty:
+            self._load_df()
         print("Loading tweets from db...")
         from processing._influencers_model.influence import InfluenceActions
         self.influence_points = InfluenceActions.load_influencers_from_pickle(INFLUENCE_POINTS)
         if not self.target_users:
-            self.load_influencers_id_list(self.influence_points, random=False)
+            self.load_influencers_id_list(random=False)
 
         tweets = np.empty((0, 2))
 
@@ -235,7 +240,10 @@ class _DatasetInfluencersModel(_Dataset):
             n_tl_filtered = self.get_user_timeline(u)
             col = np.isin(dataset[:, 0], n_tl_filtered[:, 0])
             #             print(X[:, j].shape, col.reshape((11,1)))
-            X[:, j] = col.reshape((nrows, 1))
+            # print('SHAPE X[:, j]: {}...'.format(X[:, j].shape))
+            # print('SHAPE col.reshape((nrows, 1)): {}...'.format(col.reshape((nrows, 1)).shape))
+            # print('SHAPE col: {}...'.format(col.shape))
+            X[:, j] = col
             # print(X[:, j])
 
         rts_counts = self.df.retweeted_status__id_str.groupby(self.df.retweeted_status__id_str).count()

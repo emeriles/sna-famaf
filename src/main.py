@@ -18,6 +18,7 @@ if __name__ == '__main__':
         'save_graph_as_graphml',
         'build_influence_points',
         'get_users_followed_data',
+        'experiment_influencers',
         'develop',
     ]
     parser.add_argument('action', metavar='ACTION', type=str,
@@ -47,6 +48,7 @@ if __name__ == '__main__':
     from preparation.get_active_and_central import ActiveAndCentral
     from preparation.twitter_users import GraphHandler
     from processing._influencers_model.influence import InfluenceActions
+    from processing._influencers_model.experiment import Experiments
 
     print('RUNNING {}'.format(args.action))
     if args.action == 'test_all_clfs':
@@ -73,6 +75,8 @@ if __name__ == '__main__':
         InfluenceActions.build_influence_points()
     if args.action == 'get_users_followed_data':
         GraphHandler.get_users_followed_data()
+    if args.action == 'experiment_influencers':
+        Experiments.experiment()
 
 
 # we need 5589 users

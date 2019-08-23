@@ -100,6 +100,6 @@ class InfluenceActions(object):
     @staticmethod
     def load_influencers_from_pickle(filename):
         print("Loading influence points from pickle {}".format(filename))
-        with open(filename, 'r+') as f:
+        with open(filename, 'rb+') as f:
             influencers = pickle.load(f)
         return influencers

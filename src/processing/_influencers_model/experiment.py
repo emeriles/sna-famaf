@@ -2,13 +2,14 @@ import pickle
 
 from processing._influencers_model.db_csv import DatasetInfluencersModel
 from processing._influencers_model.influence import InfluenceActions
-from settings import MIN_INFLUENCERS, MAX_INFLUENCERS, STEP_INFLUENCERS, AVG_RANDOM_REPETITIONS_NEEDED, INFLUENCE_POINTS
+from settings import MIN_INFLUENCERS, MAX_INFLUENCERS, STEP_INFLUENCERS, AVG_RANDOM_REPETITIONS_NEEDED, \
+    INFLUENCE_POINTS, XY_CACHE_FOLDER
 
 
 class Experiments(object):
 
     @staticmethod
-    def _experiment(d, influence_points, with_influencers=True, communities_distributed=False, folder='.', full=False):
+    def _experiment(d, influence_points, with_influencers=True, communities_distributed=False, folder=XY_CACHE_FOLDER, full=False):
 
         experiments = list()
         experiments.append('social')
@@ -65,8 +66,8 @@ class Experiments(object):
     def experiment():
         import sys
         import os
-        FOLDER = sys.argv[1]
-        os.mkdir(FOLDER)
+        # FOLDER = sys.argv[1]
+        # os.mkdir(FOLDER)
         d = DatasetInfluencersModel
         # INFLUENCE_FILE = "influence_points_{}.pickle".format('50_10_40')
         # INFLUENCE_FILE = "influence_points_{}.pickle".format('new')
@@ -77,7 +78,6 @@ class Experiments(object):
                                 influence_points,
                                 with_influencers=True,
                                 communities_distributed=False,
-                                folder=FOLDER,
+                                folder=XY_CACHE_FOLDER,
                                 full=False)
         # only_one_community()
-        d.close_session()
