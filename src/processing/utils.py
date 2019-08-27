@@ -8,11 +8,11 @@ from collections import defaultdict
 import numpy as np
 
 from processing.dbmodels import open_session, User
-from settings import NX_GRAPH_PATH, ACTIVE_AND_CENTRAL
+from settings import NX_GRAPH_PATH, ACTIVE_AND_CENTRAL, NX_SUBGRAPH_PATH
 
 
 def load_nx_graph():
-    return nx.read_gpickle(NX_GRAPH_PATH)
+    return nx.read_gpickle(NX_SUBGRAPH_PATH)
 
 
 # def load_gt_graph():
