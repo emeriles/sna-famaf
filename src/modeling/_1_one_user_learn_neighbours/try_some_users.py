@@ -35,8 +35,11 @@ def try_some_users(delta_minutes):
 
     # pending_user_ids = [uid for uid,_,_ in TEST_USERS_ALL]
 
-    for user_id in get_test_users_ids()[:3]:
+    for user_id in get_test_users_ids():
             # [#74153376, 1622441, 117335842,
             #         76133133, 33524608, 85861402]:
         print('Try some users for user {}'.format(user_id))
-        worker(user_id, delta_minutes=delta_minutes)
+        try:
+            worker(user_id, delta_minutes=delta_minutes)
+        except ValueError as e:
+            print(e)
