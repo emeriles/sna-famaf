@@ -45,21 +45,29 @@ class _DatasetOneUserModel(_Dataset):
         """Override by child classes. Returns all tweets to be considered for training.
         That is: uid's retweets, plus neighbours tweets in timeline.
         All this pruned to 10000"""
-        tweets = np.empty((0, 2))
-        own_retweets = self.df[(self.df.user__id_str == uid) & pd.notna(self.df.retweeted_status__id_str)]
-        tweets = np.concatenate((tweets, own_retweets.loc[:, ('id_str', 'created_at')]))
-        print('Len of own retweets (positive examples) is {}'.format(tweets.shape))
+        own_tweets = self.get_user_timeline(uid)
+        # own_retweets = self.df[(self.df.user__id_str == uid) & pd.notna(self.df.retweeted_status__id_str)]
+        own_tweets_len = own_tweets.shape[0]
+        # tweets = np.concatenate((tweets, own_retweets.loc[:, ('id_str', 'created_at')]))
+        print('Len of own timeline (possible positive examples) is {}'.format(own_tweets_len))
 
+        n_tweets = np.empty((0, 2))
         for u in neighbours:
-            tweets = np.concatenate((tweets, self.get_user_timeline(u)))
-            if len(tweets) > 10000:
-                break
+            n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u)))
 
-        print('done getting tweets universe. Shape is ', tweets.shape)
+        print('Done getting neighbour tweets universe. Shape is ', n_tweets.shape)
+
         # prune to max of 10000
-        if len(tweets) > 10000:
+        n_tweets_len = 10000 - own_tweets_len
+        if len(n_tweets) > n_tweets_len:
+            idxs = np.random.choice(len(n_tweets), n_tweets_len, replace=False)
+            n_tweets = n_tweets[idxs]
             print('\tDataset was truncated to 10000 tweets')
-        return tweets[:10000]
+
+        tweets = np.empty((0, 2))
+        tweets = np.concatenate((tweets, n_tweets))
+
+        return tweets
 
     def get_neighbourhood(self, uid):
         """override with child classes.

@@ -89,11 +89,17 @@ class _Dataset(object):
             uid = [str(uid)]
         filtered = self.df[(self.df.user__id_str.isin(uid))]
         tweets = filtered.copy()
-        own_tweets = tweets.loc[:, ('id_str', 'created_at')]
-        rts = tweets.loc[:, ('retweeted_status__id_str', 'retweeted_status__created_at')]
+
+        own_tweets = tweets[pd.isna(tweets.retweeted_status__id_str)]
+        own_tweets = own_tweets.loc[:, ('id_str', 'created_at')]
+
+        rts = tweets[pd.notna(tweets.retweeted_status__id_str)]
+        rts = rts.loc[:, ('retweeted_status__id_str', 'created_at')]
         rts.rename({'retweeted_status__id_str': 'id_str',
-                    'retweeted_status__created_at': 'created_at'},
+                    # 'retweeted_status__created_at': 'created_at'
+                    },
                    axis='columns', inplace=True)
+
         timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
         return timeline
 
