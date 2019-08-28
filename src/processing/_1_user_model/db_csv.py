@@ -100,7 +100,7 @@ class _DatasetOneUserModel(_Dataset):
         for j, u in enumerate(neighbour_users):
             to_process -= 1
             percentage = 100.0 - ((to_process / tweets.shape[0]) * 100)
-            print('Avance: %{}'.format(percentage), end='\r')
+            # print('Avance: %{}'.format(percentage), end='\r')
 
             n_tl_filtered = self.get_user_timeline(u)
             col = np.isin(tweets[:, 0], n_tl_filtered[:, 0])
