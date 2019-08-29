@@ -1,0 +1,336 @@
+(sna-famaf-ve) mmeriles@zx81:~/sna-famaf/src$ time python main.py try_some_users 0 --data full
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING try_some_users
+Try some users for user 81289660
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8))           Time delta is: None mins
+Len of own retweets (positive examples) is (687, 2)
+done getting tweets universe. Shape is  (11610, 2)
+       Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 475)
+Done Extracting Features 0:04:33.078254
+         START SVC
+# Tuning hyper-parameters for f1
+(7000, 475) (2000, 475) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6516
+        True       1.00      0.99      1.00       484
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1862
+        True       1.00      0.99      1.00       138
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+         END SVC
+Try some users for user 7095352
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8))           Time delta is: None mins
+Len of own retweets (positive examples) is (179, 2)
+done getting tweets universe. Shape is  (11447, 2)
+       Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 618)
+Done Extracting Features 0:05:51.465884
+         START SVC
+# Tuning hyper-parameters for f1
+(7000, 618) (2000, 618) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no pr
+edicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6875
+        True       1.00      1.00      1.00       125
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1964
+        True       1.00      1.00      1.00        36
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+         END SVC
+Try some users for user 1756721
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8))           Time delta is: None mins
+Len of own retweets (positive examples) is (9, 2)
+done getting tweets universe. Shape is  (11365, 2)
+       Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 970)
+Done Extracting Features 0:08:41.961972
+         START SVC
+# Tuning hyper-parameters for f1
+(7000, 970) (2000, 970) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6994
+        True       1.00      1.00      1.00         6
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1998
+        True       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+         END SVC
+
+real   21m6.155s
+user   21m57.011s
+sys    0m29.347s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+take 2:
+
+(sna-famaf-ve) mmeriles@zx81:~/sna-famaf/src$ time python main.py try_some_users 0 --data full
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING try_some_users
+Try some users for user 35391622
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8))           Time delta is: None mins
+Len of own retweets (positive examples) is (6, 2)
+done getting tweets universe. Shape is  (10238, 2)
+       Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 421)
+Done Extracting Features 0:03:43.508045
+         START SVC
+# Tuning hyper-parameters for f1
+(7000, 421) (2000, 421) True True
+
+
+
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6996
+        True       1.00      1.00      1.00         4
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1999
+        True       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+         END SVC
+Try some users for user 18779247
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8))           Time delta is: None mins
+Len of own retweets (positive examples) is (55, 2)
+done getting tweets universe. Shape is  (12554, 2)
+       Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 870)
+Done Extracting Features 0:07:42.160048
+         START SVC
+# Tuning hyper-parameters for f1
+(7000, 870) (2000, 870) True True
+
+
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6961
+        True       1.00      1.00      1.00        39
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1989
+        True       1.00      1.00      1.00        11
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+         END SVC
+Try some users for user 196362385
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8))           Time delta is: None mins
+Len of own retweets (positive examples) is (137, 2)
+done getting tweets universe. Shape is  (12568, 2)
+       Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 574)
+Done Extracting Features 0:04:53.886374
+         START SVC
+# Tuning hyper-parameters for f1
+(7000, 574) (2000, 574) True True
+
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6904
+        True       1.00      1.00      1.00        96
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1973
+        True       1.00      1.00      1.00        27
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+         END SVC
+
+real   18m19.856s
+user   19m12.775s
+sys    0m27.133s

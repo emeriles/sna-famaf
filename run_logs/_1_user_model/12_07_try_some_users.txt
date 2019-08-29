@@ -1,0 +1,38 @@
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6994
+        True       1.00      1.00      1.00         6
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1998
+        True       1.00      1.00      1.00         2
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+                        END SVC
+
+real    18m24.683s
+user    19m27.746s
+sys     0m26.552s
