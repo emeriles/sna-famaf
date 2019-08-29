@@ -96,7 +96,7 @@ class _Dataset(object):
             own_tweets = tweets[pd.isna(tweets.retweeted_status__id_str)]
             own_tweets = own_tweets.loc[:, ('id_str', 'created_at')]
         else:
-            own_tweets = np.empty((0, 2))
+            own_tweets = pd.DataFrame()
 
         if with_retweets:
             rts = tweets[pd.notna(tweets.retweeted_status__id_str)]
@@ -106,7 +106,7 @@ class _Dataset(object):
                         },
                        axis='columns', inplace=True)
         else:
-            rts = np.empty((0, 2))
+            rts = pd.DataFrame()
 
         timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
         return timeline
