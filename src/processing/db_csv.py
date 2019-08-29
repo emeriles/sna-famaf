@@ -77,9 +77,11 @@ class _Dataset(object):
             self._load_df()
         return self.df.user__id_str.unique()
 
-    def get_user_timeline(self, uid):
+    def get_user_timeline(self, uid, with_original=True, with_retweets=True):
         """
         Returns [(tweet_id, creted_at)] for a given user id or list of users ids
+        :param with_original:
+        :param with_retweets:
         :param uid:
         :return:
         """
@@ -90,15 +92,21 @@ class _Dataset(object):
         filtered = self.df[(self.df.user__id_str.isin(uid))]
         tweets = filtered.copy()
 
-        own_tweets = tweets[pd.isna(tweets.retweeted_status__id_str)]
-        own_tweets = own_tweets.loc[:, ('id_str', 'created_at')]
+        if with_original:
+            own_tweets = tweets[pd.isna(tweets.retweeted_status__id_str)]
+            own_tweets = own_tweets.loc[:, ('id_str', 'created_at')]
+        else:
+            own_tweets = np.empty((0, 2))
 
-        rts = tweets[pd.notna(tweets.retweeted_status__id_str)]
-        rts = rts.loc[:, ('retweeted_status__id_str', 'created_at')]
-        rts.rename({'retweeted_status__id_str': 'id_str',
-                    # 'retweeted_status__created_at': 'created_at'
-                    },
-                   axis='columns', inplace=True)
+        if with_retweets:
+            rts = tweets[pd.notna(tweets.retweeted_status__id_str)]
+            rts = rts.loc[:, ('retweeted_status__id_str', 'created_at')]
+            rts.rename({'retweeted_status__id_str': 'id_str',
+                        # 'retweeted_status__created_at': 'created_at'
+                        },
+                       axis='columns', inplace=True)
+        else:
+            rts = np.empty((0, 2))
 
         timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
         return timeline

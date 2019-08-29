@@ -45,7 +45,7 @@ class _DatasetOneUserModel(_Dataset):
         """Override by child classes. Returns all tweets to be considered for training.
         That is: uid's retweets, plus neighbours tweets in timeline.
         All this pruned to 10000"""
-        own_tweets = self.get_user_timeline(uid)
+        own_tweets = self.get_user_timeline(uid, with_original=False, with_retweets=True)
         # own_retweets = self.df[(self.df.user__id_str == uid) & pd.notna(self.df.retweeted_status__id_str)]
         own_tweets_len = own_tweets.shape[0]
         # tweets = np.concatenate((tweets, own_retweets.loc[:, ('id_str', 'created_at')]))
@@ -108,7 +108,7 @@ class _DatasetOneUserModel(_Dataset):
             X[:, j] = col.reshape((nrows, 1))
             # print(X[:, j])
 
-        own_tl_filtered = self.get_user_timeline(own_user)
+        own_tl_filtered = self.get_user_timeline(own_user, with_original=False, with_retweets=True)
         y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
         end = datetime.datetime.now() - start
         print('Done Extracting Features', end)
