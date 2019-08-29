@@ -1,0 +1,865 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING try_some_users
+Try some users for user 163154530
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 344 level 2 neighbourhs for user 163154530.
+Len of own timeline (possible positive examples) is 3019
+Done getting neighbour tweets universe. Shape is  (797263, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 344)
+Done Extracting Features 0:04:36.675602
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 344) (2000, 344) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      4887
+        True       1.00      0.99      1.00      2113
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      1396
+        True       1.00      0.99      0.99       604
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      0.99      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+			END SVC
+Try some users for user 14707350
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 281 level 2 neighbourhs for user 14707350.
+Len of own timeline (possible positive examples) is 3020
+Done getting neighbour tweets universe. Shape is  (590128, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 281)
+Done Extracting Features 0:03:21.525991
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 281) (2000, 281) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      4885
+        True       1.00      0.95      0.97      2115
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.97      0.98      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1396
+        True       1.00      0.95      0.98       604
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.98      0.98      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 317463387
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 837 level 2 neighbourhs for user 317463387.
+Len of own timeline (possible positive examples) is 3089
+Done getting neighbour tweets universe. Shape is  (1987661, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 837)
+Done Extracting Features 0:11:31.297814
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 837) (2000, 837) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      4837
+        True       1.00      0.99      0.99      2163
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      0.99      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      1382
+        True       0.99      0.99      0.99       618
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.99      0.99      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 145240604
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 307 level 2 neighbourhs for user 145240604.
+Len of own timeline (possible positive examples) is 3160
+Done getting neighbour tweets universe. Shape is  (732874, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 307)
+Done Extracting Features 0:04:05.727859
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 307) (2000, 307) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      4788
+        True       1.00      0.98      0.99      2212
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.99      0.99      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      1368
+        True       0.99      0.97      0.98       632
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.99      0.99      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 143852870
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 600 level 2 neighbourhs for user 143852870.
+Len of own timeline (possible positive examples) is 3162
+Done getting neighbour tweets universe. Shape is  (1429855, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 600)
+Done Extracting Features 0:08:22.199466
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 600) (2000, 600) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      4786
+        True       1.00      0.98      0.99      2214
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.99      0.99      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      1367
+        True       1.00      0.98      0.99       633
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       1.00      0.99      0.99      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 150069885
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 580 level 2 neighbourhs for user 150069885.
+Len of own timeline (possible positive examples) is 3147
+Done getting neighbour tweets universe. Shape is  (1482296, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 580)
+Done Extracting Features 0:08:41.840447
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 580) (2000, 580) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      4797
+        True       1.00      0.97      0.98      2203
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.98      0.99      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      1371
+        True       1.00      0.98      0.99       629
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.99      0.99      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 62363015
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 792 level 2 neighbourhs for user 62363015.
+Len of own timeline (possible positive examples) is 3157
+Done getting neighbour tweets universe. Shape is  (1853091, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 792)
+Done Extracting Features 0:10:35.826407
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 792) (2000, 792) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      4790
+        True       1.00      0.99      0.99      2210
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      0.99      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1369
+        True       1.00      1.00      1.00       631
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+			END SVC
+Try some users for user 42775597
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 464 level 2 neighbourhs for user 42775597.
+Len of own timeline (possible positive examples) is 3021
+Done getting neighbour tweets universe. Shape is  (1151785, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 464)
+Done Extracting Features 0:06:47.643260
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 464) (2000, 464) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      4882
+        True       0.98      0.96      0.97      2118
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.98      0.98      0.98      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      1395
+        True       0.98      0.96      0.97       605
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.98      0.98      0.98      2000
+weighted avg       0.98      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 22519602
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 778 level 2 neighbourhs for user 22519602.
+Len of own timeline (possible positive examples) is 3236
+Done getting neighbour tweets universe. Shape is  (1912282, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 778)
+Done Extracting Features 0:11:06.673827
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 778) (2000, 778) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      4735
+        True       1.00      0.99      1.00      2265
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1353
+        True       1.00      1.00      1.00       647
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+			END SVC
+Try some users for user 184892265
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 426 level 2 neighbourhs for user 184892265.
+Len of own timeline (possible positive examples) is 3050
+Done getting neighbour tweets universe. Shape is  (1097876, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 426)
+Done Extracting Features 0:06:25.922769
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 426) (2000, 426) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      4859
+        True       0.99      0.95      0.97      2141
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.97      0.98      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      1388
+        True       0.98      0.90      0.94       612
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.97      0.95      0.96      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 31423048
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 725 level 2 neighbourhs for user 31423048.
+Len of own timeline (possible positive examples) is 3055
+Done getting neighbour tweets universe. Shape is  (1811774, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 725)
+Done Extracting Features 0:10:27.497192
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 725) (2000, 725) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      4861
+        True       1.00      0.99      1.00      2139
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1389
+        True       1.00      0.99      1.00       611
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+			END SVC
+Try some users for user 55100261
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 516 level 2 neighbourhs for user 55100261.
+Len of own timeline (possible positive examples) is 3004
+Done getting neighbour tweets universe. Shape is  (1218534, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 516)
+Done Extracting Features 0:07:05.088205
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 516) (2000, 516) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      4894
+        True       1.00      0.96      0.98      2106
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.98      0.98      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1399
+        True       0.99      0.90      0.94       601
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.98      0.95      0.96      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 69962890
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 672 level 2 neighbourhs for user 69962890.
+Len of own timeline (possible positive examples) is 3198
+Done getting neighbour tweets universe. Shape is  (1612939, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 672)
+Done Extracting Features 0:09:27.939375
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 672) (2000, 672) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      4761
+        True       0.99      0.98      0.99      2239
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.99      0.99      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      1361
+        True       1.00      0.99      0.99       639
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.99      0.99      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 166122395
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 497 level 2 neighbourhs for user 166122395.
+Len of own timeline (possible positive examples) is 3044
+Done getting neighbour tweets universe. Shape is  (1157206, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 497)
+Done Extracting Features 0:06:36.228594
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 497) (2000, 497) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      4868
+        True       0.99      0.99      0.99      2132
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.99      0.99      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      1391
+        True       1.00      0.99      0.99       609
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       1.00      0.99      0.99      2000
+weighted avg       1.00      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 138814032
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 521 level 2 neighbourhs for user 138814032.
+Len of own timeline (possible positive examples) is 2943
+Done getting neighbour tweets universe. Shape is  (1232210, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 521)
+Done Extracting Features 0:07:19.638683
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 521) (2000, 521) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      4913
+        True       0.89      0.98      0.93      2087
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.94      0.96      0.95      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.94      0.94      1403
+        True       0.86      0.86      0.86       597
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.90      0.90      0.90      2000
+weighted avg       0.92      0.92      0.92      2000
+
+
+			END SVC
+Try some users for user 169982171
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 595 level 2 neighbourhs for user 169982171.
+Len of own timeline (possible positive examples) is 3026
+Done getting neighbour tweets universe. Shape is  (1405030, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 595)
+Done Extracting Features 0:08:16.496839
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 595) (2000, 595) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      4880
+        True       0.99      0.98      0.99      2120
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.99      0.99      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      1395
+        True       0.98      0.98      0.98       605
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.98      0.98      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 1198823724
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 409 level 2 neighbourhs for user 1198823724.
+Len of own timeline (possible positive examples) is 3038
+Done getting neighbour tweets universe. Shape is  (966454, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 409)
+Done Extracting Features 0:05:34.328707
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 409) (2000, 409) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      4873
+        True       1.00      0.98      0.99      2127
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       1.00      0.99      0.99      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      1393
+        True       1.00      0.98      0.99       607
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       1.00      0.99      0.99      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 114510872
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 705 level 2 neighbourhs for user 114510872.
+Len of own timeline (possible positive examples) is 3016
+Done getting neighbour tweets universe. Shape is  (1738791, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 705)
+Done Extracting Features 0:10:16.144359
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 705) (2000, 705) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      4888
+        True       0.99      0.96      0.97      2112
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.98      0.98      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1397
+        True       0.99      0.96      0.97       603
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.99      0.98      0.98      2000
+weighted avg       0.99      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 26935676
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 473 level 2 neighbourhs for user 26935676.
+Len of own timeline (possible positive examples) is 3195
+Done getting neighbour tweets universe. Shape is  (1137923, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 473)
+Done Extracting Features 0:06:31.174321
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 473) (2000, 473) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      4763
+        True       1.00      1.00      1.00      2237
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1361
+        True       1.00      1.00      1.00       639
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+			END SVC
+Try some users for user 16012783
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 305 level 2 neighbourhs for user 16012783.
+Len of own timeline (possible positive examples) is 3137
+Done getting neighbour tweets universe. Shape is  (732586, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 305)
+Done Extracting Features 0:03:59.405682
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 305) (2000, 305) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      4804
+        True       1.00      1.00      1.00      2196
+
+   micro avg       1.00      1.00      1.00      7000
+   macro avg       1.00      1.00      1.00      7000
+weighted avg       1.00      1.00      1.00      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1373
+        True       1.00      1.00      1.00       627
+
+   micro avg       1.00      1.00      1.00      2000
+   macro avg       1.00      1.00      1.00      2000
+weighted avg       1.00      1.00      1.00      2000
+
+
+			END SVC
