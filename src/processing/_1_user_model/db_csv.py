@@ -65,7 +65,7 @@ class _DatasetOneUserModel(_Dataset):
             print('\tDataset was truncated to 10000 tweets')
 
         tweets = np.empty((0, 2))
-        tweets = np.concatenate((tweets, n_tweets))
+        tweets = np.concatenate((tweets, own_tweets, n_tweets))
 
         return tweets
 
