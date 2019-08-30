@@ -1,6 +1,7 @@
-from multiprocessing import Manager, Pool
-from sklearn.metrics import f1_score, precision_score, recall_score
 import json
+from multiprocessing import Manager, Pool
+
+from sklearn.metrics import f1_score, precision_score, recall_score
 
 from modeling._1_one_user_learn_neighbours.model import OneUserModel
 from processing._1_user_model.db_csv import DatasetOneUserModel
@@ -62,10 +63,13 @@ def compute_scores(delta_minutes):
     lock = manager.Lock()
 
     for uid in uids:
-        worker(uid, f1s_train, f1s_valid, f1s_testv,
-                                       precisions_train, precisions_valid, precisions_testv,
-                                       recalls_train, recalls_valid, recalls_testv,
-                                       lock, delta_minutes)
+        try:
+            worker(uid, f1s_train, f1s_valid, f1s_testv,
+                                           precisions_train, precisions_valid, precisions_testv,
+                                           recalls_train, recalls_valid, recalls_testv,
+                                           lock, delta_minutes)
+        except ValueError as e:
+            print('FAILED FOR USER {}. Exception: {}'.format(uid, e))
     pool.close()
     pool.join()
 
