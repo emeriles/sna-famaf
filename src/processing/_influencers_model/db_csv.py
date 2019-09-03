@@ -231,6 +231,7 @@ class _DatasetInfluencersModel(_Dataset):
             X = np.zeros((nrows, nfeats))
 
         to_process = X.shape[0]
+        print('Extracting features X shape is :', X.shape)
         for j, u in enumerate(self.influencers_ids):
             to_process -= 1
             percentage = 100.0 - ((to_process / X.shape[0]) * 100)
