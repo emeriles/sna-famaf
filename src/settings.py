@@ -48,7 +48,7 @@ INFLUENCE_POINTS = '../data/processed/influence_points_new.pickle'
 
 MODELS_FOLDER_1_ = "../model/_1_one_user_learn_neighbours"
 
-SCORES_FOLDER_1_ =  "modeling/_1_one_user_learn_neighbours/scores"
+SCORES_FOLDER_1_ = "modeling/_1_one_user_learn_neighbours/scores"
 
 CENTRAL_USER_DATA = {
     'id': 393285785, ## NOT IN NEW_DOWNLOADED.gpickle!!!!!!!!!!!

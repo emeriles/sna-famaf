@@ -1,4 +1,5 @@
 import json
+import os
 from multiprocessing import Manager, Pool
 
 from sklearn.metrics import f1_score, precision_score, recall_score
@@ -72,6 +73,9 @@ def compute_scores(delta_minutes):
             print('FAILED FOR USER {}. Exception: {}'.format(uid, e))
     pool.close()
     pool.join()
+
+    if not os.path.exists(SCORES_FOLDER_1_):
+        os.makedirs(SCORES_FOLDER_1_)
 
     with open(SCORES_FOLDER_1_ + '/f1s_train_svc.json', 'w') as f:
         json.dump(dict(f1s_train), f)
