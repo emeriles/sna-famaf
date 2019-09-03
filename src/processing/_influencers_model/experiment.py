@@ -45,20 +45,21 @@ class Experiments(object):
                     #    d.load_tw_lda(num_topics=experiment.split("tw_lda_")[-1])
                     if 'fasttext' in experiment:
                         d.load_fasttext()
-                    suffix = "_{}i_{}".format(number, experiment)
+                    time_window = d.delta_minutes
+                    suffix = "_{}i_{}_{}m".format(number, experiment, time_window)
                     if repetitions != 0:
                         suffix += "_{}".format(str(repetitions))
                     x_train, y_train = d.extract_features(dataset="train",
                                                           with_influencers=with_influencers)
-                    with open('{}/X_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}/_infl_X_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(x_train, save_file)
-                    with open('{}/y_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}/_infl_y_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(y_train, save_file)
                     x_test, y_test = d.extract_features(dataset="test",
                                                         with_influencers=with_influencers)
-                    with open('{}/X_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}/_infl_X_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(x_test, save_file)
-                    with open('{}/y_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}/_infl_y_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(y_test, save_file)
                     repetitions += 1
 

@@ -229,7 +229,6 @@ class _DatasetInfluencersModel(_Dataset):
             X = np.zeros((nrows, nfeats + 300))
         else:
             X = np.zeros((nrows, nfeats))
-        y = np.zeros(nrows)
 
         to_process = X.shape[0]
         for j, u in enumerate(self.influencers_ids):
@@ -248,7 +247,11 @@ class _DatasetInfluencersModel(_Dataset):
 
         rts_counts = self.df.retweeted_status__id_str.groupby(self.df.retweeted_status__id_str).count()
 
-        y = rts_counts[dataset[:, 0]]
+        if self.tt_min_score is None:
+            self.get_tt_min_score()
+        y_ = rts_counts[dataset[:, 0]]
+        y = y_ > self.tt_min_score
+        y.replace(to_replace=[True, False], value=[1, 0], inplace=True)
 
         # y[idx] = 1 if len(users_with_tweet) >= self.tt_min_score else 0
 
