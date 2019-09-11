@@ -8,7 +8,7 @@
 
 
 NAME="save_tweets_yesterday"
-PROJECT_DIR=/home/ubuntu/projects/emanuel/sna-famaf/src/preparation
+PROJECT_DIR=/home/ubuntu/temp_project/emanuel/sna-famaf/src/preparation
 VIRTUAL_ENV=/home/ubuntu/.virtualenvs/sna-famaf
 
 source $VIRTUAL_ENV/bin/activate
@@ -21,4 +21,4 @@ exec $VIRTUAL_ENV/bin/python -u actions.py get_yesterday 2>&1 | tee actions_log_
 docker stop db_tweets
 
 # for crontab. at 2:00 am.
-# 0 2 * * * /home/ubuntu/projects/emanuel/sna-famaf/tw_dataset/bash_scripts/save_yesterday_tweet.sh
+# 0 2 * * * /home/ubuntu/temp_project/sna-famaf/src/preparation/bash_scripts/save_yesterday_tweet.sh
