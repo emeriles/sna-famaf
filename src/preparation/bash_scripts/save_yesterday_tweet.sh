@@ -8,7 +8,7 @@
 
 
 NAME="save_tweets_yesterday"
-PROJECT_DIR=/home/ubuntu/temp_project/emanuel/sna-famaf/src/preparation
+PROJECT_DIR=/home/ubuntu/temp_project/sna-famaf/src/preparation
 VIRTUAL_ENV=/home/ubuntu/.virtualenvs/sna-famaf
 
 source $VIRTUAL_ENV/bin/activate
