@@ -27,6 +27,22 @@ r = dbh.tweet_collection.find({}, {'id_str':1, 'text': 1, '_id': 0, 'retweeted_s
 df = pd.DataFrame(list(r))
 
 ```
+
+## Mongo db
+
+Create container:
+```bash
+docker create --name db_tweets --restart on-failure -p 27017:27017 -v db:/data/db mongo
+```
+start docker container:
+```bash
+docker start db_tweets
+```
+stop docker container:
+```bash
+docker stop db_tweets
+```
+
 \
 \
 \
@@ -170,5 +186,4 @@ NUM_SAMPLES = 1000000
 count = sc.parallelize(range(0, NUM_SAMPLES)) \
              .filter(inside).count()
 print("Pi is roughly %f" % (4.0 * count / NUM_SAMPLES))
-sc.stop()
-```
+sc.st

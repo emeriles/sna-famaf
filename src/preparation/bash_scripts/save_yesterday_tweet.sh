@@ -5,6 +5,7 @@
 # cd PROJECT_DIR
 # docker create --name db_tweets --restart on-failure -p 27017:27017 -v db:/data/db mongo
 ##########
+# AND ALSO: users should be moved from graph to mongo db.
 
 
 NAME="save_tweets_yesterday"

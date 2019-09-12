@@ -9,7 +9,7 @@ import time
 from pymongo import MongoClient, InsertOne
 from pymongo.errors import BulkWriteError, DuplicateKeyError
 
-TMP_SEEN_USERS = './preparation/temp/seen_users.pickle'
+TMP_SEEN_USERS = './temp/seen_users.pickle'
 
 SEEN_USERS = set()
 if os.path.exists(TMP_SEEN_USERS):
