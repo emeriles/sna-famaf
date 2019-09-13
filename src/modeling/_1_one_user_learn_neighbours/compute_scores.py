@@ -1,5 +1,6 @@
 import json
 import os
+import numpy as np
 from multiprocessing import Manager, Pool
 
 from sklearn.metrics import f1_score, precision_score, recall_score
@@ -11,7 +12,8 @@ from settings import SCORES_FOLDER_1_
 
 
 def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_valid, precisions_testv,
-    recalls_train, recalls_valid, recalls_testv, lock, delta_minutes):
+           recalls_train, recalls_valid, recalls_testv, pos_cases_train, pos_cases_valid, pos_cases_testv,
+           lock, delta_minutes):
     """worker function"""
     print("Largamos para {}".format(uid))
     
@@ -24,13 +26,15 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     f1s_train[uid] = f1_score(y_true, y_pred)
     precisions_train[uid] = precision_score(y_true, y_pred)
     recalls_train[uid] = recall_score(y_true, y_pred)
+    pos_cases_train[uid] = np.sum(y_true)
     lock.release()
 
     y_true, y_pred = y_valid, clf.predict(X_valid)
     lock.acquire()
     f1s_valid[uid] = f1_score(y_true, y_pred)
     precisions_valid[uid] = precision_score(y_true, y_pred)
-    recalls_valid[uid] = recall_score(y_true, y_pred) 
+    recalls_valid[uid] = recall_score(y_true, y_pred)
+    pos_cases_valid[uid] = np.sum(y_true)
     lock.release()
 
     y_true, y_pred = y_testv, clf.predict(X_testv)
@@ -38,6 +42,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     f1s_testv[uid] = f1_score(y_true, y_pred)
     precisions_testv[uid] = precision_score(y_true, y_pred)
     recalls_testv[uid] = recall_score(y_true, y_pred)
+    pos_cases_testv[uid] = np.sum(y_true)
     lock.release()
 
 
@@ -61,6 +66,10 @@ def compute_scores(delta_minutes):
     recalls_valid = manager.dict()
     recalls_testv = manager.dict()
 
+    pos_cases_train = manager.dict()
+    pos_cases_valid = manager.dict()
+    pos_cases_testv = manager.dict()
+
     lock = manager.Lock()
 
     for uid in uids:
@@ -68,6 +77,7 @@ def compute_scores(delta_minutes):
             worker(uid, f1s_train, f1s_valid, f1s_testv,
                                            precisions_train, precisions_valid, precisions_testv,
                                            recalls_train, recalls_valid, recalls_testv,
+                                           pos_cases_train, pos_cases_valid, pos_cases_testv,
                                            lock, delta_minutes)
         except ValueError as e:
             print('FAILED FOR USER {}. Exception: {}'.format(uid, e))
@@ -103,3 +113,12 @@ def compute_scores(delta_minutes):
 
     with open(SCORES_FOLDER_1_ + '/recalls_testv_svc.json', 'w') as f:
         json.dump(dict(recalls_testv), f)
+
+    with open(SCORES_FOLDER_1_ + '/pos_cases_train_svc.json', 'w') as f:
+        json.dump(dict(pos_cases_train), f)
+
+    with open(SCORES_FOLDER_1_ + '/pos_cases_valid_svc.json', 'w') as f:
+        json.dump(dict(pos_cases_valid), f)
+
+    with open(SCORES_FOLDER_1_ + '/pos_cases_testv_svc.json', 'w') as f:
+        json.dump(dict(pos_cases_testv), f)
