@@ -1,0 +1,595 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING compute_scores
+Largamos para 8129862
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 498 level 2 neighbourhs for user 8129862.
+Len of own timeline (possible positive examples) is 11
+Done getting neighbour tweets universe. Shape is  (1147264, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 498)
+Done Extracting Features 0:08:30.070311
+Load or build model. For 8129862, model type: svc, time_delta: None
+Largamos para 70414730
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 568 level 2 neighbourhs for user 70414730.
+Len of own timeline (possible positive examples) is 221
+Done getting neighbour tweets universe. Shape is  (1311245, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 568)
+Done Extracting Features 0:09:29.036961
+Load or build model. For 70414730, model type: svc, time_delta: None
+Largamos para 185443156
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 462 level 2 neighbourhs for user 185443156.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (996174, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 462)
+Done Extracting Features 0:07:18.224759
+FAILED FOR USER 185443156. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 269820826
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 667 level 2 neighbourhs for user 269820826.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (1493155, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 667)
+Done Extracting Features 0:11:06.658239
+FAILED FOR USER 269820826. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 52693558
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 739 level 2 neighbourhs for user 52693558.
+Len of own timeline (possible positive examples) is 13
+Done getting neighbour tweets universe. Shape is  (1575064, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 739)
+Done Extracting Features 0:11:51.401666
+Load or build model. For 52693558, model type: svc, time_delta: None
+Largamos para 150115389
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 598 level 2 neighbourhs for user 150115389.
+Len of own timeline (possible positive examples) is 150
+Done getting neighbour tweets universe. Shape is  (1337182, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 598)
+Done Extracting Features 0:09:51.109687
+Load or build model. For 150115389, model type: svc, time_delta: None
+Largamos para 42915657
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 605 level 2 neighbourhs for user 42915657.
+Len of own timeline (possible positive examples) is 29
+Done getting neighbour tweets universe. Shape is  (1409130, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 605)
+Done Extracting Features 0:10:28.957638
+Load or build model. For 42915657, model type: svc, time_delta: None
+Largamos para 108968018
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 478 level 2 neighbourhs for user 108968018.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (1022728, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 478)
+Done Extracting Features 0:07:18.734657
+FAILED FOR USER 108968018. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 143852870
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 600 level 2 neighbourhs for user 143852870.
+Len of own timeline (possible positive examples) is 2
+Done getting neighbour tweets universe. Shape is  (1274338, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 600)
+Done Extracting Features 0:09:25.956231
+FAILED FOR USER 143852870. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 131728769
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 413 level 2 neighbourhs for user 131728769.
+Len of own timeline (possible positive examples) is 24
+Done getting neighbour tweets universe. Shape is  (839035, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 413)
+Done Extracting Features 0:06:10.619629
+Load or build model. For 131728769, model type: svc, time_delta: None
+Largamos para 19722366
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 670 level 2 neighbourhs for user 19722366.
+Len of own timeline (possible positive examples) is 10
+Done getting neighbour tweets universe. Shape is  (1384961, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 670)
+Done Extracting Features 0:10:31.129119
+Load or build model. For 19722366, model type: svc, time_delta: None
+Largamos para 2859085672
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 732 level 2 neighbourhs for user 2859085672.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (1623410, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 732)
+Done Extracting Features 0:11:56.402403
+FAILED FOR USER 2859085672. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 142126563
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 663 level 2 neighbourhs for user 142126563.
+Len of own timeline (possible positive examples) is 52
+Done getting neighbour tweets universe. Shape is  (1461702, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 663)
+Done Extracting Features 0:09:55.991842
+Load or build model. For 142126563, model type: svc, time_delta: None
+Largamos para 135091201
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 366 level 2 neighbourhs for user 135091201.
+Len of own timeline (possible positive examples) is 32
+Done getting neighbour tweets universe. Shape is  (794290, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 366)
+Done Extracting Features 0:05:36.534569
+Load or build model. For 135091201, model type: svc, time_delta: None
+Largamos para 7658762
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 454 level 2 neighbourhs for user 7658762.
+Len of own timeline (possible positive examples) is 53
+Done getting neighbour tweets universe. Shape is  (1007971, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 454)
+Done Extracting Features 0:06:49.799877
+Load or build model. For 7658762, model type: svc, time_delta: None
+Largamos para 8932062
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 637 level 2 neighbourhs for user 8932062.
+Len of own timeline (possible positive examples) is 23
+Done getting neighbour tweets universe. Shape is  (1460019, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 637)
+Done Extracting Features 0:10:16.098683
+Load or build model. For 8932062, model type: svc, time_delta: None
+Largamos para 23608164
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 921 level 2 neighbourhs for user 23608164.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (2121830, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 921)
+Done Extracting Features 0:14:45.383322
+FAILED FOR USER 23608164. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 5695632
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 342 level 2 neighbourhs for user 5695632.
+Len of own timeline (possible positive examples) is 2
+Done getting neighbour tweets universe. Shape is  (819640, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 342)
+Done Extracting Features 0:05:33.620698
+FAILED FOR USER 5695632. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 139556774
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 470 level 2 neighbourhs for user 139556774.
+Len of own timeline (possible positive examples) is 179
+Done getting neighbour tweets universe. Shape is  (1042838, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 470)
+Done Extracting Features 0:06:53.133125
+Load or build model. For 139556774, model type: svc, time_delta: None
+Largamos para 202038737
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 473 level 2 neighbourhs for user 202038737.
+Len of own timeline (possible positive examples) is 135
+Done getting neighbour tweets universe. Shape is  (972704, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 473)
+Done Extracting Features 0:06:47.745405
+Load or build model. For 202038737, model type: svc, time_delta: None
+Largamos para 196362385
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 574 level 2 neighbourhs for user 196362385.
+Len of own timeline (possible positive examples) is 102
+Done getting neighbour tweets universe. Shape is  (1274761, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 574)
+Done Extracting Features 0:08:50.037847
+Load or build model. For 196362385, model type: svc, time_delta: None
+Largamos para 14104882
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 759 level 2 neighbourhs for user 14104882.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (1770424, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 759)
+Done Extracting Features 0:12:02.077109
+FAILED FOR USER 14104882. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 92993433
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 655 level 2 neighbourhs for user 92993433.
+Len of own timeline (possible positive examples) is 49
+Done getting neighbour tweets universe. Shape is  (1433843, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 655)
+Done Extracting Features 0:09:25.656697
+Load or build model. For 92993433, model type: svc, time_delta: None
+Largamos para 292458412
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 539 level 2 neighbourhs for user 292458412.
+Len of own timeline (possible positive examples) is 59
+Done getting neighbour tweets universe. Shape is  (1238104, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 539)
+Done Extracting Features 0:08:37.497452
+Load or build model. For 292458412, model type: svc, time_delta: None
+Largamos para 14707350
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 281 level 2 neighbourhs for user 14707350.
+Len of own timeline (possible positive examples) is 170
+Done getting neighbour tweets universe. Shape is  (550172, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 281)
+Done Extracting Features 0:03:35.876942
+Load or build model. For 14707350, model type: svc, time_delta: None
+Largamos para 801202
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 833 level 2 neighbourhs for user 801202.
+Len of own timeline (possible positive examples) is 151
+Done getting neighbour tweets universe. Shape is  (1969535, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 833)
+Done Extracting Features 0:13:39.733972
+Load or build model. For 801202, model type: svc, time_delta: None
+Largamos para 914367366
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 601 level 2 neighbourhs for user 914367366.
+Len of own timeline (possible positive examples) is 9
+Done getting neighbour tweets universe. Shape is  (1272988, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 601)
+Done Extracting Features 0:08:49.977923
+Load or build model. For 914367366, model type: svc, time_delta: None
+Largamos para 506434809
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 676 level 2 neighbourhs for user 506434809.
+Len of own timeline (possible positive examples) is 126
+Done getting neighbour tweets universe. Shape is  (1551142, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 676)
+Done Extracting Features 0:10:49.796222
+Load or build model. For 506434809, model type: svc, time_delta: None
+Largamos para 7664892
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 820 level 2 neighbourhs for user 7664892.
+Len of own timeline (possible positive examples) is 53
+Done getting neighbour tweets universe. Shape is  (1915105, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 820)
+Done Extracting Features 0:13:07.790732
+Load or build model. For 7664892, model type: svc, time_delta: None
+Largamos para 71013695
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 785 level 2 neighbourhs for user 71013695.
+Len of own timeline (possible positive examples) is 29
+Done getting neighbour tweets universe. Shape is  (1831216, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 785)
+Done Extracting Features 0:11:59.771770
+Load or build model. For 71013695, model type: svc, time_delta: None
+Largamos para 20450173
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 396 level 2 neighbourhs for user 20450173.
+Len of own timeline (possible positive examples) is 0
+Done getting neighbour tweets universe. Shape is  (866856, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 396)
+Done Extracting Features 0:05:53.434925
+Load or build model. For 20450173, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 396) (7000, 396) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 20450173. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 151058509
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 219 level 2 neighbourhs for user 151058509.
+Len of own timeline (possible positive examples) is 310
+Done getting neighbour tweets universe. Shape is  (406600, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 219)
+Done Extracting Features 0:02:37.832115
+Load or build model. For 151058509, model type: svc, time_delta: None
+Largamos para 89522960
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 356 level 2 neighbourhs for user 89522960.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (776499, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 356)
+Done Extracting Features 0:05:16.920218
+FAILED FOR USER 89522960. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 199793152
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 235 level 2 neighbourhs for user 199793152.
+Len of own timeline (possible positive examples) is 12
+Done getting neighbour tweets universe. Shape is  (423155, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 235)
+Done Extracting Features 0:02:47.442702
+Load or build model. For 199793152, model type: svc, time_delta: None
+Largamos para 117416319
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 379 level 2 neighbourhs for user 117416319.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (719709, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 379)
+Done Extracting Features 0:04:54.949261
+FAILED FOR USER 117416319. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 69321798
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 694 level 2 neighbourhs for user 69321798.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (1629852, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 694)
+Done Extracting Features 0:10:23.794540
+FAILED FOR USER 69321798. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 14265389
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 451 level 2 neighbourhs for user 14265389.
+Len of own timeline (possible positive examples) is 71
+Done getting neighbour tweets universe. Shape is  (933652, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 451)
+Done Extracting Features 0:07:00.906997
+Load or build model. For 14265389, model type: svc, time_delta: None
+Largamos para 157523545
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 169 level 2 neighbourhs for user 157523545.
+Len of own timeline (possible positive examples) is 970
+Done getting neighbour tweets universe. Shape is  (305895, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 169)
+Done Extracting Features 0:02:04.767986
+Load or build model. For 157523545, model type: svc, time_delta: None
+Largamos para 160004720
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 461 level 2 neighbourhs for user 160004720.
+Len of own timeline (possible positive examples) is 29
+Done getting neighbour tweets universe. Shape is  (928750, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 461)
+Done Extracting Features 0:06:45.293203
+Load or build model. For 160004720, model type: svc, time_delta: None
+Largamos para 7712092
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 696 level 2 neighbourhs for user 7712092.
+Len of own timeline (possible positive examples) is 0
+Done getting neighbour tweets universe. Shape is  (1582278, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 696)
+Done Extracting Features 0:11:15.523571
+Load or build model. For 7712092, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 696) (7000, 696) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 7712092. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 183184266
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 247 level 2 neighbourhs for user 183184266.
+Len of own timeline (possible positive examples) is 127
+Done getting neighbour tweets universe. Shape is  (437492, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 247)
+Done Extracting Features 0:03:07.623321
+Load or build model. For 183184266, model type: svc, time_delta: None
+Largamos para 70724306
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 642 level 2 neighbourhs for user 70724306.
+Len of own timeline (possible positive examples) is 5
+Done getting neighbour tweets universe. Shape is  (1364503, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 642)
+Done Extracting Features 0:10:14.256381
+FAILED FOR USER 70724306. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 50778394
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 491 level 2 neighbourhs for user 50778394.
+Len of own timeline (possible positive examples) is 127
+Done getting neighbour tweets universe. Shape is  (1120027, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 491)
+Done Extracting Features 0:08:26.821978
+Load or build model. For 50778394, model type: svc, time_delta: None
+Largamos para 62363015
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 792 level 2 neighbourhs for user 62363015.
+Len of own timeline (possible positive examples) is 9
+Done getting neighbour tweets universe. Shape is  (1743888, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 792)
+Done Extracting Features 0:11:05.771308
+Load or build model. For 62363015, model type: svc, time_delta: None
+Largamos para 76946476
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 431 level 2 neighbourhs for user 76946476.
+Len of own timeline (possible positive examples) is 132
+Done getting neighbour tweets universe. Shape is  (910805, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 431)
+Done Extracting Features 0:06:18.925449
+Load or build model. For 76946476, model type: svc, time_delta: None
+Largamos para 8259752
+Loading df
+Done loading df. DF shape is :(11497020, 8) (Original: (11497020, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 654 level 2 neighbourhs for user 8259752.
+Len of own timeline (possible positive examples) is 7
+Done getting neighbour tweets universe. Shape is  (1515103, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 654)
+Done Extracting Features 0:10:19.942604
+Load or build model. For 8259752, model type: svc, time_delta: None
+Largamos para 38456951
+Loading df
+Traceback (most recent call last):
+  File "main.py", line 61, in <module>
+    compute_scores(delta_minutes=delta_minutes)
+  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 71, in compute_scores
+    lock, delta_minutes)
+  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 19, in worker
+    load_or_create_dataset(uid, delta_minutes_filter=delta_minutes)
+  File "/home/mmeriles/sna-famaf/src/processing/_1_user_model/db_csv.py", line 146, in load_or_create_dataset
+    self._load_df()
+  File "/home/mmeriles/sna-famaf/src/processing/db_csv.py", line 40, in _load_df
+    df = pd.read_csv(self.csv_path, dtype=dtypes)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/io/parsers.py", line 446, in _read
+    data = parser.read(nrows)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/io/parsers.py", line 1051, in read
+    df = DataFrame(col_dict, columns=columns, index=index)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/core/frame.py", line 348, in __init__
+    mgr = self._init_dict(data, index, columns, dtype=dtype)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/core/frame.py", line 459, in _init_dict
+    return _arrays_to_mgr(arrays, data_names, index, columns, dtype=dtype)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/core/frame.py", line 7364, in _arrays_to_mgr
+    return create_block_manager_from_arrays(arrays, arr_names, axes)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/core/internals.py", line 4872, in create_block_manager_from_arrays
+    blocks = form_blocks(arrays, names, axes)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/core/internals.py", line 4938, in form_blocks
+    object_blocks = _simple_blockify(items_dict['ObjectBlock'], np.object_)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/core/internals.py", line 4976, in _simple_blockify
+    values, placement = _stack_arrays(tuples, dtype)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/pandas/core/internals.py", line 5037, in _stack_arrays
+    stacked = np.empty(shape, dtype=dtype)
+MemoryError

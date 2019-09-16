@@ -1,0 +1,297 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING evaluate_influencers
+100i_social ['100i_social_Nonem']
+=======================================================
+File: 100i_social_Nonem
+(train)Tweets: 203772, Influencers: 100
+(test) Tweets: 67924, Influencers: 100
+=======================================================
+
+Results on 100i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.82      0.83      0.82     47375
+     Relevante       0.59      0.59      0.59     20549
+
+     micro avg       0.75      0.75      0.75     67924
+     macro avg       0.71      0.71      0.71     67924
+  weighted avg       0.75      0.75      0.75     67924
+
+
+125i_social ['125i_social_Nonem']
+=======================================================
+File: 125i_social_Nonem
+(train)Tweets: 203772, Influencers: 125
+(test) Tweets: 67924, Influencers: 125
+=======================================================
+
+Results on 125i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.83      0.81      0.82     47375
+     Relevante       0.59      0.63      0.61     20549
+
+     micro avg       0.76      0.76      0.76     67924
+     macro avg       0.71      0.72      0.72     67924
+  weighted avg       0.76      0.76      0.76     67924
+
+
+150i_social ['150i_social_Nonem']
+=======================================================
+File: 150i_social_Nonem
+(train)Tweets: 203772, Influencers: 150
+(test) Tweets: 67924, Influencers: 150
+=======================================================
+
+Results on 150i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.85      0.85      0.85     47375
+     Relevante       0.65      0.64      0.65     20549
+
+     micro avg       0.79      0.79      0.79     67924
+     macro avg       0.75      0.75      0.75     67924
+  weighted avg       0.79      0.79      0.79     67924
+
+
+175i_social ['175i_social_Nonem']
+=======================================================
+File: 175i_social_Nonem
+(train)Tweets: 203772, Influencers: 175
+(test) Tweets: 67924, Influencers: 175
+=======================================================
+
+Results on 175i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.85      0.86      0.86     47375
+     Relevante       0.67      0.66      0.67     20549
+
+     micro avg       0.80      0.80      0.80     67924
+     macro avg       0.76      0.76      0.76     67924
+  weighted avg       0.80      0.80      0.80     67924
+
+
+200i_social ['200i_social_Nonem']
+=======================================================
+File: 200i_social_Nonem
+(train)Tweets: 203772, Influencers: 200
+(test) Tweets: 67924, Influencers: 200
+=======================================================
+
+Results on 200i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.86      0.87      0.86     47375
+     Relevante       0.68      0.67      0.67     20549
+
+     micro avg       0.81      0.81      0.81     67924
+     macro avg       0.77      0.77      0.77     67924
+  weighted avg       0.80      0.81      0.80     67924
+
+
+225i_social ['225i_social_Nonem']
+=======================================================
+File: 225i_social_Nonem
+(train)Tweets: 203772, Influencers: 225
+(test) Tweets: 67924, Influencers: 225
+=======================================================
+
+Results on 225i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.86      0.87      0.87     47375
+     Relevante       0.70      0.68      0.69     20549
+
+     micro avg       0.81      0.81      0.81     67924
+     macro avg       0.78      0.78      0.78     67924
+  weighted avg       0.81      0.81      0.81     67924
+
+
+250i_social ['250i_social_Nonem']
+=======================================================
+File: 250i_social_Nonem
+(train)Tweets: 203772, Influencers: 250
+(test) Tweets: 67924, Influencers: 250
+=======================================================
+
+Results on 250i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.87      0.88      0.87     47375
+     Relevante       0.71      0.70      0.70     20549
+
+     micro avg       0.82      0.82      0.82     67924
+     macro avg       0.79      0.79      0.79     67924
+  weighted avg       0.82      0.82      0.82     67924
+
+
+275i_social ['275i_social_Nonem']
+=======================================================
+File: 275i_social_Nonem
+(train)Tweets: 203772, Influencers: 275
+(test) Tweets: 67924, Influencers: 275
+=======================================================
+
+Results on 275i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.87      0.91      0.89     47375
+     Relevante       0.77      0.69      0.73     20549
+
+     micro avg       0.84      0.84      0.84     67924
+     macro avg       0.82      0.80      0.81     67924
+  weighted avg       0.84      0.84      0.84     67924
+
+
+300i_social ['300i_social_Nonem']
+=======================================================
+File: 300i_social_Nonem
+(train)Tweets: 203772, Influencers: 300
+(test) Tweets: 67924, Influencers: 300
+=======================================================
+
+Results on 300i_social_Nonem dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state'
