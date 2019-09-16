@@ -20,7 +20,9 @@ def svm_classifier(x_train, x_test, y_train, y_true, gridsearch=False,
     else:
         clf = svm.SVC(kernel='rbf', C=C, gamma=GAMMA, class_weight='balanced', shrinking=True, probability=True)
         #clf = svm.SVC(kernel='poly', C=0.1, gamma=1, class_weight='balanced')
+    print('Fitting...')
     clf.fit(x_train, y_train)
+    print('Predicting...')
     y_pred = clf.predict(x_test)
     y_scores = clf.predict_proba(x_test)[:,1]
     if roc_curve_:
