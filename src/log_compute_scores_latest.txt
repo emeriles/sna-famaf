@@ -1,0 +1,665 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING compute_scores
+Largamos para 8129862
+Load or build model. For 8129862, model type: svc, time_delta: None
+Largamos para 70414730
+Load or build model. For 70414730, model type: svc, time_delta: None
+Largamos para 185443156
+Load or build model. For 185443156, model type: svc, time_delta: None
+Largamos para 269820826
+Load or build model. For 269820826, model type: svc, time_delta: None
+Largamos para 52693558
+Load or build model. For 52693558, model type: svc, time_delta: None
+Largamos para 150115389
+Load or build model. For 150115389, model type: svc, time_delta: None
+Largamos para 42915657
+Load or build model. For 42915657, model type: svc, time_delta: None
+Largamos para 108968018
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 478 level 2 neighbourhs for user 108968018.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (1111306, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 478)
+Done Extracting Features 0:08:08.892875
+FAILED FOR USER 108968018. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 143852870
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 600 level 2 neighbourhs for user 143852870.
+Len of own timeline (possible positive examples) is 5
+Done getting neighbour tweets universe. Shape is  (1429855, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 600)
+Done Extracting Features 0:09:30.225739
+FAILED FOR USER 143852870. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 131728769
+Load or build model. For 131728769, model type: svc, time_delta: None
+Largamos para 19722366
+Load or build model. For 19722366, model type: svc, time_delta: None
+Largamos para 2859085672
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 732 level 2 neighbourhs for user 2859085672.
+Len of own timeline (possible positive examples) is 4
+Done getting neighbour tweets universe. Shape is  (1769673, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 732)
+Done Extracting Features 0:12:28.441665
+FAILED FOR USER 2859085672. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 142126563
+Load or build model. For 142126563, model type: svc, time_delta: None
+Largamos para 135091201
+Load or build model. For 135091201, model type: svc, time_delta: None
+Largamos para 7658762
+Load or build model. For 7658762, model type: svc, time_delta: None
+Largamos para 8932062
+Load or build model. For 8932062, model type: svc, time_delta: None
+Largamos para 23608164
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 921 level 2 neighbourhs for user 23608164.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (2275483, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 921)
+Done Extracting Features 0:16:21.726032
+FAILED FOR USER 23608164. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 5695632
+Load or build model. For 5695632, model type: svc, time_delta: None
+Largamos para 139556774
+Load or build model. For 139556774, model type: svc, time_delta: None
+Largamos para 202038737
+Load or build model. For 202038737, model type: svc, time_delta: None
+Largamos para 196362385
+Load or build model. For 196362385, model type: svc, time_delta: None
+Largamos para 14104882
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 759 level 2 neighbourhs for user 14104882.
+Len of own timeline (possible positive examples) is 4
+Done getting neighbour tweets universe. Shape is  (1893380, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 759)
+Done Extracting Features 0:13:35.179370
+FAILED FOR USER 14104882. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 92993433
+Load or build model. For 92993433, model type: svc, time_delta: None
+Largamos para 292458412
+Load or build model. For 292458412, model type: svc, time_delta: None
+Largamos para 14707350
+Load or build model. For 14707350, model type: svc, time_delta: None
+Largamos para 801202
+Load or build model. For 801202, model type: svc, time_delta: None
+Largamos para 914367366
+Load or build model. For 914367366, model type: svc, time_delta: None
+Largamos para 506434809
+Load or build model. For 506434809, model type: svc, time_delta: None
+Largamos para 7664892
+Load or build model. For 7664892, model type: svc, time_delta: None
+Largamos para 71013695
+Load or build model. For 71013695, model type: svc, time_delta: None
+Largamos para 20450173
+Load or build model. For 20450173, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 396) (7000, 396) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 20450173. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 151058509
+Load or build model. For 151058509, model type: svc, time_delta: None
+Largamos para 89522960
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 356 level 2 neighbourhs for user 89522960.
+Len of own timeline (possible positive examples) is 5
+Done getting neighbour tweets universe. Shape is  (847864, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 356)
+Done Extracting Features 0:06:06.780628
+FAILED FOR USER 89522960. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 199793152
+Load or build model. For 199793152, model type: svc, time_delta: None
+Largamos para 117416319
+Load or build model. For 117416319, model type: svc, time_delta: None
+Largamos para 69321798
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 694 level 2 neighbourhs for user 69321798.
+Len of own timeline (possible positive examples) is 5
+Done getting neighbour tweets universe. Shape is  (1744875, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 694)
+Done Extracting Features 0:12:31.838160
+FAILED FOR USER 69321798. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 14265389
+Load or build model. For 14265389, model type: svc, time_delta: None
+Largamos para 157523545
+Load or build model. For 157523545, model type: svc, time_delta: None
+Largamos para 160004720
+Load or build model. For 160004720, model type: svc, time_delta: None
+Largamos para 7712092
+Load or build model. For 7712092, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 696) (7000, 696) False False
+FAILED FOR USER 7712092. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 183184266
+Load or build model. For 183184266, model type: svc, time_delta: None
+Largamos para 70724306
+Load or build model. For 70724306, model type: svc, time_delta: None
+Largamos para 50778394
+Load or build model. For 50778394, model type: svc, time_delta: None
+Largamos para 62363015
+Load or build model. For 62363015, model type: svc, time_delta: None
+Largamos para 76946476
+Load or build model. For 76946476, model type: svc, time_delta: None
+Largamos para 8259752
+Load or build model. For 8259752, model type: svc, time_delta: None
+Largamos para 38456951
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 673 level 2 neighbourhs for user 38456951.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (1614810, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 673)
+Done Extracting Features 0:11:32.790011
+FAILED FOR USER 38456951. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 130866630
+Load or build model. For 130866630, model type: svc, time_delta: None
+Largamos para 115717145
+Load or build model. For 115717145, model type: svc, time_delta: None
+Largamos para 1198823724
+Load or build model. For 1198823724, model type: svc, time_delta: None
+Largamos para 42046651
+Load or build model. For 42046651, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 363) (7000, 363) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 42046651. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 166122395
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 497 level 2 neighbourhs for user 166122395.
+Len of own timeline (possible positive examples) is 5
+Done getting neighbour tweets universe. Shape is  (1157206, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 497)
+Done Extracting Features 0:08:18.384616
+FAILED FOR USER 166122395. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 9732212
+Load or build model. For 9732212, model type: svc, time_delta: None
+Largamos para 69628317
+Load or build model. For 69628317, model type: svc, time_delta: None
+Largamos para 416721882
+Load or build model. For 416721882, model type: svc, time_delta: None
+Largamos para 143564478
+Load or build model. For 143564478, model type: svc, time_delta: None
+Largamos para 24735713
+Load or build model. For 24735713, model type: svc, time_delta: None
+Largamos para 205827262
+Load or build model. For 205827262, model type: svc, time_delta: None
+Largamos para 69962890
+Load or build model. For 69962890, model type: svc, time_delta: None
+Largamos para 517662064
+Load or build model. For 517662064, model type: svc, time_delta: None
+Largamos para 184892265
+Load or build model. For 184892265, model type: svc, time_delta: None
+Largamos para 142532652
+Load or build model. For 142532652, model type: svc, time_delta: None
+Largamos para 1679653772
+Load or build model. For 1679653772, model type: svc, time_delta: None
+Largamos para 35778170
+Load or build model. For 35778170, model type: svc, time_delta: None
+Largamos para 9656262
+Load or build model. For 9656262, model type: svc, time_delta: None
+Largamos para 31423048
+Load or build model. For 31423048, model type: svc, time_delta: None
+Largamos para 35040142
+Load or build model. For 35040142, model type: svc, time_delta: None
+Largamos para 326807652
+Load or build model. For 326807652, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 846) (7000, 846) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 326807652. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 72925674
+Load or build model. For 72925674, model type: svc, time_delta: None
+Largamos para 183280034
+Load or build model. For 183280034, model type: svc, time_delta: None
+Largamos para 83989828
+Load or build model. For 83989828, model type: svc, time_delta: None
+Largamos para 136706767
+Load or build model. For 136706767, model type: svc, time_delta: None
+Largamos para 120477698
+Load or build model. For 120477698, model type: svc, time_delta: None
+Largamos para 163154530
+Load or build model. For 163154530, model type: svc, time_delta: None
+Largamos para 322780110
+Load or build model. For 322780110, model type: svc, time_delta: None
+Largamos para 17309892
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 745 level 2 neighbourhs for user 17309892.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (1773268, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 745)
+Done Extracting Features 0:13:10.666174
+FAILED FOR USER 17309892. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 16012783
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 305 level 2 neighbourhs for user 16012783.
+Len of own timeline (possible positive examples) is 5
+Done getting neighbour tweets universe. Shape is  (732586, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 305)
+Done Extracting Features 0:05:14.949313
+FAILED FOR USER 16012783. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 25584941
+Load or build model. For 25584941, model type: svc, time_delta: None
+Largamos para 169965323
+Load or build model. For 169965323, model type: svc, time_delta: None
+Largamos para 35744749
+Load or build model. For 35744749, model type: svc, time_delta: None
+Largamos para 284811417
+Load or build model. For 284811417, model type: svc, time_delta: None
+Largamos para 92794844
+Load or build model. For 92794844, model type: svc, time_delta: None
+Largamos para 114537953
+Load or build model. For 114537953, model type: svc, time_delta: None
+Largamos para 276169885
+Load or build model. For 276169885, model type: svc, time_delta: None
+Largamos para 182831320
+Load or build model. For 182831320, model type: svc, time_delta: None
+Largamos para 204567208
+Load or build model. For 204567208, model type: svc, time_delta: None
+Largamos para 312146187
+Load or build model. For 312146187, model type: svc, time_delta: None
+Largamos para 35839931
+Load or build model. For 35839931, model type: svc, time_delta: None
+Largamos para 195691612
+Load or build model. For 195691612, model type: svc, time_delta: None
+Largamos para 186815164
+Load or build model. For 186815164, model type: svc, time_delta: None
+Largamos para 263865213
+Load or build model. For 263865213, model type: svc, time_delta: None
+Largamos para 218894949
+Load or build model. For 218894949, model type: svc, time_delta: None
+Largamos para 7840542
+Load or build model. For 7840542, model type: svc, time_delta: None
+Largamos para 63039879
+Load or build model. For 63039879, model type: svc, time_delta: None
+Largamos para 517682344
+Load or build model. For 517682344, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 330) (7000, 330) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 517682344. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 149970952
+Load or build model. For 149970952, model type: svc, time_delta: None
+Largamos para 289426556
+Load or build model. For 289426556, model type: svc, time_delta: None
+Largamos para 17960797
+Load or build model. For 17960797, model type: svc, time_delta: None
+Largamos para 139792947
+Load or build model. For 139792947, model type: svc, time_delta: None
+Largamos para 64524269
+Load or build model. For 64524269, model type: svc, time_delta: None
+Largamos para 349106585
+Load or build model. For 349106585, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 1006) (7000, 1006) False False
+FAILED FOR USER 349106585. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 87818409
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 331 level 2 neighbourhs for user 87818409.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (799508, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 331)
+Done Extracting Features 0:05:46.317164
+FAILED FOR USER 87818409. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 471363110
+Load or build model. For 471363110, model type: svc, time_delta: None
+Largamos para 274532892
+Load or build model. For 274532892, model type: svc, time_delta: None
+Largamos para 72207487
+Load or build model. For 72207487, model type: svc, time_delta: None
+Largamos para 142192618
+Load or build model. For 142192618, model type: svc, time_delta: None
+Largamos para 111645984
+Load or build model. For 111645984, model type: svc, time_delta: None
+Largamos para 44043305
+Load or build model. For 44043305, model type: svc, time_delta: None
+Largamos para 33189599
+Load or build model. For 33189599, model type: svc, time_delta: None
+Largamos para 46733972
+Load or build model. For 46733972, model type: svc, time_delta: None
+Largamos para 239200202
+Load or build model. For 239200202, model type: svc, time_delta: None
+Largamos para 8936082
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 344 level 2 neighbourhs for user 8936082.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (827828, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 344)
+Done Extracting Features 0:06:01.011773
+FAILED FOR USER 8936082. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 258860022
+Load or build model. For 258860022, model type: svc, time_delta: None
+Largamos para 6792352
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 553 level 2 neighbourhs for user 6792352.
+Len of own timeline (possible positive examples) is 4
+Done getting neighbour tweets universe. Shape is  (1411853, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 553)
+Done Extracting Features 0:10:29.240186
+FAILED FOR USER 6792352. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 114510872
+Load or build model. For 114510872, model type: svc, time_delta: None
+Largamos para 131068673
+Load or build model. For 131068673, model type: svc, time_delta: None
+Largamos para 8150842
+Load or build model. For 8150842, model type: svc, time_delta: None
+Largamos para 73190286
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 359 level 2 neighbourhs for user 73190286.
+Len of own timeline (possible positive examples) is 4
+Done getting neighbour tweets universe. Shape is  (868343, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 359)
+Done Extracting Features 0:06:17.010785
+FAILED FOR USER 73190286. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 9165882
+Load or build model. For 9165882, model type: svc, time_delta: None
+Largamos para 1864359570
+Load or build model. For 1864359570, model type: svc, time_delta: None
+Largamos para 139160485
+Load or build model. For 139160485, model type: svc, time_delta: None
+Largamos para 126746564
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 749 level 2 neighbourhs for user 126746564.
+Len of own timeline (possible positive examples) is 1
+Done getting neighbour tweets universe. Shape is  (1864347, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 749)
+Done Extracting Features 0:13:34.578985
+FAILED FOR USER 126746564. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 75309219
+Load or build model. For 75309219, model type: svc, time_delta: None
+Largamos para 233644860
+Load or build model. For 233644860, model type: svc, time_delta: None
+Largamos para 90197038
+Load or build model. For 90197038, model type: svc, time_delta: None
+Largamos para 16002828
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 857 level 2 neighbourhs for user 16002828.
+Len of own timeline (possible positive examples) is 4
+Done getting neighbour tweets universe. Shape is  (2048230, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 857)
+Done Extracting Features 0:15:06.198830
+FAILED FOR USER 16002828. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 7761842
+Load or build model. For 7761842, model type: svc, time_delta: None
+Largamos para 29858524
+Load or build model. For 29858524, model type: svc, time_delta: None
+Largamos para 67334466
+Load or build model. For 67334466, model type: svc, time_delta: None
+Largamos para 14884391
+Load or build model. For 14884391, model type: svc, time_delta: None
+Largamos para 74250661
+Load or build model. For 74250661, model type: svc, time_delta: None
+Largamos para 145240604
+Load or build model. For 145240604, model type: svc, time_delta: None
+Largamos para 48023
+Load or build model. For 48023, model type: svc, time_delta: None
+Largamos para 85130724
+Load or build model. For 85130724, model type: svc, time_delta: None
+Largamos para 160609570
+Load or build model. For 160609570, model type: svc, time_delta: None
+Largamos para 631374320
+Load or build model. For 631374320, model type: svc, time_delta: None
+Largamos para 182916952
+Load or build model. For 182916952, model type: svc, time_delta: None
+Largamos para 60083391
+Load or build model. For 60083391, model type: svc, time_delta: None
+Largamos para 8010502
+Load or build model. For 8010502, model type: svc, time_delta: None
+Largamos para 29557642
+Load or build model. For 29557642, model type: svc, time_delta: None
+Largamos para 555684585
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 413 level 2 neighbourhs for user 555684585.
+Len of own timeline (possible positive examples) is 2
+Done getting neighbour tweets universe. Shape is  (999201, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 413)
+Done Extracting Features 0:07:03.869882
+FAILED FOR USER 555684585. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 244328058
+Load or build model. For 244328058, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 554) (7000, 554) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 244328058. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 59881845
+Load or build model. For 59881845, model type: svc, time_delta: None
+Largamos para 62903173
+Load or build model. For 62903173, model type: svc, time_delta: None
+Largamos para 169982171
+Load or build model. For 169982171, model type: svc, time_delta: None
+Largamos para 7764352
+Load or build model. For 7764352, model type: svc, time_delta: None
+Largamos para 150069885
+Load or build model. For 150069885, model type: svc, time_delta: None
+Largamos para 317463387
+Load or build model. For 317463387, model type: svc, time_delta: None
+Largamos para 26935676
+Load or build model. For 26935676, model type: svc, time_delta: None
+Largamos para 154753258
+Load or build model. For 154753258, model type: svc, time_delta: None
+Largamos para 164791463
+Load or build model. For 164791463, model type: svc, time_delta: None
+Largamos para 42775597
+Load or build model. For 42775597, model type: svc, time_delta: None
+Largamos para 1724268187
+Load or build model. For 1724268187, model type: svc, time_delta: None
+Largamos para 192728611
+Load or build model. For 192728611, model type: svc, time_delta: None
+Largamos para 149254440
+Load or build model. For 149254440, model type: svc, time_delta: None
+Largamos para 18717943
+Load or build model. For 18717943, model type: svc, time_delta: None
+Largamos para 55100261
+Load or build model. For 55100261, model type: svc, time_delta: None
+Largamos para 146953504
+Load or build model. For 146953504, model type: svc, time_delta: None
+Largamos para 61577575
+Load or build model. For 61577575, model type: svc, time_delta: None
+Largamos para 150903507
+Load or build model. For 150903507, model type: svc, time_delta: None
+Largamos para 2467791
+Load or build model. For 2467791, model type: svc, time_delta: None
+Largamos para 1307745198
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 497 level 2 neighbourhs for user 1307745198.
+Len of own timeline (possible positive examples) is 3
+Done getting neighbour tweets universe. Shape is  (1185780, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 497)
+Done Extracting Features 0:08:33.062255
+FAILED FOR USER 1307745198. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 14342112
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 500 level 2 neighbourhs for user 14342112.
+Len of own timeline (possible positive examples) is 4
+Done getting neighbour tweets universe. Shape is  (1316526, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 500)
+Done Extracting Features 0:09:46.828728
+FAILED FOR USER 14342112. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 138814032
+Load or build model. For 138814032, model type: svc, time_delta: None
+Largamos para 15187065
+Load or build model. For 15187065, model type: svc, time_delta: None
+Largamos para 19923515
+Load or build model. For 19923515, model type: svc, time_delta: None
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 395) (7000, 395) False False
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+FAILED FOR USER 19923515. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 364528766
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 500 level 2 neighbourhs for user 364528766.
+Len of own timeline (possible positive examples) is 4
+Done getting neighbour tweets universe. Shape is  (1163233, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 500)
+Done Extracting Features 0:08:40.937559
+FAILED FOR USER 364528766. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Largamos para 2340581
+Load or build model. For 2340581, model type: svc, time_delta: None
+Largamos para 22519602
+Load or build model. For 22519602, model type: svc, time_delta: None
+Largamos para 70851232
+Load or build model. For 70851232, model type: svc, time_delta: None
+Largamos para 7230812
+Load or build model. For 7230812, model type: svc, time_delta: None
+Largamos para 149286609
+Load or build model. For 149286609, model type: svc, time_delta: None
+Largamos para 182512109
+Load or build model. For 182512109, model type: svc, time_delta: None
+Largamos para 9041082
+Load or build model. For 9041082, model type: svc, time_delta: None
+Largamos para 322172045
+Load or build model. For 322172045, model type: svc, time_delta: None
+Largamos para 189278621
+Load or build model. For 189278621, model type: svc, time_delta: None
+Largamos para 37507486
+Load or build model. For 37507486, model type: svc, time_delta: None
+Largamos para 28785486
+Load or build model. For 28785486, model type: svc, time_delta: None
+Largamos para 1652541
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 309 level 2 neighbourhs for user 1652541.
+Len of own timeline (possible positive examples) is 2
+Done getting neighbour tweets universe. Shape is  (737599, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 309)
+Done Extracting Features 0:05:18.946799
+FAILED FOR USER 1652541. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+Traceback (most recent call last):
+  File "main.py", line 61, in <module>
+    compute_scores(delta_minutes=delta_minutes)
+  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 118, in compute_scores
+    json.dump(dict(pos_cases_train), f)
+  File "/usr/lib/python3.7/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.7/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.7/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.7/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib/python3.7/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
