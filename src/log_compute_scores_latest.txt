@@ -26,7 +26,7 @@ Len of own timeline (possible positive examples) is 1
 Done getting neighbour tweets universe. Shape is  (1111306, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 478)
-Done Extracting Features 0:08:08.892875
+Done Extracting Features 0:08:05.775734
 FAILED FOR USER 108968018. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 143852870
 Loading df
@@ -37,7 +37,7 @@ Len of own timeline (possible positive examples) is 5
 Done getting neighbour tweets universe. Shape is  (1429855, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 600)
-Done Extracting Features 0:09:30.225739
+Done Extracting Features 0:10:29.060030
 FAILED FOR USER 143852870. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 131728769
 Load or build model. For 131728769, model type: svc, time_delta: None
@@ -52,7 +52,7 @@ Len of own timeline (possible positive examples) is 4
 Done getting neighbour tweets universe. Shape is  (1769673, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 732)
-Done Extracting Features 0:12:28.441665
+Done Extracting Features 0:12:52.431589
 FAILED FOR USER 2859085672. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 142126563
 Load or build model. For 142126563, model type: svc, time_delta: None
@@ -71,7 +71,7 @@ Len of own timeline (possible positive examples) is 1
 Done getting neighbour tweets universe. Shape is  (2275483, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 921)
-Done Extracting Features 0:16:21.726032
+Done Extracting Features 0:15:49.605061
 FAILED FOR USER 23608164. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 5695632
 Load or build model. For 5695632, model type: svc, time_delta: None
@@ -90,7 +90,7 @@ Len of own timeline (possible positive examples) is 4
 Done getting neighbour tweets universe. Shape is  (1893380, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 759)
-Done Extracting Features 0:13:35.179370
+Done Extracting Features 0:13:36.574681
 FAILED FOR USER 14104882. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 92993433
 Load or build model. For 92993433, model type: svc, time_delta: None
@@ -138,7 +138,7 @@ Len of own timeline (possible positive examples) is 5
 Done getting neighbour tweets universe. Shape is  (847864, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 356)
-Done Extracting Features 0:06:06.780628
+Done Extracting Features 0:06:02.451842
 FAILED FOR USER 89522960. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 199793152
 Load or build model. For 199793152, model type: svc, time_delta: None
@@ -153,7 +153,7 @@ Len of own timeline (possible positive examples) is 5
 Done getting neighbour tweets universe. Shape is  (1744875, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 694)
-Done Extracting Features 0:12:31.838160
+Done Extracting Features 0:12:31.060990
 FAILED FOR USER 69321798. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 14265389
 Load or build model. For 14265389, model type: svc, time_delta: None
@@ -189,7 +189,7 @@ Len of own timeline (possible positive examples) is 3
 Done getting neighbour tweets universe. Shape is  (1614810, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 673)
-Done Extracting Features 0:11:32.790011
+Done Extracting Features 0:11:42.547144
 FAILED FOR USER 38456951. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 130866630
 Load or build model. For 130866630, model type: svc, time_delta: None
@@ -221,7 +221,7 @@ Len of own timeline (possible positive examples) is 5
 Done getting neighbour tweets universe. Shape is  (1157206, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 497)
-Done Extracting Features 0:08:18.384616
+Done Extracting Features 0:08:10.518438
 FAILED FOR USER 166122395. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 9732212
 Load or build model. For 9732212, model type: svc, time_delta: None
@@ -287,7 +287,7 @@ Len of own timeline (possible positive examples) is 3
 Done getting neighbour tweets universe. Shape is  (1773268, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 745)
-Done Extracting Features 0:13:10.666174
+Done Extracting Features 0:13:09.698941
 FAILED FOR USER 17309892. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 16012783
 Loading df
@@ -298,7 +298,7 @@ Len of own timeline (possible positive examples) is 5
 Done getting neighbour tweets universe. Shape is  (732586, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 305)
-Done Extracting Features 0:05:14.949313
+Done Extracting Features 0:05:12.355558
 FAILED FOR USER 16012783. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 25584941
 Load or build model. For 25584941, model type: svc, time_delta: None
@@ -375,7 +375,7 @@ Len of own timeline (possible positive examples) is 1
 Done getting neighbour tweets universe. Shape is  (799508, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 331)
-Done Extracting Features 0:05:46.317164
+Done Extracting Features 0:05:48.155200
 FAILED FOR USER 87818409. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 471363110
 Load or build model. For 471363110, model type: svc, time_delta: None
@@ -404,7 +404,7 @@ Len of own timeline (possible positive examples) is 1
 Done getting neighbour tweets universe. Shape is  (827828, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 344)
-Done Extracting Features 0:06:01.011773
+Done Extracting Features 0:05:57.786072
 FAILED FOR USER 8936082. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 258860022
 Load or build model. For 258860022, model type: svc, time_delta: None
@@ -417,7 +417,7 @@ Len of own timeline (possible positive examples) is 4
 Done getting neighbour tweets universe. Shape is  (1411853, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 553)
-Done Extracting Features 0:10:29.240186
+Done Extracting Features 0:10:21.138153
 FAILED FOR USER 6792352. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 114510872
 Load or build model. For 114510872, model type: svc, time_delta: None
@@ -434,7 +434,7 @@ Len of own timeline (possible positive examples) is 4
 Done getting neighbour tweets universe. Shape is  (868343, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 359)
-Done Extracting Features 0:06:17.010785
+Done Extracting Features 0:06:23.351651
 FAILED FOR USER 73190286. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 9165882
 Load or build model. For 9165882, model type: svc, time_delta: None
@@ -451,7 +451,7 @@ Len of own timeline (possible positive examples) is 1
 Done getting neighbour tweets universe. Shape is  (1864347, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 749)
-Done Extracting Features 0:13:34.578985
+Done Extracting Features 0:13:37.759747
 FAILED FOR USER 126746564. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 75309219
 Load or build model. For 75309219, model type: svc, time_delta: None
@@ -468,7 +468,7 @@ Len of own timeline (possible positive examples) is 4
 Done getting neighbour tweets universe. Shape is  (2048230, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 857)
-Done Extracting Features 0:15:06.198830
+Done Extracting Features 0:14:55.077018
 FAILED FOR USER 16002828. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 7761842
 Load or build model. For 7761842, model type: svc, time_delta: None
@@ -507,7 +507,7 @@ Len of own timeline (possible positive examples) is 2
 Done getting neighbour tweets universe. Shape is  (999201, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 413)
-Done Extracting Features 0:07:03.869882
+Done Extracting Features 0:07:10.730708
 FAILED FOR USER 555684585. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 244328058
 Load or build model. For 244328058, model type: svc, time_delta: None
@@ -571,7 +571,7 @@ Len of own timeline (possible positive examples) is 3
 Done getting neighbour tweets universe. Shape is  (1185780, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 497)
-Done Extracting Features 0:08:33.062255
+Done Extracting Features 0:08:43.526150
 FAILED FOR USER 1307745198. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 14342112
 Loading df
@@ -582,7 +582,7 @@ Len of own timeline (possible positive examples) is 4
 Done getting neighbour tweets universe. Shape is  (1316526, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 500)
-Done Extracting Features 0:09:46.828728
+Done Extracting Features 0:09:50.288857
 FAILED FOR USER 14342112. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 138814032
 Load or build model. For 138814032, model type: svc, time_delta: None
@@ -612,7 +612,7 @@ Len of own timeline (possible positive examples) is 4
 Done getting neighbour tweets universe. Shape is  (1163233, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 500)
-Done Extracting Features 0:08:40.937559
+Done Extracting Features 0:08:39.299578
 FAILED FOR USER 364528766. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
 Largamos para 2340581
 Load or build model. For 2340581, model type: svc, time_delta: None
@@ -645,21 +645,5 @@ Len of own timeline (possible positive examples) is 2
 Done getting neighbour tweets universe. Shape is  (737599, 2)
 	Dataset was truncated to 10000 tweets
 Extracting features Optimized. X shape is : (10000, 309)
-Done Extracting Features 0:05:18.946799
+Done Extracting Features 0:05:23.468959
 FAILED FOR USER 1652541. Exception: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
-Traceback (most recent call last):
-  File "main.py", line 61, in <module>
-    compute_scores(delta_minutes=delta_minutes)
-  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 118, in compute_scores
-    json.dump(dict(pos_cases_train), f)
-  File "/usr/lib/python3.7/json/__init__.py", line 179, in dump
-    for chunk in iterable:
-  File "/usr/lib/python3.7/json/encoder.py", line 431, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File "/usr/lib/python3.7/json/encoder.py", line 405, in _iterencode_dict
-    yield from chunks
-  File "/usr/lib/python3.7/json/encoder.py", line 438, in _iterencode
-    o = _default(o)
-  File "/usr/lib/python3.7/json/encoder.py", line 179, in default
-    raise TypeError(f'Object of type {o.__class__.__name__} '
-TypeError: Object of type int64 is not JSON serializable
