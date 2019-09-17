@@ -26,7 +26,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     f1s_train[uid] = f1_score(y_true, y_pred)
     precisions_train[uid] = precision_score(y_true, y_pred)
     recalls_train[uid] = recall_score(y_true, y_pred)
-    pos_cases_train[uid] = np.sum(y_true)
+    pos_cases_train[uid] = int(np.sum(y_true))
     lock.release()
 
     y_true, y_pred = y_valid, clf.predict(X_valid)
@@ -34,7 +34,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     f1s_valid[uid] = f1_score(y_true, y_pred)
     precisions_valid[uid] = precision_score(y_true, y_pred)
     recalls_valid[uid] = recall_score(y_true, y_pred)
-    pos_cases_valid[uid] = np.sum(y_true)
+    pos_cases_valid[uid] = int(np.sum(y_true))
     lock.release()
 
     y_true, y_pred = y_testv, clf.predict(X_testv)
@@ -42,7 +42,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     f1s_testv[uid] = f1_score(y_true, y_pred)
     precisions_testv[uid] = precision_score(y_true, y_pred)
     recalls_testv[uid] = recall_score(y_true, y_pred)
-    pos_cases_testv[uid] = np.sum(y_true)
+    pos_cases_testv[uid] = int(np.sum(y_true))
     lock.release()
 
 
