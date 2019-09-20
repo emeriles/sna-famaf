@@ -1,4 +1,5 @@
 # import graph_tool.all as gt
+import json
 import pickle
 
 import networkx as nx
@@ -8,7 +9,7 @@ from collections import defaultdict
 import numpy as np
 
 from processing.dbmodels import open_session, User
-from settings import NX_GRAPH_PATH, ACTIVE_AND_CENTRAL, NX_SUBGRAPH_PATH
+from settings import NX_GRAPH_PATH, ACTIVE_AND_CENTRAL, NX_SUBGRAPH_PATH, SCORES_FOLDER_1_
 
 
 def load_nx_graph():
@@ -217,3 +218,10 @@ def get_test_users_ids():
     return pickle.load(open(ACTIVE_AND_CENTRAL, 'rb'))
     # 208 con primer grafo que calculé (todos los lados posibles enter los usuarios dados) (194 en el paper)
     # ????? entre el subgrafo calculado despues.
+
+
+def get_test_users_ids_aux(treshold=50):
+    with open(SCORES_FOLDER_1_ + '/pos_cases_train_svc.json', 'r') as f:
+        f1s = json.load(f)
+    users = [uid for (uid, pos_cases) in f1s.items() if pos_cases > treshold]
+    return users

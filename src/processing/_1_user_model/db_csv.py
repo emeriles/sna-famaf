@@ -17,10 +17,57 @@ class _DatasetOneUserModel(_Dataset):
 
     def __init__(self, csv_path=CSV_CUTTED, txt_path=JSON_TEXTS, delta_minutes_filter=None):
         super().__init__(csv_path=csv_path, txt_path=txt_path, delta_minutes_filter=delta_minutes_filter)
+        self.left_out_own_retweets_ids = None
 
     def load_nx_subgraph(self):
         print('Loading graph from {}'.format(NX_SUBGRAPH_PATH))
         return nx.read_gpickle(NX_SUBGRAPH_PATH)
+
+    def _load_df(self, central_uid=None):
+        print('Loading df')
+        dtypes = {
+            'user__id_str': str,
+            'id_str': str,
+            'retweeted_status__id_str': str,
+            'retweeted_status__user__id_str': str,
+            'retweet_count': str,
+            'quoted_status_id_str': str,
+        }
+        df = pd.read_csv(self.csv_path, dtype=dtypes)
+        original_shape = df.shape
+
+        # parse dates
+        datetime_cols = [c for c in df.columns if 'created_at' in c]
+        for c in datetime_cols:
+            df[c] = pd.to_datetime(df[c])
+
+        # reemplazar nombre de columnas: . por __ para sintactic sugar de pandas.
+        df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)
+        df.drop_duplicates(subset='id_str', inplace=True)
+
+        if self.delta_minutes:
+            print('Filtering by time')
+            df_filtered = df[np.isnat(df.retweeted_status__created_at) |
+                (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=self.delta_minutes))]
+            df = df_filtered.copy()
+
+            # remove positive cases retweets ids that were filtered in the previous step,
+            # because they should not be in the tweets universe (X rows)
+            if central_uid is None:
+                raise Exception('central_uid must be provided when filtering on time window with one user model')
+            left_out_own_retweets = df[(df.user__id_str == central_uid) & pd.notna(df.retweeted_status__id_str) &
+                (df.created_at - df.retweeted_status__created_at > datetime.timedelta(minutes=self.delta_minutes))]
+            df.drop(left_out_own_retweets.index, inplace=True)
+
+            # self.left_out_own_retweets_ids = left_out_own_retweets.loc[:, 'retweeted_status__id_str'].values
+            print('There are {} retweets left out from central user timeline'.format(left_out_own_retweets.shape[0]))
+
+        self.df = df
+        print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
+              format(df.shape, original_shape, self.delta_minutes))
+
+        # self._load_text_df()
+        return df
 
     def get_level2_neighbours(self, user_id):
         """
@@ -45,19 +92,22 @@ class _DatasetOneUserModel(_Dataset):
         """Override by child classes. Returns all tweets to be considered for training.
         That is: uid's retweets, plus neighbours tweets in timeline.
         All this pruned to 10000"""
+        print('Getting neighbour tweets universe.')
         own_tweets = self.get_user_timeline(uid, with_original=False, with_retweets=True)
-        # own_retweets = self.df[(self.df.user__id_str == uid) & pd.notna(self.df.retweeted_status__id_str)]
         own_tweets_len = own_tweets.shape[0]
-        # tweets = np.concatenate((tweets, own_retweets.loc[:, ('id_str', 'created_at')]))
-        print('Len of own timeline (possible positive examples) is {}'.format(own_tweets_len))
+        print('Len of own retweets timeline (possible positive examples) is {}'.format(own_tweets_len))
 
         n_tweets = np.empty((0, 2))
         for u in neighbours:
+            # sacar del posible universo de tweets los `left_out_own_tweets`.
+            # tl_filtered = tl[np.isin(tl[:, 0], self.left_out_own_retweets_ids, invert=True)]
             n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u)))
 
         print('Done getting neighbour tweets universe. Shape is ', n_tweets.shape)
+        # sacar del posible universo de tweets los `left_out_own_tweets`.
+        # n_tweets = n_tweets[np.isin(n_tweets[:, 0], self.left_out_own_retweets_ids, invert=True)]
 
-        # prune to max of 10000
+        # prune to max of 10000. random sample is done over all neighbour tweets.
         n_tweets_len = 10000 - own_tweets_len
         if len(n_tweets) > n_tweets_len:
             idxs = np.random.choice(len(n_tweets), n_tweets_len, replace=False)
@@ -143,7 +193,7 @@ class _DatasetOneUserModel(_Dataset):
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
         else:
-            self._load_df()
+            self._load_df(central_uid=uid)
             uid = str(uid)
             neighbours = self.get_neighbourhood(uid)
             # remove selected user from neighbours

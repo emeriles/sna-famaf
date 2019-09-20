@@ -7,7 +7,7 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 
 from modeling._1_one_user_learn_neighbours.model import OneUserModel
 from processing._1_user_model.db_csv import DatasetOneUserModel
-from processing.utils import get_test_users_ids
+from processing.utils import get_test_users_ids, get_test_users_ids_aux
 from settings import SCORES_FOLDER_1_
 
 
@@ -46,9 +46,13 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     lock.release()
 
 
-def compute_scores(delta_minutes):
+def compute_scores(delta_minutes, cherry_pick_users=False):
 
-    uids = [u for u in get_test_users_ids()]
+    print('Using cherry picked users: {}'.format(cherry_pick_users))
+    if cherry_pick_users:
+        uids = get_test_users_ids_aux()
+    else:
+        uids = get_test_users_ids()
 
     pool = Pool(processes=7)
 
@@ -87,38 +91,38 @@ def compute_scores(delta_minutes):
     if not os.path.exists(SCORES_FOLDER_1_):
         os.makedirs(SCORES_FOLDER_1_)
 
-    with open(SCORES_FOLDER_1_ + '/f1s_train_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/f1s_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(f1s_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/f1s_valid_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/f1s_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(f1s_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/f1s_testv_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/f1s_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(f1s_testv), f)
 
-    with open(SCORES_FOLDER_1_ + '/precisions_train_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/precisions_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(precisions_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/precisions_valid_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/precisions_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(precisions_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/precisions_testv_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/precisions_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(precisions_testv), f)
 
-    with open(SCORES_FOLDER_1_ + '/recalls_train_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/recalls_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(recalls_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/recalls_valid_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/recalls_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(recalls_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/recalls_testv_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/recalls_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(recalls_testv), f)
 
-    with open(SCORES_FOLDER_1_ + '/pos_cases_train_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/pos_cases_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(pos_cases_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/pos_cases_valid_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/pos_cases_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(pos_cases_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/pos_cases_testv_svc.json', 'w') as f:
+    with open(SCORES_FOLDER_1_ + '/pos_cases_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(pos_cases_testv), f)

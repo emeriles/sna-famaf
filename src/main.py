@@ -8,7 +8,9 @@ if __name__ == '__main__':
     action_choices = [
         'test_all_clfs',
         'try_some_users',
+        'try_some_users_cp',
         'compute_scores',
+        'compute_scores_cp',
         'create_and_save_csv_cutted',
         # 'reset_sqlite_db',
         'active_and_central',
@@ -57,8 +59,13 @@ if __name__ == '__main__':
         OneUserModel.test_all_clfs(uid=76133133, time_delta_filter=delta_minutes)
     if args.action == 'try_some_users':
         try_some_users(delta_minutes=delta_minutes)
+    if args.action == 'try_some_users_cp':
+        try_some_users(delta_minutes=delta_minutes, cherry_pick_users=True)
     if args.action == 'compute_scores':
         compute_scores(delta_minutes=delta_minutes)
+    if args.action == 'compute_scores_cp':
+        compute_scores(delta_minutes=delta_minutes, cherry_pick_users=True)
+
     if args.action == 'create_and_save_csv_cutted':
         PreprocessCSV.create_and_save_csv_cutted()
     # if args.action == 'reset_sqlite_db':
@@ -73,10 +80,12 @@ if __name__ == '__main__':
         GraphHandler.build_k_closure_graph_2()
     if args.action == 'save_graph_as_graphml':
         InfluenceActions.save_graph_as_graphml()
+
     if args.action == 'build_influence_points':
         InfluenceActions.build_influence_points()
     if args.action == 'get_users_followed_data':
         GraphHandler.get_users_followed_data()
+
     if args.action == 'experiment_influencers':
         Experiments.experiment()
     if args.action == 'evaluate_influencers':

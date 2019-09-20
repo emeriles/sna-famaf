@@ -27,7 +27,7 @@ class _Dataset(object):
             return [id_ for id_, counts in most_active][:N]
         return most_active[:N]
 
-    def _load_df(self):
+    def _load_df(self, central_uid=None):
         print('Loading df')
         dtypes = {
             'user__id_str': str,
@@ -51,9 +51,8 @@ class _Dataset(object):
 
         if self.delta_minutes:
             print('Filtering by time')
-            df_filtered = df[
-                (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=self.delta_minutes)) |
-                np.isnat(df.retweeted_status__created_at)]
+            df_filtered = df[np.isnat(df.retweeted_status__created_at) |
+                (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=self.delta_minutes))]
             df = df_filtered.copy()
 
         self.df = df
