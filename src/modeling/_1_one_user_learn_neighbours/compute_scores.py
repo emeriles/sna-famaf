@@ -54,6 +54,8 @@ def compute_scores(delta_minutes, cherry_pick_users=False):
     else:
         uids = get_test_users_ids()
 
+    print('Running compute scores for {} users.'.format(len(uids)))
+
     pool = Pool(processes=7)
 
     manager = Manager()
