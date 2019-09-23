@@ -1,0 +1,208 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING compute_scores_cp
+Using cherry picked users: True
+Running compute scores for 79 users.
+Largamos para 70414730
+Loading df
+Filtering by time
+There are 0 retweets left out from central user timeline
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8)) 		Time delta is: 240 mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 568 level 2 neighbourhs for user 70414730.
+Getting neighbour tweets universe.
+Len of own retweets timeline (possible positive examples) is 338
+Done getting neighbour tweets universe. Shape is  (1382672, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 568)
+Done Extracting Features 0:09:37.509415
+Load or build model. For 70414730, model type: svc, time_delta: 240
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 568) (7000, 568) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00       966
+        True       1.00      0.85      0.92        34
+
+   micro avg       0.99      0.99      0.99      1000
+   macro avg       1.00      0.93      0.96      1000
+weighted avg       1.00      0.99      0.99      1000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6759
+        True       0.74      0.46      0.57       241
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.86      0.73      0.78      7000
+weighted avg       0.97      0.98      0.97      7000
+
+
+			END SVC
+Largamos para 150115389
+Loading df
+Filtering by time
+There are 0 retweets left out from central user timeline
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8)) 		Time delta is: 240 mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 598 level 2 neighbourhs for user 150115389.
+Getting neighbour tweets universe.
+Len of own retweets timeline (possible positive examples) is 209
+Done getting neighbour tweets universe. Shape is  (1416274, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 598)
+Done Extracting Features 0:10:00.990690
+Load or build model. For 150115389, model type: svc, time_delta: 240
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 598) (7000, 598) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/model_selection/_search.py:841: DeprecationWarning: The default of the `iid` parameter will change from True to False in version 0.22 and will be removed in 0.24. This will change numeric results when test-set sizes are unequal.
+  DeprecationWarning)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99       979
+        True       1.00      0.52      0.69        21
+
+   micro avg       0.99      0.99      0.99      1000
+   macro avg       0.99      0.76      0.84      1000
+weighted avg       0.99      0.99      0.99      1000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6852
+        True       1.00      0.38      0.55       148
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.69      0.77      7000
+weighted avg       0.99      0.99      0.98      7000
+
+
+			END SVC
+Largamos para 42915657
+Loading df
+Filtering by time
+There are 0 retweets left out from central user timeline
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8)) 		Time delta is: 240 mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 605 level 2 neighbourhs for user 42915657.
+Getting neighbour tweets universe.
+Len of own retweets timeline (possible positive examples) is 84
+Done getting neighbour tweets universe. Shape is  (1483960, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 605)
+Done Extracting Features 0:10:31.746901
+Load or build model. For 42915657, model type: svc, time_delta: 240
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 605) (7000, 605) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/model_selection/_search.py:841: DeprecationWarning: The default of the `iid` parameter will change from True to False in version 0.22 and will be removed in 0.24. This will change numeric results when test-set sizes are unequal.
+  DeprecationWarning)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00       992
+        True       1.00      0.88      0.93         8
+
+   micro avg       1.00      1.00      1.00      1000
+   macro avg       1.00      0.94      0.97      1000
+weighted avg       1.00      1.00      1.00      1000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      6940
+        True       0.70      0.35      0.47        60
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.85      0.67      0.73      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+			END SVC
+Largamos para 131728769
+Loading df
+Filtering by time
+There are 0 retweets left out from central user timeline
+Done loading df. DF shape is :(11902427, 8) (Original: (12397359, 8)) 		Time delta is: 240 mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 413 level 2 neighbourhs for user 131728769.
+Getting neighbour tweets universe.
+Len of own retweets timeline (possible positive examples) is 66
+Done getting neighbour tweets universe. Shape is  (917143, 2)
+	Dataset was truncated to 10000 tweets
+Extracting features Optimized. X shape is : (10000, 413)
+Done Extracting Features 0:06:27.309477
+Load or build model. For 131728769, model type: svc, time_delta: 240
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(1000, 413) (7000, 413) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/model_selection/_search.py:841: DeprecationWarning: The default of the `iid` parameter will change from True to False in version 0.22 and will be removed in 0.24. This will change numeric results when test-set sizes are unequal.
+  DeprecationWarning)
