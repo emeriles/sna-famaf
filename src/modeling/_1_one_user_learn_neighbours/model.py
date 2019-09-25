@@ -54,9 +54,9 @@ class OneUserModel(object):
         # Set the parameters by cross-validation
         params = dict(
             max_depth=[5, 20, None],
-            n_estimators=[10, 30, 100],
+            n_estimators=[10, 30, 100, 500],
             class_weight=['balanced_subsample', 'balanced'],
-            # sample_weight=[sample_weight]
+            sample_weight=[sample_weight, None],
             max_features=[50, 300, None, 'auto'],
             min_samples_leaf=[1, 3]
         )
