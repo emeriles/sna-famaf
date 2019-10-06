@@ -19,7 +19,7 @@ class _Dataset(object):
     def get_most_active_users(self, N=1000, just_ids=True):
         if self.df.empty:
             self._load_df()
-        most_active = sorted(self.df.user__id_str.groupby(self.df.user__id_str).count().iteritems(),
+        most_active = sorted(self.df.retweeted_status__user__id_str.groupby(self.df.user__id_str).count().iteritems(),
                              reverse=True, key=lambda x: x[1])
         print('Sample of first 20 most active users:')
         print(list(most_active)[:20])
