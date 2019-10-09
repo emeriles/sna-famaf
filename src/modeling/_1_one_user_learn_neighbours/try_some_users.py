@@ -9,7 +9,7 @@ def worker(user_id, delta_minutes):
     X_train, X_valid, X_test, y_train, y_valid, y_test = DatasetOneUserModel\
         .load_or_create_dataset(user_id, delta_minutes_filter=delta_minutes)
     dataset = X_train, X_valid, y_train, y_valid
-    clf = OneUserModel.model_select_rdf(dataset)
+    clf = OneUserModel.model_select_svc(dataset)
     OneUserModel.save_model(clf, user_id, 'svc', time_delta_filter=delta_minutes)
     # except Exception as e:
     #     print(e)
