@@ -1,0 +1,5011 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING try_some_users
+Using cherry picked users: False
+Try some users for user 155612697
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 219) (2000, 219) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6560
+        True       1.00      0.58      0.73       440
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.99      0.79      0.86      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1875
+        True       0.98      0.49      0.65       125
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.98      0.74      0.82      2000
+weighted avg       0.97      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 146114434
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 474) (2000, 474) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6645
+        True       1.00      0.74      0.85       355
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.87      0.92      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1899
+        True       1.00      0.28      0.43       101
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.98      0.64      0.71      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 16311528
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 437) (2000, 437) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6517
+        True       0.90      0.78      0.83       483
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.94      0.89      0.91      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.98      1862
+        True       0.81      0.67      0.74       138
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.89      0.83      0.86      2000
+weighted avg       0.96      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 29622459
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 375) (2000, 375) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.96      0.96      6285
+        True       0.63      0.65      0.64       715
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.79      0.80      0.80      7000
+weighted avg       0.93      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.95      0.96      1795
+        True       0.61      0.62      0.62       205
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.78      0.79      0.79      2000
+weighted avg       0.92      0.92      0.92      2000
+
+
+			END SVC
+Try some users for user 155359090
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 253) (2000, 253) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6232
+        True       0.94      0.83      0.88       768
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.96      0.91      0.94      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1781
+        True       0.94      0.74      0.83       219
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.96      0.87      0.91      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 177767829
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 511) (2000, 511) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.93      0.94      6455
+        True       0.39      0.55      0.46       545
+
+   micro avg       0.90      0.90      0.90      7000
+   macro avg       0.68      0.74      0.70      7000
+weighted avg       0.92      0.90      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.92      0.94      1844
+        True       0.33      0.49      0.40       156
+
+   micro avg       0.88      0.88      0.88      2000
+   macro avg       0.64      0.70      0.67      2000
+weighted avg       0.91      0.88      0.89      2000
+
+
+			END SVC
+Try some users for user 177222447
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 476) (2000, 476) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6325
+        True       0.95      0.72      0.82       675
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.96      0.86      0.90      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.99      0.96      1807
+        True       0.81      0.29      0.43       193
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.87      0.64      0.69      2000
+weighted avg       0.92      0.93      0.91      2000
+
+
+			END SVC
+Try some users for user 170780382
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 388) (2000, 388) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      6511
+        True       0.92      0.81      0.86       489
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.95      0.90      0.93      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      1861
+        True       0.86      0.76      0.80       139
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.92      0.87      0.90      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 195846630
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 283) (2000, 283) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      5949
+        True       0.77      0.95      0.85      1051
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.88      0.95      0.91      7000
+weighted avg       0.96      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.93      0.93      1700
+        True       0.62      0.65      0.63       300
+
+   micro avg       0.89      0.89      0.89      2000
+   macro avg       0.78      0.79      0.78      2000
+weighted avg       0.89      0.89      0.89      2000
+
+
+			END SVC
+Try some users for user 53062387
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 323) (2000, 323) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6606
+        True       1.00      0.67      0.80       394
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.84      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1887
+        True       1.00      0.42      0.59       113
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.98      0.71      0.79      2000
+weighted avg       0.97      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 206106207
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 676) (2000, 676) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6654
+        True       0.92      0.75      0.83       346
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.95      0.87      0.91      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1901
+        True       0.91      0.64      0.75        99
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.95      0.82      0.87      2000
+weighted avg       0.98      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 163180480
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 432) (2000, 432) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6574
+        True       1.00      0.66      0.80       426
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.83      0.89      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1878
+        True       1.00      0.75      0.86       122
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.99      0.88      0.93      2000
+weighted avg       0.99      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 149254440
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 419) (2000, 419) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6604
+        True       0.95      0.74      0.84       396
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.97      0.87      0.91      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1887
+        True       0.87      0.29      0.44       113
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.91      0.64      0.71      2000
+weighted avg       0.95      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 119781455
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 584) (2000, 584) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6450
+        True       0.99      0.67      0.80       550
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.84      0.89      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      1.00      0.97      1843
+        True       0.94      0.29      0.44       157
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.94      0.64      0.70      2000
+weighted avg       0.94      0.94      0.93      2000
+
+
+			END SVC
+Try some users for user 134221261
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 618) (2000, 618) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6503
+        True       0.93      0.74      0.83       497
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.96      0.87      0.91      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1858
+        True       0.91      0.48      0.63       142
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.93      0.74      0.80      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 203883293
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 456) (2000, 456) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.90      0.95      6139
+        True       0.58      0.95      0.72       861
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.79      0.93      0.83      7000
+weighted avg       0.94      0.91      0.92      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.88      0.90      1754
+        True       0.36      0.50      0.42       246
+
+   micro avg       0.83      0.83      0.83      2000
+   macro avg       0.64      0.69      0.66      2000
+weighted avg       0.86      0.83      0.84      2000
+
+
+			END SVC
+Try some users for user 154216022
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 428) (2000, 428) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6628
+        True       0.87      0.68      0.76       372
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.92      0.84      0.88      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1894
+        True       0.94      0.59      0.73       106
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.96      0.80      0.86      2000
+weighted avg       0.98      0.98      0.97      2000
+
+
+			END SVC
+Try some users for user 557296978
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 517) (2000, 517) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.95      0.98      0.97      6467
+        True       0.68      0.43      0.53       533
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.82      0.71      0.75      7000
+weighted avg       0.93      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.98      0.97      1847
+        True       0.68      0.46      0.55       153
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.82      0.72      0.76      2000
+weighted avg       0.94      0.94      0.94      2000
+
+
+			END SVC
+Try some users for user 187641771
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 431) (2000, 431) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      5770
+        True       0.95      0.80      0.87      1230
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.95      0.89      0.92      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.89      0.98      0.93      1649
+        True       0.81      0.42      0.55       351
+
+   micro avg       0.88      0.88      0.88      2000
+   macro avg       0.85      0.70      0.74      2000
+weighted avg       0.87      0.88      0.86      2000
+
+
+			END SVC
+Try some users for user 142055804
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 509) (2000, 509) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6151
+        True       0.97      0.88      0.92       849
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.98      0.94      0.96      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1757
+        True       0.95      0.74      0.84       243
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.96      0.87      0.91      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 177790591
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 272) (2000, 272) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6642
+        True       1.00      0.68      0.81       358
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.84      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1898
+        True       0.97      0.34      0.51       102
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.97      0.67      0.74      2000
+weighted avg       0.97      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 2925634140
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 209) (2000, 209) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.91      0.95      5914
+        True       0.65      0.93      0.77      1086
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.82      0.92      0.86      7000
+weighted avg       0.93      0.91      0.92      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.88      0.90      1689
+        True       0.46      0.55      0.50       311
+
+   micro avg       0.83      0.83      0.83      2000
+   macro avg       0.69      0.72      0.70      2000
+weighted avg       0.84      0.83      0.84      2000
+
+
+			END SVC
+Try some users for user 158155548
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 218) (2000, 218) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6443
+        True       0.92      0.67      0.78       557
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.95      0.83      0.88      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.99      0.97      1841
+        True       0.84      0.42      0.56       159
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.89      0.71      0.77      2000
+weighted avg       0.94      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 137020204
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 427) (2000, 427) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6278
+        True       1.00      0.81      0.89       722
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.90      0.94      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1794
+        True       1.00      0.60      0.75       206
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.98      0.80      0.86      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 273198805
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 506) (2000, 506) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6444
+        True       0.96      0.97      0.96       556
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.98      0.98      0.98      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      0.99      0.99      1841
+        True       0.94      0.94      0.94       159
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.97      0.97      0.97      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 105838056
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 413) (2000, 413) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6643
+        True       0.90      0.76      0.83       357
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.95      0.88      0.91      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      1898
+        True       0.82      0.60      0.69       102
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.90      0.80      0.84      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 72532390
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 449) (2000, 449) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6602
+        True       0.94      0.40      0.57       398
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.95      0.70      0.77      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1887
+        True       0.91      0.38      0.54       113
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.94      0.69      0.76      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 180387621
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 249) (2000, 249) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6551
+        True       0.90      0.73      0.81       449
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.94      0.86      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1871
+        True       0.91      0.67      0.77       129
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.95      0.83      0.88      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 136706767
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 224) (2000, 224) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6498
+        True       1.00      0.81      0.90       502
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.91      0.94      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      1857
+        True       0.72      0.43      0.54       143
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.84      0.71      0.75      2000
+weighted avg       0.94      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 17814160
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 340) (2000, 340) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6473
+        True       1.00      0.57      0.73       527
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.79      0.86      7000
+weighted avg       0.97      0.97      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1849
+        True       1.00      0.49      0.66       151
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.98      0.75      0.82      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 231636434
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 262) (2000, 262) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6190
+        True       0.93      0.74      0.83       810
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.95      0.87      0.90      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.99      0.96      1769
+        True       0.87      0.49      0.63       231
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.90      0.74      0.80      2000
+weighted avg       0.93      0.93      0.92      2000
+
+
+			END SVC
+Try some users for user 326512684
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 557) (2000, 557) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00      6519
+        True       0.99      0.90      0.94       481
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.95      0.97      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      1863
+        True       0.95      0.95      0.95       137
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.97      0.97      0.97      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 119998164
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 497) (2000, 497) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.96      0.98      6020
+        True       0.81      0.97      0.88       980
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.90      0.97      0.93      7000
+weighted avg       0.97      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.95      0.95      1720
+        True       0.70      0.77      0.74       280
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.83      0.86      0.85      2000
+weighted avg       0.93      0.92      0.92      2000
+
+
+			END SVC
+Try some users for user 151159392
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 328) (2000, 328) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6618
+        True       1.00      0.69      0.81       382
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.84      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      1891
+        True       0.98      0.55      0.71       109
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.98      0.77      0.85      2000
+weighted avg       0.98      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 155022600
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 492) (2000, 492) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6447
+        True       0.94      0.71      0.81       553
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.96      0.85      0.90      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      1.00      0.97      1842
+        True       0.94      0.42      0.58       158
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.95      0.71      0.78      2000
+weighted avg       0.95      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 146904949
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 372) (2000, 372) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6293
+        True       0.93      0.80      0.86       707
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.96      0.90      0.92      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.99      0.97      1798
+        True       0.81      0.51      0.63       202
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.88      0.75      0.80      2000
+weighted avg       0.93      0.94      0.93      2000
+
+
+			END SVC
+Try some users for user 118718718
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 479) (2000, 479) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.97      6566
+        True       0.50      0.90      0.64       434
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.74      0.92      0.80      7000
+weighted avg       0.96      0.94      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.94      0.95      1876
+        True       0.33      0.45      0.38       124
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.65      0.70      0.67      2000
+weighted avg       0.92      0.91      0.92      2000
+
+
+			END SVC
+Try some users for user 460141468
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 620) (2000, 620) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6502
+        True       0.86      0.78      0.82       498
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.92      0.89      0.90      7000
+weighted avg       0.97      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      1857
+        True       0.86      0.76      0.81       143
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.92      0.88      0.90      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 388635402
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 448) (2000, 448) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6471
+        True       1.00      0.66      0.80       529
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.99      0.83      0.89      7000
+weighted avg       0.98      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      1.00      0.97      1849
+        True       0.96      0.30      0.46       151
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.95      0.65      0.72      2000
+weighted avg       0.95      0.95      0.93      2000
+
+
+			END SVC
+Try some users for user 128958788
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 405) (2000, 405) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6212
+        True       0.99      0.93      0.96       788
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.96      0.98      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1775
+        True       0.96      0.84      0.90       225
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.97      0.92      0.94      2000
+weighted avg       0.98      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 80947885
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 838) (2000, 838) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      6613
+        True       1.00      0.21      0.35       387
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.98      0.60      0.66      7000
+weighted avg       0.96      0.96      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1889
+        True       1.00      0.27      0.43       111
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.98      0.64      0.70      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 173166881
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 416) (2000, 416) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6510
+        True       0.92      0.74      0.82       490
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.95      0.87      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      1860
+        True       0.83      0.49      0.62       140
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.90      0.74      0.80      2000
+weighted avg       0.95      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 134883425
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 482) (2000, 482) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.90      0.94      5620
+        True       0.69      0.93      0.79      1380
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.84      0.91      0.87      7000
+weighted avg       0.92      0.91      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.87      0.88      0.88      1605
+        True       0.49      0.48      0.49       395
+
+   micro avg       0.80      0.80      0.80      2000
+   macro avg       0.68      0.68      0.68      2000
+weighted avg       0.80      0.80      0.80      2000
+
+
+			END SVC
+Try some users for user 182831320
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 372) (2000, 372) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6571
+        True       0.78      0.52      0.63       429
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.87      0.76      0.80      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1877
+        True       0.76      0.52      0.62       123
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.87      0.75      0.80      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 17441030
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 579) (2000, 579) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6299
+        True       0.93      0.75      0.83       701
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.95      0.87      0.91      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.98      0.96      1800
+        True       0.77      0.49      0.60       200
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.86      0.74      0.78      2000
+weighted avg       0.93      0.93      0.93      2000
+
+
+			END SVC
+Try some users for user 233630752
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 492) (2000, 492) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6625
+        True       0.95      0.81      0.87       375
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.97      0.90      0.93      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      1893
+        True       0.88      0.65      0.75       107
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.93      0.82      0.87      2000
+weighted avg       0.98      0.98      0.97      2000
+
+
+			END SVC
+Try some users for user 316583387
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 659) (2000, 659) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.96      0.97      6163
+        True       0.74      0.81      0.77       837
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.86      0.88      0.87      7000
+weighted avg       0.95      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.95      0.96      1761
+        True       0.67      0.75      0.70       239
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.82      0.85      0.83      2000
+weighted avg       0.93      0.93      0.93      2000
+
+
+			END SVC
+Try some users for user 178045174
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 348) (2000, 348) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6489
+        True       0.91      0.66      0.76       511
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.94      0.83      0.87      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1854
+        True       0.86      0.62      0.72       146
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.91      0.80      0.85      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 358430626
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 323) (2000, 323) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.89      0.94      5182
+        True       0.76      0.95      0.84      1818
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.87      0.92      0.89      7000
+weighted avg       0.92      0.91      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.79      0.86      1481
+        True       0.58      0.84      0.69       519
+
+   micro avg       0.80      0.80      0.80      2000
+   macro avg       0.76      0.81      0.77      2000
+weighted avg       0.84      0.80      0.81      2000
+
+
+			END SVC
+Try some users for user 2485702456
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 503) (2000, 503) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6443
+        True       0.94      0.79      0.86       557
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.96      0.89      0.93      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1841
+        True       0.94      0.59      0.73       159
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.95      0.79      0.85      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 301016792
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 265) (2000, 265) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      5706
+        True       0.93      0.80      0.86      1294
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.94      0.89      0.91      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.97      0.94      1630
+        True       0.80      0.57      0.67       370
+
+   micro avg       0.89      0.89      0.89      2000
+   macro avg       0.86      0.77      0.80      2000
+weighted avg       0.89      0.89      0.89      2000
+
+
+			END SVC
+Try some users for user 95987553
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 361) (2000, 361) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.95      1.00      0.97      6058
+        True       0.98      0.69      0.81       942
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.97      0.84      0.89      7000
+weighted avg       0.96      0.96      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      1.00      0.96      1731
+        True       0.94      0.44      0.60       269
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.93      0.72      0.78      2000
+weighted avg       0.92      0.92      0.91      2000
+
+
+			END SVC
+Try some users for user 1660361
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 472) (2000, 472) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.96      6515
+        True       0.50      0.85      0.63       485
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.74      0.90      0.80      7000
+weighted avg       0.95      0.93      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.95      0.96      1861
+        True       0.46      0.60      0.52       139
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.71      0.77      0.74      2000
+weighted avg       0.93      0.92      0.93      2000
+
+
+			END SVC
+Try some users for user 110414397
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 394) (2000, 394) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.91      0.85      0.88      5653
+        True       0.51      0.65      0.57      1347
+
+   micro avg       0.81      0.81      0.81      7000
+   macro avg       0.71      0.75      0.72      7000
+weighted avg       0.83      0.81      0.82      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.89      0.82      0.85      1615
+        True       0.43      0.56      0.49       385
+
+   micro avg       0.77      0.77      0.77      2000
+   macro avg       0.66      0.69      0.67      2000
+weighted avg       0.80      0.77      0.78      2000
+
+
+			END SVC
+Try some users for user 197637727
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 459) (2000, 459) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6550
+        True       0.96      0.74      0.84       450
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.97      0.87      0.91      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1871
+        True       0.93      0.43      0.59       129
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.95      0.72      0.79      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 158869286
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 196) (2000, 196) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.91      0.94      5917
+        True       0.64      0.91      0.75      1083
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.81      0.91      0.85      7000
+weighted avg       0.93      0.91      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      0.87      0.89      1691
+        True       0.45      0.56      0.50       309
+
+   micro avg       0.82      0.82      0.82      2000
+   macro avg       0.68      0.72      0.70      2000
+weighted avg       0.84      0.82      0.83      2000
+
+
+			END SVC
+Try some users for user 235340755
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 632) (2000, 632) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6635
+        True       0.96      0.77      0.85       365
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.97      0.88      0.92      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      1895
+        True       0.94      0.71      0.81       105
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.96      0.86      0.90      2000
+weighted avg       0.98      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 29476104
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 617) (2000, 617) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6625
+        True       0.75      0.43      0.55       375
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.86      0.71      0.76      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1893
+        True       0.69      0.45      0.54       107
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.83      0.72      0.76      2000
+weighted avg       0.95      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 171196248
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 450) (2000, 450) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6583
+        True       0.97      0.68      0.80       417
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.97      0.84      0.89      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1881
+        True       0.89      0.50      0.64       119
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.93      0.75      0.81      2000
+weighted avg       0.96      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 13330252
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 679) (2000, 679) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      6546
+        True       0.85      0.41      0.55       454
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.91      0.70      0.77      7000
+weighted avg       0.95      0.96      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      1.00      0.97      1870
+        True       0.84      0.32      0.47       130
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.90      0.66      0.72      2000
+weighted avg       0.95      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 17620434
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 454) (2000, 454) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6359
+        True       1.00      0.75      0.86       641
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.88      0.92      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      1.00      0.97      1817
+        True       0.97      0.36      0.52       183
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.95      0.68      0.74      2000
+weighted avg       0.94      0.94      0.93      2000
+
+
+			END SVC
+Try some users for user 195005131
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 375) (2000, 375) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      6556
+        True       0.86      0.84      0.85       444
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.93      0.91      0.92      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1873
+        True       0.77      0.59      0.67       127
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.87      0.79      0.82      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 180068784
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 501) (2000, 501) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      5777
+        True       0.96      0.82      0.89      1223
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.96      0.91      0.93      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.99      0.95      1651
+        True       0.92      0.53      0.67       349
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.91      0.76      0.81      2000
+weighted avg       0.91      0.91      0.90      2000
+
+
+			END SVC
+Try some users for user 242311942
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 435) (2000, 435) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6579
+        True       0.85      0.50      0.63       421
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.91      0.75      0.80      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1880
+        True       0.85      0.53      0.65       120
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.91      0.76      0.82      2000
+weighted avg       0.96      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 123865750
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 295) (2000, 295) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6637
+        True       0.88      0.62      0.73       363
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.93      0.81      0.86      7000
+weighted avg       0.97      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1896
+        True       0.84      0.39      0.54       104
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.90      0.70      0.76      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 182644738
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 444) (2000, 444) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      6574
+        True       0.91      0.83      0.87       426
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.95      0.91      0.93      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      1879
+        True       0.83      0.68      0.75       121
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.90      0.83      0.87      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 138500942
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 376) (2000, 376) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      6086
+        True       0.94      0.73      0.82       914
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.95      0.86      0.90      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      0.99      0.95      1739
+        True       0.84      0.39      0.54       261
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.88      0.69      0.74      2000
+weighted avg       0.91      0.91      0.90      2000
+
+
+			END SVC
+Try some users for user 144561679
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 475) (2000, 475) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6320
+        True       0.99      0.76      0.86       680
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.98      0.88      0.92      7000
+weighted avg       0.98      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      1.00      0.96      1806
+        True       0.87      0.27      0.42       194
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.90      0.63      0.69      2000
+weighted avg       0.92      0.93      0.91      2000
+
+
+			END SVC
+Try some users for user 226730707
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 473) (2000, 473) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.97      6530
+        True       0.53      0.90      0.67       470
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.76      0.92      0.82      7000
+weighted avg       0.96      0.94      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.94      0.95      1866
+        True       0.37      0.47      0.41       134
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.66      0.71      0.68      2000
+weighted avg       0.92      0.91      0.92      2000
+
+
+			END SVC
+Try some users for user 130922573
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 591) (2000, 591) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6500
+        True       0.90      0.74      0.81       500
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.94      0.87      0.90      7000
+weighted avg       0.97      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      1857
+        True       0.75      0.45      0.57       143
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.85      0.72      0.77      2000
+weighted avg       0.94      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 2945261
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 867) (2000, 867) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.92      0.97      0.94      5937
+        True       0.74      0.53      0.62      1063
+
+   micro avg       0.90      0.90      0.90      7000
+   macro avg       0.83      0.75      0.78      7000
+weighted avg       0.89      0.90      0.89      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.96      0.93      1696
+        True       0.67      0.46      0.55       304
+
+   micro avg       0.88      0.88      0.88      2000
+   macro avg       0.79      0.71      0.74      2000
+weighted avg       0.87      0.88      0.87      2000
+
+
+			END SVC
+Try some users for user 175914955
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 376) (2000, 376) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6302
+        True       0.99      0.74      0.85       698
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.87      0.92      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      1.00      0.96      1801
+        True       0.95      0.27      0.42       199
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.94      0.63      0.69      2000
+weighted avg       0.93      0.93      0.91      2000
+
+
+			END SVC
+Try some users for user 210952398
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 334) (2000, 334) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      6257
+        True       0.91      0.69      0.79       743
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.94      0.84      0.88      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.99      0.96      1788
+        True       0.88      0.38      0.53       212
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.90      0.69      0.74      2000
+weighted avg       0.93      0.93      0.92      2000
+
+
+			END SVC
+Try some users for user 8952422
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 482) (2000, 482) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.98      0.97      6169
+        True       0.82      0.77      0.80       831
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.90      0.87      0.89      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.95      0.95      1763
+        True       0.61      0.56      0.58       237
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.78      0.75      0.76      2000
+weighted avg       0.90      0.91      0.90      2000
+
+
+			END SVC
+Try some users for user 228190246
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 426) (2000, 426) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      6021
+        True       0.96      0.77      0.85       979
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.96      0.88      0.91      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      0.99      0.95      1721
+        True       0.84      0.47      0.60       279
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.88      0.73      0.78      2000
+weighted avg       0.91      0.91      0.90      2000
+
+
+			END SVC
+Try some users for user 2686869089
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 456) (2000, 456) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.92      0.95      5766
+        True       0.72      0.95      0.82      1234
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.85      0.93      0.89      7000
+weighted avg       0.94      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.88      0.89      1647
+        True       0.50      0.58      0.54       353
+
+   micro avg       0.82      0.82      0.82      2000
+   macro avg       0.70      0.73      0.71      2000
+weighted avg       0.84      0.82      0.83      2000
+
+
+			END SVC
+Try some users for user 138814032
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 521) (2000, 521) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.93      0.96      6537
+        True       0.49      1.00      0.66       463
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.75      0.96      0.81      7000
+weighted avg       0.97      0.93      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.92      0.95      1868
+        True       0.41      0.78      0.54       132
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.70      0.85      0.74      2000
+weighted avg       0.95      0.91      0.92      2000
+
+
+			END SVC
+Try some users for user 188483512
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 267) (2000, 267) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6603
+        True       1.00      0.52      0.69       397
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.99      0.76      0.84      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      1887
+        True       1.00      0.52      0.69       113
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.99      0.76      0.84      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 145421975
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 606) (2000, 606) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      6574
+        True       0.91      0.85      0.88       426
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.95      0.92      0.93      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1879
+        True       0.89      0.58      0.70       121
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.93      0.79      0.84      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 149258770
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 390) (2000, 390) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      5767
+        True       0.96      0.82      0.88      1233
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.96      0.91      0.93      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.99      0.95      1647
+        True       0.90      0.54      0.67       353
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.90      0.76      0.81      2000
+weighted avg       0.91      0.91      0.90      2000
+
+
+			END SVC
+Try some users for user 153815177
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 475) (2000, 475) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6621
+        True       0.96      0.76      0.85       379
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.97      0.88      0.92      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1892
+        True       0.87      0.44      0.59       108
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.92      0.72      0.79      2000
+weighted avg       0.96      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 156242969
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 419) (2000, 419) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.98      0.97      6018
+        True       0.86      0.78      0.82       982
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.91      0.88      0.90      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.98      0.97      1719
+        True       0.85      0.78      0.81       281
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.91      0.88      0.89      2000
+weighted avg       0.95      0.95      0.95      2000
+
+
+			END SVC
+Try some users for user 149970952
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 390) (2000, 390) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6509
+        True       0.97      0.81      0.88       491
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.98      0.90      0.94      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1859
+        True       0.96      0.46      0.62       141
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.96      0.73      0.80      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 209711679
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 632) (2000, 632) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      6578
+        True       0.89      0.80      0.84       422
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.94      0.89      0.92      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      1879
+        True       0.85      0.81      0.83       121
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.92      0.90      0.91      2000
+weighted avg       0.98      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 17931624
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 624) (2000, 624) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6616
+        True       1.00      0.42      0.59       384
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.71      0.79      7000
+weighted avg       0.97      0.97      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1890
+        True       1.00      0.46      0.63       110
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.98      0.73      0.81      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 130506373
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 379) (2000, 379) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6407
+        True       0.83      0.72      0.77       593
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.90      0.85      0.88      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.98      0.98      1831
+        True       0.79      0.69      0.74       169
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.88      0.84      0.86      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 159480540
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 707) (2000, 707) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.93      1.00      0.96      6332
+        True       1.00      0.29      0.45       668
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.97      0.64      0.71      7000
+weighted avg       0.94      0.93      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      1.00      0.96      1809
+        True       1.00      0.31      0.47       191
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.97      0.65      0.72      2000
+weighted avg       0.94      0.93      0.92      2000
+
+
+			END SVC
+Try some users for user 140237000
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 607) (2000, 607) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6645
+        True       0.98      0.47      0.63       355
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.97      0.73      0.81      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      1899
+        True       0.98      0.49      0.65       101
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.98      0.74      0.82      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 53169164
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 302) (2000, 302) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.98      6584
+        True       0.78      0.62      0.69       416
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.88      0.80      0.84      7000
+weighted avg       0.96      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1881
+        True       0.82      0.50      0.62       119
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.90      0.75      0.80      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 90185866
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 494) (2000, 494) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6313
+        True       0.96      0.80      0.87       687
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.97      0.90      0.93      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.99      0.96      1803
+        True       0.84      0.41      0.55       197
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.89      0.70      0.76      2000
+weighted avg       0.93      0.93      0.92      2000
+
+
+			END SVC
+Try some users for user 110316549
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 521) (2000, 521) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6380
+        True       0.99      0.71      0.83       620
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.86      0.91      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      1.00      0.97      1823
+        True       0.91      0.42      0.58       177
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.93      0.71      0.78      2000
+weighted avg       0.94      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 145414019
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 584) (2000, 584) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.95      0.93      0.94      6335
+        True       0.47      0.57      0.51       665
+
+   micro avg       0.90      0.90      0.90      7000
+   macro avg       0.71      0.75      0.73      7000
+weighted avg       0.91      0.90      0.90      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.93      0.94      1810
+        True       0.40      0.46      0.43       190
+
+   micro avg       0.88      0.88      0.88      2000
+   macro avg       0.67      0.70      0.68      2000
+weighted avg       0.89      0.88      0.89      2000
+
+
+			END SVC
+Try some users for user 185083071
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 213) (2000, 213) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.93      0.96      6126
+        True       0.65      0.93      0.76       874
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.82      0.93      0.86      7000
+weighted avg       0.95      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.89      0.91      1750
+        True       0.44      0.60      0.51       250
+
+   micro avg       0.85      0.85      0.85      2000
+   macro avg       0.69      0.74      0.71      2000
+weighted avg       0.88      0.85      0.86      2000
+
+
+			END SVC
+Try some users for user 142192618
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 514) (2000, 514) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.95      6529
+        True       0.40      0.53      0.46       471
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.68      0.74      0.71      7000
+weighted avg       0.93      0.92      0.92      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.94      0.95      1865
+        True       0.36      0.47      0.41       135
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.66      0.70      0.68      2000
+weighted avg       0.92      0.91      0.91      2000
+
+
+			END SVC
+Try some users for user 430073621
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 603) (2000, 603) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6416
+        True       0.98      0.67      0.80       584
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.84      0.89      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      1.00      0.97      1833
+        True       0.95      0.35      0.52       167
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.95      0.68      0.74      2000
+weighted avg       0.94      0.94      0.93      2000
+
+
+			END SVC
+Try some users for user 103462194
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 513) (2000, 513) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.89      0.94      5895
+        True       0.62      0.94      0.75      1105
+
+   micro avg       0.90      0.90      0.90      7000
+   macro avg       0.80      0.92      0.84      7000
+weighted avg       0.93      0.90      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.87      0.89      1685
+        True       0.44      0.54      0.48       315
+
+   micro avg       0.82      0.82      0.82      2000
+   macro avg       0.67      0.70      0.69      2000
+weighted avg       0.84      0.82      0.83      2000
+
+
+			END SVC
+Try some users for user 36787113
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 343) (2000, 343) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6509
+        True       0.90      0.74      0.81       491
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.94      0.87      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1860
+        True       0.84      0.56      0.67       140
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.90      0.77      0.82      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 243827202
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 398) (2000, 398) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.92      0.95      5627
+        True       0.74      0.93      0.82      1373
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.86      0.93      0.89      7000
+weighted avg       0.93      0.92      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      0.89      0.90      1607
+        True       0.60      0.66      0.63       393
+
+   micro avg       0.85      0.85      0.85      2000
+   macro avg       0.76      0.78      0.77      2000
+weighted avg       0.85      0.85      0.85      2000
+
+
+			END SVC
+Try some users for user 172373423
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 453) (2000, 453) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.94      0.96      0.95      6191
+        True       0.62      0.51      0.56       809
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.78      0.73      0.75      7000
+weighted avg       0.90      0.91      0.90      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.97      0.95      1769
+        True       0.65      0.48      0.55       231
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.79      0.72      0.75      2000
+weighted avg       0.90      0.91      0.90      2000
+
+
+			END SVC
+Try some users for user 208646224
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 468) (2000, 468) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6476
+        True       0.99      0.69      0.81       524
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.98      0.84      0.90      7000
+weighted avg       0.98      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      1.00      0.97      1851
+        True       0.89      0.32      0.47       149
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.92      0.66      0.72      2000
+weighted avg       0.94      0.95      0.93      2000
+
+
+			END SVC
+Try some users for user 159620450
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 612) (2000, 612) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.92      0.96      6225
+        True       0.60      0.96      0.74       775
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.80      0.94      0.85      7000
+weighted avg       0.95      0.92      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.89      0.92      1779
+        True       0.40      0.57      0.47       221
+
+   micro avg       0.86      0.86      0.86      2000
+   macro avg       0.67      0.73      0.69      2000
+weighted avg       0.88      0.86      0.87      2000
+
+
+			END SVC
+Try some users for user 160142615
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 515) (2000, 515) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.90      0.94      5845
+        True       0.65      0.94      0.77      1155
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.82      0.92      0.85      7000
+weighted avg       0.93      0.91      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.87      0.90      1670
+        True       0.51      0.70      0.59       330
+
+   micro avg       0.84      0.84      0.84      2000
+   macro avg       0.72      0.78      0.74      2000
+weighted avg       0.87      0.84      0.85      2000
+
+
+			END SVC
+Try some users for user 143562981
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 351) (2000, 351) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6600
+        True       1.00      0.74      0.85       400
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.87      0.92      7000
+weighted avg       0.99      0.99      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1885
+        True       0.98      0.38      0.55       115
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.97      0.69      0.77      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 1357911
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 404) (2000, 404) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      6011
+        True       0.93      0.78      0.85       989
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.94      0.88      0.91      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.99      0.95      1717
+        True       0.82      0.39      0.53       283
+
+   micro avg       0.90      0.90      0.90      2000
+   macro avg       0.86      0.69      0.74      2000
+weighted avg       0.90      0.90      0.89      2000
+
+
+			END SVC
+Try some users for user 447461196
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 484) (2000, 484) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.98      6345
+        True       0.88      0.76      0.81       655
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.93      0.87      0.90      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.98      0.97      1813
+        True       0.74      0.54      0.62       187
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.85      0.76      0.80      2000
+weighted avg       0.93      0.94      0.93      2000
+
+
+			END SVC
+Try some users for user 214986628
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 295) (2000, 295) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6464
+        True       0.99      0.75      0.85       536
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.98      0.87      0.92      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.99      0.97      1847
+        True       0.81      0.33      0.47       153
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.88      0.66      0.72      2000
+weighted avg       0.94      0.94      0.93      2000
+
+
+			END SVC
+Try some users for user 55066860
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 689) (2000, 689) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00      6654
+        True       0.93      0.95      0.94       346
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.96      0.98      0.97      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      1901
+        True       0.90      0.88      0.89        99
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.95      0.94      0.94      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 244175447
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 429) (2000, 429) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.92      0.95      5510
+        True       0.75      0.95      0.84      1490
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.87      0.93      0.89      7000
+weighted avg       0.94      0.92      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.89      0.90      0.89      1575
+        True       0.61      0.60      0.60       425
+
+   micro avg       0.83      0.83      0.83      2000
+   macro avg       0.75      0.75      0.75      2000
+weighted avg       0.83      0.83      0.83      2000
+
+
+			END SVC
+Try some users for user 7523352
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 258) (2000, 258) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6570
+        True       0.96      0.63      0.76       430
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.97      0.81      0.87      7000
+weighted avg       0.98      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1877
+        True       0.89      0.51      0.65       123
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.93      0.75      0.82      2000
+weighted avg       0.96      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 1247076385
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 480) (2000, 480) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.90      0.94      5738
+        True       0.67      0.95      0.79      1262
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.83      0.92      0.86      7000
+weighted avg       0.93      0.91      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.89      0.91      1639
+        True       0.57      0.69      0.63       361
+
+   micro avg       0.85      0.85      0.85      2000
+   macro avg       0.75      0.79      0.77      2000
+weighted avg       0.87      0.85      0.86      2000
+
+
+			END SVC
+Try some users for user 966192692
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 564) (2000, 564) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.89      0.94      5648
+        True       0.68      0.94      0.79      1352
+
+   micro avg       0.90      0.90      0.90      7000
+   macro avg       0.83      0.92      0.86      7000
+weighted avg       0.93      0.90      0.91      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.90      0.87      0.89      1614
+        True       0.53      0.61      0.57       386
+
+   micro avg       0.82      0.82      0.82      2000
+   macro avg       0.72      0.74      0.73      2000
+weighted avg       0.83      0.82      0.82      2000
+
+
+			END SVC
+Try some users for user 74615519
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 453) (2000, 453) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6642
+        True       0.97      0.63      0.77       358
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.98      0.82      0.88      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1897
+        True       0.94      0.47      0.62       103
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.96      0.73      0.80      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 143431671
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 410) (2000, 410) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      6032
+        True       0.94      0.75      0.84       968
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.95      0.87      0.91      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.98      0.95      1723
+        True       0.80      0.39      0.53       277
+
+   micro avg       0.90      0.90      0.90      2000
+   macro avg       0.85      0.69      0.74      2000
+weighted avg       0.89      0.90      0.89      2000
+
+
+			END SVC
+Try some users for user 142532652
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 526) (2000, 526) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.92      0.89      0.90      5389
+        True       0.67      0.73      0.70      1611
+
+   micro avg       0.85      0.85      0.85      7000
+   macro avg       0.79      0.81      0.80      7000
+weighted avg       0.86      0.85      0.86      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.91      0.90      0.90      1540
+        True       0.67      0.69      0.68       460
+
+   micro avg       0.85      0.85      0.85      2000
+   macro avg       0.79      0.79      0.79      2000
+weighted avg       0.85      0.85      0.85      2000
+
+
+			END SVC
+Try some users for user 132704571
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 212) (2000, 212) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      6074
+        True       0.99      0.75      0.85       926
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.87      0.92      7000
+weighted avg       0.97      0.97      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.99      0.96      1735
+        True       0.88      0.52      0.65       265
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.91      0.75      0.81      2000
+weighted avg       0.92      0.93      0.92      2000
+
+
+			END SVC
+Try some users for user 14156599
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 494) (2000, 494) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6263
+        True       0.98      0.70      0.82       737
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.98      0.85      0.90      7000
+weighted avg       0.97      0.97      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      1.00      0.96      1789
+        True       0.91      0.35      0.50       211
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.92      0.67      0.73      2000
+weighted avg       0.93      0.93      0.91      2000
+
+
+			END SVC
+Try some users for user 134898089
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 587) (2000, 587) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      6131
+        True       0.99      0.72      0.83       869
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.98      0.86      0.91      7000
+weighted avg       0.97      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      1.00      0.96      1751
+        True       0.93      0.39      0.55       249
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.93      0.69      0.75      2000
+weighted avg       0.92      0.92      0.91      2000
+
+
+			END SVC
+Try some users for user 97717418
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 399) (2000, 399) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.88      0.93      5735
+        True       0.63      0.92      0.75      1265
+
+   micro avg       0.89      0.89      0.89      7000
+   macro avg       0.81      0.90      0.84      7000
+weighted avg       0.92      0.89      0.90      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.90      0.87      0.88      1639
+        True       0.47      0.54      0.50       361
+
+   micro avg       0.81      0.81      0.81      2000
+   macro avg       0.68      0.70      0.69      2000
+weighted avg       0.82      0.81      0.81      2000
+
+
+			END SVC
+Try some users for user 7377622
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 502) (2000, 502) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6556
+        True       1.00      0.66      0.79       444
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.83      0.89      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1873
+        True       1.00      0.52      0.68       127
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.98      0.76      0.83      2000
+weighted avg       0.97      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 55023471
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 311) (2000, 311) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.98      6391
+        True       0.86      0.75      0.80       609
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.92      0.87      0.89      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.99      0.97      1826
+        True       0.76      0.45      0.57       174
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.85      0.72      0.77      2000
+weighted avg       0.93      0.94      0.93      2000
+
+
+			END SVC
+Try some users for user 136794480
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 364) (2000, 364) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6612
+        True       0.78      0.51      0.62       388
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.88      0.75      0.80      7000
+weighted avg       0.96      0.97      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      1889
+        True       0.62      0.32      0.43       111
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.79      0.66      0.70      2000
+weighted avg       0.94      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 7981232
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 422) (2000, 422) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6434
+        True       0.91      0.70      0.79       566
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.94      0.85      0.89      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.99      0.97      1839
+        True       0.74      0.47      0.57       161
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.85      0.73      0.77      2000
+weighted avg       0.94      0.94      0.94      2000
+
+
+			END SVC
+Try some users for user 87528727
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 758) (2000, 758) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.99      6428
+        True       1.00      0.70      0.82       572
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.85      0.91      7000
+weighted avg       0.98      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      1.00      0.97      1837
+        True       1.00      0.39      0.56       163
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.97      0.70      0.77      2000
+weighted avg       0.95      0.95      0.94      2000
+
+
+			END SVC
+Try some users for user 721013767
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 278) (2000, 278) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.98      6373
+        True       0.90      0.74      0.81       627
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.94      0.87      0.90      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1821
+        True       0.84      0.64      0.73       179
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.90      0.82      0.85      2000
+weighted avg       0.95      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 277517202
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 514) (2000, 514) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6651
+        True       1.00      0.65      0.79       349
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.83      0.89      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1900
+        True       0.97      0.35      0.51       100
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.97      0.67      0.75      2000
+weighted avg       0.97      0.97      0.96      2000
+
+
+			END SVC
+Try some users for user 878235842
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 455) (2000, 455) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6607
+        True       0.93      0.72      0.81       393
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.96      0.86      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1887
+        True       0.88      0.33      0.48       113
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.92      0.66      0.73      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 188525384
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 206) (2000, 206) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.94      0.99      0.97      6138
+        True       0.92      0.59      0.72       862
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.93      0.79      0.84      7000
+weighted avg       0.94      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      0.99      0.96      1753
+        True       0.88      0.42      0.57       247
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.90      0.71      0.76      2000
+weighted avg       0.92      0.92      0.91      2000
+
+
+			END SVC
+Try some users for user 158007051
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 365) (2000, 365) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      5613
+        True       0.94      0.82      0.88      1387
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.95      0.90      0.92      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.88      0.97      0.92      1603
+        True       0.77      0.46      0.58       397
+
+   micro avg       0.87      0.87      0.87      2000
+   macro avg       0.83      0.71      0.75      2000
+weighted avg       0.86      0.87      0.85      2000
+
+
+			END SVC
+Try some users for user 369120654
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 378) (2000, 378) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.95      0.96      0.96      6000
+        True       0.75      0.73      0.74      1000
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.85      0.84      0.85      7000
+weighted avg       0.93      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.95      0.94      1715
+        True       0.67      0.61      0.64       285
+
+   micro avg       0.90      0.90      0.90      2000
+   macro avg       0.81      0.78      0.79      2000
+weighted avg       0.90      0.90      0.90      2000
+
+
+			END SVC
+Try some users for user 49365716
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 428) (2000, 428) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.98      0.98      5862
+        True       0.91      0.84      0.87      1138
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.94      0.91      0.92      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.98      0.96      1675
+        True       0.87      0.73      0.79       325
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.91      0.85      0.88      2000
+weighted avg       0.94      0.94      0.94      2000
+
+
+			END SVC
+Try some users for user 273923851
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 698) (2000, 698) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.98      6594
+        True       0.58      0.91      0.71       406
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.79      0.94      0.84      7000
+weighted avg       0.97      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.96      1884
+        True       0.45      0.72      0.55       116
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.72      0.83      0.76      2000
+weighted avg       0.95      0.93      0.94      2000
+
+
+			END SVC
+Try some users for user 8083992
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 677) (2000, 677) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6535
+        True       0.85      0.63      0.72       465
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.91      0.81      0.85      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      1867
+        True       0.85      0.53      0.65       133
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.91      0.76      0.82      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 1311735576
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 163) (2000, 163) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.94      0.99      0.97      5675
+        True       0.97      0.75      0.85      1325
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.96      0.87      0.91      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.88      0.97      0.92      1621
+        True       0.76      0.43      0.55       379
+
+   micro avg       0.87      0.87      0.87      2000
+   macro avg       0.82      0.70      0.74      2000
+weighted avg       0.86      0.87      0.85      2000
+
+
+			END SVC
+Try some users for user 187193299
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 420) (2000, 420) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.91      0.88      0.90      5375
+        True       0.64      0.73      0.68      1625
+
+   micro avg       0.84      0.84      0.84      7000
+   macro avg       0.78      0.80      0.79      7000
+weighted avg       0.85      0.84      0.85      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.90      0.87      0.88      1535
+        True       0.61      0.67      0.64       465
+
+   micro avg       0.82      0.82      0.82      2000
+   macro avg       0.75      0.77      0.76      2000
+weighted avg       0.83      0.82      0.83      2000
+
+
+			END SVC
+Try some users for user 712635080
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 418) (2000, 418) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      6560
+        True       0.88      0.78      0.82       440
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.93      0.88      0.91      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      1875
+        True       0.89      0.74      0.81       125
+
+   micro avg       0.98      0.98      0.98      2000
+   macro avg       0.93      0.87      0.90      2000
+weighted avg       0.98      0.98      0.98      2000
+
+
+			END SVC
+Try some users for user 35744749
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 529) (2000, 529) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.97      0.98      6440
+        True       0.73      0.79      0.76       560
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.86      0.88      0.87      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.95      0.95      0.95      1840
+        True       0.40      0.39      0.39       160
+
+   micro avg       0.90      0.90      0.90      2000
+   macro avg       0.67      0.67      0.67      2000
+weighted avg       0.90      0.90      0.90      2000
+
+
+			END SVC
+Try some users for user 36997365
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 172) (2000, 172) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      6592
+        True       1.00      0.83      0.91       408
+
+   micro avg       0.99      0.99      0.99      7000
+   macro avg       0.99      0.92      0.95      7000
+weighted avg       0.99      0.99      0.99      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      0.99      1883
+        True       1.00      0.78      0.88       117
+
+   micro avg       0.99      0.99      0.99      2000
+   macro avg       0.99      0.89      0.93      2000
+weighted avg       0.99      0.99      0.99      2000
+
+
+			END SVC
+Try some users for user 44698651
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 204) (2000, 204) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.98      6548
+        True       0.83      0.71      0.76       452
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.90      0.85      0.87      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.98      0.98      1871
+        True       0.73      0.61      0.67       129
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.85      0.80      0.82      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Try some users for user 171681656
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 376) (2000, 376) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6455
+        True       0.97      0.72      0.83       545
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.97      0.86      0.91      7000
+weighted avg       0.98      0.98      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.98      1845
+        True       0.88      0.47      0.61       155
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.92      0.73      0.79      2000
+weighted avg       0.95      0.95      0.95      2000
+
+
+			END SVC
+Try some users for user 156056618
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 392) (2000, 392) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      6338
+        True       0.96      0.71      0.82       662
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.96      0.86      0.90      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.94      0.99      0.97      1811
+        True       0.86      0.38      0.52       189
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.90      0.68      0.74      2000
+weighted avg       0.93      0.94      0.92      2000
+
+
+			END SVC
+Try some users for user 148078014
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 386) (2000, 386) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6554
+        True       1.00      0.69      0.81       446
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.84      0.90      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1873
+        True       0.95      0.32      0.48       127
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.95      0.66      0.73      2000
+weighted avg       0.96      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 69921311
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 507) (2000, 507) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      6483
+        True       0.79      0.47      0.59       517
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.88      0.73      0.78      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.99      0.97      1853
+        True       0.76      0.48      0.59       147
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.86      0.73      0.78      2000
+weighted avg       0.95      0.95      0.95      2000
+
+
+			END SVC
+Try some users for user 293910627
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 481) (2000, 481) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6601
+        True       0.99      0.73      0.84       399
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.86      0.92      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      1.00      0.98      1886
+        True       0.87      0.29      0.43       114
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.91      0.64      0.71      2000
+weighted avg       0.95      0.96      0.95      2000
+
+
+			END SVC
+Try some users for user 167253149
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 696) (2000, 696) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.99      0.98      6154
+        True       0.94      0.79      0.86       846
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.95      0.89      0.92      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.93      0.99      0.96      1758
+        True       0.85      0.48      0.62       242
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.89      0.74      0.79      2000
+weighted avg       0.92      0.93      0.92      2000
+
+
+			END SVC
+Try some users for user 29223956
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 177) (2000, 177) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      1.00      0.99      6279
+        True       1.00      0.83      0.91       721
+
+   micro avg       0.98      0.98      0.98      7000
+   macro avg       0.99      0.92      0.95      7000
+weighted avg       0.98      0.98      0.98      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      1.00      0.98      1794
+        True       0.96      0.73      0.83       206
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.97      0.86      0.91      2000
+weighted avg       0.97      0.97      0.97      2000
+
+
+			END SVC
+Try some users for user 172200993
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 436) (2000, 436) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.91      0.95      5896
+        True       0.67      0.93      0.78      1104
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.83      0.92      0.86      7000
+weighted avg       0.94      0.92      0.92      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.92      0.89      0.90      1685
+        True       0.50      0.59      0.54       315
+
+   micro avg       0.84      0.84      0.84      2000
+   macro avg       0.71      0.74      0.72      2000
+weighted avg       0.85      0.84      0.85      2000
+
+
+			END SVC
+Try some users for user 8565932
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 425) (2000, 425) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': None, 'gamma': 100, 'kernel': 'poly'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.99      0.99      6250
+        True       0.89      0.85      0.87       750
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.94      0.92      0.93      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.98      0.97      1785
+        True       0.81      0.68      0.74       215
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.88      0.83      0.85      2000
+weighted avg       0.95      0.95      0.95      2000
+
+
+			END SVC
+Try some users for user 172111787
+Loading df
+Done loading df. DF shape is :(12397359, 8) (Original: (12397359, 8)) 		Time delta is: None mins
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 324 level 2 neighbourhs for user 172111787.
+Getting neighbour tweets universe.
+Len of own retweets timeline (possible positive examples) is 521
