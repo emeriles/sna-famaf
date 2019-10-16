@@ -315,7 +315,8 @@ class OneUserModel(object):
         clf = OneUserModel.load_model(uid, model_type, time_delta_filter)
         dataset = DatasetOneUserModel.load_or_create_dataset(uid, time_delta_filter)
         X_train, X_test, X_valid, y_train, y_test, y_valid = dataset
-        dataset = X_valid, X_train, y_valid, y_train   ###### SAME AS THIS
+        dataset = X_train, X_test, y_train, y_test
+        # dataset = X_valid, X_train, y_valid, y_train   ###### SAME AS THIS                      <<<<<<<<<<<<<<<<<<<<-----------------------------------
         if not clf:
             clf = getattr(OneUserModel, 'model_select_{}'.format(model_type))(dataset)
             if save:
