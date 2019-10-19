@@ -192,6 +192,7 @@ class _DatasetOneUserModel(_Dataset):
         fname = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, self.delta_minutes))
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
+            print('LOADED DATASET FROM {fname}'.format(fname))
         else:
             self._load_df(central_uid=uid)
             uid = str(uid)
