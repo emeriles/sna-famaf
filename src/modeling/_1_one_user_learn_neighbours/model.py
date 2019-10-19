@@ -300,6 +300,7 @@ class OneUserModel(object):
         model_path = join(MODELS_FOLDER_1_, "{}_{}_{}.pickle".format(model_type, uid, time_delta_filter))
         try:
             clf = joblib.load(model_path)
+            print('LOADED MODEL FROM {model_path}'.format(model_path=model_path))
         except FileNotFoundError:
             return None
         return clf
