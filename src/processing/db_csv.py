@@ -36,6 +36,7 @@ class _Dataset(object):
             'retweeted_status__user__id_str': str,
             'retweet_count': str,
             'quoted_status_id_str': str,
+            'lang': str,
         }
         df = pd.read_csv(self.csv_path, dtype=dtypes)
         original_shape = df.shape

@@ -93,7 +93,7 @@ class _DatasetOneUserModel(_Dataset):
         That is: uid's retweets, plus neighbours tweets in timeline.
         All this pruned to 10000"""
         print('Getting neighbour tweets universe.')
-        own_tweets = self.get_user_timeline(uid, with_original=False, with_retweets=True)
+        own_tweets = self.get_user_timeline(uid, with_original=True, with_retweets=True)
         own_tweets_len = own_tweets.shape[0]
         print('Len of own retweets timeline (possible positive examples) is {}'.format(own_tweets_len))
 
@@ -158,7 +158,7 @@ class _DatasetOneUserModel(_Dataset):
             X[:, j] = col.reshape((nrows, 1))
             # print(X[:, j])
 
-        own_tl_filtered = self.get_user_timeline(own_user, with_original=False, with_retweets=True)
+        own_tl_filtered = self.get_user_timeline(own_user, with_original=True, with_retweets=True)
         y = np.isin(tweets[:, 0], own_tl_filtered[:, 0])
         end = datetime.datetime.now() - start
         print('Done Extracting Features', end)
