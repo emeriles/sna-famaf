@@ -75,60 +75,60 @@ class PreprocessCSV(object):
         # Ahora vamos a reasignar los valores correctos a retweeted_status__created_at de los tweet_w_more_than_one_rt
         # para ello se crea un nuevo campo 'retweeted_status__new_created_at'
 
-        # # selecciono solo los tweets que voy a modificar
-        # aux_df = data_f[tweet_w_more_than_one_rt]
-        # # definimos un DF de pandas que tiene como index retweeted_status__id_str
-        # # y que tiene los minimos timestamps de los tweets a reciclar.
-        # idx_mins = aux_df.groupby(aux_df.retweeted_status__id_str).created_at.idxmin()
-        # min_timestamps = aux_df.loc[idx_mins]
-        #
-        # # para setear en data_f los nuevos campos adecuadamente, los NaT deben ser tratados. Se los pasa temporalmente
-        # # por un -1 -> nan.
-        # # (Nota: como no se puede indexar un df con NaN, entonces se pasa los datos por un -1 temporal.)
-        # min_timestamps.set_index('retweeted_status__id_str', inplace=True)
-        # min_timestamps.loc['-1'] = np.nan
-        #
-        # # copiamos la columna retweeted_status__id_str, para reemplazarla por los new_created_at, llenando los NA con -1
-        # df_retweeted_status__id_str_col = self.df.retweeted_status__id_str.fillna('-1').values
-        # # finalmente, pasamos la columna a los timestamps que calculamos, de acuerdo a su retweeted_status__id_str
-        # data_f['retweeted_status__new_created_at'] = min_timestamps.loc[df_retweeted_status__id_str_col].created_at.values
-        # # reasignamos valores correctos para los campos retweeted_status__user_id
-        # data_f['retweeted_status__new_user__id_str'] = min_timestamps.loc[df_retweeted_status__id_str_col].user__id_str.values
-        # # reasignamos valores correctos para los campos retweeted_status__id_str
-        # data_f['retweeted_status__new_id_str'] = min_timestamps.loc[df_retweeted_status__id_str_col].index.values
-        #
-        # # ya tenemos a data_f con los valores "reciclados", pero faltan los originales (rt_status__created_at,
-        # # rt_status__id_str y rt_status__user_id_str que no fueron reciclados)
-        # # si la columna nueva de created_at es NaT, rellenamos con el valor de retweeted_status__created_at
-        # data_f['retweeted_status__new_created_at'] = \
-        #     data_f.retweeted_status__new_created_at.fillna(self.df.retweeted_status__created_at)
-        # # si la columna nueva de new_id_str es '-1', rellenamos con nan,
-        # # para luego rellenar con el valor de rt_status__id_str, si se encontro nan
-        # data_f.retweeted_status__new_id_str = data_f.retweeted_status__new_id_str.replace('-1', value=np.nan)
-        # data_f['retweeted_status__new_id_str'] = \
-        #     data_f.retweeted_status__new_id_str.fillna(self.df.retweeted_status__id_str)
-        # # si la columna nueva de new_user__id_str es NaT, rellenamos con el valor de retweeted_status__user__id_str
-        # data_f['retweeted_status__new_user__id_str'] = \
-        #     data_f.retweeted_status__new_user__id_str.fillna(self.df.retweeted_status__user__id_str)
-        #
-        # # reasignamos los valores con los que vamos a trabajar
-        # data_f['retweeted_status__created_at'], data_f['retweeted_status__old_created_at'] = \
-        #     data_f['retweeted_status__new_created_at'], data_f['retweeted_status__created_at']
-        # data_f['retweeted_status__user__id_str'], data_f['retweeted_status__old_user__id_str'] = \
-        #     data_f['retweeted_status__new_user__id_str'], data_f['retweeted_status__user__id_str']
-        # data_f['retweeted_status__id_str'], data_f['retweeted_status__old_id_str'] = \
-        #     data_f['retweeted_status__new_id_str'], data_f['retweeted_status__id_str']
-        #
-        # # Finalmente, a los tweets reciclados con menor timestamps hay que tratarlos como "originales"
-        # # para eso se setean los campos retweeted_status__* a NaN  y...
-        # # Nota: this holds: =======>>>>>  aux_df.loc[idx_mins].equals(self.df.loc[idx_mins]) == True
-        # data_f.loc[idx_mins, 'retweeted_status__id_str'] = np.nan
-        # data_f.loc[idx_mins, 'retweeted_status__user__id_str'] = np.nan
-        # data_f.loc[idx_mins, 'retweeted_status__created_at'] = np.nan
-        #
-        # # ...y setearles el id_str, como si fuesen originales, (es decir, con el valor del retweeted_status__id_str)
-        # data_f.loc[idx_mins, 'id_str'] = min_timestamps.loc[
-        #     self.df.loc[idx_mins].retweeted_status__id_str.values].index.values
+        # selecciono solo los tweets que voy a modificar
+        aux_df = data_f[tweet_w_more_than_one_rt]
+        # definimos un DF de pandas que tiene como index retweeted_status__id_str
+        # y que tiene los minimos timestamps de los tweets a reciclar.
+        idx_mins = aux_df.groupby(aux_df.retweeted_status__id_str).created_at.idxmin()
+        min_timestamps = aux_df.loc[idx_mins]
+
+        # para setear en data_f los nuevos campos adecuadamente, los NaT deben ser tratados. Se los pasa temporalmente
+        # por un -1 -> nan.
+        # (Nota: como no se puede indexar un df con NaN, entonces se pasa los datos por un -1 temporal.)
+        min_timestamps.set_index('retweeted_status__id_str', inplace=True)
+        min_timestamps.loc['-1'] = np.nan
+
+        # copiamos la columna retweeted_status__id_str, para reemplazarla por los new_created_at, llenando los NA con -1
+        df_retweeted_status__id_str_col = self.df.retweeted_status__id_str.fillna('-1').values
+        # finalmente, pasamos la columna a los timestamps que calculamos, de acuerdo a su retweeted_status__id_str
+        data_f['retweeted_status__new_created_at'] = min_timestamps.loc[df_retweeted_status__id_str_col].created_at.values
+        # reasignamos valores correctos para los campos retweeted_status__user_id
+        data_f['retweeted_status__new_user__id_str'] = min_timestamps.loc[df_retweeted_status__id_str_col].user__id_str.values
+        # reasignamos valores correctos para los campos retweeted_status__id_str
+        data_f['retweeted_status__new_id_str'] = min_timestamps.loc[df_retweeted_status__id_str_col].index.values
+
+        # ya tenemos a data_f con los valores "reciclados", pero faltan los originales (rt_status__created_at,
+        # rt_status__id_str y rt_status__user_id_str que no fueron reciclados)
+        # si la columna nueva de created_at es NaT, rellenamos con el valor de retweeted_status__created_at
+        data_f['retweeted_status__new_created_at'] = \
+            data_f.retweeted_status__new_created_at.fillna(self.df.retweeted_status__created_at)
+        # si la columna nueva de new_id_str es '-1', rellenamos con nan,
+        # para luego rellenar con el valor de rt_status__id_str, si se encontro nan
+        data_f.retweeted_status__new_id_str = data_f.retweeted_status__new_id_str.replace('-1', value=np.nan)
+        data_f['retweeted_status__new_id_str'] = \
+            data_f.retweeted_status__new_id_str.fillna(self.df.retweeted_status__id_str)
+        # si la columna nueva de new_user__id_str es NaT, rellenamos con el valor de retweeted_status__user__id_str
+        data_f['retweeted_status__new_user__id_str'] = \
+            data_f.retweeted_status__new_user__id_str.fillna(self.df.retweeted_status__user__id_str)
+
+        # reasignamos los valores con los que vamos a trabajar
+        data_f['retweeted_status__created_at'], data_f['retweeted_status__old_created_at'] = \
+            data_f['retweeted_status__new_created_at'], data_f['retweeted_status__created_at']
+        data_f['retweeted_status__user__id_str'], data_f['retweeted_status__old_user__id_str'] = \
+            data_f['retweeted_status__new_user__id_str'], data_f['retweeted_status__user__id_str']
+        data_f['retweeted_status__id_str'], data_f['retweeted_status__old_id_str'] = \
+            data_f['retweeted_status__new_id_str'], data_f['retweeted_status__id_str']
+
+        # Finalmente, a los tweets reciclados con menor timestamps hay que tratarlos como "originales"
+        # para eso se setean los campos retweeted_status__* a NaN  y...
+        # Nota: this holds: =======>>>>>  aux_df.loc[idx_mins].equals(self.df.loc[idx_mins]) == True
+        data_f.loc[idx_mins, 'retweeted_status__id_str'] = np.nan
+        data_f.loc[idx_mins, 'retweeted_status__user__id_str'] = np.nan
+        data_f.loc[idx_mins, 'retweeted_status__created_at'] = np.nan
+
+        # ...y setearles el id_str, como si fuesen originales, (es decir, con el valor del retweeted_status__id_str)
+        data_f.loc[idx_mins, 'id_str'] = min_timestamps.loc[
+            self.df.loc[idx_mins].retweeted_status__id_str.values].index.values
 
         result = data_f[original_tweets_on_ds | retweeted_by_my_users | tweet_w_more_than_one_rt]
         use_cols = [
@@ -149,7 +149,7 @@ class PreprocessCSV(object):
     def create_and_save_csv_cutted():
         p = PreprocessCSV()
         p.df_cut1()
-        p.save_cut1()
+        p.save_cut1()   
 
 
 class CSVDataframe(object):
