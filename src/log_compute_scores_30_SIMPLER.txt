@@ -1,0 +1,2262 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING compute_scores
+Using cherry picked users: False
+Running compute scores for 224 users.
+Largamos para 155612697
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155612697_30.pickle
+Load or build model. For 155612697, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155612697_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155612697_30.pickle
+Largamos para 146114434
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146114434_30.pickle
+Load or build model. For 146114434, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_146114434_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146114434_30.pickle
+Largamos para 16311528
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16311528_30.pickle
+Load or build model. For 16311528, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_16311528_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16311528_30.pickle
+Largamos para 29622459
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29622459_30.pickle
+Load or build model. For 29622459, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29622459_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29622459_30.pickle
+Largamos para 155359090
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155359090_30.pickle
+Load or build model. For 155359090, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155359090_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155359090_30.pickle
+Largamos para 177767829
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177767829_30.pickle
+Load or build model. For 177767829, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177767829_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177767829_30.pickle
+Largamos para 177222447
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177222447_30.pickle
+Load or build model. For 177222447, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177222447_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177222447_30.pickle
+Largamos para 170780382
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_170780382_30.pickle
+Load or build model. For 170780382, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_170780382_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_170780382_30.pickle
+Largamos para 195846630
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195846630_30.pickle
+Load or build model. For 195846630, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_195846630_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195846630_30.pickle
+Largamos para 53062387
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53062387_30.pickle
+Load or build model. For 53062387, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_53062387_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53062387_30.pickle
+Largamos para 206106207
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_206106207_30.pickle
+Load or build model. For 206106207, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_206106207_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_206106207_30.pickle
+Largamos para 163180480
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_163180480_30.pickle
+Load or build model. For 163180480, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_163180480_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_163180480_30.pickle
+Largamos para 149254440
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149254440_30.pickle
+Load or build model. For 149254440, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_149254440_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149254440_30.pickle
+Largamos para 119781455
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119781455_30.pickle
+Load or build model. For 119781455, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_119781455_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119781455_30.pickle
+Largamos para 134221261
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134221261_30.pickle
+Load or build model. For 134221261, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_134221261_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134221261_30.pickle
+Largamos para 203883293
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203883293_30.pickle
+Load or build model. For 203883293, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_203883293_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203883293_30.pickle
+Largamos para 154216022
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_154216022_30.pickle
+Load or build model. For 154216022, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_154216022_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_154216022_30.pickle
+Largamos para 557296978
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_557296978_30.pickle
+Load or build model. For 557296978, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_557296978_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_557296978_30.pickle
+Largamos para 187641771
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187641771_30.pickle
+Load or build model. For 187641771, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_187641771_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187641771_30.pickle
+Largamos para 142055804
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142055804_30.pickle
+Load or build model. For 142055804, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_142055804_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142055804_30.pickle
+Largamos para 177790591
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177790591_30.pickle
+Load or build model. For 177790591, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177790591_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177790591_30.pickle
+Largamos para 2925634140
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2925634140_30.pickle
+Load or build model. For 2925634140, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2925634140_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2925634140_30.pickle
+Largamos para 158155548
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158155548_30.pickle
+Load or build model. For 158155548, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_158155548_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158155548_30.pickle
+Largamos para 137020204
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_137020204_30.pickle
+Load or build model. For 137020204, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_137020204_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_137020204_30.pickle
+Largamos para 273198805
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273198805_30.pickle
+Load or build model. For 273198805, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_273198805_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273198805_30.pickle
+Largamos para 105838056
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_105838056_30.pickle
+Load or build model. For 105838056, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_105838056_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_105838056_30.pickle
+Largamos para 72532390
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_72532390_30.pickle
+Load or build model. For 72532390, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_72532390_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_72532390_30.pickle
+Largamos para 180387621
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180387621_30.pickle
+Load or build model. For 180387621, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_180387621_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180387621_30.pickle
+Largamos para 136706767
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136706767_30.pickle
+Load or build model. For 136706767, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_136706767_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136706767_30.pickle
+Largamos para 17814160
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17814160_30.pickle
+Load or build model. For 17814160, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17814160_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17814160_30.pickle
+Largamos para 231636434
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_231636434_30.pickle
+Load or build model. For 231636434, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_231636434_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_231636434_30.pickle
+Largamos para 326512684
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_326512684_30.pickle
+Load or build model. For 326512684, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_326512684_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_326512684_30.pickle
+Largamos para 119998164
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119998164_30.pickle
+Load or build model. For 119998164, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_119998164_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119998164_30.pickle
+Largamos para 151159392
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151159392_30.pickle
+Load or build model. For 151159392, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_151159392_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151159392_30.pickle
+Largamos para 155022600
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155022600_30.pickle
+Load or build model. For 155022600, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155022600_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155022600_30.pickle
+Largamos para 146904949
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146904949_30.pickle
+Load or build model. For 146904949, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_146904949_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146904949_30.pickle
+Largamos para 118718718
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_118718718_30.pickle
+Load or build model. For 118718718, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_118718718_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_118718718_30.pickle
+Largamos para 460141468
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_460141468_30.pickle
+Load or build model. For 460141468, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_460141468_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_460141468_30.pickle
+Largamos para 388635402
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_388635402_30.pickle
+Load or build model. For 388635402, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_388635402_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_388635402_30.pickle
+Largamos para 128958788
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_128958788_30.pickle
+Load or build model. For 128958788, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_128958788_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_128958788_30.pickle
+Largamos para 80947885
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_80947885_30.pickle
+Load or build model. For 80947885, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_80947885_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_80947885_30.pickle
+Largamos para 173166881
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_173166881_30.pickle
+Load or build model. For 173166881, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_173166881_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_173166881_30.pickle
+Largamos para 134883425
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134883425_30.pickle
+Load or build model. For 134883425, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_134883425_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134883425_30.pickle
+Largamos para 182831320
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182831320_30.pickle
+Load or build model. For 182831320, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_182831320_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182831320_30.pickle
+Largamos para 17441030
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17441030_30.pickle
+Load or build model. For 17441030, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17441030_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17441030_30.pickle
+Largamos para 233630752
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233630752_30.pickle
+Load or build model. For 233630752, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_233630752_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233630752_30.pickle
+Largamos para 316583387
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_316583387_30.pickle
+Load or build model. For 316583387, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_316583387_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_316583387_30.pickle
+Largamos para 178045174
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_178045174_30.pickle
+Load or build model. For 178045174, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_178045174_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_178045174_30.pickle
+Largamos para 358430626
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_358430626_30.pickle
+Load or build model. For 358430626, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_358430626_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_358430626_30.pickle
+Largamos para 2485702456
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2485702456_30.pickle
+Load or build model. For 2485702456, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2485702456_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2485702456_30.pickle
+Largamos para 301016792
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_301016792_30.pickle
+Load or build model. For 301016792, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_301016792_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_301016792_30.pickle
+Largamos para 95987553
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_95987553_30.pickle
+Load or build model. For 95987553, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_95987553_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_95987553_30.pickle
+Largamos para 1660361
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1660361_30.pickle
+Load or build model. For 1660361, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1660361_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1660361_30.pickle
+Largamos para 110414397
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110414397_30.pickle
+Load or build model. For 110414397, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_110414397_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110414397_30.pickle
+Largamos para 197637727
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_197637727_30.pickle
+Load or build model. For 197637727, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_197637727_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_197637727_30.pickle
+Largamos para 158869286
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158869286_30.pickle
+Load or build model. For 158869286, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_158869286_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158869286_30.pickle
+Largamos para 235340755
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_235340755_30.pickle
+Load or build model. For 235340755, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_235340755_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_235340755_30.pickle
+Largamos para 29476104
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29476104_30.pickle
+Load or build model. For 29476104, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29476104_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29476104_30.pickle
+Largamos para 171196248
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171196248_30.pickle
+Load or build model. For 171196248, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_171196248_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171196248_30.pickle
+Largamos para 13330252
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_13330252_30.pickle
+Load or build model. For 13330252, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_13330252_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_13330252_30.pickle
+Largamos para 17620434
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17620434_30.pickle
+Load or build model. For 17620434, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17620434_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17620434_30.pickle
+Largamos para 195005131
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195005131_30.pickle
+Load or build model. For 195005131, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_195005131_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195005131_30.pickle
+Largamos para 180068784
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180068784_30.pickle
+Load or build model. For 180068784, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_180068784_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180068784_30.pickle
+Largamos para 242311942
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_242311942_30.pickle
+Load or build model. For 242311942, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_242311942_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_242311942_30.pickle
+Largamos para 123865750
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_123865750_30.pickle
+Load or build model. For 123865750, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_123865750_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_123865750_30.pickle
+Largamos para 182644738
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182644738_30.pickle
+Load or build model. For 182644738, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_182644738_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182644738_30.pickle
+Largamos para 138500942
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138500942_30.pickle
+Load or build model. For 138500942, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138500942_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138500942_30.pickle
+Largamos para 144561679
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_144561679_30.pickle
+Load or build model. For 144561679, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_144561679_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_144561679_30.pickle
+Largamos para 226730707
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_226730707_30.pickle
+Load or build model. For 226730707, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_226730707_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_226730707_30.pickle
+Largamos para 130922573
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130922573_30.pickle
+Load or build model. For 130922573, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_130922573_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130922573_30.pickle
+Largamos para 2945261
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2945261_30.pickle
+Load or build model. For 2945261, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2945261_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2945261_30.pickle
+Largamos para 175914955
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175914955_30.pickle
+Load or build model. For 175914955, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_175914955_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175914955_30.pickle
+Largamos para 210952398
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_210952398_30.pickle
+Load or build model. For 210952398, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_210952398_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_210952398_30.pickle
+Largamos para 8952422
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8952422_30.pickle
+Load or build model. For 8952422, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_8952422_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8952422_30.pickle
+Largamos para 228190246
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_228190246_30.pickle
+Load or build model. For 228190246, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_228190246_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_228190246_30.pickle
+Largamos para 2686869089
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2686869089_30.pickle
+Load or build model. For 2686869089, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2686869089_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2686869089_30.pickle
+Largamos para 138814032
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138814032_30.pickle
+Load or build model. For 138814032, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138814032_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138814032_30.pickle
+Largamos para 188483512
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188483512_30.pickle
+Load or build model. For 188483512, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_188483512_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188483512_30.pickle
+Largamos para 145421975
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145421975_30.pickle
+Load or build model. For 145421975, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_145421975_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145421975_30.pickle
+Largamos para 149258770
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149258770_30.pickle
+Load or build model. For 149258770, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_149258770_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149258770_30.pickle
+Largamos para 153815177
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153815177_30.pickle
+Load or build model. For 153815177, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_153815177_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153815177_30.pickle
+Largamos para 156242969
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156242969_30.pickle
+Load or build model. For 156242969, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_156242969_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156242969_30.pickle
+Largamos para 149970952
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149970952_30.pickle
+Load or build model. For 149970952, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_149970952_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149970952_30.pickle
+Largamos para 209711679
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_209711679_30.pickle
+Load or build model. For 209711679, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_209711679_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_209711679_30.pickle
+Largamos para 17931624
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17931624_30.pickle
+Load or build model. For 17931624, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17931624_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17931624_30.pickle
+Largamos para 130506373
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130506373_30.pickle
+Load or build model. For 130506373, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_130506373_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130506373_30.pickle
+Largamos para 159480540
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159480540_30.pickle
+Load or build model. For 159480540, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_159480540_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159480540_30.pickle
+Largamos para 140237000
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_140237000_30.pickle
+Load or build model. For 140237000, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_140237000_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_140237000_30.pickle
+Largamos para 53169164
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53169164_30.pickle
+Load or build model. For 53169164, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_53169164_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53169164_30.pickle
+Largamos para 90185866
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_90185866_30.pickle
+Load or build model. For 90185866, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_90185866_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_90185866_30.pickle
+Largamos para 110316549
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110316549_30.pickle
+Load or build model. For 110316549, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_110316549_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110316549_30.pickle
+Largamos para 145414019
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145414019_30.pickle
+Load or build model. For 145414019, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_145414019_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145414019_30.pickle
+Largamos para 185083071
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185083071_30.pickle
+Load or build model. For 185083071, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_185083071_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185083071_30.pickle
+Largamos para 142192618
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142192618_30.pickle
+Load or build model. For 142192618, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_142192618_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142192618_30.pickle
+Largamos para 430073621
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_430073621_30.pickle
+Load or build model. For 430073621, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_430073621_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_430073621_30.pickle
+Largamos para 103462194
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_103462194_30.pickle
+Load or build model. For 103462194, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_103462194_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_103462194_30.pickle
+Largamos para 36787113
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36787113_30.pickle
+Load or build model. For 36787113, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_36787113_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36787113_30.pickle
+Largamos para 243827202
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243827202_30.pickle
+Load or build model. For 243827202, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_243827202_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243827202_30.pickle
+Largamos para 172373423
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172373423_30.pickle
+Load or build model. For 172373423, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_172373423_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172373423_30.pickle
+Largamos para 208646224
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_208646224_30.pickle
+Load or build model. For 208646224, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_208646224_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_208646224_30.pickle
+Largamos para 159620450
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159620450_30.pickle
+Load or build model. For 159620450, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_159620450_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159620450_30.pickle
+Largamos para 160142615
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_160142615_30.pickle
+Load or build model. For 160142615, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_160142615_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_160142615_30.pickle
+Largamos para 143562981
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143562981_30.pickle
+Load or build model. For 143562981, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_143562981_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143562981_30.pickle
+Largamos para 1357911
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1357911_30.pickle
+Load or build model. For 1357911, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1357911_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1357911_30.pickle
+Largamos para 447461196
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_447461196_30.pickle
+Load or build model. For 447461196, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_447461196_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_447461196_30.pickle
+Largamos para 214986628
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_214986628_30.pickle
+Load or build model. For 214986628, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_214986628_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_214986628_30.pickle
+Largamos para 55066860
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55066860_30.pickle
+Load or build model. For 55066860, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_55066860_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55066860_30.pickle
+Largamos para 244175447
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_244175447_30.pickle
+Load or build model. For 244175447, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_244175447_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_244175447_30.pickle
+Largamos para 7523352
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7523352_30.pickle
+Load or build model. For 7523352, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7523352_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7523352_30.pickle
+Largamos para 1247076385
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1247076385_30.pickle
+Load or build model. For 1247076385, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1247076385_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1247076385_30.pickle
+Largamos para 966192692
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_966192692_30.pickle
+Load or build model. For 966192692, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_966192692_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_966192692_30.pickle
+Largamos para 74615519
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_74615519_30.pickle
+Load or build model. For 74615519, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_74615519_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_74615519_30.pickle
+Largamos para 143431671
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143431671_30.pickle
+Load or build model. For 143431671, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_143431671_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143431671_30.pickle
+Largamos para 142532652
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142532652_30.pickle
+Load or build model. For 142532652, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_142532652_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142532652_30.pickle
+Largamos para 132704571
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132704571_30.pickle
+Load or build model. For 132704571, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_132704571_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132704571_30.pickle
+Largamos para 14156599
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_14156599_30.pickle
+Load or build model. For 14156599, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_14156599_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_14156599_30.pickle
+Largamos para 134898089
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134898089_30.pickle
+Load or build model. For 134898089, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_134898089_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134898089_30.pickle
+Largamos para 97717418
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_97717418_30.pickle
+Load or build model. For 97717418, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_97717418_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_97717418_30.pickle
+Largamos para 7377622
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7377622_30.pickle
+Load or build model. For 7377622, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7377622_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7377622_30.pickle
+Largamos para 55023471
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55023471_30.pickle
+Load or build model. For 55023471, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_55023471_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55023471_30.pickle
+Largamos para 136794480
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136794480_30.pickle
+Load or build model. For 136794480, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_136794480_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136794480_30.pickle
+Largamos para 7981232
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7981232_30.pickle
+Load or build model. For 7981232, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7981232_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7981232_30.pickle
+Largamos para 87528727
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_87528727_30.pickle
+Load or build model. For 87528727, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_87528727_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_87528727_30.pickle
+Largamos para 721013767
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_721013767_30.pickle
+Load or build model. For 721013767, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_721013767_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_721013767_30.pickle
+Largamos para 277517202
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_277517202_30.pickle
+Load or build model. For 277517202, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_277517202_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_277517202_30.pickle
+Largamos para 878235842
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_878235842_30.pickle
+Load or build model. For 878235842, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_878235842_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_878235842_30.pickle
+Largamos para 188525384
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188525384_30.pickle
+Load or build model. For 188525384, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_188525384_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188525384_30.pickle
+Largamos para 158007051
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158007051_30.pickle
+Load or build model. For 158007051, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_158007051_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158007051_30.pickle
+Largamos para 369120654
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_369120654_30.pickle
+Load or build model. For 369120654, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_369120654_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_369120654_30.pickle
+Largamos para 49365716
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_49365716_30.pickle
+Load or build model. For 49365716, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_49365716_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_49365716_30.pickle
+Largamos para 273923851
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273923851_30.pickle
+Load or build model. For 273923851, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_273923851_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273923851_30.pickle
+Largamos para 8083992
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8083992_30.pickle
+Load or build model. For 8083992, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_8083992_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8083992_30.pickle
+Largamos para 1311735576
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1311735576_30.pickle
+Load or build model. For 1311735576, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1311735576_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1311735576_30.pickle
+Largamos para 187193299
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187193299_30.pickle
+Load or build model. For 187193299, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_187193299_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187193299_30.pickle
+Largamos para 712635080
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_712635080_30.pickle
+Load or build model. For 712635080, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_712635080_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_712635080_30.pickle
+Largamos para 35744749
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_35744749_30.pickle
+Load or build model. For 35744749, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_35744749_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_35744749_30.pickle
+Largamos para 36997365
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36997365_30.pickle
+Load or build model. For 36997365, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_36997365_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36997365_30.pickle
+Largamos para 44698651
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_44698651_30.pickle
+Load or build model. For 44698651, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_44698651_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_44698651_30.pickle
+Largamos para 171681656
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171681656_30.pickle
+Load or build model. For 171681656, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_171681656_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171681656_30.pickle
+Largamos para 156056618
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156056618_30.pickle
+Load or build model. For 156056618, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_156056618_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156056618_30.pickle
+Largamos para 148078014
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_148078014_30.pickle
+Load or build model. For 148078014, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_148078014_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_148078014_30.pickle
+Largamos para 69921311
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_69921311_30.pickle
+Load or build model. For 69921311, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_69921311_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_69921311_30.pickle
+Largamos para 293910627
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_293910627_30.pickle
+Load or build model. For 293910627, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_293910627_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_293910627_30.pickle
+Largamos para 167253149
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_167253149_30.pickle
+Load or build model. For 167253149, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_167253149_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_167253149_30.pickle
+Largamos para 29223956
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29223956_30.pickle
+Load or build model. For 29223956, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29223956_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29223956_30.pickle
+Largamos para 172200993
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172200993_30.pickle
+Load or build model. For 172200993, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_172200993_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172200993_30.pickle
+Largamos para 8565932
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8565932_30.pickle
+Load or build model. For 8565932, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_8565932_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8565932_30.pickle
+Largamos para 172111787
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172111787_30.pickle
+Load or build model. For 172111787, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_172111787_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172111787_30.pickle
+Largamos para 186560753
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186560753_30.pickle
+Load or build model. For 186560753, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_186560753_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186560753_30.pickle
+Largamos para 19055241
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_19055241_30.pickle
+Load or build model. For 19055241, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_19055241_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_19055241_30.pickle
+Largamos para 2411324736
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2411324736_30.pickle
+Load or build model. For 2411324736, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2411324736_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2411324736_30.pickle
+Largamos para 79063686
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_79063686_30.pickle
+Load or build model. For 79063686, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_79063686_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_79063686_30.pickle
+Largamos para 10823582
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10823582_30.pickle
+Load or build model. For 10823582, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_10823582_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10823582_30.pickle
+Largamos para 125363239
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_125363239_30.pickle
+Load or build model. For 125363239, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_125363239_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_125363239_30.pickle
+Largamos para 216960357
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_216960357_30.pickle
+Load or build model. For 216960357, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_216960357_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_216960357_30.pickle
+Largamos para 139931335
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_139931335_30.pickle
+Load or build model. For 139931335, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_139931335_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_139931335_30.pickle
+Largamos para 186595337
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186595337_30.pickle
+Load or build model. For 186595337, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_186595337_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186595337_30.pickle
+Largamos para 201780346
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_201780346_30.pickle
+Load or build model. For 201780346, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_201780346_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_201780346_30.pickle
+Largamos para 133452990
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_133452990_30.pickle
+Load or build model. For 133452990, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_133452990_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_133452990_30.pickle
+Largamos para 138160985
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138160985_30.pickle
+Load or build model. For 138160985, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138160985_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138160985_30.pickle
+Largamos para 157523545
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_157523545_30.pickle
+Load or build model. For 157523545, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_157523545_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_157523545_30.pickle
+Largamos para 185702157
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185702157_30.pickle
+Load or build model. For 185702157, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_185702157_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185702157_30.pickle
+Largamos para 138016222
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138016222_30.pickle
+Load or build model. For 138016222, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138016222_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138016222_30.pickle
+Largamos para 161933526
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_161933526_30.pickle
+Load or build model. For 161933526, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_161933526_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_161933526_30.pickle
+Largamos para 1487932730
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1487932730_30.pickle
+Load or build model. For 1487932730, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1487932730_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1487932730_30.pickle
+Largamos para 21013930
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_21013930_30.pickle
+Load or build model. For 21013930, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_21013930_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_21013930_30.pickle
+Largamos para 344940001
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_344940001_30.pickle
+Load or build model. For 344940001, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_344940001_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_344940001_30.pickle
+Largamos para 29753422
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29753422_30.pickle
+Load or build model. For 29753422, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29753422_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29753422_30.pickle
+Largamos para 17078536
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17078536_30.pickle
+Load or build model. For 17078536, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17078536_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17078536_30.pickle
+Largamos para 42957295
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_42957295_30.pickle
+Load or build model. For 42957295, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_42957295_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_42957295_30.pickle
+Largamos para 16786398
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16786398_30.pickle
+Load or build model. For 16786398, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_16786398_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16786398_30.pickle
+Largamos para 98704664
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_98704664_30.pickle
+Load or build model. For 98704664, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_98704664_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_98704664_30.pickle
+Largamos para 4245701
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_4245701_30.pickle
+Load or build model. For 4245701, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_4245701_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_4245701_30.pickle
+Largamos para 153115598
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153115598_30.pickle
+Load or build model. For 153115598, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_153115598_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153115598_30.pickle
+Largamos para 785025013
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_785025013_30.pickle
+Load or build model. For 785025013, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_785025013_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_785025013_30.pickle
+Largamos para 2450324088
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2450324088_30.pickle
+Load or build model. For 2450324088, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2450324088_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2450324088_30.pickle
+Largamos para 215872828
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_215872828_30.pickle
+Load or build model. For 215872828, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_215872828_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_215872828_30.pickle
+Largamos para 171110904
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171110904_30.pickle
+Load or build model. For 171110904, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_171110904_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171110904_30.pickle
+Largamos para 10070542
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10070542_30.pickle
+Load or build model. For 10070542, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_10070542_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10070542_30.pickle
+Largamos para 132727626
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132727626_30.pickle
+Load or build model. For 132727626, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_132727626_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132727626_30.pickle
+Largamos para 84584995
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_84584995_30.pickle
+Load or build model. For 84584995, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_84584995_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_84584995_30.pickle
+Largamos para 155669017
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155669017_30.pickle
+Load or build model. For 155669017, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155669017_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155669017_30.pickle
+Largamos para 175606747
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175606747_30.pickle
+Load or build model. For 175606747, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_175606747_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175606747_30.pickle
+Largamos para 311504156
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_311504156_30.pickle
+Load or build model. For 311504156, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_311504156_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_311504156_30.pickle
+Largamos para 15521401
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_15521401_30.pickle
+Load or build model. For 15521401, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_15521401_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_15521401_30.pickle
+Largamos para 601872880
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_601872880_30.pickle
+Load or build model. For 601872880, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_601872880_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_601872880_30.pickle
+Largamos para 196172891
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_196172891_30.pickle
+Load or build model. For 196172891, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_196172891_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_196172891_30.pickle
+Largamos para 164698884
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_164698884_30.pickle
+Load or build model. For 164698884, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_164698884_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_164698884_30.pickle
+Largamos para 156740257
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156740257_30.pickle
+Load or build model. For 156740257, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_156740257_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156740257_30.pickle
+Largamos para 143795703
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143795703_30.pickle
+Load or build model. For 143795703, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_143795703_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143795703_30.pickle
+Largamos para 359791727
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_359791727_30.pickle
+Load or build model. For 359791727, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_359791727_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_359791727_30.pickle
+Largamos para 7805322
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7805322_30.pickle
+Load or build model. For 7805322, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7805322_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7805322_30.pickle
+Largamos para 53198511
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53198511_30.pickle
+Load or build model. For 53198511, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_53198511_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53198511_30.pickle
+Largamos para 145677457
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145677457_30.pickle
+Load or build model. For 145677457, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_145677457_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145677457_30.pickle
+Largamos para 168932686
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_168932686_30.pickle
+Load or build model. For 168932686, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_168932686_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_168932686_30.pickle
+Largamos para 203215796
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203215796_30.pickle
+Load or build model. For 203215796, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_203215796_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203215796_30.pickle
+Largamos para 177342424
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177342424_30.pickle
+Load or build model. For 177342424, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177342424_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177342424_30.pickle
+Largamos para 376476098
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_376476098_30.pickle
+Load or build model. For 376476098, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_376476098_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_376476098_30.pickle
+Largamos para 233644860
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233644860_30.pickle
+Load or build model. For 233644860, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_233644860_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233644860_30.pickle
+Largamos para 2489202613
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2489202613_30.pickle
+Load or build model. For 2489202613, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2489202613_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2489202613_30.pickle
+Largamos para 263865213
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_263865213_30.pickle
+Load or build model. For 263865213, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_263865213_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_263865213_30.pickle
+Largamos para 175923801
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175923801_30.pickle
+Load or build model. For 175923801, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_175923801_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175923801_30.pickle
+Largamos para 262127099
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_262127099_30.pickle
+Load or build model. For 262127099, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_262127099_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_262127099_30.pickle
+Largamos para 151055124
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151055124_30.pickle
+Load or build model. For 151055124, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_151055124_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151055124_30.pickle
+Largamos para 38488855
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_38488855_30.pickle
+Load or build model. For 38488855, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_38488855_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_38488855_30.pickle
+Largamos para 1372415197
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1372415197_30.pickle
+Load or build model. For 1372415197, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1372415197_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1372415197_30.pickle
+Largamos para 151980036
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151980036_30.pickle
+Load or build model. For 151980036, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_151980036_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151980036_30.pickle
+Largamos para 186647026
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186647026_30.pickle
+Load or build model. For 186647026, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_186647026_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186647026_30.pickle
+Largamos para 102971189
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_102971189_30.pickle
+Load or build model. For 102971189, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_102971189_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_102971189_30.pickle
+Largamos para 122802136
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_122802136_30.pickle
+Load or build model. For 122802136, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_122802136_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_122802136_30.pickle
+Largamos para 716017536
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_716017536_30.pickle
+Load or build model. For 716017536, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_716017536_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_716017536_30.pickle
+Largamos para 824157
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_824157_30.pickle
+Load or build model. For 824157, model type: svc, time_delta: 30
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_824157_30.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 289) (2000, 289) False False
+FAILED FOR USER 824157. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 243049971
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243049971_30.pickle
+Load or build model. For 243049971, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_243049971_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243049971_30.pickle
+Largamos para 50103873
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_50103873_30.pickle
+Load or build model. For 50103873, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_50103873_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_50103873_30.pickle
+Largamos para 75825205
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_75825205_30.pickle
+Load or build model. For 75825205, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_75825205_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_75825205_30.pickle
+Largamos para 174991765
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_174991765_30.pickle
+Load or build model. For 174991765, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_174991765_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_174991765_30.pickle
+Largamos para 150319476
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_150319476_30.pickle
+Load or build model. For 150319476, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_150319476_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_150319476_30.pickle
+Largamos para 23965285
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_23965285_30.pickle
+Load or build model. For 23965285, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_23965285_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_23965285_30.pickle
+Largamos para 18207515
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_18207515_30.pickle
+Load or build model. For 18207515, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_18207515_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_18207515_30.pickle
+Largamos para 88778227
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_88778227_30.pickle
+Load or build model. For 88778227, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_88778227_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_88778227_30.pickle
+Largamos para 292963883
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_292963883_30.pickle
+Load or build model. For 292963883, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_292963883_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_292963883_30.pickle
+Largamos para 261418654
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_261418654_30.pickle
+Load or build model. For 261418654, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_261418654_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_261418654_30.pickle
+Largamos para 2240928494
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2240928494_30.pickle
+Load or build model. For 2240928494, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2240928494_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2240928494_30.pickle
+Largamos para 29399931
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29399931_30.pickle
+Load or build model. For 29399931, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29399931_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29399931_30.pickle
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING compute_scores
+Using cherry picked users: False
+Running compute scores for 224 users.
+Largamos para 155612697
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155612697_30.pickle
+Load or build model. For 155612697, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155612697_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155612697_30.pickle
+Largamos para 146114434
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146114434_30.pickle
+Load or build model. For 146114434, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_146114434_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146114434_30.pickle
+Largamos para 16311528
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16311528_30.pickle
+Load or build model. For 16311528, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_16311528_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16311528_30.pickle
+Largamos para 29622459
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29622459_30.pickle
+Load or build model. For 29622459, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29622459_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29622459_30.pickle
+Largamos para 155359090
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155359090_30.pickle
+Load or build model. For 155359090, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155359090_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155359090_30.pickle
+Largamos para 177767829
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177767829_30.pickle
+Load or build model. For 177767829, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177767829_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177767829_30.pickle
+Largamos para 177222447
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177222447_30.pickle
+Load or build model. For 177222447, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177222447_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177222447_30.pickle
+Largamos para 170780382
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_170780382_30.pickle
+Load or build model. For 170780382, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_170780382_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_170780382_30.pickle
+Largamos para 195846630
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195846630_30.pickle
+Load or build model. For 195846630, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_195846630_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195846630_30.pickle
+Largamos para 53062387
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53062387_30.pickle
+Load or build model. For 53062387, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_53062387_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53062387_30.pickle
+Largamos para 206106207
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_206106207_30.pickle
+Load or build model. For 206106207, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_206106207_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_206106207_30.pickle
+Largamos para 163180480
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_163180480_30.pickle
+Load or build model. For 163180480, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_163180480_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_163180480_30.pickle
+Largamos para 149254440
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149254440_30.pickle
+Load or build model. For 149254440, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_149254440_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149254440_30.pickle
+Largamos para 119781455
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119781455_30.pickle
+Load or build model. For 119781455, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_119781455_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119781455_30.pickle
+Largamos para 134221261
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134221261_30.pickle
+Load or build model. For 134221261, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_134221261_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134221261_30.pickle
+Largamos para 203883293
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203883293_30.pickle
+Load or build model. For 203883293, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_203883293_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203883293_30.pickle
+Largamos para 154216022
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_154216022_30.pickle
+Load or build model. For 154216022, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_154216022_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_154216022_30.pickle
+Largamos para 557296978
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_557296978_30.pickle
+Load or build model. For 557296978, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_557296978_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_557296978_30.pickle
+Largamos para 187641771
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187641771_30.pickle
+Load or build model. For 187641771, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_187641771_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187641771_30.pickle
+Largamos para 142055804
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142055804_30.pickle
+Load or build model. For 142055804, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_142055804_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142055804_30.pickle
+Largamos para 177790591
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177790591_30.pickle
+Load or build model. For 177790591, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177790591_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177790591_30.pickle
+Largamos para 2925634140
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2925634140_30.pickle
+Load or build model. For 2925634140, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2925634140_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2925634140_30.pickle
+Largamos para 158155548
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158155548_30.pickle
+Load or build model. For 158155548, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_158155548_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158155548_30.pickle
+Largamos para 137020204
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_137020204_30.pickle
+Load or build model. For 137020204, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_137020204_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_137020204_30.pickle
+Largamos para 273198805
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273198805_30.pickle
+Load or build model. For 273198805, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_273198805_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273198805_30.pickle
+Largamos para 105838056
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_105838056_30.pickle
+Load or build model. For 105838056, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_105838056_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_105838056_30.pickle
+Largamos para 72532390
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_72532390_30.pickle
+Load or build model. For 72532390, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_72532390_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_72532390_30.pickle
+Largamos para 180387621
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180387621_30.pickle
+Load or build model. For 180387621, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_180387621_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180387621_30.pickle
+Largamos para 136706767
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136706767_30.pickle
+Load or build model. For 136706767, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_136706767_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136706767_30.pickle
+Largamos para 17814160
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17814160_30.pickle
+Load or build model. For 17814160, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17814160_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17814160_30.pickle
+Largamos para 231636434
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_231636434_30.pickle
+Load or build model. For 231636434, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_231636434_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_231636434_30.pickle
+Largamos para 326512684
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_326512684_30.pickle
+Load or build model. For 326512684, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_326512684_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_326512684_30.pickle
+Largamos para 119998164
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119998164_30.pickle
+Load or build model. For 119998164, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_119998164_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119998164_30.pickle
+Largamos para 151159392
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151159392_30.pickle
+Load or build model. For 151159392, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_151159392_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151159392_30.pickle
+Largamos para 155022600
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155022600_30.pickle
+Load or build model. For 155022600, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155022600_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155022600_30.pickle
+Largamos para 146904949
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146904949_30.pickle
+Load or build model. For 146904949, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_146904949_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146904949_30.pickle
+Largamos para 118718718
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_118718718_30.pickle
+Load or build model. For 118718718, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_118718718_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_118718718_30.pickle
+Largamos para 460141468
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_460141468_30.pickle
+Load or build model. For 460141468, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_460141468_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_460141468_30.pickle
+Largamos para 388635402
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_388635402_30.pickle
+Load or build model. For 388635402, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_388635402_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_388635402_30.pickle
+Largamos para 128958788
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_128958788_30.pickle
+Load or build model. For 128958788, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_128958788_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_128958788_30.pickle
+Largamos para 80947885
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_80947885_30.pickle
+Load or build model. For 80947885, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_80947885_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_80947885_30.pickle
+Largamos para 173166881
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_173166881_30.pickle
+Load or build model. For 173166881, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_173166881_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_173166881_30.pickle
+Largamos para 134883425
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134883425_30.pickle
+Load or build model. For 134883425, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_134883425_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134883425_30.pickle
+Largamos para 182831320
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182831320_30.pickle
+Load or build model. For 182831320, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_182831320_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182831320_30.pickle
+Largamos para 17441030
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17441030_30.pickle
+Load or build model. For 17441030, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17441030_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17441030_30.pickle
+Largamos para 233630752
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233630752_30.pickle
+Load or build model. For 233630752, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_233630752_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233630752_30.pickle
+Largamos para 316583387
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_316583387_30.pickle
+Load or build model. For 316583387, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_316583387_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_316583387_30.pickle
+Largamos para 178045174
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_178045174_30.pickle
+Load or build model. For 178045174, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_178045174_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_178045174_30.pickle
+Largamos para 358430626
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_358430626_30.pickle
+Load or build model. For 358430626, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_358430626_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_358430626_30.pickle
+Largamos para 2485702456
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2485702456_30.pickle
+Load or build model. For 2485702456, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2485702456_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2485702456_30.pickle
+Largamos para 301016792
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_301016792_30.pickle
+Load or build model. For 301016792, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_301016792_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_301016792_30.pickle
+Largamos para 95987553
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_95987553_30.pickle
+Load or build model. For 95987553, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_95987553_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_95987553_30.pickle
+Largamos para 1660361
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1660361_30.pickle
+Load or build model. For 1660361, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1660361_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1660361_30.pickle
+Largamos para 110414397
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110414397_30.pickle
+Load or build model. For 110414397, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_110414397_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110414397_30.pickle
+Largamos para 197637727
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_197637727_30.pickle
+Load or build model. For 197637727, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_197637727_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_197637727_30.pickle
+Largamos para 158869286
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158869286_30.pickle
+Load or build model. For 158869286, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_158869286_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158869286_30.pickle
+Largamos para 235340755
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_235340755_30.pickle
+Load or build model. For 235340755, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_235340755_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_235340755_30.pickle
+Largamos para 29476104
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29476104_30.pickle
+Load or build model. For 29476104, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29476104_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29476104_30.pickle
+Largamos para 171196248
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171196248_30.pickle
+Load or build model. For 171196248, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_171196248_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171196248_30.pickle
+Largamos para 13330252
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_13330252_30.pickle
+Load or build model. For 13330252, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_13330252_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_13330252_30.pickle
+Largamos para 17620434
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17620434_30.pickle
+Load or build model. For 17620434, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17620434_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17620434_30.pickle
+Largamos para 195005131
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195005131_30.pickle
+Load or build model. For 195005131, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_195005131_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195005131_30.pickle
+Largamos para 180068784
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180068784_30.pickle
+Load or build model. For 180068784, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_180068784_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180068784_30.pickle
+Largamos para 242311942
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_242311942_30.pickle
+Load or build model. For 242311942, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_242311942_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_242311942_30.pickle
+Largamos para 123865750
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_123865750_30.pickle
+Load or build model. For 123865750, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_123865750_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_123865750_30.pickle
+Largamos para 182644738
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182644738_30.pickle
+Load or build model. For 182644738, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_182644738_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182644738_30.pickle
+Largamos para 138500942
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138500942_30.pickle
+Load or build model. For 138500942, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138500942_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138500942_30.pickle
+Largamos para 144561679
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_144561679_30.pickle
+Load or build model. For 144561679, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_144561679_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_144561679_30.pickle
+Largamos para 226730707
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_226730707_30.pickle
+Load or build model. For 226730707, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_226730707_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_226730707_30.pickle
+Largamos para 130922573
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130922573_30.pickle
+Load or build model. For 130922573, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_130922573_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130922573_30.pickle
+Largamos para 2945261
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2945261_30.pickle
+Load or build model. For 2945261, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2945261_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2945261_30.pickle
+Largamos para 175914955
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175914955_30.pickle
+Load or build model. For 175914955, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_175914955_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175914955_30.pickle
+Largamos para 210952398
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_210952398_30.pickle
+Load or build model. For 210952398, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_210952398_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_210952398_30.pickle
+Largamos para 8952422
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8952422_30.pickle
+Load or build model. For 8952422, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_8952422_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8952422_30.pickle
+Largamos para 228190246
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_228190246_30.pickle
+Load or build model. For 228190246, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_228190246_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_228190246_30.pickle
+Largamos para 2686869089
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2686869089_30.pickle
+Load or build model. For 2686869089, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2686869089_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2686869089_30.pickle
+Largamos para 138814032
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138814032_30.pickle
+Load or build model. For 138814032, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138814032_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138814032_30.pickle
+Largamos para 188483512
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188483512_30.pickle
+Load or build model. For 188483512, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_188483512_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188483512_30.pickle
+Largamos para 145421975
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145421975_30.pickle
+Load or build model. For 145421975, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_145421975_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145421975_30.pickle
+Largamos para 149258770
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149258770_30.pickle
+Load or build model. For 149258770, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_149258770_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149258770_30.pickle
+Largamos para 153815177
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153815177_30.pickle
+Load or build model. For 153815177, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_153815177_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153815177_30.pickle
+Largamos para 156242969
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156242969_30.pickle
+Load or build model. For 156242969, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_156242969_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156242969_30.pickle
+Largamos para 149970952
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149970952_30.pickle
+Load or build model. For 149970952, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_149970952_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149970952_30.pickle
+Largamos para 209711679
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_209711679_30.pickle
+Load or build model. For 209711679, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_209711679_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_209711679_30.pickle
+Largamos para 17931624
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17931624_30.pickle
+Load or build model. For 17931624, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17931624_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17931624_30.pickle
+Largamos para 130506373
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130506373_30.pickle
+Load or build model. For 130506373, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_130506373_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_130506373_30.pickle
+Largamos para 159480540
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159480540_30.pickle
+Load or build model. For 159480540, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_159480540_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159480540_30.pickle
+Largamos para 140237000
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_140237000_30.pickle
+Load or build model. For 140237000, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_140237000_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_140237000_30.pickle
+Largamos para 53169164
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53169164_30.pickle
+Load or build model. For 53169164, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_53169164_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53169164_30.pickle
+Largamos para 90185866
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_90185866_30.pickle
+Load or build model. For 90185866, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_90185866_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_90185866_30.pickle
+Largamos para 110316549
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110316549_30.pickle
+Load or build model. For 110316549, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_110316549_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_110316549_30.pickle
+Largamos para 145414019
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145414019_30.pickle
+Load or build model. For 145414019, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_145414019_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145414019_30.pickle
+Largamos para 185083071
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185083071_30.pickle
+Load or build model. For 185083071, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_185083071_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185083071_30.pickle
+Largamos para 142192618
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142192618_30.pickle
+Load or build model. For 142192618, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_142192618_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142192618_30.pickle
+Largamos para 430073621
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_430073621_30.pickle
+Load or build model. For 430073621, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_430073621_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_430073621_30.pickle
+Largamos para 103462194
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_103462194_30.pickle
+Load or build model. For 103462194, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_103462194_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_103462194_30.pickle
+Largamos para 36787113
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36787113_30.pickle
+Load or build model. For 36787113, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_36787113_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36787113_30.pickle
+Largamos para 243827202
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243827202_30.pickle
+Load or build model. For 243827202, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_243827202_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243827202_30.pickle
+Largamos para 172373423
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172373423_30.pickle
+Load or build model. For 172373423, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_172373423_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172373423_30.pickle
+Largamos para 208646224
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_208646224_30.pickle
+Load or build model. For 208646224, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_208646224_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_208646224_30.pickle
+Largamos para 159620450
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159620450_30.pickle
+Load or build model. For 159620450, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_159620450_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_159620450_30.pickle
+Largamos para 160142615
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_160142615_30.pickle
+Load or build model. For 160142615, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_160142615_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_160142615_30.pickle
+Largamos para 143562981
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143562981_30.pickle
+Load or build model. For 143562981, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_143562981_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143562981_30.pickle
+Largamos para 1357911
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1357911_30.pickle
+Load or build model. For 1357911, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1357911_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1357911_30.pickle
+Largamos para 447461196
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_447461196_30.pickle
+Load or build model. For 447461196, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_447461196_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_447461196_30.pickle
+Largamos para 214986628
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_214986628_30.pickle
+Load or build model. For 214986628, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_214986628_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_214986628_30.pickle
+Largamos para 55066860
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55066860_30.pickle
+Load or build model. For 55066860, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_55066860_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55066860_30.pickle
+Largamos para 244175447
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_244175447_30.pickle
+Load or build model. For 244175447, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_244175447_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_244175447_30.pickle
+Largamos para 7523352
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7523352_30.pickle
+Load or build model. For 7523352, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7523352_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7523352_30.pickle
+Largamos para 1247076385
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1247076385_30.pickle
+Load or build model. For 1247076385, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1247076385_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1247076385_30.pickle
+Largamos para 966192692
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_966192692_30.pickle
+Load or build model. For 966192692, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_966192692_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_966192692_30.pickle
+Largamos para 74615519
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_74615519_30.pickle
+Load or build model. For 74615519, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_74615519_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_74615519_30.pickle
+Largamos para 143431671
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143431671_30.pickle
+Load or build model. For 143431671, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_143431671_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143431671_30.pickle
+Largamos para 142532652
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142532652_30.pickle
+Load or build model. For 142532652, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_142532652_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142532652_30.pickle
+Largamos para 132704571
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132704571_30.pickle
+Load or build model. For 132704571, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_132704571_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132704571_30.pickle
+Largamos para 14156599
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_14156599_30.pickle
+Load or build model. For 14156599, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_14156599_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_14156599_30.pickle
+Largamos para 134898089
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134898089_30.pickle
+Load or build model. For 134898089, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_134898089_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134898089_30.pickle
+Largamos para 97717418
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_97717418_30.pickle
+Load or build model. For 97717418, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_97717418_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_97717418_30.pickle
+Largamos para 7377622
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7377622_30.pickle
+Load or build model. For 7377622, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7377622_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7377622_30.pickle
+Largamos para 55023471
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55023471_30.pickle
+Load or build model. For 55023471, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_55023471_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_55023471_30.pickle
+Largamos para 136794480
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136794480_30.pickle
+Load or build model. For 136794480, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_136794480_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136794480_30.pickle
+Largamos para 7981232
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7981232_30.pickle
+Load or build model. For 7981232, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7981232_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7981232_30.pickle
+Largamos para 87528727
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_87528727_30.pickle
+Load or build model. For 87528727, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_87528727_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_87528727_30.pickle
+Largamos para 721013767
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_721013767_30.pickle
+Load or build model. For 721013767, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_721013767_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_721013767_30.pickle
+Largamos para 277517202
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_277517202_30.pickle
+Load or build model. For 277517202, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_277517202_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_277517202_30.pickle
+Largamos para 878235842
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_878235842_30.pickle
+Load or build model. For 878235842, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_878235842_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_878235842_30.pickle
+Largamos para 188525384
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188525384_30.pickle
+Load or build model. For 188525384, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_188525384_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_188525384_30.pickle
+Largamos para 158007051
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158007051_30.pickle
+Load or build model. For 158007051, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_158007051_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158007051_30.pickle
+Largamos para 369120654
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_369120654_30.pickle
+Load or build model. For 369120654, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_369120654_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_369120654_30.pickle
+Largamos para 49365716
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_49365716_30.pickle
+Load or build model. For 49365716, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_49365716_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_49365716_30.pickle
+Largamos para 273923851
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273923851_30.pickle
+Load or build model. For 273923851, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_273923851_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273923851_30.pickle
+Largamos para 8083992
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8083992_30.pickle
+Load or build model. For 8083992, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_8083992_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8083992_30.pickle
+Largamos para 1311735576
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1311735576_30.pickle
+Load or build model. For 1311735576, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1311735576_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1311735576_30.pickle
+Largamos para 187193299
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187193299_30.pickle
+Load or build model. For 187193299, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_187193299_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187193299_30.pickle
+Largamos para 712635080
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_712635080_30.pickle
+Load or build model. For 712635080, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_712635080_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_712635080_30.pickle
+Largamos para 35744749
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_35744749_30.pickle
+Load or build model. For 35744749, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_35744749_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_35744749_30.pickle
+Largamos para 36997365
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36997365_30.pickle
+Load or build model. For 36997365, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_36997365_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_36997365_30.pickle
+Largamos para 44698651
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_44698651_30.pickle
+Load or build model. For 44698651, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_44698651_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_44698651_30.pickle
+Largamos para 171681656
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171681656_30.pickle
+Load or build model. For 171681656, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_171681656_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171681656_30.pickle
+Largamos para 156056618
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156056618_30.pickle
+Load or build model. For 156056618, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_156056618_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156056618_30.pickle
+Largamos para 148078014
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_148078014_30.pickle
+Load or build model. For 148078014, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_148078014_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_148078014_30.pickle
+Largamos para 69921311
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_69921311_30.pickle
+Load or build model. For 69921311, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_69921311_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_69921311_30.pickle
+Largamos para 293910627
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_293910627_30.pickle
+Load or build model. For 293910627, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_293910627_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_293910627_30.pickle
+Largamos para 167253149
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_167253149_30.pickle
+Load or build model. For 167253149, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_167253149_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_167253149_30.pickle
+Largamos para 29223956
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29223956_30.pickle
+Load or build model. For 29223956, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29223956_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29223956_30.pickle
+Largamos para 172200993
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172200993_30.pickle
+Load or build model. For 172200993, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_172200993_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172200993_30.pickle
+Largamos para 8565932
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8565932_30.pickle
+Load or build model. For 8565932, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_8565932_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_8565932_30.pickle
+Largamos para 172111787
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172111787_30.pickle
+Load or build model. For 172111787, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_172111787_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_172111787_30.pickle
+Largamos para 186560753
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186560753_30.pickle
+Load or build model. For 186560753, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_186560753_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186560753_30.pickle
+Largamos para 19055241
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_19055241_30.pickle
+Load or build model. For 19055241, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_19055241_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_19055241_30.pickle
+Largamos para 2411324736
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2411324736_30.pickle
+Load or build model. For 2411324736, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2411324736_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2411324736_30.pickle
+Largamos para 79063686
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_79063686_30.pickle
+Load or build model. For 79063686, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_79063686_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_79063686_30.pickle
+Largamos para 10823582
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10823582_30.pickle
+Load or build model. For 10823582, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_10823582_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10823582_30.pickle
+Largamos para 125363239
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_125363239_30.pickle
+Load or build model. For 125363239, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_125363239_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_125363239_30.pickle
+Largamos para 216960357
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_216960357_30.pickle
+Load or build model. For 216960357, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_216960357_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_216960357_30.pickle
+Largamos para 139931335
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_139931335_30.pickle
+Load or build model. For 139931335, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_139931335_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_139931335_30.pickle
+Largamos para 186595337
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186595337_30.pickle
+Load or build model. For 186595337, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_186595337_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186595337_30.pickle
+Largamos para 201780346
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_201780346_30.pickle
+Load or build model. For 201780346, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_201780346_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_201780346_30.pickle
+Largamos para 133452990
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_133452990_30.pickle
+Load or build model. For 133452990, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_133452990_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_133452990_30.pickle
+Largamos para 138160985
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138160985_30.pickle
+Load or build model. For 138160985, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138160985_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138160985_30.pickle
+Largamos para 157523545
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_157523545_30.pickle
+Load or build model. For 157523545, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_157523545_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_157523545_30.pickle
+Largamos para 185702157
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185702157_30.pickle
+Load or build model. For 185702157, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_185702157_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_185702157_30.pickle
+Largamos para 138016222
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138016222_30.pickle
+Load or build model. For 138016222, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_138016222_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_138016222_30.pickle
+Largamos para 161933526
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_161933526_30.pickle
+Load or build model. For 161933526, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_161933526_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_161933526_30.pickle
+Largamos para 1487932730
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1487932730_30.pickle
+Load or build model. For 1487932730, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1487932730_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1487932730_30.pickle
+Largamos para 21013930
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_21013930_30.pickle
+Load or build model. For 21013930, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_21013930_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_21013930_30.pickle
+Largamos para 344940001
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_344940001_30.pickle
+Load or build model. For 344940001, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_344940001_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_344940001_30.pickle
+Largamos para 29753422
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29753422_30.pickle
+Load or build model. For 29753422, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29753422_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29753422_30.pickle
+Largamos para 17078536
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17078536_30.pickle
+Load or build model. For 17078536, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_17078536_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17078536_30.pickle
+Largamos para 42957295
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_42957295_30.pickle
+Load or build model. For 42957295, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_42957295_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_42957295_30.pickle
+Largamos para 16786398
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16786398_30.pickle
+Load or build model. For 16786398, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_16786398_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16786398_30.pickle
+Largamos para 98704664
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_98704664_30.pickle
+Load or build model. For 98704664, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_98704664_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_98704664_30.pickle
+Largamos para 4245701
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_4245701_30.pickle
+Load or build model. For 4245701, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_4245701_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_4245701_30.pickle
+Largamos para 153115598
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153115598_30.pickle
+Load or build model. For 153115598, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_153115598_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_153115598_30.pickle
+Largamos para 785025013
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_785025013_30.pickle
+Load or build model. For 785025013, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_785025013_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_785025013_30.pickle
+Largamos para 2450324088
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2450324088_30.pickle
+Load or build model. For 2450324088, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2450324088_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2450324088_30.pickle
+Largamos para 215872828
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_215872828_30.pickle
+Load or build model. For 215872828, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_215872828_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_215872828_30.pickle
+Largamos para 171110904
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171110904_30.pickle
+Load or build model. For 171110904, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_171110904_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_171110904_30.pickle
+Largamos para 10070542
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10070542_30.pickle
+Load or build model. For 10070542, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_10070542_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_10070542_30.pickle
+Largamos para 132727626
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132727626_30.pickle
+Load or build model. For 132727626, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_132727626_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_132727626_30.pickle
+Largamos para 84584995
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_84584995_30.pickle
+Load or build model. For 84584995, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_84584995_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_84584995_30.pickle
+Largamos para 155669017
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155669017_30.pickle
+Load or build model. For 155669017, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_155669017_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155669017_30.pickle
+Largamos para 175606747
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175606747_30.pickle
+Load or build model. For 175606747, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_175606747_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175606747_30.pickle
+Largamos para 311504156
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_311504156_30.pickle
+Load or build model. For 311504156, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_311504156_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_311504156_30.pickle
+Largamos para 15521401
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_15521401_30.pickle
+Load or build model. For 15521401, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_15521401_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_15521401_30.pickle
+Largamos para 601872880
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_601872880_30.pickle
+Load or build model. For 601872880, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_601872880_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_601872880_30.pickle
+Largamos para 196172891
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_196172891_30.pickle
+Load or build model. For 196172891, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_196172891_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_196172891_30.pickle
+Largamos para 164698884
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_164698884_30.pickle
+Load or build model. For 164698884, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_164698884_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_164698884_30.pickle
+Largamos para 156740257
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156740257_30.pickle
+Load or build model. For 156740257, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_156740257_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_156740257_30.pickle
+Largamos para 143795703
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143795703_30.pickle
+Load or build model. For 143795703, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_143795703_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_143795703_30.pickle
+Largamos para 359791727
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_359791727_30.pickle
+Load or build model. For 359791727, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_359791727_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_359791727_30.pickle
+Largamos para 7805322
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7805322_30.pickle
+Load or build model. For 7805322, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_7805322_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_7805322_30.pickle
+Largamos para 53198511
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53198511_30.pickle
+Load or build model. For 53198511, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_53198511_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53198511_30.pickle
+Largamos para 145677457
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145677457_30.pickle
+Load or build model. For 145677457, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_145677457_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_145677457_30.pickle
+Largamos para 168932686
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_168932686_30.pickle
+Load or build model. For 168932686, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_168932686_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_168932686_30.pickle
+Largamos para 203215796
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203215796_30.pickle
+Load or build model. For 203215796, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_203215796_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203215796_30.pickle
+Largamos para 177342424
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177342424_30.pickle
+Load or build model. For 177342424, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_177342424_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177342424_30.pickle
+Largamos para 376476098
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_376476098_30.pickle
+Load or build model. For 376476098, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_376476098_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_376476098_30.pickle
+Largamos para 233644860
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233644860_30.pickle
+Load or build model. For 233644860, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_233644860_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_233644860_30.pickle
+Largamos para 2489202613
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2489202613_30.pickle
+Load or build model. For 2489202613, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2489202613_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2489202613_30.pickle
+Largamos para 263865213
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_263865213_30.pickle
+Load or build model. For 263865213, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_263865213_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_263865213_30.pickle
+Largamos para 175923801
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175923801_30.pickle
+Load or build model. For 175923801, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_175923801_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_175923801_30.pickle
+Largamos para 262127099
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_262127099_30.pickle
+Load or build model. For 262127099, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_262127099_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_262127099_30.pickle
+Largamos para 151055124
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151055124_30.pickle
+Load or build model. For 151055124, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_151055124_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151055124_30.pickle
+Largamos para 38488855
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_38488855_30.pickle
+Load or build model. For 38488855, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_38488855_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_38488855_30.pickle
+Largamos para 1372415197
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1372415197_30.pickle
+Load or build model. For 1372415197, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_1372415197_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_1372415197_30.pickle
+Largamos para 151980036
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151980036_30.pickle
+Load or build model. For 151980036, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_151980036_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151980036_30.pickle
+Largamos para 186647026
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186647026_30.pickle
+Load or build model. For 186647026, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_186647026_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_186647026_30.pickle
+Largamos para 102971189
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_102971189_30.pickle
+Load or build model. For 102971189, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_102971189_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_102971189_30.pickle
+Largamos para 122802136
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_122802136_30.pickle
+Load or build model. For 122802136, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_122802136_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_122802136_30.pickle
+Largamos para 716017536
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_716017536_30.pickle
+Load or build model. For 716017536, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_716017536_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_716017536_30.pickle
+Largamos para 824157
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_824157_30.pickle
+Load or build model. For 824157, model type: svc, time_delta: 30
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_824157_30.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 289) (2000, 289) False False
+FAILED FOR USER 824157. Exception: The number of classes has to be greater than one; got 1 class
+Largamos para 243049971
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243049971_30.pickle
+Load or build model. For 243049971, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_243049971_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_243049971_30.pickle
+Largamos para 50103873
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_50103873_30.pickle
+Load or build model. For 50103873, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_50103873_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_50103873_30.pickle
+Largamos para 75825205
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_75825205_30.pickle
+Load or build model. For 75825205, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_75825205_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_75825205_30.pickle
+Largamos para 174991765
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_174991765_30.pickle
+Load or build model. For 174991765, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_174991765_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_174991765_30.pickle
+Largamos para 150319476
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_150319476_30.pickle
+Load or build model. For 150319476, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_150319476_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_150319476_30.pickle
+Largamos para 23965285
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_23965285_30.pickle
+Load or build model. For 23965285, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_23965285_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_23965285_30.pickle
+Largamos para 18207515
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_18207515_30.pickle
+Load or build model. For 18207515, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_18207515_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_18207515_30.pickle
+Largamos para 88778227
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_88778227_30.pickle
+Load or build model. For 88778227, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_88778227_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_88778227_30.pickle
+Largamos para 292963883
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_292963883_30.pickle
+Load or build model. For 292963883, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_292963883_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_292963883_30.pickle
+Largamos para 261418654
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_261418654_30.pickle
+Load or build model. For 261418654, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_261418654_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_261418654_30.pickle
+Largamos para 2240928494
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2240928494_30.pickle
+Load or build model. For 2240928494, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_2240928494_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2240928494_30.pickle
+Largamos para 29399931
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29399931_30.pickle
+Load or build model. For 29399931, model type: svc, time_delta: 30
+LOADED MODEL FROM ../model/_1_one_user_learn_neighbours/svc_29399931_30.pickle
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29399931_30.pickle
