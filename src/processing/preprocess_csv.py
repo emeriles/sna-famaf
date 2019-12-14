@@ -248,6 +248,46 @@ class PreprocessCSV(object):
         print('Performing cut1 done.')
         return new_df
 
+    def df_cut1_simpler_2(self):
+        """
+        Returns a new dataframe with altered data: Recicling of tweets and included interaction among our users only.
+        :param data_f:
+        :return:
+        """
+        print('Performing df cut over {}'.format(self.df_path))
+        # el filtro 1 va a ser un gran OR de:
+        # OR item 1: tweets originales en este dataset (que no son RT de nada)
+        data_f = self.df.copy(deep=True)
+        original_tweets_on_ds = data_f.retweeted_status__id_str.isna()
+
+        # OR item 2: tweets que son RT de un tweet de nuestros usuarios (un tweet de nuestros usuarios,
+        # es un tweet original en este dataset)
+        retweeted_by_my_users = data_f.retweeted_status__id_str.isin(self.df.id_str)
+        ids_rtst_by_my_users = data_f[data_f.retweeted_status__id_str.isin(self.df.id_str)].retweeted_status__id_str.values  # to use later
+
+        # OR item 3: tweets que fueron retweeteados mas de 1 vez en este dataset.
+        # para mantener consistencia en esta alteración el campo retweeted_status__created_at debe ser modificado,
+        # usando el timestamp más temprano de los retweets de un mismo tweet.
+
+        # obtener los conteos de tweets en el dataset
+        rt_counts_on_ds = self.df.groupby(self.df.retweeted_status__id_str).count()
+        # filtrar los tweets que tiene más de un retweet en el ds Y que NO sean retweets de tweets de nuestros usuarios
+        tweet_ids_w_more_than_one_rt = rt_counts_on_ds[(rt_counts_on_ds.retweeted_status__user__id_str > 1) &
+                                                       ~(rt_counts_on_ds.index.isin(ids_rtst_by_my_users))]
+        # # seleccionar, del dataframe completo, los retweeted_status__id_str de los que estan en el filtro
+        tweet_w_more_than_one_rt = data_f.retweeted_status__id_str.isin(tweet_ids_w_more_than_one_rt)
+
+        result = data_f[original_tweets_on_ds | retweeted_by_my_users | tweet_w_more_than_one_rt]
+        use_cols = [
+            'created_at', 'user__id_str', 'id_str', 'retweeted_status__id_str',
+            'retweeted_status__user__id_str', 'retweeted_status__created_at', 'retweet_count', 'quoted_status_id_str',
+            'lang',
+        ]
+        new_df = result[use_cols].copy(deep=True)
+        self.cut1 = new_df
+        print('Performing cut1 done.')
+        return new_df
+
     def save_cut1(self, filename=CSV_CUTTED):
         print('Saving dataframe {}'.format(filename))
         self.cut1.to_csv(filename, index=False)
@@ -256,7 +296,8 @@ class PreprocessCSV(object):
     def create_and_save_csv_cutted():
         p = PreprocessCSV()
         # p.df_cut1()
-        p.df_cut1_simpler()
+        # p.df_cut1_simpler()
+        p.df_cut1_simpler_2()
         p.save_cut1()
 
 
