@@ -87,7 +87,7 @@ if __name__ == '__main__':
         GraphHandler.get_users_followed_data()
 
     if args.action == 'experiment_influencers':
-        Experiments.experiment()
+        Experiments.experiment(delta_minutes=delta_minutes)
     if args.action == 'evaluate_influencers':
         evaluate()
 

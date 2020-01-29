@@ -64,12 +64,12 @@ class Experiments(object):
                     repetitions += 1
 
     @staticmethod
-    def experiment():
+    def experiment(delta_minutes):
         import sys
         import os
         # FOLDER = sys.argv[1]
         # os.mkdir(FOLDER)
-        d = DatasetInfluencersModel
+        d = DatasetInfluencersModel(delta_minutes_filter=delta_minutes)
         # INFLUENCE_FILE = "influence_points_{}.pickle".format('50_10_40')
         # INFLUENCE_FILE = "influence_points_{}.pickle".format('new')
         # INFLUENCE_FILE = "influence_points_{}.pickle".format('nx_35_15_25_25_infomap')

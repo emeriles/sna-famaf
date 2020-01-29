@@ -14,7 +14,7 @@ from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER, NX_SUBGRAPH_PATH, 
     MAX_INFLUENCERS_PERCENT
 
 
-class _DatasetInfluencersModel(_Dataset):
+class DatasetInfluencersModel(_Dataset):
 
     def __init__(self, csv_path=CSV_CUTTED, txt_path=JSON_TEXTS, delta_minutes_filter=None):
         super().__init__(csv_path=csv_path, txt_path=txt_path, delta_minutes_filter=delta_minutes_filter)
@@ -319,4 +319,4 @@ class _DatasetInfluencersModel(_Dataset):
     #     return dataset
 
 
-DatasetInfluencersModel = _DatasetInfluencersModel()
+# DatasetInfluencersModel = DatasetInfluencersModel()
