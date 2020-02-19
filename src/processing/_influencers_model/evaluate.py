@@ -101,7 +101,7 @@ def results_on_experiment(folder, file_or_files, roc=False, roc_curve_=False):
         return _report_on(file_or_files)
 
 
-def f1_score_by_influencers(folders):
+def f1_score_by_influencers(folders, delta_minutes):
     def get_multiple_tries(file, folder):
         from os import listdir
         from os.path import isfile, join
@@ -129,7 +129,7 @@ def f1_score_by_influencers(folders):
         testing_files = []
         for idsuffix, suffix in enumerate(suffixes):
             prefixes = range(MIN_INFLUENCERS, MAX_INFLUENCERS, STEP_INFLUENCERS)
-            testing_files = ["{}i{}".format(each, suffix) for each in prefixes]
+            testing_files = ["{}i{}_{}m".format(each, suffix, delta_minutes) for each in prefixes]
             results.append(defaultdict(list))
             results[idsuffix]['x'] = prefixes
             for filename in testing_files:
@@ -155,5 +155,5 @@ def f1_score_by_influencers(folders):
     #      "graph_{}_{}.html".format(GAMMA, C))
 
 
-def evaluate():
-    f1_score_by_influencers([XY_CACHE_FOLDER])
+def evaluate(delta_minutes):
+    f1_score_by_influencers([XY_CACHE_FOLDER], delta_minutes)

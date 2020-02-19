@@ -89,7 +89,7 @@ if __name__ == '__main__':
     if args.action == 'experiment_influencers':
         Experiments.experiment(delta_minutes=delta_minutes)
     if args.action == 'evaluate_influencers':
-        evaluate()
+        evaluate(delta_minutes=delta_minutes)
 
 
 # we need 5589 users
