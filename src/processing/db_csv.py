@@ -79,7 +79,7 @@ class _Dataset(object):
 
     def get_user_timeline(self, uid, with_original=True, with_retweets=True):
         """
-        Returns [(tweet_id, creted_at)] for a given user id or list of users ids
+        Returns [(tweet_id, creted_at, retweeted_status__created_at)] for a given user id or list of users ids
         :param with_original:
         :param with_retweets:
         :param uid:
@@ -94,13 +94,13 @@ class _Dataset(object):
 
         if with_original:
             own_tweets = tweets[pd.isna(tweets.retweeted_status__id_str)]
-            own_tweets = own_tweets.loc[:, ('id_str', 'created_at')]
+            own_tweets = own_tweets.loc[:, ('id_str', 'created_at', 'retweeted_status__created_at')]
         else:
             own_tweets = pd.DataFrame()
 
         if with_retweets:
             rts = tweets[pd.notna(tweets.retweeted_status__id_str)]
-            rts = rts.loc[:, ('retweeted_status__id_str', 'created_at')]
+            rts = rts.loc[:, ('retweeted_status__id_str', 'created_at', 'retweeted_status__created_at')]
             rts.rename({'retweeted_status__id_str': 'id_str',
                         # 'retweeted_status__created_at': 'created_at'
                         },
@@ -108,7 +108,7 @@ class _Dataset(object):
         else:
             rts = pd.DataFrame()
 
-        timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
+        timeline = pd.concat([own_tweets, rts]).dropna(subset=['id_str']).drop_duplicates(subset='id_str').values
         return timeline
 
     def get_tweets_universe(self, uid, neighbours):

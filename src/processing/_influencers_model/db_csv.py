@@ -235,7 +235,7 @@ class DatasetInfluencersModel(_Dataset):
         for j, u in enumerate(self.influencers_ids):
             to_process -= 1
             percentage = 100.0 - ((to_process / X.shape[0]) * 100)
-            print('Avance: %{}'.format(percentage), end='\r')
+            # print('Avance: %{}'.format(percentage), end='\r')
 
             n_tl_filtered = self.get_user_timeline(u)
             col = np.isin(dataset[:, 0], n_tl_filtered[:, 0])

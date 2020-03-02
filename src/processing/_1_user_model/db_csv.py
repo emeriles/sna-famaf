@@ -45,22 +45,23 @@ class _DatasetOneUserModel(_Dataset):
         df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)
         df.drop_duplicates(subset='id_str', inplace=True)
 
-        if self.delta_minutes:
-            print('Filtering by time')
-            df_filtered = df[np.isnat(df.retweeted_status__created_at) |
-                (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=self.delta_minutes))]
-            df = df_filtered.copy()
-
-            # remove positive cases retweets ids that were filtered in the previous step,
-            # because they should not be in the tweets universe (X rows)
-            if central_uid is None:
-                raise Exception('central_uid must be provided when filtering on time window with one user model')
-            left_out_own_retweets = df[(df.user__id_str == central_uid) & pd.notna(df.retweeted_status__id_str) &
-                (df.created_at - df.retweeted_status__created_at > datetime.timedelta(minutes=self.delta_minutes))]
-            df.drop(left_out_own_retweets.index, inplace=True)
-
-            # self.left_out_own_retweets_ids = left_out_own_retweets.loc[:, 'retweeted_status__id_str'].values
-            print('There are {} retweets left out from central user timeline'.format(left_out_own_retweets.shape[0]))
+        # if self.delta_minutes:
+        #     print('Filtering by time')
+        #     # df_filtered = df[np.isnat(df.retweeted_status__created_at) |
+        #     #     (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=self.delta_minutes))]
+        #     # df = df_filtered.copy()
+        #     result_df = df.copy(deep=True)
+        #
+        #     # remove positive cases retweets ids that were filtered in the previous step,
+        #     # because they should not be in the tweets universe (X rows)
+        #     if central_uid is None:
+        #         raise Exception('central_uid must be provided when filtering on time window with one user model')
+        #     left_out_own_retweets = df[(df.user__id_str == central_uid) & pd.notna(df.retweeted_status__id_str) &
+        #         (df.created_at - df.retweeted_status__created_at > datetime.timedelta(minutes=self.delta_minutes))]
+        #     result_df.drop(left_out_own_retweets.index, inplace=True)  ## wtf emanuel?: VER QUE VAN A FALLAR LOS INDEX ACA
+        #
+        #     # self.left_out_own_retweets_ids = left_out_own_retweets.loc[:, 'retweeted_status__id_str'].values
+        #     print('There are {} retweets left out from central user timeline'.format(left_out_own_retweets.shape[0]))
 
         self.df = df
         print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
@@ -97,7 +98,7 @@ class _DatasetOneUserModel(_Dataset):
         own_tweets_len = own_tweets.shape[0]
         print('Len of own retweets timeline (possible positive examples) is {}'.format(own_tweets_len))
 
-        n_tweets = np.empty((0, 2))
+        n_tweets = np.empty((0, 3))
         for u in neighbours:
             # sacar del posible universo de tweets los `left_out_own_tweets`.
             # tl_filtered = tl[np.isin(tl[:, 0], self.left_out_own_retweets_ids, invert=True)]
@@ -114,10 +115,82 @@ class _DatasetOneUserModel(_Dataset):
             n_tweets = n_tweets[idxs]
             print('\tDataset was truncated to 10000 tweets')
 
-        tweets = np.empty((0, 2))
+        tweets = np.empty((0, 3))
         tweets = np.concatenate((tweets, own_tweets, n_tweets))
 
         return tweets
+
+    def get_tweets_universe_2(self, uid, neighbours):
+        """Override by child classes. Returns all tweets to be considered for training.
+        That is: uid's retweets, plus neighbours tweets in timeline.
+        All this pruned to 10000"""
+        print('Getting neighbour tweets universe.')
+        own_tweets = self.get_user_timeline(uid, with_original=True, with_retweets=True)
+        own_tweets_len = own_tweets.shape[0]
+        print('Len of own retweets timeline (possible positive examples) is {}'.format(own_tweets_len))
+
+        n_tweets = np.empty((0, 3))
+        for u in neighbours:
+            # sacar del posible universo de tweets los `left_out_own_tweets`.
+            # tl_filtered = tl[np.isin(tl[:, 0], self.left_out_own_retweets_ids, invert=True)]
+            n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u)))
+
+        print('Done getting neighbour tweets universe. Shape is ', n_tweets.shape)
+        # sacar del posible universo de tweets los `left_out_own_tweets`.
+        # n_tweets = n_tweets[np.isin(n_tweets[:, 0], self.left_out_own_retweets_ids, invert=True)]
+
+        # prune to max of 10000. random sample is done over all neighbour tweets.
+        n_tweets_len = 10000 - own_tweets_len
+        if len(n_tweets) > n_tweets_len:
+            idxs = np.random.choice(len(n_tweets), n_tweets_len, replace=False)
+            n_tweets = n_tweets[idxs]
+            print('\tDataset was truncated to 10000 tweets')
+
+        tweets = np.empty((0, 3))
+        tweets = np.concatenate((tweets, own_tweets, n_tweets))
+        # tweets = pd.DataFrame(tweets).drop_duplicates(subset=0)  # drop duplicates on id (by default keeps the first occurrence
+
+        # split on time window
+
+        # first on central user timeline
+        # fillna on rt_status__created_at (not retweets) with same value as created_at
+        mask = pd.isna(own_tweets[:, 2])
+        own_tweets[:, 2] = np.where(mask, own_tweets[:, 1], own_tweets[:, 2])
+
+        mask_positive_early = (own_tweets[:, 1] - own_tweets[:, 2]) < datetime.timedelta(minutes=self.delta_minutes)
+        mask_positive_later = ~mask_positive_early
+
+        positive_early = own_tweets[mask_positive_early]
+        positive_later = own_tweets[mask_positive_later]
+
+        if positive_later.shape[0] == 0:
+            raise Exception('No hay tweets de clase positiva LATER para predecir!')
+        if positive_early.shape[0] == 0:
+            raise Exception('No hay tweets de clase positiva EARLY para predecir!')
+
+        # second, on neighbour users
+
+        # remove all own_tweets that could be on n_tweets
+        n_tweets = n_tweets[~ np.isin(n_tweets[:, 0], own_tweets[:, 0])]
+
+        mask_positive_early = (n_tweets[:, 1] - n_tweets[:, 2]) < datetime.timedelta(minutes=self.delta_minutes)
+        mask_positive_later = ~mask_positive_early
+
+        negative_early = own_tweets[mask_positive_early]
+        negative_later = own_tweets[mask_positive_later]
+
+        if negative_later.shape[0] == 0:
+            raise Exception('No hay tweets de clase negativa LATER para predecir!')
+        if negative_early.shape[0] == 0:
+            raise Exception('No hay tweets de clase negativa EARLY para predecir!')
+
+        early_tweets = np.empty((0, 3))
+        early_tweets = np.concatenate((early_tweets, positive_early, negative_early))  # SHUFFLE THIS?
+
+        later_tweets = np.empty((0, 3))
+        later_tweets = np.concatenate((later_tweets, positive_later, negative_later))  # SHUFFLE THIS?
+
+        return early_tweets, later_tweets
 
     def get_neighbourhood(self, uid):
         """override with child classes.
@@ -214,5 +287,42 @@ class _DatasetOneUserModel(_Dataset):
         (X_train, X_test, X_valid, y_train, y_test, y_valid) = dataset
         return dataset
 
+    def load_or_create_dataset_2(self, uid, delta_minutes_filter):
+        """
+        Implementation that splits train-test according to time window.
+        :param uid:
+        :param delta_minutes_filter:
+        :return:
+        """
+        self.delta_minutes = delta_minutes_filter
+        self.df = pd.DataFrame()
+        model_name = self.__class__.__name__
+        fname = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, self.delta_minutes))
+        if os.path.exists(fname):
+            dataset = pickle.load(open(fname, 'rb'))
+            print('LOADED DATASET FROM {fname}'.format(fname=fname))
+        else:
+            self._load_df(central_uid=uid)
+            uid = str(uid)
+            neighbours = self.get_neighbourhood(uid)
+            # remove selected user from neighbours
+            neighbours = [u for u in neighbours if u != uid]
+
+            tweets_train, tweets_test = self.get_tweets_universe_2(uid, neighbours)
+            print('\t\tTrain tweets shape is: {}; test tweets shape is: {}'.format(tweets_train.shape, tweets_test.shape))
+
+            X_train, y_train = self.extract_features(tweets_train, neighbours, uid)
+            X_test, y_test = self.extract_features(tweets_test, neighbours, uid)
+            X_valid, y_valid = None, None
+
+            # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+            # X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42,
+            #                                                     stratify=y_test)
+            dataset = (X_train, X_test, X_valid, y_train, y_test, y_valid)
+
+            pickle.dump(dataset, open(fname, 'wb'))
+
+        (X_train, X_test, X_valid, y_train, y_test, y_valid) = dataset
+        return dataset
 
 DatasetOneUserModel = _DatasetOneUserModel()

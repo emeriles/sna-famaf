@@ -7,7 +7,7 @@ from sqlalchemy_utils.functions import drop_database, database_exists, create_da
 import time
 
 # from processing.preprocess_csv import CSVDataframe
-from settings import SQLITE_CONNECTION, CSV_CUTTED, NX_GRAPH_PATH
+from settings import SQLITE_CONNECTION
 
 # DATE_LOWER_LIMIT = datetime(year=2015, month=8, day=24)
 #
