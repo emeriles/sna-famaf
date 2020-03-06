@@ -77,7 +77,7 @@ class _Dataset(object):
             self._load_df()
         return self.df.user__id_str.unique()
 
-    def get_user_timeline(self, uid, with_original=True, with_retweets=True):
+    def get_user_timeline(self, uid, with_original=True, with_retweets=True, filter_timedelta=False):
         """
         Returns [(tweet_id, creted_at, retweeted_status__created_at)] for a given user id or list of users ids
         :param with_original:
@@ -99,7 +99,13 @@ class _Dataset(object):
             own_tweets = pd.DataFrame()
 
         if with_retweets:
-            rts = tweets[pd.notna(tweets.retweeted_status__id_str)]
+            if filter_timedelta:
+                time_constraint = (tweets.created_at - tweets.retweeted_status__created_at) \
+                                  < datetime.timedelta(minutes=self.delta_minutes)
+            else:
+                time_constraint = True
+
+            rts = tweets[pd.notna(tweets.retweeted_status__id_str) & time_constraint]
             rts = rts.loc[:, ('retweeted_status__id_str', 'created_at', 'retweeted_status__created_at')]
             rts.rename({'retweeted_status__id_str': 'id_str',
                         # 'retweeted_status__created_at': 'created_at'

@@ -102,7 +102,8 @@ class _DatasetOneUserModel(_Dataset):
         for u in neighbours:
             # sacar del posible universo de tweets los `left_out_own_tweets`.
             # tl_filtered = tl[np.isin(tl[:, 0], self.left_out_own_retweets_ids, invert=True)]
-            n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u)))
+            n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u,
+                                                                        filter_timedelta=True)))  ### TODO: CAPAZ ESTE FILTRO NO VAYA AQUI TAMBIEN
 
         print('Done getting neighbour tweets universe. Shape is ', n_tweets.shape)
         # sacar del posible universo de tweets los `left_out_own_tweets`.
@@ -120,7 +121,7 @@ class _DatasetOneUserModel(_Dataset):
 
         return tweets
 
-    def get_tweets_universe_2(self, uid, neighbours):
+    def get_tweets_universe_2(self, uid, neighbours):  # SPLIT DATASET IN TWO. Train with < timedelta and test with > timedelta
         """Override by child classes. Returns all tweets to be considered for training.
         That is: uid's retweets, plus neighbours tweets in timeline.
         All this pruned to 10000"""
@@ -133,7 +134,8 @@ class _DatasetOneUserModel(_Dataset):
         for u in neighbours:
             # sacar del posible universo de tweets los `left_out_own_tweets`.
             # tl_filtered = tl[np.isin(tl[:, 0], self.left_out_own_retweets_ids, invert=True)]
-            n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u)))
+            n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u,
+                                                                        filter_timedelta=True)))  ### TODO: CAPAZ ESTE FILTRO NO VAYA AQUI TAMBIEN
 
         print('Done getting neighbour tweets universe. Shape is ', n_tweets.shape)
         # sacar del posible universo de tweets los `left_out_own_tweets`.
@@ -225,7 +227,7 @@ class _DatasetOneUserModel(_Dataset):
             percentage = 100.0 - ((to_process / tweets.shape[0]) * 100)
             # print('Avance: %{}'.format(percentage), end='\r')
 
-            n_tl_filtered = self.get_user_timeline(u)
+            n_tl_filtered = self.get_user_timeline(u, filter_timedelta=True)
             col = np.isin(tweets[:, 0], n_tl_filtered[:, 0])
             #             print(X[:, j].shape, col.reshape((11,1)))
             X[:, j] = col.reshape((nrows, 1))
