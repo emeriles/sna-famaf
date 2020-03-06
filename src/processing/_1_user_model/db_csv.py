@@ -173,11 +173,11 @@ class _DatasetOneUserModel(_Dataset):
         # remove all own_tweets that could be on n_tweets
         n_tweets = n_tweets[~ np.isin(n_tweets[:, 0], own_tweets[:, 0])]
 
-        mask_positive_early = (n_tweets[:, 1] - n_tweets[:, 2]) < datetime.timedelta(minutes=self.delta_minutes)
-        mask_positive_later = ~mask_positive_early
+        n_mask_positive_early = (n_tweets[:, 1] - n_tweets[:, 2]) < datetime.timedelta(minutes=self.delta_minutes)
+        n_mask_positive_later = ~n_mask_positive_early
 
-        negative_early = own_tweets[mask_positive_early]
-        negative_later = own_tweets[mask_positive_later]
+        negative_early = n_tweets[n_mask_positive_early]
+        negative_later = n_tweets[n_mask_positive_later]
 
         if negative_later.shape[0] == 0:
             raise Exception('No hay tweets de clase negativa LATER para predecir!')
