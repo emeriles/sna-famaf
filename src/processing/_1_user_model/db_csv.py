@@ -262,14 +262,16 @@ class _DatasetOneUserModel(_Dataset):
 
     def load_or_create_dataset(self, uid, delta_minutes_filter):
         self.delta_minutes = delta_minutes_filter
-        self.df = pd.DataFrame()
+        # self.df = pd.DataFrame()
         model_name = self.__class__.__name__
         fname = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, self.delta_minutes))
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
             print('LOADED DATASET FROM {fname}'.format(fname=fname))
         else:
-            self._load_df(central_uid=uid)
+            if self.df.empty:
+                print('DF EMPTY LOADING IT')
+                self._load_df(central_uid=uid)
             uid = str(uid)
             neighbours = self.get_neighbourhood(uid)
             # remove selected user from neighbours
