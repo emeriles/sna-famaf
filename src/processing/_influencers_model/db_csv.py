@@ -185,7 +185,7 @@ class DatasetInfluencersModel(_Dataset):
     #     print('Done Extracting Features', end)
     #     return X, y
 
-    def get_user_timeline(self, uid):
+    def get_user_timeline_OLD_INFLUENCE(self, uid):
         """
         Returns [(tweet_id, creted_at)] for a given user id or list of users ids
         :param uid:
@@ -203,6 +203,46 @@ class DatasetInfluencersModel(_Dataset):
                     'retweeted_status__created_at': 'created_at'},  ########## ??????????????
                    axis='columns', inplace=True)
         timeline = pd.concat([own_tweets, rts]).dropna().drop_duplicates(subset='id_str').values
+        return timeline
+
+    def get_user_timeline(self, uid, with_original=True, with_retweets=True, filter_timedelta=False):
+        """
+        Returns [(tweet_id, creted_at, retweeted_status__created_at)] for a given user id or list of users ids
+        :param with_original:
+        :param with_retweets:
+        :param uid:
+        :return:
+        """
+        if self.df.empty:
+            self._load_df()
+        if isinstance(uid, str) or isinstance(uid, int):
+            uid = [str(uid)]
+        filtered = self.df[(self.df.user__id_str.isin(uid))]
+        tweets = filtered.copy()
+
+        if with_original:
+            own_tweets = tweets[pd.isna(tweets.retweeted_status__id_str)]
+            own_tweets = own_tweets.loc[:, ('id_str', 'created_at', 'retweeted_status__created_at')]
+        else:
+            own_tweets = pd.DataFrame()
+
+        if with_retweets:
+            if filter_timedelta:
+                time_constraint = (tweets.created_at - tweets.retweeted_status__created_at) \
+                                  < datetime.timedelta(minutes=self.delta_minutes)
+            else:
+                time_constraint = True
+
+            rts = tweets[pd.notna(tweets.retweeted_status__id_str) & time_constraint]
+            rts = rts.loc[:, ('retweeted_status__id_str', 'created_at', 'retweeted_status__created_at')]
+            rts.rename({'retweeted_status__id_str': 'id_str',
+                        # 'retweeted_status__created_at': 'created_at'
+                        },
+                       axis='columns', inplace=True)
+        else:
+            rts = pd.DataFrame()
+
+        timeline = pd.concat([own_tweets, rts]).dropna(subset=['id_str']).drop_duplicates(subset='id_str').values
         return timeline
 
     def extract_features(self, dataset="train", with_influencers=True):
@@ -237,7 +277,7 @@ class DatasetInfluencersModel(_Dataset):
             percentage = 100.0 - ((to_process / X.shape[0]) * 100)
             # print('Avance: %{}'.format(percentage), end='\r')
 
-            n_tl_filtered = self.get_user_timeline(u)
+            n_tl_filtered = self.get_user_timeline(u, filter_timedelta=True)
             col = np.isin(dataset[:, 0], n_tl_filtered[:, 0])
             #             print(X[:, j].shape, col.reshape((11,1)))
             # print('SHAPE X[:, j]: {}...'.format(X[:, j].shape))

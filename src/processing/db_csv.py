@@ -50,17 +50,17 @@ class _Dataset(object):
         df.rename(columns=lambda x: x.replace('.', '__'), inplace=True)
         df.drop_duplicates(subset='id_str', inplace=True)
 
-        if self.delta_minutes:
-            print('Filtering by time')
-            df_filtered = df[np.isnat(df.retweeted_status__created_at) |
-                (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=self.delta_minutes))]
-            df = df_filtered.copy()
-
+        # if self.delta_minutes:
+        #     print('Filtering by time')
+        #     df_filtered = df[np.isnat(df.retweeted_status__created_at) |
+        #         (df.created_at - df.retweeted_status__created_at <= datetime.timedelta(minutes=self.delta_minutes))]
+        #     df = df_filtered.copy()
+        #
         self.df = df
-        print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
-              format(df.shape, original_shape, self.delta_minutes))
-
-        # self._load_text_df()
+        # print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
+        #       format(df.shape, original_shape, self.delta_minutes))
+        #
+        # # self._load_text_df()
         return df
 
     def _load_text_df(self):
