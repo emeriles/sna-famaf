@@ -10,7 +10,7 @@ import networkx as nx
 from sklearn.model_selection import train_test_split
 
 from processing.db_csv import _Dataset
-from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER, NX_SUBGRAPH_PATH
+from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER, NX_SUBGRAPH_PATH, TW_UNIVERSE_CACHE_FOLDER
 
 
 class _DatasetOneUserModel(_Dataset):
@@ -89,10 +89,17 @@ class _DatasetOneUserModel(_Dataset):
         print('Fetched {} level 2 neighbourhs for user {}.'.format(len(neighbour_users), user_id))
         return neighbour_users
 
-    def get_tweets_universe(self, uid, neighbours):
+    def get_tweets_universe(self, uid, neighbours, try_to_load=True):
         """Override by child classes. Returns all tweets to be considered for training.
         That is: uid's retweets, plus neighbours tweets in timeline.
         All this pruned to 10000"""
+        filename = TW_UNIVERSE_CACHE_FOLDER + str(uid)
+        if try_to_load:
+            if os.path.exists(filename):
+                with open(filename, 'rb') as f:
+                    print('Successful load on tweets universe from file: ', filename)
+                    return pickle.load(f)
+
         print('Getting neighbour tweets universe.')
         own_tweets = self.get_user_timeline(uid, with_original=True, with_retweets=True)
         own_tweets_len = own_tweets.shape[0]
@@ -118,6 +125,10 @@ class _DatasetOneUserModel(_Dataset):
 
         tweets = np.empty((0, 3))
         tweets = np.concatenate((tweets, own_tweets, n_tweets))
+
+        with open(filename, 'wb') as f:
+            pickle.dump(tweets, f)
+        print('Successful save on tweets universe to file: ', filename)
 
         return tweets
 

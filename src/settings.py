@@ -34,6 +34,8 @@ JSON_TEXTS = {}""".format(SQLITE_CONNECTION, CSV_RAW, CSV_CUTTED, JSON_TEXTS))
 
 XY_CACHE_FOLDER = "./processing/xy_cache/"
 
+TW_UNIVERSE_CACHE_FOLDER = "./processing/tw_universe_cache/"
+
 NX_GRAPH_PATH = '../data/graphs/subgraph_new_downloaded.gpickle'
 
 NX_SUBGRAPH_PATH = '../data/graphs/latest_subgraph.gpickle'
