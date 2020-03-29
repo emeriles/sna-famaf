@@ -20,8 +20,8 @@ class FTEXT(object):
         self.tweets = None
 
     def prepare(self):
-        if not self.tweets:
-            raise Exception("No tweets to evaluate")
+        # if not self.tweets:
+        #     raise Exception("No tweets to evaluate")
         with open(INPUT_FILE, "w+") as f:
             for tw in self.tweets:
                 text = NLPFeatures.preprocess_mati(tw, lemma=False)
