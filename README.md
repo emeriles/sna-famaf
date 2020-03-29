@@ -16,6 +16,9 @@ Export dataset as csv.
 (as it is really hard to work with text on csvs, you may want to omit text field)
 `mongoexport -h localhost -d twitter -c tweet --type=csv --fields created_at,user.id_str,id_str,text,retweeted_status.id_str,retweeted_status.user.id_str,retweeted_status.created_at,retweet_count,quoted_status_id_str --out dayli_col.csv`
 
+Export text dataset.
+`db.tweet.aggregate([{$project : {"rt_st__id_str" : "$retweeted_status.id_str", "id_str": "$id_str", "text": "$text"}}, {$out:"text_collection"}])`
+
 Export text fiedls to pandas dataframe:
 put mongo docker up, then
 `ipython` from src

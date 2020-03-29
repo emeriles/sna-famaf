@@ -14,6 +14,7 @@ SQLITE_CONNECTION = None
 CSV_RAW = None
 CSV_CUTTED = None
 JSON_TEXTS = None
+TXT_EMBEDDINGS_SERIES = '../model/txt_embeddings.pickle'
 
 if DATASET_SIZE_TYPE == 'SMALL':
     SQLITE_CONNECTION = 'sqlite:///../data/processed/twitter_sample_daily.db'

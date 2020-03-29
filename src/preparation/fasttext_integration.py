@@ -1,7 +1,12 @@
 import os
 
 # from preparation.utils import NLPFeatures
+import pickle
+
 from preparation.nlp_features import NLPFeatures
+import pandas as pd
+from processing.db_csv import _Dataset
+from settings import TXT_EMBEDDINGS_SERIES
 
 FASTTEXT = './preparation/fasttext'
 MODEL = "../model/third_party/fasttext/wiki.es.bin"
@@ -19,7 +24,7 @@ class FTEXT(object):
             raise Exception("No tweets to evaluate")
         with open(INPUT_FILE, "w+") as f:
             for tw in self.tweets:
-                text = NLPFeatures.preprocess_mati(tw.text, lemma=False)
+                text = NLPFeatures.preprocess_mati(tw, lemma=False)
                 f.write(text + "\n")
         with open(INPUT_FILE, "r+") as f:
             assert (len(self.tweets) == len(f.readlines()))
@@ -39,11 +44,49 @@ class FTEXT(object):
         return lines
 
     def get_embeddings(self, tweets):
+        """
+        tweets is a list of strings.
+        :param tweets:
+        :return:
+        """
+        print('Getting embeddings for {} tweets.'.format(len(tweets)))
         self.tweets = tweets
         self.prepare()
         self.run()
-        return self.read()
+        embeddings = self.read()
+        print('Done gettin embeddings. There are {}.'.format(len(embeddings)))
+        print('example: ', embeddings[:20])
+        return embeddings
 
+
+class FTextActions(object):
+    @staticmethod
+    def build_ftext_features():
+        # load tweets
+        tweets_w_ids = FTextActions.get_tweets_id_text()
+        print('There are {} tweets_w_ids'.format(len(tweets_w_ids)))
+        tweets_txt = tweets_w_ids[:, 1]
+        ftext = FTEXT()
+        txt_embeddings = ftext.get_embeddings(tweets_txt)
+
+        # save txt embeddings in pandas.Series with index on id_str
+        tweets_id_str = tweets_w_ids[:, 0]
+        embeddings_series = pd.Series(data=txt_embeddings, index=tweets_id_str)
+        with open(TXT_EMBEDDINGS_SERIES, 'wb') as f:
+            pickle.dump(embeddings_series, f)
+
+    @staticmethod
+    def load_embeddings_series():
+        with open(TXT_EMBEDDINGS_SERIES, 'rb') as f:
+            return pickle.load(f)
+
+    @staticmethod
+    def get_tweets_id_text():
+        """
+        return list of id_ and its text. It must consider if it is a retweet, it should have the id of the retweet.
+        :return:
+        """
+        return _Dataset.get_texts_id_str()
 
 """
     timeline counts info

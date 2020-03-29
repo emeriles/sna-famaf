@@ -264,9 +264,9 @@ class DatasetInfluencersModel(_Dataset):
         elif self.tw_lda is not None:
             nfeatsplus = nfeats + int(self.tw_lda.settings['topics'])
             X = np.zeros((nrows, nfeatsplus))
-        elif self.fasttext is not None:
-            ft_sentence_vectors = self.fasttext.get_embeddings(dataset)
-            X = np.zeros((nrows, nfeats + 300))
+        # elif self.fasttext is not None:
+        #     ft_sentence_vectors = self.fasttext.get_embeddings(dataset)
+        #     X = np.zeros((nrows, nfeats + 300))
         else:
             X = np.zeros((nrows, nfeats))
 

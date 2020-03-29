@@ -63,13 +63,18 @@ class _Dataset(object):
         # # self._load_text_df()
         return df
 
-    def _load_text_df(self):
-        print('Loading text df: {}'.format(self.txt_path))
-        df = pd.read_json(self.txt_path)
-        df.drop_duplicates(subset='id_str', inplace=True)
-        df.drop(['_id'], axis=1, inplace=True)
-        df.set_index('id_str', inplace=True)
-        self.text_df = df
+    @staticmethod
+    def _load_text_df(filename_txt_json_path=JSON_TEXTS):
+        print('Loading text df: {}'.format(filename_txt_json_path))
+
+        df = pd.read_json(filename_txt_json_path, lines=True, dtype=False)
+        print('Loaded raw text dataframe. Shape is: ', df.shape)
+
+        # set correct id for our project
+        df['correct_id'] = np.where(pd.isna(df.rt_st__id_str), df.id_str, df.rt_st__id_str)
+        df.drop_duplicates(subset='correct_id', inplace=True)
+        df['id_str'] = df['correct_id']
+
         return df
 
     def get_all_users(self):
@@ -133,5 +138,7 @@ class _Dataset(object):
         """
         raise NotImplementedError()
 
-    def get_tweets_texts(self):
-        return self.text_df
+    @staticmethod
+    def get_texts_id_str():
+        text_df = _Dataset._load_text_df()
+        return text_df[['id_str', 'text']].values
