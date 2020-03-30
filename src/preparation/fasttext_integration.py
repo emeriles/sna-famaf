@@ -30,8 +30,8 @@ class FTEXT(object):
             assert (len(self.tweets) == len(f.readlines()))
 
     def run(self):
-        if not self.tweets:
-            raise Exception("No tweets to evaluate")
+        # if not self.tweets:
+        #     raise Exception("No tweets to evaluate")
         print('Running external fasttext')
         cmd = ("{} print-sentence-vectors {} < {} > {}"
                .format(FASTTEXT, MODEL, INPUT_FILE, OUTPUT_FILE))
