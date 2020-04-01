@@ -16,8 +16,8 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
            lock, delta_minutes):
     """worker function"""
     print("Largamos para {}".format(uid))
-    
-    X_train, X_valid, X_testv, y_train, y_valid, y_testv = DatasetOneUserModel.\
+
+    X_train, X_valid, X_testv, y_train, y_valid, y_testv, X_train_l, X_test_l, X_valid_l = DatasetOneUserModel.\
                                                         load_or_create_dataset(uid, delta_minutes_filter=delta_minutes)
     clf = OneUserModel.load_or_build_model(uid, 'svc', delta_minutes)
 

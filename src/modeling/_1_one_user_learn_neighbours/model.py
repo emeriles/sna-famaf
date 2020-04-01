@@ -282,7 +282,7 @@ class OneUserModel(object):
     def test_all_clfs(uid, time_delta_filter, save=True):
         # from create_clesa_datasets import *
         # uid=37226353
-        X_train, X_test, X_valid, y_train, y_test, y_valid = DatasetOneUserModel.\
+        X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l = DatasetOneUserModel.\
                                                     load_or_create_dataset(uid, delta_minutes_filter=time_delta_filter)
         dataset = X_valid, X_train, y_valid, y_train           ## THIS SAME AS  ... mirar mas abajo.
         clf1 = OneUserModel.model_select_rdf(dataset)
@@ -315,7 +315,7 @@ class OneUserModel(object):
         print('Load or build model. For {}, model type: {}, time_delta: {}'.format(uid, model_type, time_delta_filter))
         clf = OneUserModel.load_model(uid, model_type, time_delta_filter)
         dataset = DatasetOneUserModel.load_or_create_dataset(uid, time_delta_filter)
-        X_train, X_test, X_valid, y_train, y_test, y_valid = dataset
+        X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l = dataset
         dataset = X_train, X_test, y_train, y_test
         # dataset = X_valid, X_train, y_valid, y_train   ###### SAME AS THIS                      <<<<<<<<<<<<<<<<<<<<-----------------------------------
         if not clf:

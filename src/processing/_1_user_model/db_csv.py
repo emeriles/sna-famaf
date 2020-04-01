@@ -110,7 +110,7 @@ class _DatasetOneUserModel(_Dataset):
             # sacar del posible universo de tweets los `left_out_own_tweets`.
             # tl_filtered = tl[np.isin(tl[:, 0], self.left_out_own_retweets_ids, invert=True)]
             n_tweets = np.concatenate((n_tweets, self.get_user_timeline(u,
-                                                                        filter_timedelta=True)))  ### TODO: CAPAZ ESTE FILTRO NO VAYA AQUI TAMBIEN
+                                                                        filter_timedelta=False)))
 
         print('Done getting neighbour tweets universe. Shape is ', n_tweets.shape)
         # sacar del posible universo de tweets los `left_out_own_tweets`.
@@ -291,15 +291,17 @@ class _DatasetOneUserModel(_Dataset):
             tweets = self.get_tweets_universe(uid, neighbours)
 
             X, y = self.extract_features(tweets, neighbours, uid)
+            labels = tweets[:, 0]
 
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
-            X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42,
+            X_train, X_test, y_train, y_test, X_train_l, X_test_l = train_test_split(X, y, labels, test_size=0.3,
+                                                                                     random_state=42, stratify=y)
+            X_valid, X_test, y_valid, y_test, X_valid_l, X_test_l = train_test_split(X_test, y_test, X_test_l, test_size=0.66666, random_state=42,
                                                                 stratify=y_test)
-            dataset = (X_train, X_test, X_valid, y_train, y_test, y_valid)
+            dataset = (X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l)
 
             pickle.dump(dataset, open(fname, 'wb'))
 
-        (X_train, X_test, X_valid, y_train, y_test, y_valid) = dataset
+            (X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l) = dataset
         return dataset
 
     def load_or_create_dataset_2(self, uid, delta_minutes_filter):

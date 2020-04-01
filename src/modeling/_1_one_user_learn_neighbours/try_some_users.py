@@ -6,7 +6,7 @@ from processing.utils import get_test_users_ids, get_test_users_ids_aux
 def worker(user_id, delta_minutes):
     # try:
         # clf = train_and_evaluate(user_id)
-    X_train, X_valid, X_test, y_train, y_valid, y_test = DatasetOneUserModel\
+    X_train, X_valid, X_test, y_train, y_valid, y_test, X_train_l, X_test_l, X_valid_l = DatasetOneUserModel\
         .load_or_create_dataset(user_id, delta_minutes_filter=delta_minutes)
     dataset = X_train, X_valid, y_train, y_valid
     clf = OneUserModel.model_select_svc(dataset)
