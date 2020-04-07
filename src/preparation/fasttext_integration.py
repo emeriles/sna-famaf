@@ -9,7 +9,7 @@ from processing.db_csv import _Dataset
 from settings import TXT_EMBEDDINGS_SERIES
 
 FASTTEXT = './preparation/fasttext'
-MODEL = "../model/third_party/fasttext/wiki.es.bin"
+MODEL = "../model/third_party/fasttext/cc.es.300.bin"
 INPUT_FILE = "preparation/tweets.in"
 OUTPUT_FILE = "preparation/tweets.out"
 
