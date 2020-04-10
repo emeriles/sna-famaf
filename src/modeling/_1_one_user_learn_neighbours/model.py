@@ -364,8 +364,12 @@ class OneUserModel(object):
         uids = get_test_users_ids()
         d = {}
         for uid in uids:
-            OneUserModel._cross_pred(uid, time_delta_clf, time_delta_pred, d)
+            try:
+                OneUserModel._cross_pred(uid, time_delta_clf, time_delta_pred, d)
+            except ValueError:
+                print('\t\tValue error for user {}.'.format(uid))
         import pickle
         with open('scores_2_mins_predicting', 'wb') as f:
             pickle.dump(d, f)
+        print('There were {} users. There are {} predictions'.format(len(uids), len(d)))
         print('Success!')
