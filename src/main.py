@@ -24,6 +24,7 @@ if __name__ == '__main__':
         'evaluate_influencers',
         'develop',
         'build_ftext_features',
+        'cross_prediction',
     ]
     parser.add_argument('action', metavar='ACTION', type=str,
                         help='action to be performed. One of {}'.format(action_choices), choices=action_choices)
@@ -96,6 +97,8 @@ if __name__ == '__main__':
     if args.action == 'build_ftext_features':
         FTextActions.build_ftext_features()
 
+    if args.action == 'cross_prediction':
+        OneUserModel.cross_prediction()
 # we need 5589 users
 
 # most central user in katz (new_downloaded):    297144638

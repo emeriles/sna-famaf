@@ -8,10 +8,11 @@ from sklearn.svm import SVC
 from sklearn.linear_model import SGDClassifier
 
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, f1_score, precision_score, recall_score
 import numpy as np
 
 from processing._1_user_model.db_csv import DatasetOneUserModel
+from processing.utils import get_test_users_ids
 from settings import MODELS_FOLDER_1_
 
 
@@ -323,3 +324,48 @@ class OneUserModel(object):
             if save:
                 OneUserModel.save_model(clf, uid, model_type, time_delta_filter)
         return clf
+
+    @staticmethod
+    def _cross_pred(uid, time_clf, time_to_pred, d):
+        clf = OneUserModel.load_or_build_model(uid, 'svc', time_clf)
+        # this is just legacy treatment! dataset now comes with labels!
+        X_train, X_valid, X_testv, y_train, y_valid, y_testv = DatasetOneUserModel.\
+            load_or_create_dataset(uid,delta_minutes_filter=time_to_pred)
+
+        result = {}
+        y_true, y_pred = y_train, clf.predict(X_train)
+        print('Classification report on TRAIN with clf {} predicting on {}'.format(time_clf, time_to_pred))
+        print(classification_report(y_true, y_pred))
+        result['f1s_train'] = f1_score(y_true, y_pred)
+        result['precisions_train'] = precision_score(y_true, y_pred)
+        result['recalls_train'] = recall_score(y_true, y_pred)
+        result['pos_cases_train'] = int(np.sum(y_true))
+
+        # y_true, y_pred = y_valid, clf.predict(X_valid)
+        # lock.acquire()
+        # f1s_valid[uid] = f1_score(y_true, y_pred)
+        # precisions_valid[uid] = precision_score(y_true, y_pred)
+        # recalls_valid[uid] = recall_score(y_true, y_pred)
+        # pos_cases_valid[uid] = int(np.sum(y_true))
+        # lock.release()
+
+        y_true, y_pred = y_testv, clf.predict(X_testv)
+        print('Classification report on TEST with clf {} predicting on {}'.format(time_clf, time_to_pred))
+        result['f1s_testv'] = f1_score(y_true, y_pred)
+        result['precisions_testv'] = precision_score(y_true, y_pred)
+        result['recalls_testv'] = recall_score(y_true, y_pred)
+        result['pos_cases_testv'] = int(np.sum(y_true))
+        d[uid] = result
+
+    @staticmethod
+    def cross_prediction():
+        time_delta_clf = 2
+        time_delta_pred = None  # equals to hole dataset
+        uids = get_test_users_ids()
+        d = {}
+        for uid in uids:
+            OneUserModel._cross_pred(uid, time_delta_clf, time_delta_pred, d)
+        import pickle
+        with open('scores_2_mins_predicting', 'wb') as f:
+            pickle.dump(d, f)
+        print('Success!')
