@@ -104,7 +104,7 @@ class _Dataset(object):
             own_tweets = pd.DataFrame()
 
         if with_retweets:
-            if filter_timedelta:
+            if filter_timedelta and self.delta_minutes is not None:
                 time_constraint = (tweets.created_at - tweets.retweeted_status__created_at) \
                                   < datetime.timedelta(minutes=self.delta_minutes)
             else:
