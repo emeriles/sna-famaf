@@ -2,6 +2,7 @@ from __future__ import print_function
 
 from os.path import join
 
+from scipy.sparse import issparse
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.externals import joblib
 from sklearn.svm import SVC
@@ -364,12 +365,45 @@ class OneUserModel(object):
         uids = get_test_users_ids()
         d = {}
         for uid in uids:
+            time_delta_pred = None
             try:
                 OneUserModel._cross_pred(uid, time_delta_clf, time_delta_pred, d)
             except ValueError:
                 print('\t\tValue error for user {}.'.format(uid))
+            # test here for dataset health
+            time_delta_pred = 0
+            OneUserModel.check_y_vector_health(uid, time_delta_clf, time_delta_pred)
         import pickle
         with open('scores_2_mins_predicting', 'wb') as f:
             pickle.dump(d, f)
         print('There were {} users. There are {} predictions'.format(len(uids), len(d)))
         print('Success!')
+
+    @staticmethod
+    def check_y_vector_health(uid, time_delta_1, time_delta_2):  # maybe extend to X?
+        assert(time_delta_1 < time_delta_2)  # this is to check X. -> 0s could turn to 1s. but 1s can not turn to 0s
+
+        def check_equals(arr1, arr2):
+            for m1, m2 in zip(arr1, arr2):
+                if issparse(m1):
+                    m1, m2 = m1.todense(), m2.todense()
+                assert (np.array_equal(m1, m2))
+
+        print('Checking health on datasets')
+        dataset_1 = DatasetOneUserModel. \
+            load_or_create_dataset(uid, delta_minutes_filter=time_delta_1)
+        dataset_2 = DatasetOneUserModel. \
+            load_or_create_dataset(uid, delta_minutes_filter=time_delta_2)
+
+        # each dataset unpacks to this:
+        # X_train, X_valid, X_testv, y_train, y_valid, y_testv, X_train_l, X_test_l, X_valid_l
+
+        print('Checking healht on Ys')
+        ys_1, ys_2 = dataset_1[3:6], dataset_2[3:6]
+        check_equals(ys_1, ys_2)
+        print('Good health on targets (ys)')
+
+        print('Checking healht on labels')
+        lbs_1, lbs_2 = dataset_1[6:9], dataset_2[6:9]
+        check_equals(lbs_1, lbs_2)
+        print('Good health on labels')
