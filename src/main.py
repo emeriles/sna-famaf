@@ -10,6 +10,7 @@ if __name__ == '__main__':
         'try_some_users',
         'try_some_users_cp',
         'compute_scores',
+        'compute_scores_ft',
         'compute_scores_cp',
         'create_and_save_csv_cutted',
         # 'reset_sqlite_db',
@@ -31,6 +32,8 @@ if __name__ == '__main__':
     data_choices = ['small', 'full']
     parser.add_argument('--data', metavar='DATA', type=str,
                         help='data to be loaded. Small sample or full', choices=data_choices)
+    parser.add_argument('--seconds', required=False, action='store_true',
+                        help='If present, it says to take delta_minutes as seconds (just for compute_scores[_ft] and experiment_influencers[_ft]')
     delta_minutes_choices = [0, 75, 150, 225, 500]  # quartiles to 5 hours
     parser.add_argument('delta_minutes', metavar='DELTA_MINUTES', type=int,
                         help='delta minutes to consider, zero means use the COMPLETE dataset')
@@ -39,6 +42,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     delta_minutes = args.delta_minutes if args.delta_minutes != 0 else None
+    as_seconds = args.seconds
 
     if args.data == 'full':
         os.environ.setdefault('DATASET_SIZE_TYPE', 'FULL')
@@ -65,7 +69,9 @@ if __name__ == '__main__':
     if args.action == 'try_some_users_cp':
         try_some_users(delta_minutes=delta_minutes, cherry_pick_users=True)
     if args.action == 'compute_scores':
-        compute_scores(delta_minutes=delta_minutes)
+        compute_scores(delta_minutes=delta_minutes, as_seconds=True)
+    if args.action == 'compute_scores_ft':
+        compute_scores(delta_minutes=delta_minutes, fasttext=True, as_seconds=True)
     if args.action == 'compute_scores_cp':
         compute_scores(delta_minutes=delta_minutes, cherry_pick_users=True)
 

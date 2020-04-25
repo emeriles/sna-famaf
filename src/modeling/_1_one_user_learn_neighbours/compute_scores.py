@@ -8,20 +8,21 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 from modeling._1_one_user_learn_neighbours.model import OneUserModel
 from processing._1_user_model.db_csv import DatasetOneUserModel
 from processing.utils import get_test_users_ids, get_test_users_ids_aux
-from settings import SCORES_FOLDER_1_
+from settings import SCORES_FOLDER_1_, SCORES_FOLDER_1_FT
 
 
 def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_valid, precisions_testv,
            recalls_train, recalls_valid, recalls_testv, pos_cases_train, pos_cases_valid, pos_cases_testv,
-           lock, delta_minutes):
+           lock, delta_minutes, fasttext, as_seconds=False):
     """worker function"""
     print("Largamos para {}".format(uid))
 
     X_train, X_valid, X_testv, y_train, y_valid, y_testv, X_train_l, X_test_l, X_valid_l = DatasetOneUserModel.\
-                                                        load_or_create_dataset(uid, delta_minutes_filter=delta_minutes)
+                                                        load_or_create_dataset(uid, delta_minutes_filter=delta_minutes,
+                                                                               fasttext=fasttext, as_seconds=as_seconds)
     # old loading
     # X_train, X_valid, X_testv, y_train, y_valid, y_testv = DatasetOneUserModel.load_or_create_dataset(central_uid, delta_minutes_filter=0)
-    clf = OneUserModel.load_or_build_model(uid, 'svc', delta_minutes)
+    clf = OneUserModel.load_or_build_model(uid, 'svc', delta_minutes, fasttext=fasttext, as_seconds=as_seconds)
 
     y_true, y_pred = y_train, clf.predict(X_train)
     lock.acquire()
@@ -48,7 +49,7 @@ def worker(uid, f1s_train, f1s_valid, f1s_testv, precisions_train, precisions_va
     lock.release()
 
 
-def compute_scores(delta_minutes, cherry_pick_users=False):
+def compute_scores(delta_minutes, cherry_pick_users=False, fasttext=False, as_seconds=False):
 
     print('Using cherry picked users: {}'.format(cherry_pick_users))
     if cherry_pick_users:
@@ -86,47 +87,50 @@ def compute_scores(delta_minutes, cherry_pick_users=False):
                                            precisions_train, precisions_valid, precisions_testv,
                                            recalls_train, recalls_valid, recalls_testv,
                                            pos_cases_train, pos_cases_valid, pos_cases_testv,
-                                           lock, delta_minutes)
+                                           lock, delta_minutes, fasttext=fasttext, as_seconds=as_seconds)
         except ValueError as e:
             print('FAILED FOR USER {}. Exception: {}'.format(uid, e))
     pool.close()
     pool.join()
 
-    if not os.path.exists(SCORES_FOLDER_1_):
-        os.makedirs(SCORES_FOLDER_1_)
+    scores_folder = SCORES_FOLDER_1_FT if fasttext else SCORES_FOLDER_1_
+    delta_minutes = str(delta_minutes) + 'secs' if as_seconds else str(delta_minutes)
 
-    with open(SCORES_FOLDER_1_ + '/f1s_train_{}_svc.json'.format(delta_minutes), 'w') as f:
+    if not os.path.exists(scores_folder):
+        os.makedirs(scores_folder)
+
+    with open(scores_folder + '/f1s_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(f1s_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/f1s_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/f1s_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(f1s_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/f1s_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/f1s_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(f1s_testv), f)
 
-    with open(SCORES_FOLDER_1_ + '/precisions_train_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/precisions_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(precisions_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/precisions_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/precisions_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(precisions_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/precisions_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/precisions_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(precisions_testv), f)
 
-    with open(SCORES_FOLDER_1_ + '/recalls_train_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/recalls_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(recalls_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/recalls_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/recalls_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(recalls_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/recalls_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/recalls_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(recalls_testv), f)
 
-    with open(SCORES_FOLDER_1_ + '/pos_cases_train_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/pos_cases_train_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(pos_cases_train), f)
 
-    with open(SCORES_FOLDER_1_ + '/pos_cases_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/pos_cases_valid_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(pos_cases_valid), f)
 
-    with open(SCORES_FOLDER_1_ + '/pos_cases_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
+    with open(scores_folder + '/pos_cases_testv_{}_svc.json'.format(delta_minutes), 'w') as f:
         json.dump(dict(pos_cases_testv), f)

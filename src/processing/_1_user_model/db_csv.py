@@ -10,7 +10,8 @@ import networkx as nx
 from sklearn.model_selection import train_test_split
 
 from processing.db_csv import _Dataset
-from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER, NX_SUBGRAPH_PATH, TW_UNIVERSE_CACHE_FOLDER
+from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER, NX_SUBGRAPH_PATH, TW_UNIVERSE_CACHE_FOLDER, \
+    XY_CACHE_FOLDER_FT
 
 
 class _DatasetOneUserModel(_Dataset):
@@ -64,8 +65,13 @@ class _DatasetOneUserModel(_Dataset):
         #     print('There are {} retweets left out from central user timeline'.format(left_out_own_retweets.shape[0]))
 
         self.df = df
-        print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
-              format(df.shape, original_shape, self.delta_minutes))
+
+        if self.as_seconds:
+            print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} seconds'. \
+                  format(df.shape, original_shape, self.delta_minutes))
+        else:
+            print('Done loading df. DF shape is :{} (Original: {}) \t\tTime delta is: {} mins'. \
+                  format(df.shape, original_shape, self.delta_minutes))
 
         # self._load_text_df()
         return df
@@ -214,7 +220,7 @@ class _DatasetOneUserModel(_Dataset):
 
         return neighbours
 
-    def _extract_features_full(self, tweets, neighbour_users, own_user):
+    def _extract_features_full(self, tweets, neighbour_users, own_user, fasttext=False):
         """
         Given tweets and neighbour_users, we extract
         'neighbour activity' features for each tweet
@@ -225,6 +231,10 @@ class _DatasetOneUserModel(_Dataset):
         """
         nrows = tweets.shape[0]
         nfeats = len(neighbour_users)
+        if fasttext:
+            nrows += 300
+            nfeats += 300
+
         start = datetime.datetime.now()
         X = scipy.sparse.lil_matrix((nrows, nfeats))
         #         X = np.empty((nrows, nfeats), dtype=np.int8)
@@ -233,6 +243,15 @@ class _DatasetOneUserModel(_Dataset):
         print('Extracting features Optimized. X shape is :', X.shape)
 
         to_process = tweets.shape[0]
+
+        if fasttext:
+            pass
+            # embeddings = self._get_embeddings_for_tweet(tweets[:, 0])
+            # if self.ftext_features_series is None:
+            #     self._load_ftext_features()
+            # for idx, tweet in tweets[:, 0]:
+                # X[idx, (nfeats - 300):] = ft_sentence_vectors[idx].split(" ")[:-1]
+
         for j, u in enumerate(neighbour_users):
             to_process -= 1
             percentage = 100.0 - ((to_process / tweets.shape[0]) * 100)
@@ -259,7 +278,7 @@ class _DatasetOneUserModel(_Dataset):
 
         return X, y
 
-    def extract_features(self, tweets, neighbour_users, own_user, timedelta=None):
+    def extract_features(self, tweets, neighbour_users, own_user, timedelta=None, fasttext=False):
         """
         Given tweets and neighbour_users, we extract
         'neighbour activity' features for each tweet
@@ -269,13 +288,16 @@ class _DatasetOneUserModel(_Dataset):
             indicating if the tweet is authored/retweeted by that user and is comprehended in timedelta window
         """
         if not timedelta:
-            return self._extract_features_full(tweets, neighbour_users, own_user)
+            return self._extract_features_full(tweets, neighbour_users, own_user, fasttext=fasttext)
 
-    def load_or_create_dataset(self, uid, delta_minutes_filter):
+    def load_or_create_dataset(self, uid, delta_minutes_filter, fasttext=False, as_seconds=False):
+        self.as_seconds = as_seconds
         self.delta_minutes = delta_minutes_filter
         # self.df = pd.DataFrame()
         model_name = self.__class__.__name__
-        fname = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, self.delta_minutes))
+        folder = XY_CACHE_FOLDER_FT if fasttext else XY_CACHE_FOLDER
+        delta_minutes_fn = str(self.delta_minutes) + 'secs' if as_seconds else str(self.delta_minutes)
+        fname = join(folder, "dataset_{}_{}_{}.pickle".format(model_name, uid, delta_minutes_fn))
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
             print('LOADED DATASET FROM {fname}'.format(fname=fname))
@@ -290,7 +312,7 @@ class _DatasetOneUserModel(_Dataset):
 
             tweets = self.get_tweets_universe(uid, neighbours)
 
-            X, y = self.extract_features(tweets, neighbours, uid)
+            X, y = self.extract_features(tweets, neighbours, uid, fasttext=fasttext)
             labels = tweets[:, 0]
 
             X_train, X_test, y_train, y_test, X_train_l, X_test_l = train_test_split(X, y, labels, test_size=0.3,
@@ -304,42 +326,43 @@ class _DatasetOneUserModel(_Dataset):
             (X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l) = dataset
         return dataset
 
-    def load_or_create_dataset_2(self, uid, delta_minutes_filter):
-        """
-        Implementation that splits train-test according to time window.
-        :param uid:
-        :param delta_minutes_filter:
-        :return:
-        """
-        self.delta_minutes = delta_minutes_filter
-        self.df = pd.DataFrame()
-        model_name = self.__class__.__name__
-        fname = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, self.delta_minutes))
-        if os.path.exists(fname):
-            dataset = pickle.load(open(fname, 'rb'))
-            print('LOADED DATASET FROM {fname}'.format(fname=fname))
-        else:
-            self._load_df(central_uid=uid)
-            uid = str(uid)
-            neighbours = self.get_neighbourhood(uid)
-            # remove selected user from neighbours
-            neighbours = [u for u in neighbours if u != uid]
+    # def load_or_create_dataset_2(self, uid, delta_minutes_filter):
+    #     """
+    #     Implementation that splits train-test according to time window.
+    #     :param uid:
+    #     :param delta_minutes_filter:
+    #     :return:
+    #     """
+    #     self.delta_minutes = delta_minutes_filter
+    #     self.df = pd.DataFrame()
+    #     model_name = self.__class__.__name__
+    #     fname = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, self.delta_minutes))
+    #     if os.path.exists(fname):
+    #         dataset = pickle.load(open(fname, 'rb'))
+    #         print('LOADED DATASET FROM {fname}'.format(fname=fname))
+    #     else:
+    #         self._load_df(central_uid=uid)
+    #         uid = str(uid)
+    #         neighbours = self.get_neighbourhood(uid)
+    #         # remove selected user from neighbours
+    #         neighbours = [u for u in neighbours if u != uid]
+    #
+    #         tweets_train, tweets_test = self.get_tweets_universe_2(uid, neighbours)
+    #         print('\t\tTrain tweets shape is: {}; test tweets shape is: {}'.format(tweets_train.shape, tweets_test.shape))
+    #
+    #         X_train, y_train = self.extract_features(tweets_train, neighbours, uid)
+    #         X_test, y_test = self.extract_features(tweets_test, neighbours, uid)
+    #         X_valid, y_valid = None, None
+    #
+    #         # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+    #         # X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42,
+    #         #                                                     stratify=y_test)
+    #         dataset = (X_train, X_test, X_valid, y_train, y_test, y_valid)
+    #
+    #         pickle.dump(dataset, open(fname, 'wb'))
+    #
+    #     (X_train, X_test, X_valid, y_train, y_test, y_valid) = dataset
+    #     return dataset
 
-            tweets_train, tweets_test = self.get_tweets_universe_2(uid, neighbours)
-            print('\t\tTrain tweets shape is: {}; test tweets shape is: {}'.format(tweets_train.shape, tweets_test.shape))
-
-            X_train, y_train = self.extract_features(tweets_train, neighbours, uid)
-            X_test, y_test = self.extract_features(tweets_test, neighbours, uid)
-            X_valid, y_valid = None, None
-
-            # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
-            # X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.66666, random_state=42,
-            #                                                     stratify=y_test)
-            dataset = (X_train, X_test, X_valid, y_train, y_test, y_valid)
-
-            pickle.dump(dataset, open(fname, 'wb'))
-
-        (X_train, X_test, X_valid, y_train, y_test, y_valid) = dataset
-        return dataset
 
 DatasetOneUserModel = _DatasetOneUserModel()

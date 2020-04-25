@@ -15,6 +15,8 @@ class _Dataset(object):
         self.df: pd.DataFrame = pd.DataFrame()
         self.text_df: pd.DataFrame = pd.DataFrame()
         self.delta_minutes = delta_minutes_filter
+        self.ftext_features_series = None
+        self.as_seconds = False
 
     def get_most_active_users(self, N=1000, just_ids=True):
         if self.df.empty:
@@ -26,6 +28,26 @@ class _Dataset(object):
         if just_ids:
             return [id_ for id_, counts in most_active][:N]
         return most_active[:N]
+
+    def _load_ftext_features(self):
+        print('\tLoading fasttext features... (this should be done just once or so...)')
+        # self.ftext_features_series = FTextActions.load_embeddings_series()  <- NO. 40 gb en memoria.
+        # do al preprocessing ... like split(' ') . .. return np.array directly? no. ir results in 40gb structures.
+        # just load file as strings, and dict_like structure to convert tweet_id_str -> row_number in string file
+        # from preparation.fasttext_integration import FTextActions
+        # self.ftext_matrix = FTextActions.get_embeddings()
+        # self.ftext_id_to_row =FTextActions.get_tweet_id_to_row_for_fasttext()
+
+    def _get_embeddings_for_tweet(self, tweet_ids):
+        pass
+        # if self.ftext_features_series is None:
+        #     self._load_ftext_features()
+        # if isinstance(tweet_ids, str) or isinstance(tweet_ids, int):
+        #     tweet_ids = np.array([str(tweet_ids)])
+        # rows = self.ftext_id_to_row[tweet_ids]
+        # return self.ftext_matrix[rows, ]
+        # Sí, pero ojo con self.ftext_matrix!
+
 
     def _load_df(self, central_uid=None):
         print('Loading df')
@@ -105,8 +127,9 @@ class _Dataset(object):
 
         if with_retweets:
             if filter_timedelta and self.delta_minutes is not None:
-                time_constraint = (tweets.created_at - tweets.retweeted_status__created_at) \
-                                  < datetime.timedelta(minutes=self.delta_minutes)
+                time_delta = datetime.timedelta(seconds=self.delta_minutes) if self.as_seconds else \
+                    datetime.timedelta(minutes=self.delta_minutes)
+                time_constraint = (tweets.created_at - tweets.retweeted_status__created_at) < time_delta
             else:
                 time_constraint = True
 

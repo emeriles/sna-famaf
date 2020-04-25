@@ -298,8 +298,11 @@ class OneUserModel(object):
             OneUserModel.save_model(clf4, uid, 'sgd', time_delta_filter)
 
     @staticmethod
-    def load_model(uid, model_type, time_delta_filter):
-        model_path = join(MODELS_FOLDER_1_, "{}_{}_{}.pickle".format(model_type, uid, time_delta_filter))
+    def load_model(uid, model_type, time_delta_filter, as_seconds=False, fasttext=False):
+        time_delta_filter = str(time_delta_filter) + 'secs' if as_seconds else str(time_delta_filter)
+        ft = '_ft' if fasttext else ''
+        filename = "{}_{}_{}{}.pickle".format(model_type, uid, time_delta_filter, ft)
+        model_path = join(MODELS_FOLDER_1_, filename)
         try:
             clf = joblib.load(model_path)
             print('LOADED MODEL FROM {model_path}'.format(model_path=model_path))
@@ -308,22 +311,25 @@ class OneUserModel(object):
         return clf
 
     @staticmethod
-    def save_model(clf, uid, model_type, time_delta_filter):
-        model_path = join(MODELS_FOLDER_1_, "{}_{}_{}.pickle".format(model_type, uid, time_delta_filter))
+    def save_model(clf, uid, model_type, time_delta_filter, as_seconds=False, fasttext=False):
+        time_delta_filter = str(time_delta_filter) + 'secs' if as_seconds else str(time_delta_filter)
+        ft = '_ft' if fasttext else ''
+        filename = "{}_{}_{}{}.pickle".format(model_type, uid, time_delta_filter, ft)
+        model_path = join(MODELS_FOLDER_1_, filename)
         joblib.dump(clf, model_path)
 
     @staticmethod
-    def load_or_build_model(uid, model_type, time_delta_filter, save=True):
+    def load_or_build_model(uid, model_type, time_delta_filter, save=True, as_seconds=False, fasttext=False):
         print('Load or build model. For {}, model type: {}, time_delta: {}'.format(uid, model_type, time_delta_filter))
-        clf = OneUserModel.load_model(uid, model_type, time_delta_filter)
-        dataset = DatasetOneUserModel.load_or_create_dataset(uid, time_delta_filter)
+        clf = OneUserModel.load_model(uid, model_type, time_delta_filter, as_seconds=as_seconds, fasttext=fasttext)
+        dataset = DatasetOneUserModel.load_or_create_dataset(uid, time_delta_filter, fasttext=fasttext, as_seconds=as_seconds)
         X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l = dataset
         dataset = X_train, X_test, y_train, y_test
         # dataset = X_valid, X_train, y_valid, y_train   ###### SAME AS THIS                      <<<<<<<<<<<<<<<<<<<<-----------------------------------
         if not clf:
             clf = getattr(OneUserModel, 'model_select_{}'.format(model_type))(dataset)
             if save:
-                OneUserModel.save_model(clf, uid, model_type, time_delta_filter)
+                OneUserModel.save_model(clf, uid, model_type, time_delta_filter, fasttext=fasttext, as_seconds=as_seconds)
         return clf
 
     @staticmethod
@@ -381,7 +387,7 @@ class OneUserModel(object):
 
     @staticmethod
     def check_y_vector_health(uid, time_delta_1, time_delta_2):  # maybe extend to X?
-        assert(time_delta_1 < time_delta_2)  # this is to check X. -> 0s could turn to 1s. but 1s can not turn to 0s
+        assert(time_delta_2 is None or time_delta_1 < time_delta_2)  # this is to check X. -> 0s could turn to 1s. but 1s can not turn to 0s
 
         def check_equals(arr1, arr2):
             for m1, m2 in zip(arr1, arr2):
