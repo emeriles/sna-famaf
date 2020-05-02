@@ -11,7 +11,7 @@ from settings import TXT_EMBEDDINGS_SERIES
 FASTTEXT = './preparation/fasttext'
 MODEL = "../model/third_party/fasttext/cc.es.300.bin"
 INPUT_FILE = "preparation/tweets.in"
-OUTPUT_FILE = "preparation/tweets.out"
+OUTPUT_FILE = "preparation/tweets_COMPLETE.out"
 TMP_INPUT_FILE = "preparation/tmp_tweets.in"
 TMP_OUTPUT_FILE = "preparation/tmp_tweets.out"
 
@@ -97,26 +97,26 @@ class FTextActions(object):
         data = pd.Series(data[:, 1], index=data[:, 0])
         return data
 
-    @staticmethod
-    def get_tweet_id_to_row_for_fasttext():
-        dict_filename = 'preparation/tweets_to_rowid.in'
-        if os.path.exists(dict_filename):
-            return pd.Series.from_csv(dict_filename)
-            # with open(dict_filename, 'rb') as f:
-            #     return f.read()
-        ids = FTextActions.get_tweets_id_text()
-        just_ids = ids[:, 0]
-        """
-        In [22]: timeit.timeit('idxx = random.randint(0, just_ids.shape[0]-1); id_to_row[just_ids[idxx]] == idxx', globals=globals(), number=1000000)                                                   
-        Out[22]: 2.053907260997221
-        and..
-        In [20]: timeit.timeit('idxxs = np.random.randint(0, just_ids.shape[0]-1, size=1000000); id_to_row_s[just_ids[idxxs]] == idxxs', globals=globals(), number=1)                   
-        Out[20]: 1.2792448829859495
-        """
-        id_to_row = {tweet_id: idx for idx, tweet_id in enumerate(just_ids)}
-        id_to_row_s = pd.Series(list(id_to_row.values()), index=list(id_to_row.keys()))
-        id_to_row_s.to_csv(dict_filename)
-        return id_to_row_s
+    # @staticmethod
+    # def get_tweet_id_to_row_for_fasttext():
+    #     dict_filename = 'preparation/tweets_to_rowid.in'
+    #     if os.path.exists(dict_filename):
+    #         return pd.Series.from_csv(dict_filename)
+    #         # with open(dict_filename, 'rb') as f:
+    #         #     return f.read()
+    #     ids = FTextActions.get_tweets_id_text()
+    #     just_ids = ids[:, 0]
+    #     """
+    #     In [22]: timeit.timeit('idxx = random.randint(0, just_ids.shape[0]-1); id_to_row[just_ids[idxx]] == idxx', globals=globals(), number=1000000)
+    #     Out[22]: 2.053907260997221
+    #     and..
+    #     In [20]: timeit.timeit('idxxs = np.random.randint(0, just_ids.shape[0]-1, size=1000000); id_to_row_s[just_ids[idxxs]] == idxxs', globals=globals(), number=1)
+    #     Out[20]: 1.2792448829859495
+    #     """
+    #     id_to_row = {tweet_id: idx for idx, tweet_id in enumerate(just_ids)}
+    #     id_to_row_s = pd.Series(list(id_to_row.values()), index=list(id_to_row.keys()))
+    #     id_to_row_s.to_csv(dict_filename)
+    #     return id_to_row_s
 
 
 class FTEXT(object):
