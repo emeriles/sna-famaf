@@ -142,7 +142,7 @@ class FTEXT(object):
             raise Exception("No tweets to evaluate")
         print('Running external fasttext')
         cmd = ("{}/fasttext print-sentence-vectors {} < {} > {}"
-               .format(FASTTEXT, MODEL, INPUT_FILE, OUTPUT_FILE))
+               .format(FASTTEXT, MODEL, TMP_INPUT_FILE, TMP_OUTPUT_FILE))
         # print(cmd)
         os.system(cmd)
 
