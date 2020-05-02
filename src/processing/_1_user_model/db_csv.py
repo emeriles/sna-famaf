@@ -232,7 +232,6 @@ class _DatasetOneUserModel(_Dataset):
         nrows = tweets.shape[0]
         nfeats = len(neighbour_users)
         if fasttext:
-            nrows += 300
             nfeats += 300
 
         start = datetime.datetime.now()
@@ -243,16 +242,15 @@ class _DatasetOneUserModel(_Dataset):
         print('Extracting features Optimized. X shape is :', X.shape)
 
         to_process = tweets.shape[0]
+        offset_columns = 0
 
         if fasttext:
-            pass
-            # embeddings = self._get_embeddings_for_tweet(tweets[:, 0])
-            # if self.ftext_features_series is None:
-            #     self._load_ftext_features()
-            # for idx, tweet in tweets[:, 0]:
-                # X[idx, (nfeats - 300):] = ft_sentence_vectors[idx].split(" ")[:-1]
+            embeddings = self._get_embeddings_for_tweet(tweets[:, 0])
+            for idx, tweet in enumerate(tweets[:, 0]):
+                X[idx, :300] = embeddings[idx].split(" ")[:-1]
+            offset_columns = 301
 
-        for j, u in enumerate(neighbour_users):
+        for j, u in enumerate(neighbour_users, start=offset_columns):
             to_process -= 1
             percentage = 100.0 - ((to_process / tweets.shape[0]) * 100)
             # print('Avance: %{}'.format(percentage), end='\r')
@@ -290,6 +288,26 @@ class _DatasetOneUserModel(_Dataset):
         if not timedelta:
             return self._extract_features_full(tweets, neighbour_users, own_user, fasttext=fasttext)
 
+    def _add_fasttext_features_to_ds(self, fname_no_ft):
+        print('Adding fasttext features to dataset : {}'.format(fname_no_ft))
+        dataset = pickle.load(open(fname_no_ft, 'rb'))
+        (X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l) = dataset
+        i = 0
+        for ds, labels in zip([X_train, X_test, X_valid], [X_train_l, X_test_l, X_valid_l]):
+            nrows = ds.shape[0]
+            nfeats = 300
+
+            embeddings_arr = np.empty((nrows, nfeats))
+
+            embeddings = self._get_embeddings_for_tweet(labels)
+            for idx, tweet in enumerate(labels):
+                embeddings_arr[idx, :300] = embeddings[idx].split(" ")[:-1]
+            new_ds = np.c_[embeddings_arr, ds.todense()]
+            dataset[i] = new_ds
+            i += 1
+
+        return dataset
+
     def load_or_create_dataset(self, uid, delta_minutes_filter, fasttext=False, as_seconds=False):
         self.as_seconds = as_seconds
         self.delta_minutes = delta_minutes_filter
@@ -298,9 +316,12 @@ class _DatasetOneUserModel(_Dataset):
         folder = XY_CACHE_FOLDER_FT if fasttext else XY_CACHE_FOLDER
         delta_minutes_fn = str(self.delta_minutes) + 'secs' if as_seconds else str(self.delta_minutes)
         fname = join(folder, "dataset_{}_{}_{}.pickle".format(model_name, uid, delta_minutes_fn))
+        fname_no_ft = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, delta_minutes_fn))
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
             print('LOADED DATASET FROM {fname}'.format(fname=fname))
+        elif fasttext and os.path.exists(fname_no_ft):
+            dataset = self._add_fasttext_features_to_ds(fname_no_ft)
         else:
             if self.df.empty:
                 print('DF EMPTY LOADING IT')
@@ -325,6 +346,40 @@ class _DatasetOneUserModel(_Dataset):
 
             (X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l) = dataset
         return dataset
+
+    @staticmethod
+    def get_matrix_density(minutes, as_seconds=False):
+        from processing.utils import get_test_users_ids
+        uids = get_test_users_ids()
+        ds = []
+        ds_r = []
+        for uid in uids:
+            timewindow = '{}{}'.format(minutes, 'secs' if as_seconds else '')
+            filename = 'processing/xy_cache/dataset__DatasetOneUserModel_{}_{}.pickle'.format(uid, timewindow)
+            with open(filename, 'rb') as f:
+                X_train, X_valid, X_testv, y_train, y_valid, y_testv, X_train_l, X_test_l, X_valid_l = pickle.load(f)
+            X_t = X_train.todense()
+            row_with_most_ones = np.sum(X_t[X_t.sum(axis=1).argmax()])
+
+            matrix_size = 1.0 * X_t.shape[0] * X_t.shape[1]
+            matrix_rows = 1.0 * X_t.shape[0]
+            matrix_ones = np.sum(X_t)
+            density = matrix_ones / matrix_size
+            density_r = matrix_ones / matrix_rows
+            ds.append(density)
+            ds_r.append(density_r)
+        from statistics import mean
+        mean_cell_ds = mean(ds)
+        mean_row_ds = mean(ds_r)
+        print('Mean cell density (size / ones): {}'.format(mean_cell_ds))
+        print('Mean row density (size / ones): {}'.format(mean_row_ds))
+
+    # a = []
+    # for n in nei:
+    #     DatasetOneUserModel.delta_minutes = 2
+    #
+    #     if '1029021872862711808' in DatasetOneUserModel.get_user_timeline(n, filter_timedelta=True)[:, 0]:
+    #         a.append(n)
 
     # def load_or_create_dataset_2(self, uid, delta_minutes_filter):
     #     """

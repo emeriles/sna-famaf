@@ -68,7 +68,7 @@ class FTextActions(object):
         tweets_w_ids = FTextActions.get_tweets_id_text()
         print('There are {} tweets_w_ids'.format(len(tweets_w_ids)))
         tweets_txt = tweets_w_ids[:, 1]
-        ftext = FTEXT()
+        ftext = FTEXT_FULL()
         txt_embeddings = ftext.get_embeddings(tweets_txt)
 
         # save txt embeddings in pandas.Series with index on id_str
@@ -83,8 +83,8 @@ class FTextActions(object):
             return pickle.load(f)
 
     @staticmethod
-    def get_embeddings():
-        ftext = FTEXT()
+    def get_ALL_embeddings():
+        ftext = FTEXT_FULL()
         return ftext.read()
 
     @staticmethod
@@ -93,7 +93,9 @@ class FTextActions(object):
         return list of id_ and its text. It must consider if it is a retweet, it should have the id of the retweet.
         :return:
         """
-        return _Dataset.get_texts_id_str()
+        data = _Dataset.get_texts_id_str()
+        data = pd.Series(data[:, 1], index=data[:, 0])
+        return data
 
     @staticmethod
     def get_tweet_id_to_row_for_fasttext():
@@ -128,11 +130,11 @@ class FTEXT(object):
     def prepare(self):
         if not self.tweets:
             raise Exception("No tweets to evaluate")
-        with open(TMP_INPUT_FILE, "w+", 'utf-8') as f:
+        with open(TMP_INPUT_FILE, "w+") as f:
             for tw in self.tweets:
                 text = NLPFeatures.preprocess_mati(tw, lemma=False)
                 f.write(text+"\n")
-        with open(TMP_INPUT_FILE, "r+", 'utf-8') as f:
+        with open(TMP_INPUT_FILE, "r+") as f:
             assert(len(self.tweets) == len(f.readlines()))
 
     def run(self):
@@ -141,11 +143,11 @@ class FTEXT(object):
         print('Running external fasttext')
         cmd = ("{}/fasttext print-sentence-vectors {} < {} > {}"
                .format(FASTTEXT, MODEL, INPUT_FILE, OUTPUT_FILE))
-        print(cmd)
+        # print(cmd)
         os.system(cmd)
 
     def read(self):
-        with open(TMP_OUTPUT_FILE, "r", 'utf-8') as f:
+        with open(TMP_OUTPUT_FILE, "r") as f:
             lines = f.readlines()
         return lines
 

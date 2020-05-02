@@ -15,7 +15,7 @@ class _Dataset(object):
         self.df: pd.DataFrame = pd.DataFrame()
         self.text_df: pd.DataFrame = pd.DataFrame()
         self.delta_minutes = delta_minutes_filter
-        self.ftext_features_series = None
+        self.ids_texts = None
         self.as_seconds = False
 
     def get_most_active_users(self, N=1000, just_ids=True):
@@ -34,17 +34,23 @@ class _Dataset(object):
         # self.ftext_features_series = FTextActions.load_embeddings_series()  <- NO. 40 gb en memoria.
         # do al preprocessing ... like split(' ') . .. return np.array directly? no. ir results in 40gb structures.
         # just load file as strings, and dict_like structure to convert tweet_id_str -> row_number in string file
-        # from preparation.fasttext_integration import FTextActions
+        from preparation.fasttext_integration import FTextActions
         # self.ftext_matrix = FTextActions.get_embeddings()
         # self.ftext_id_to_row =FTextActions.get_tweet_id_to_row_for_fasttext()
+        self.ids_texts = FTextActions.get_tweets_id_text()
 
     def _get_embeddings_for_tweet(self, tweet_ids):
         pass
-        # if self.ftext_features_series is None:
-        #     self._load_ftext_features()
+        if self.ids_texts is None:
+            self._load_ftext_features()
+        texts = self.ids_texts[tweet_ids]
         # if isinstance(tweet_ids, str) or isinstance(tweet_ids, int):
         #     tweet_ids = np.array([str(tweet_ids)])
         # rows = self.ftext_id_to_row[tweet_ids]
+        from preparation.fasttext_integration import FTEXT
+        ftext = FTEXT()
+        embeddings = ftext.get_embeddings(tweets=texts)
+        return embeddings
         # return self.ftext_matrix[rows, ]
         # Sí, pero ojo con self.ftext_matrix!
 
