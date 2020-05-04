@@ -170,4 +170,7 @@ class _Dataset(object):
     @staticmethod
     def get_texts_id_str():
         text_df = _Dataset._load_text_df()
-        return text_df[['id_str', 'text']].values
+        full = text_df[['id_str', 'text']].values
+        just_ids = np.array(full[:, 0])
+        return just_ids
+        # return np.array((text_df[['id_str', 'text']].values)[:, 0])

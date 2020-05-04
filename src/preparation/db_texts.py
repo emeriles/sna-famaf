@@ -69,7 +69,7 @@ class _DBHandler(object):
         from processing.db_csv import _Dataset
         from preparation.fasttext_integration import OUTPUT_FILE
 
-        tweet_ids = _Dataset.get_texts_id_str()[:, 0]
+        tweet_ids = _Dataset.get_texts_id_str()
         print('loaded necessary data. now moving to db...')
         for tid, features in zip(tweet_ids, open(OUTPUT_FILE)):
             features = features.strip()

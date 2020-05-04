@@ -94,8 +94,8 @@ class FTextActions(object):
         :return:
         """
         data = _Dataset.get_texts_id_str()
-        data = pd.Series(data[:, 1], index=data[:, 0])
-        return data
+        # data = pd.Series(data[:, 1], index=data[:, 0])
+        # return data
 
     # @staticmethod
     # def get_tweet_id_to_row_for_fasttext():
