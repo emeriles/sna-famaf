@@ -71,11 +71,30 @@ class _DBHandler(object):
 
         tweet_ids = _Dataset.get_texts_id_str()
         print('loaded necessary data. now moving to db...')
+
+        conn = sqlite3.connect(DBHandler.db_path)
+        # conn.row_factory = _dict_factory
+        c = conn.cursor()
+
+        # result = self.c.fetchall()
+        # self.conn.commit()
+
+        to_process = full_n = len(tweet_ids)
+        percentage = 0
+
         for tid, features in zip(tweet_ids, open(OUTPUT_FILE)):
             features = features.strip()
             query = """INSERT INTO tweets (id, features)
               VALUES ({id}, '{features}')""".format(id=tid, features=features)
-            DBHandler.execute(query)
+            # DBHandler.execute(query)
+            c.execute(query)
+
+            to_process -= 1
+            percentage = 100 - int(to_process / full_n * 100)
+            print(
+                'Avance: %{}'.format(percentage), end='\r'
+            )
+        conn.commit()
         print('done creating db.')
 
 
