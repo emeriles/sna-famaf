@@ -172,7 +172,7 @@ class _Dataset(object):
         filename = './just_tweets_ids.pickle'
         import os
         import pickle
-        if not os._exists(filename):
+        if not os.exists(filename):
             raise Exception('CAREFULL!!!!!!!!!!! THIS TAKES 40GB+ MEMORY!. Comment this line to execute anyway')
             text_df = _Dataset._load_text_df()
             full = text_df[['id_str', 'text']].values
