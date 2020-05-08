@@ -169,8 +169,17 @@ class _Dataset(object):
 
     @staticmethod
     def get_texts_id_str():
-        text_df = _Dataset._load_text_df()
-        full = text_df[['id_str', 'text']].values
-        just_ids = np.array(full[:, 0])
+        filename = './just_tweets_ids.pickle'
+        import os
+        import pickle
+        if not os._exists(filename):
+            text_df = _Dataset._load_text_df()
+            full = text_df[['id_str', 'text']].values
+            just_ids = np.array(full[:, 0])
+            with open(filename, 'wb') as f:
+                pickle.dump(just_ids, f)
+        else:
+            just_ids = pickle.load(open(filename, 'rb'))
+        raise Exception('FIN DE GET IDS!')
         return just_ids
         # return np.array((text_df[['id_str', 'text']].values)[:, 0])
