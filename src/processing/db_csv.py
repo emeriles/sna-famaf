@@ -173,6 +173,7 @@ class _Dataset(object):
         import os
         import pickle
         if not os._exists(filename):
+            raise Exception('CAREFULL!!!!!!!!!!! THIS TAKES 40GB+ MEMORY!. Comment this line to execute anyway')
             text_df = _Dataset._load_text_df()
             full = text_df[['id_str', 'text']].values
             just_ids = np.array(full[:, 0])
@@ -180,6 +181,4 @@ class _Dataset(object):
                 pickle.dump(just_ids, f)
         else:
             just_ids = pickle.load(open(filename, 'rb'))
-        raise Exception('FIN DE GET IDS!')
         return just_ids
-        # return np.array((text_df[['id_str', 'text']].values)[:, 0])
