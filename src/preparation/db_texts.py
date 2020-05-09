@@ -60,7 +60,7 @@ class _DBHandler(object):
         DBHandler.execute(
             """
             CREATE TABLE IF NOT EXISTS tweets (
-                    id integer PRIMARY KEY,
+                    id text,
                     features text
                 );
             """
@@ -81,11 +81,12 @@ class _DBHandler(object):
 
         to_process = full_n = len(tweet_ids)
         percentage = 0
+        c.execute('PRAGMA synchronous = OFF')
+        conn.commit()
 
         for tid, features in zip(tweet_ids, open(OUTPUT_FILE)):
             features = features.strip()
-            query = """INSERT INTO tweets (id, features)
-              VALUES ({id}, '{features}')""".format(id=tid, features=features)
+            query = """INSERT INTO tweets VALUES ('{id}', '{features}')""".format(id=tid, features=features)
             # DBHandler.execute(query)
             c.execute(query)
 
