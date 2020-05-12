@@ -3,6 +3,7 @@ import datetime
 import pandas as pd
 import numpy as np
 
+from preparation.db_texts import DBHandler
 from settings import CSV_CUTTED, JSON_TEXTS
 
 
@@ -30,27 +31,29 @@ class _Dataset(object):
         return most_active[:N]
 
     def _load_ftext_features(self):
-        print('\tLoading fasttext features... (this should be done just once or so...)')
-        # self.ftext_features_series = FTextActions.load_embeddings_series()  <- NO. 40 gb en memoria.
-        # do al preprocessing ... like split(' ') . .. return np.array directly? no. ir results in 40gb structures.
-        # just load file as strings, and dict_like structure to convert tweet_id_str -> row_number in string file
-        from preparation.fasttext_integration import FTextActions
-        # self.ftext_matrix = FTextActions.get_embeddings()
-        # self.ftext_id_to_row =FTextActions.get_tweet_id_to_row_for_fasttext()
-        self.ids_texts = FTextActions.get_tweets_id_text()
+        # print('\tLoading fasttext features... (this should be done just once or so...)')
+        # # self.ftext_features_series = FTextActions.load_embeddings_series()  <- NO. 40 gb en memoria.
+        # # do al preprocessing ... like split(' ') . .. return np.array directly? no. ir results in 40gb structures.
+        # # just load file as strings, and dict_like structure to convert tweet_id_str -> row_number in string file
+        # from preparation.fasttext_integration import FTextActions
+        # # self.ftext_matrix = FTextActions.get_embeddings()
+        # # self.ftext_id_to_row =FTextActions.get_tweet_id_to_row_for_fasttext()
+        # self.ids_texts = FTextActions.get_tweets_id_text()
+        pass
 
     def _get_embeddings_for_tweet(self, tweet_ids):
         pass
-        if self.ids_texts is None:
-            self._load_ftext_features()
-        texts = self.ids_texts[tweet_ids]
-        # if isinstance(tweet_ids, str) or isinstance(tweet_ids, int):
-        #     tweet_ids = np.array([str(tweet_ids)])
-        # rows = self.ftext_id_to_row[tweet_ids]
-        from preparation.fasttext_integration import FTEXT
-        ftext = FTEXT()
-        embeddings = ftext.get_embeddings(tweets=texts)
-        return embeddings
+        return DBHandler.get_features_by_id(tweet_ids)
+        # if self.ids_texts is None:
+        #     self._load_ftext_features()
+        # texts = self.ids_texts[tweet_ids]
+        # # if isinstance(tweet_ids, str) or isinstance(tweet_ids, int):
+        # #     tweet_ids = np.array([str(tweet_ids)])
+        # # rows = self.ftext_id_to_row[tweet_ids]
+        # from preparation.fasttext_integration import FTEXT
+        # ftext = FTEXT()
+        # embeddings = ftext.get_embeddings(tweets=texts)
+        # return embeddings
         # return self.ftext_matrix[rows, ]
         # Sí, pero ojo con self.ftext_matrix!
 

@@ -52,6 +52,13 @@ class _DBHandler(object):
             version = 0
         return version
 
+    def get_features_by_id(self, tweets):
+        if isinstance(tweets, str) or isinstance(tweets, int):
+            tweets = [str(tweets)]
+        feats = [self.execute("select features from tweets where id = '{}'".format(t)) for t in tweets]
+        feats = [f[0]['features'] for f in feats]
+        return feats
+
     @staticmethod
     def recreate_db():
         import os

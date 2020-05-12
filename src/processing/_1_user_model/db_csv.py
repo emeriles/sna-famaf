@@ -247,7 +247,7 @@ class _DatasetOneUserModel(_Dataset):
         if fasttext:
             embeddings = self._get_embeddings_for_tweet(tweets[:, 0])
             for idx, tweet in enumerate(tweets[:, 0]):
-                X[idx, :300] = embeddings[idx].split(" ")[:-1]
+                X[idx, :300] = embeddings[idx].split(" ")
             offset_columns = 301
 
         for j, u in enumerate(neighbour_users, start=offset_columns):
@@ -301,7 +301,7 @@ class _DatasetOneUserModel(_Dataset):
 
             embeddings = self._get_embeddings_for_tweet(labels)
             for idx, tweet in enumerate(labels):
-                embeddings_arr[idx, :300] = embeddings[idx].split(" ")[:-1]
+                embeddings_arr[idx, :] = embeddings[idx].split(" ")
             new_ds = np.c_[embeddings_arr, ds.todense()]
             dataset[i] = new_ds
             i += 1
@@ -323,6 +323,7 @@ class _DatasetOneUserModel(_Dataset):
         elif fasttext and os.path.exists(fname_no_ft):
             dataset = self._add_fasttext_features_to_ds(fname_no_ft)
         else:
+            raise Exception('NO ERA POR ACA ...')
             if self.df.empty:
                 print('DF EMPTY LOADING IT')
                 self._load_df(central_uid=uid)
