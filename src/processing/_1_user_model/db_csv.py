@@ -317,6 +317,7 @@ class _DatasetOneUserModel(_Dataset):
         delta_minutes_fn = str(self.delta_minutes) + 'secs' if as_seconds else str(self.delta_minutes)
         fname = join(folder, "dataset_{}_{}_{}.pickle".format(model_name, uid, delta_minutes_fn))
         fname_no_ft = join(XY_CACHE_FOLDER, "dataset_{}_{}_{}.pickle".format(model_name, uid, delta_minutes_fn))
+        print('Intentando cargar dataset social desde: {}'.format(fname))
         if os.path.exists(fname):
             dataset = pickle.load(open(fname, 'rb'))
             print('LOADED DATASET FROM {fname}'.format(fname=fname))
