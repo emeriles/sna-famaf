@@ -69,9 +69,9 @@ if __name__ == '__main__':
     if args.action == 'try_some_users_cp':
         try_some_users(delta_minutes=delta_minutes, cherry_pick_users=True)
     if args.action == 'compute_scores':
-        compute_scores(delta_minutes=delta_minutes, as_seconds=True)
+        compute_scores(delta_minutes=delta_minutes, as_seconds=as_seconds)
     if args.action == 'compute_scores_ft':
-        compute_scores(delta_minutes=delta_minutes, fasttext=True, as_seconds=True)
+        compute_scores(delta_minutes=delta_minutes, fasttext=True, as_seconds=as_seconds)
     if args.action == 'compute_scores_cp':
         compute_scores(delta_minutes=delta_minutes, cherry_pick_users=True)
 
