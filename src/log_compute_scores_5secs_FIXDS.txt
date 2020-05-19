@@ -1,0 +1,2102 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING compute_scores
+Using cherry picked users: False
+Running compute scores for 224 users.
+Largamos para 155612697
+DF EMPTY LOADING IT
+Loading df
+Done loading df. DF shape is :(9441950, 9) (Original: (9441950, 9)) 		Time delta is: 5 seconds
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 219 level 2 neighbourhs for user 155612697.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/155612697
+Extracting features Optimized. X shape is : (10000, 219)
+Done Extracting Features 0:01:27.109033
+Load or build model. For 155612697, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155612697_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 219) (2000, 219) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.94      0.96      5356
+        True       0.82      0.94      0.88      1644
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.90      0.94      0.92      7000
+weighted avg       0.94      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.96      1531
+        True       0.84      0.94      0.89       469
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.91      0.94      0.93      2000
+weighted avg       0.95      0.94      0.95      2000
+
+
+			END SVC
+Largamos para 146114434
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 474 level 2 neighbourhs for user 146114434.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/146114434
+Extracting features Optimized. X shape is : (10000, 474)
+Done Extracting Features 0:03:53.791295
+Load or build model. For 146114434, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146114434_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 474) (2000, 474) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      5336
+        True       0.86      0.96      0.91      1664
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.92      0.95      0.94      7000
+weighted avg       0.96      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      1525
+        True       0.85      0.98      0.91       475
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.92      0.96      0.94      2000
+weighted avg       0.96      0.95      0.96      2000
+
+
+			END SVC
+Largamos para 16311528
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 437 level 2 neighbourhs for user 16311528.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/16311528
+Extracting features Optimized. X shape is : (10000, 437)
+Done Extracting Features 0:03:32.597069
+Load or build model. For 16311528, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_16311528_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 437) (2000, 437) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.97      0.98      5610
+        True       0.88      0.95      0.91      1390
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.93      0.96      0.94      7000
+weighted avg       0.97      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.98      1603
+        True       0.87      0.97      0.92       397
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.93      0.97      0.95      2000
+weighted avg       0.97      0.96      0.97      2000
+
+
+			END SVC
+Largamos para 29622459
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 375 level 2 neighbourhs for user 29622459.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/29622459
+Extracting features Optimized. X shape is : (10000, 375)
+Done Extracting Features 0:03:17.834149
+Load or build model. For 29622459, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_29622459_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 375) (2000, 375) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.95      0.96      5692
+        True       0.79      0.85      0.82      1308
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.88      0.90      0.89      7000
+weighted avg       0.93      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.95      0.96      1627
+        True       0.81      0.83      0.82       373
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.88      0.89      0.89      2000
+weighted avg       0.93      0.93      0.93      2000
+
+
+			END SVC
+Largamos para 155359090
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 253 level 2 neighbourhs for user 155359090.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/155359090
+Extracting features Optimized. X shape is : (10000, 253)
+Done Extracting Features 0:01:54.237603
+Load or build model. For 155359090, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155359090_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 253) (2000, 253) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      6320
+        True       0.65      0.90      0.75       680
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.82      0.92      0.86      7000
+weighted avg       0.96      0.94      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      1805
+        True       0.66      0.87      0.75       195
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.82      0.91      0.86      2000
+weighted avg       0.95      0.94      0.95      2000
+
+
+			END SVC
+Largamos para 177767829
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 511 level 2 neighbourhs for user 177767829.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/177767829
+Extracting features Optimized. X shape is : (10000, 511)
+Done Extracting Features 0:04:04.057726
+Load or build model. For 177767829, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177767829_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 511) (2000, 511) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.96      5458
+        True       0.82      0.91      0.86      1542
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.90      0.93      0.91      7000
+weighted avg       0.94      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.95      1559
+        True       0.81      0.89      0.85       441
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.89      0.91      0.90      2000
+weighted avg       0.93      0.93      0.93      2000
+
+
+			END SVC
+Largamos para 177222447
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 476 level 2 neighbourhs for user 177222447.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/177222447
+Extracting features Optimized. X shape is : (10000, 476)
+Done Extracting Features 0:03:47.013737
+Load or build model. For 177222447, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177222447_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 476) (2000, 476) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.95      0.96      5564
+        True       0.81      0.86      0.84      1436
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.89      0.90      0.90      7000
+weighted avg       0.93      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.95      1589
+        True       0.79      0.87      0.83       411
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.88      0.91      0.89      2000
+weighted avg       0.93      0.93      0.93      2000
+
+
+			END SVC
+Largamos para 170780382
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 388 level 2 neighbourhs for user 170780382.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/170780382
+Extracting features Optimized. X shape is : (10000, 388)
+Done Extracting Features 0:03:13.258020
+Load or build model. For 170780382, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_170780382_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 388) (2000, 388) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.96      5995
+        True       0.72      0.95      0.82      1005
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.86      0.95      0.89      7000
+weighted avg       0.95      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.96      1713
+        True       0.71      0.95      0.82       287
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.85      0.94      0.89      2000
+weighted avg       0.95      0.94      0.94      2000
+
+
+			END SVC
+Largamos para 195846630
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 283 level 2 neighbourhs for user 195846630.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/195846630
+Extracting features Optimized. X shape is : (10000, 283)
+Done Extracting Features 0:02:02.910244
+Load or build model. For 195846630, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_195846630_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 283) (2000, 283) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.89      0.93      6273
+        True       0.48      0.90      0.63       727
+
+   micro avg       0.89      0.89      0.89      7000
+   macro avg       0.73      0.89      0.78      7000
+weighted avg       0.93      0.89      0.90      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.88      0.93      1792
+        True       0.47      0.88      0.61       208
+
+   micro avg       0.88      0.88      0.88      2000
+   macro avg       0.73      0.88      0.77      2000
+weighted avg       0.93      0.88      0.90      2000
+
+
+			END SVC
+Largamos para 53062387
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 323 level 2 neighbourhs for user 53062387.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/53062387
+Extracting features Optimized. X shape is : (10000, 323)
+Done Extracting Features 0:02:38.133789
+Load or build model. For 53062387, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_53062387_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 323) (2000, 323) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      5593
+        True       0.82      0.95      0.88      1407
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.90      0.95      0.92      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      1598
+        True       0.82      0.96      0.88       402
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.90      0.95      0.93      2000
+weighted avg       0.96      0.95      0.95      2000
+
+
+			END SVC
+Largamos para 206106207
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 676 level 2 neighbourhs for user 206106207.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/206106207
+Extracting features Optimized. X shape is : (10000, 676)
+Done Extracting Features 0:05:11.595301
+Load or build model. For 206106207, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_206106207_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 676) (2000, 676) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      5505
+        True       0.85      0.98      0.91      1495
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.92      0.97      0.94      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.97      1573
+        True       0.86      0.97      0.91       427
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.93      0.97      0.94      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 163180480
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 432 level 2 neighbourhs for user 163180480.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/163180480
+Extracting features Optimized. X shape is : (10000, 432)
+Done Extracting Features 0:03:21.893334
+Load or build model. For 163180480, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_163180480_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 432) (2000, 432) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.92      0.96      6005
+        True       0.68      0.98      0.80       995
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.84      0.95      0.88      7000
+weighted avg       0.95      0.93      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      0.93      0.96      1716
+        True       0.69      0.99      0.81       284
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.84      0.96      0.89      2000
+weighted avg       0.95      0.93      0.94      2000
+
+
+			END SVC
+Largamos para 149254440
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 419 level 2 neighbourhs for user 149254440.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/149254440
+Extracting features Optimized. X shape is : (10000, 419)
+Done Extracting Features 0:03:29.531038
+Load or build model. For 149254440, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_149254440_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 419) (2000, 419) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.96      5236
+        True       0.86      0.95      0.90      1764
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.92      0.95      0.93      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.96      1496
+        True       0.86      0.95      0.90       504
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.92      0.95      0.93      2000
+weighted avg       0.95      0.95      0.95      2000
+
+
+			END SVC
+Largamos para 119781455
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 584 level 2 neighbourhs for user 119781455.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/119781455
+Extracting features Optimized. X shape is : (10000, 584)
+Done Extracting Features 0:05:08.885693
+Load or build model. For 119781455, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119781455_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 584) (2000, 584) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.97      5670
+        True       0.84      0.94      0.89      1330
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.91      0.95      0.93      7000
+weighted avg       0.96      0.95      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.97      1620
+        True       0.84      0.94      0.89       380
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.92      0.95      0.93      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 134221261
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 618 level 2 neighbourhs for user 134221261.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/134221261
+Extracting features Optimized. X shape is : (10000, 618)
+Done Extracting Features 0:04:59.972397
+Load or build model. For 134221261, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134221261_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 618) (2000, 618) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/externals/joblib/externals/loky/process_executor.py:706: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  "timeout or by a memory leak.", UserWarning
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.96      0.97      5733
+        True       0.83      0.92      0.87      1267
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.91      0.94      0.92      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.97      1638
+        True       0.82      0.93      0.87       362
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.90      0.94      0.92      2000
+weighted avg       0.95      0.95      0.95      2000
+
+
+			END SVC
+Largamos para 203883293
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 456 level 2 neighbourhs for user 203883293.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/203883293
+Extracting features Optimized. X shape is : (10000, 456)
+Done Extracting Features 0:03:34.415968
+Load or build model. For 203883293, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_203883293_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 456) (2000, 456) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.95      5773
+        True       0.74      0.87      0.80      1227
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.86      0.90      0.88      7000
+weighted avg       0.93      0.92      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.95      1649
+        True       0.75      0.86      0.80       351
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.86      0.90      0.88      2000
+weighted avg       0.93      0.93      0.93      2000
+
+
+			END SVC
+Largamos para 154216022
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 428 level 2 neighbourhs for user 154216022.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/154216022
+Extracting features Optimized. X shape is : (10000, 428)
+Done Extracting Features 0:03:42.889693
+Load or build model. For 154216022, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_154216022_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 428) (2000, 428) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.94      0.97      6648
+        True       0.46      0.93      0.61       352
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.73      0.94      0.79      7000
+weighted avg       0.97      0.94      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.97      1899
+        True       0.46      0.91      0.61       101
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.73      0.93      0.79      2000
+weighted avg       0.97      0.94      0.95      2000
+
+
+			END SVC
+Largamos para 557296978
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 517 level 2 neighbourhs for user 557296978.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/557296978
+Extracting features Optimized. X shape is : (10000, 517)
+Done Extracting Features 0:04:12.744485
+Load or build model. For 557296978, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_557296978_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 517) (2000, 517) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.96      0.95      0.96      5267
+        True       0.85      0.89      0.87      1733
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.91      0.92      0.91      7000
+weighted avg       0.94      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.96      0.95      0.96      1505
+        True       0.85      0.89      0.87       495
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.91      0.92      0.91      2000
+weighted avg       0.94      0.93      0.93      2000
+
+
+			END SVC
+Largamos para 187641771
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 431 level 2 neighbourhs for user 187641771.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/187641771
+Extracting features Optimized. X shape is : (10000, 431)
+Done Extracting Features 0:03:42.568944
+Load or build model. For 187641771, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_187641771_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 431) (2000, 431) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.96      6131
+        True       0.66      0.81      0.73       869
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.81      0.88      0.84      7000
+weighted avg       0.93      0.92      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.95      1751
+        True       0.64      0.80      0.71       249
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.81      0.87      0.83      2000
+weighted avg       0.93      0.92      0.92      2000
+
+
+			END SVC
+Largamos para 142055804
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 509 level 2 neighbourhs for user 142055804.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/142055804
+Extracting features Optimized. X shape is : (10000, 509)
+Done Extracting Features 0:04:09.673034
+Load or build model. For 142055804, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_142055804_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 509) (2000, 509) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.93      0.96      6364
+        True       0.57      0.93      0.71       636
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.78      0.93      0.83      7000
+weighted avg       0.95      0.93      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.97      1818
+        True       0.61      0.92      0.73       182
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.80      0.93      0.85      2000
+weighted avg       0.96      0.94      0.94      2000
+
+
+			END SVC
+Largamos para 177790591
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 272 level 2 neighbourhs for user 177790591.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/177790591
+Extracting features Optimized. X shape is : (10000, 272)
+Done Extracting Features 0:02:00.629761
+Load or build model. For 177790591, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_177790591_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 272) (2000, 272) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.88      0.93      6321
+        True       0.46      0.97      0.63       679
+
+   micro avg       0.89      0.89      0.89      7000
+   macro avg       0.73      0.92      0.78      7000
+weighted avg       0.94      0.89      0.90      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      0.88      0.93      1806
+        True       0.46      0.96      0.62       194
+
+   micro avg       0.89      0.89      0.89      2000
+   macro avg       0.73      0.92      0.78      2000
+weighted avg       0.94      0.89      0.90      2000
+
+
+			END SVC
+Largamos para 2925634140
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 209 level 2 neighbourhs for user 2925634140.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/2925634140
+Extracting features Optimized. X shape is : (10000, 209)
+Done Extracting Features 0:01:26.798609
+Load or build model. For 2925634140, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_2925634140_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 209) (2000, 209) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.87      0.92      5975
+        True       0.53      0.84      0.65      1025
+
+   micro avg       0.87      0.87      0.87      7000
+   macro avg       0.75      0.86      0.78      7000
+weighted avg       0.91      0.87      0.88      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.86      0.91      1707
+        True       0.50      0.84      0.63       293
+
+   micro avg       0.85      0.85      0.85      2000
+   macro avg       0.73      0.85      0.77      2000
+weighted avg       0.90      0.85      0.87      2000
+
+
+			END SVC
+Largamos para 158155548
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 218 level 2 neighbourhs for user 158155548.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/158155548
+Extracting features Optimized. X shape is : (10000, 218)
+Done Extracting Features 0:01:38.364729
+Load or build model. For 158155548, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_158155548_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 218) (2000, 218) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.95      0.96      5330
+        True       0.86      0.92      0.89      1670
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.92      0.94      0.93      7000
+weighted avg       0.95      0.94      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.96      1523
+        True       0.85      0.93      0.89       477
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.91      0.94      0.92      2000
+weighted avg       0.95      0.94      0.94      2000
+
+
+			END SVC
+Largamos para 137020204
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 427 level 2 neighbourhs for user 137020204.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/137020204
+Extracting features Optimized. X shape is : (10000, 427)
+Done Extracting Features 0:03:33.503578
+Load or build model. For 137020204, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_137020204_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 427) (2000, 427) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.96      5821
+        True       0.76      0.94      0.84      1179
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.88      0.94      0.90      7000
+weighted avg       0.95      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.94      0.96      1663
+        True       0.75      0.93      0.83       337
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.87      0.93      0.89      2000
+weighted avg       0.94      0.94      0.94      2000
+
+
+			END SVC
+Largamos para 273198805
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 506 level 2 neighbourhs for user 273198805.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/273198805
+Extracting features Optimized. X shape is : (10000, 506)
+Done Extracting Features 0:04:30.385955
+Load or build model. For 273198805, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_273198805_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 506) (2000, 506) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.96      0.98      6313
+        True       0.74      1.00      0.85       687
+
+   micro avg       0.97      0.97      0.97      7000
+   macro avg       0.87      0.98      0.92      7000
+weighted avg       0.97      0.97      0.97      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      0.97      0.98      1804
+        True       0.78      1.00      0.88       196
+
+   micro avg       0.97      0.97      0.97      2000
+   macro avg       0.89      0.98      0.93      2000
+weighted avg       0.98      0.97      0.97      2000
+
+
+			END SVC
+Largamos para 105838056
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 413 level 2 neighbourhs for user 105838056.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/105838056
+Extracting features Optimized. X shape is : (10000, 413)
+Done Extracting Features 0:03:37.606941
+Load or build model. For 105838056, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_105838056_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 413) (2000, 413) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.97      0.98      5930
+        True       0.84      0.95      0.89      1070
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.91      0.96      0.93      7000
+weighted avg       0.97      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.98      1694
+        True       0.82      0.96      0.88       306
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.91      0.96      0.93      2000
+weighted avg       0.97      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 72532390
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 449 level 2 neighbourhs for user 72532390.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/72532390
+Extracting features Optimized. X shape is : (10000, 449)
+Done Extracting Features 0:03:44.069640
+Load or build model. For 72532390, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_72532390_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 449) (2000, 449) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.97      5639
+        True       0.81      0.94      0.87      1361
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.90      0.94      0.92      7000
+weighted avg       0.95      0.95      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      1611
+        True       0.83      0.96      0.89       389
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.91      0.96      0.93      2000
+weighted avg       0.96      0.95      0.96      2000
+
+
+			END SVC
+Largamos para 180387621
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 249 level 2 neighbourhs for user 180387621.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/180387621
+Extracting features Optimized. X shape is : (10000, 249)
+Done Extracting Features 0:01:59.306841
+Load or build model. For 180387621, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_180387621_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 249) (2000, 249) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.98      5918
+        True       0.81      0.96      0.88      1082
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.90      0.96      0.93      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.97      1691
+        True       0.80      0.96      0.88       309
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.90      0.96      0.93      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 136706767
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 224 level 2 neighbourhs for user 136706767.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/136706767
+Extracting features Optimized. X shape is : (10000, 224)
+Done Extracting Features 0:01:37.612038
+Load or build model. For 136706767, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_136706767_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 224) (2000, 224) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 0.1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.88      0.93      5299
+        True       0.72      0.97      0.82      1701
+
+   micro avg       0.90      0.90      0.90      7000
+   macro avg       0.85      0.92      0.88      7000
+weighted avg       0.92      0.90      0.90      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.87      0.93      1514
+        True       0.70      0.97      0.82       486
+
+   micro avg       0.89      0.89      0.89      2000
+   macro avg       0.85      0.92      0.87      2000
+weighted avg       0.92      0.89      0.90      2000
+
+
+			END SVC
+Largamos para 17814160
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 340 level 2 neighbourhs for user 17814160.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/17814160
+Extracting features Optimized. X shape is : (10000, 340)
+Done Extracting Features 0:02:58.016570
+Load or build model. For 17814160, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_17814160_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 340) (2000, 340) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      6072
+        True       0.72      0.93      0.81       928
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.85      0.94      0.89      7000
+weighted avg       0.95      0.94      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.93      0.96      1735
+        True       0.67      0.93      0.78       265
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.83      0.93      0.87      2000
+weighted avg       0.95      0.93      0.93      2000
+
+
+			END SVC
+Largamos para 231636434
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 262 level 2 neighbourhs for user 231636434.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/231636434
+Extracting features Optimized. X shape is : (10000, 262)
+Done Extracting Features 0:01:54.208043
+Load or build model. For 231636434, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_231636434_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 262) (2000, 262) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.87      0.93      6327
+        True       0.45      0.99      0.62       673
+
+   micro avg       0.88      0.88      0.88      7000
+   macro avg       0.73      0.93      0.78      7000
+weighted avg       0.95      0.88      0.90      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      0.88      0.94      1808
+        True       0.47      0.97      0.63       192
+
+   micro avg       0.89      0.89      0.89      2000
+   macro avg       0.73      0.93      0.78      2000
+weighted avg       0.95      0.89      0.91      2000
+
+
+			END SVC
+Largamos para 326512684
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 557 level 2 neighbourhs for user 326512684.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/326512684
+Extracting features Optimized. X shape is : (10000, 557)
+Done Extracting Features 0:04:56.390386
+Load or build model. For 326512684, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_326512684_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 557) (2000, 557) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       1.00      0.96      0.98      6200
+        True       0.74      0.99      0.85       800
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.87      0.98      0.91      7000
+weighted avg       0.97      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       1.00      0.96      0.98      1771
+        True       0.75      0.99      0.85       229
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.87      0.97      0.92      2000
+weighted avg       0.97      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 119998164
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 497 level 2 neighbourhs for user 119998164.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/119998164
+Extracting features Optimized. X shape is : (10000, 497)
+Done Extracting Features 0:04:04.920189
+Load or build model. For 119998164, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_119998164_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 497) (2000, 497) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.90      0.95      6275
+        True       0.53      0.93      0.67       725
+
+   micro avg       0.91      0.91      0.91      7000
+   macro avg       0.76      0.92      0.81      7000
+weighted avg       0.94      0.91      0.92      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.89      0.94      1793
+        True       0.49      0.91      0.63       207
+
+   micro avg       0.89      0.89      0.89      2000
+   macro avg       0.74      0.90      0.79      2000
+weighted avg       0.94      0.89      0.91      2000
+
+
+			END SVC
+Largamos para 151159392
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 328 level 2 neighbourhs for user 151159392.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/151159392
+Extracting features Optimized. X shape is : (10000, 328)
+Done Extracting Features 0:02:39.796205
+Load or build model. For 151159392, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_151159392_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 328) (2000, 328) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      5451
+        True       0.85      0.96      0.90      1549
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.92      0.96      0.94      7000
+weighted avg       0.96      0.95      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.97      1557
+        True       0.86      0.96      0.91       443
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.92      0.96      0.94      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 155022600
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 492 level 2 neighbourhs for user 155022600.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/155022600
+Extracting features Optimized. X shape is : (10000, 492)
+Done Extracting Features 0:04:16.545363
+Load or build model. For 155022600, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_155022600_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 492) (2000, 492) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.97      6021
+        True       0.74      0.90      0.81       979
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.86      0.93      0.89      7000
+weighted avg       0.95      0.94      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.97      1721
+        True       0.74      0.91      0.82       279
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.86      0.93      0.89      2000
+weighted avg       0.95      0.94      0.95      2000
+
+
+			END SVC
+Largamos para 146904949
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 372 level 2 neighbourhs for user 146904949.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/146904949
+Extracting features Optimized. X shape is : (10000, 372)
+Done Extracting Features 0:03:08.084339
+Load or build model. For 146904949, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_146904949_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 372) (2000, 372) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.93      0.95      5391
+        True       0.79      0.92      0.85      1609
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.88      0.92      0.90      7000
+weighted avg       0.93      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.93      0.95      1540
+        True       0.81      0.93      0.86       460
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.89      0.93      0.91      2000
+weighted avg       0.94      0.93      0.93      2000
+
+
+			END SVC
+Largamos para 118718718
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 479 level 2 neighbourhs for user 118718718.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/118718718
+Extracting features Optimized. X shape is : (10000, 479)
+Done Extracting Features 0:04:25.300795
+Load or build model. For 118718718, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_118718718_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 479) (2000, 479) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.97      5533
+        True       0.86      0.95      0.90      1467
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.92      0.95      0.94      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.97      0.98      1581
+        True       0.89      0.94      0.91       419
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.93      0.95      0.94      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 460141468
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 620 level 2 neighbourhs for user 460141468.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/460141468
+Extracting features Optimized. X shape is : (10000, 620)
+Done Extracting Features 0:04:54.292188
+Load or build model. For 460141468, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_460141468_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 620) (2000, 620) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.97      6341
+        True       0.68      0.92      0.79       659
+
+   micro avg       0.95      0.95      0.95      7000
+   macro avg       0.84      0.94      0.88      7000
+weighted avg       0.96      0.95      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.98      1811
+        True       0.72      0.91      0.80       189
+
+   micro avg       0.96      0.96      0.96      2000
+   macro avg       0.86      0.94      0.89      2000
+weighted avg       0.96      0.96      0.96      2000
+
+
+			END SVC
+Largamos para 388635402
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 448 level 2 neighbourhs for user 388635402.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/388635402
+Extracting features Optimized. X shape is : (10000, 448)
+Done Extracting Features 0:04:02.374934
+Load or build model. For 388635402, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_388635402_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 448) (2000, 448) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.95      0.96      5405
+        True       0.85      0.92      0.88      1595
+
+   micro avg       0.94      0.94      0.94      7000
+   macro avg       0.91      0.94      0.92      7000
+weighted avg       0.95      0.94      0.95      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.95      0.96      1544
+        True       0.84      0.91      0.87       456
+
+   micro avg       0.94      0.94      0.94      2000
+   macro avg       0.91      0.93      0.92      2000
+weighted avg       0.94      0.94      0.94      2000
+
+
+			END SVC
+Largamos para 128958788
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 405 level 2 neighbourhs for user 128958788.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/128958788
+Extracting features Optimized. X shape is : (10000, 405)
+Done Extracting Features 0:03:38.151517
+Load or build model. For 128958788, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_128958788_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 405) (2000, 405) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.96      0.98      6135
+        True       0.78      0.95      0.86       865
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.89      0.96      0.92      7000
+weighted avg       0.97      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.95      0.97      1753
+        True       0.74      0.94      0.83       247
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.86      0.95      0.90      2000
+weighted avg       0.96      0.95      0.95      2000
+
+
+			END SVC
+Largamos para 80947885
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 838 level 2 neighbourhs for user 80947885.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/80947885
+Extracting features Optimized. X shape is : (10000, 838)
+Done Extracting Features 0:07:52.482381
+Load or build model. For 80947885, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_80947885_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 838) (2000, 838) True True
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/model_selection/_search.py:841: DeprecationWarning: The default of the `iid` parameter will change from True to False in version 0.22 and will be removed in 0.24. This will change numeric results when test-set sizes are unequal.
+  DeprecationWarning)
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.98      0.96      0.97      5626
+        True       0.86      0.92      0.89      1374
+
+   micro avg       0.96      0.96      0.96      7000
+   macro avg       0.92      0.94      0.93      7000
+weighted avg       0.96      0.96      0.96      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.98      0.96      0.97      1607
+        True       0.84      0.90      0.87       393
+
+   micro avg       0.95      0.95      0.95      2000
+   macro avg       0.91      0.93      0.92      2000
+weighted avg       0.95      0.95      0.95      2000
+
+
+			END SVC
+Largamos para 173166881
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 416 level 2 neighbourhs for user 173166881.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/173166881
+Extracting features Optimized. X shape is : (10000, 416)
+Done Extracting Features 0:03:27.401242
+Load or build model. For 173166881, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_173166881_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 416) (2000, 416) True True
+Best parameters set found on training set:
+
+{'C': 0.01, 'class_weight': 'balanced', 'gamma': 1, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.94      0.96      6600
+        True       0.46      0.86      0.60       400
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.72      0.90      0.78      7000
+weighted avg       0.96      0.93      0.94      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.93      0.96      1885
+        True       0.43      0.84      0.57       115
+
+   micro avg       0.93      0.93      0.93      2000
+   macro avg       0.71      0.89      0.76      2000
+weighted avg       0.96      0.93      0.94      2000
+
+
+			END SVC
+Largamos para 134883425
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 482 level 2 neighbourhs for user 134883425.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/134883425
+Extracting features Optimized. X shape is : (10000, 482)
+Done Extracting Features 0:04:02.917932
+Load or build model. For 134883425, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_134883425_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 482) (2000, 482) True True
+Best parameters set found on training set:
+
+{'C': 1, 'class_weight': None, 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.97      0.94      0.95      6204
+        True       0.61      0.76      0.67       796
+
+   micro avg       0.92      0.92      0.92      7000
+   macro avg       0.79      0.85      0.81      7000
+weighted avg       0.93      0.92      0.92      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.97      0.93      0.95      1773
+        True       0.59      0.75      0.66       227
+
+   micro avg       0.91      0.91      0.91      2000
+   macro avg       0.78      0.84      0.81      2000
+weighted avg       0.92      0.91      0.92      2000
+
+
+			END SVC
+Largamos para 182831320
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 372 level 2 neighbourhs for user 182831320.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/182831320
+Extracting features Optimized. X shape is : (10000, 372)
+Done Extracting Features 0:02:58.330759
+Load or build model. For 182831320, model type: svc, time_delta: 5
+LOADED DATASET FROM ./processing/xy_cache/dataset__DatasetOneUserModel_182831320_5secs.pickle
+			START SVC
+# Tuning hyper-parameters for f1
+X_train.shape, X_test.shape, True in y_train, True in y_test :
+(7000, 372) (2000, 372) True True
+Best parameters set found on training set:
+
+{'C': 0.1, 'class_weight': 'balanced', 'gamma': 10, 'kernel': 'rbf'}
+Detailed classification report:
+
+Scores on training set.
+              precision    recall  f1-score   support
+
+       False       0.99      0.91      0.95      5104
+        True       0.81      0.97      0.88      1896
+
+   micro avg       0.93      0.93      0.93      7000
+   macro avg       0.90      0.94      0.92      7000
+weighted avg       0.94      0.93      0.93      7000
+
+
+Scores on test set.
+
+              precision    recall  f1-score   support
+
+       False       0.99      0.90      0.94      1458
+        True       0.79      0.98      0.87       542
+
+   micro avg       0.92      0.92      0.92      2000
+   macro avg       0.89      0.94      0.91      2000
+weighted avg       0.94      0.92      0.92      2000
+
+
+			END SVC
+Largamos para 17441030
+Loading graph from ../data/graphs/latest_subgraph.gpickle
+Fetched 579 level 2 neighbourhs for user 17441030.
+Successful load on tweets universe from file:  ./processing/tw_universe_cache/17441030
+Extracting features Optimized. X shape is : (10000, 579)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Process ForkPoolWorker-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 352, in get
+    res = self._reader.recv_bytes()
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/usr/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Process ForkPoolWorker-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Traceback (most recent call last):
+  File "main.py", line 72, in <module>
+    compute_scores(delta_minutes=delta_minutes, as_seconds=True)
+  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 90, in compute_scores
+    lock, delta_minutes, fasttext=fasttext, as_seconds=as_seconds)
+  File "/home/mmeriles/sna-famaf/src/modeling/_1_one_user_learn_neighbours/compute_scores.py", line 22, in worker
+    fasttext=fasttext, as_seconds=as_seconds)
+  File "/home/mmeriles/sna-famaf/src/processing/_1_user_model/db_csv.py", line 315, in load_or_create_dataset
+    X, y = self.extract_features(tweets, neighbours, uid, fasttext=fasttext)
+  File "/home/mmeriles/sna-famaf/src/processing/_1_user_model/db_csv.py", line 291, in extract_features
+    return self._extract_features_full(tweets, neighbour_users, own_user, fasttext=fasttext)
+  File "/home/mmeriles/sna-famaf/src/processing/_1_user_model/db_csv.py", line 261, in _extract_features_full
+    col = np.isin(tweets[:, 0], n_tl_filtered[:, 0])
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/numpy/lib/arraysetops.py", line 637, in isin
+    invert=invert).reshape(element.shape)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/numpy/lib/arraysetops.py", line 522, in in1d
+    mask |= (ar1 == a)
+KeyboardInterrupt
+Process ForkPoolWorker-45:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-42:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-44:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/util.py", line 277, in _run_finalizers
+    finalizer()
+  File "/usr/lib/python3.7/multiprocessing/util.py", line 201, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+  File "/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/externals/joblib/externals/loky/process_executor.py", line 197, in _python_exit
+    thread.join()
+  File "/usr/lib/python3.7/threading.py", line 1044, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.7/threading.py", line 1060, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+Process ForkPoolWorker-39:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-40:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-43:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-41:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.7/multiprocessing/pool.py", line 110, in worker
+    task = get()
+  File "/usr/lib/python3.7/multiprocessing/queues.py", line 351, in get
+    with self._rlock:
+  File "/usr/lib/python3.7/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+/home/mmeriles/sna-famaf-ve/lib/python3.7/site-packages/sklearn/externals/joblib/externals/loky/backend/semaphore_tracker.py:198: UserWarning: semaphore_tracker: There appear to be 12 leaked semaphores to clean up at shutdown
+  len(cache))
