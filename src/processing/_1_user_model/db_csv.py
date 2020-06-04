@@ -326,7 +326,8 @@ class _DatasetOneUserModel(_Dataset):
             print('Cargado dataset social con exito')
             dataset = self._add_fasttext_features_to_ds(fname_no_ft)
         else:
-            raise Exception('NO ERA POR ACA ...')
+            if fasttext:
+                raise Exception('NO ERA POR ACA ...')
             if self.df.empty:
                 print('DF EMPTY LOADING IT')
                 self._load_df(central_uid=uid)

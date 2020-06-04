@@ -106,32 +106,3 @@ if __name__ == '__main__':
 
     if args.action == 'cross_prediction':
         OneUserModel.cross_prediction()
-# we need 5589 users
-
-# most central user in katz (new_downloaded):    297144638
-# 297144638_subgraph.gpickle -> number_of_nodes() == 4075
-# 1357911_subgraph.gpickle -> number_of_nodes() == 4849 ...
-
-
-# tal vez hay un fenómeno de twitter que (tal vez al guardar datos en la bd) hace que salgan con casi igual timestamp
-
-
-# trabajo futuro: detección de bot por una característica de que se yo qué.
-#
-
-
-# proporciones de tiempo de retweet  PLOTEAR ESTO PARA LA TESIS
-# In [89]: mean([d['p_uno'] for d in didi])
-# Out[89]: 0.04825305378973551
-#
-# In [90]: mean([d['p_media'] for d in didi])
-# Out[90]: 0.4034549546316711
-#
-# In [91]: mean([d['p_1'] for d in didi])
-# Out[91]: 0.5042395629211999
-
-
-# para ver si terminó el de 15 min
-# ls modeling/_1_one_user_learn_neighbours/scores/*15* -lah
-
-# sacar proporciones de parámetros de SVMs dado un timedelta fijado.
