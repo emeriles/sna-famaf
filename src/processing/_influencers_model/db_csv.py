@@ -16,7 +16,7 @@ from settings import CSV_CUTTED, JSON_TEXTS, XY_CACHE_FOLDER, NX_SUBGRAPH_PATH, 
 
 class DatasetInfluencersModel(_Dataset):
 
-    def __init__(self, csv_path=CSV_CUTTED, txt_path=JSON_TEXTS, delta_minutes_filter=None):
+    def __init__(self, csv_path=CSV_CUTTED, txt_path=JSON_TEXTS, delta_minutes_filter=None, fasttext=False):
         super().__init__(csv_path=csv_path, txt_path=txt_path, delta_minutes_filter=delta_minutes_filter)
         self.relevant_users = None
         self.df_filtered = None
@@ -30,7 +30,7 @@ class DatasetInfluencersModel(_Dataset):
         self.tt_min_score = None
         self.lda = None
         self.tw_lda = None
-        self.fasttext = None
+        self.fasttext = fasttext
 
         # self.get_tt_min_score()
 

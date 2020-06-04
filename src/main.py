@@ -98,6 +98,8 @@ if __name__ == '__main__':
 
     if args.action == 'experiment_influencers':
         Experiments.experiment(delta_minutes=delta_minutes)
+    if args.action == 'experiment_influencers_ft':
+        Experiments.experiment(delta_minutes=delta_minutes, fasttext=True)
     if args.action == 'evaluate_influencers':
         evaluate(delta_minutes=delta_minutes)
 
