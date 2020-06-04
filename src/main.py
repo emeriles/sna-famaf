@@ -22,6 +22,7 @@ if __name__ == '__main__':
         'build_influence_points',
         'get_users_followed_data',
         'experiment_influencers',
+        'experiment_influencers_ft',
         'evaluate_influencers',
         'develop',
         'build_ftext_features',
