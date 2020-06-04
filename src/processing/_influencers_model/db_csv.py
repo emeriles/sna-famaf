@@ -245,7 +245,8 @@ class DatasetInfluencersModel(_Dataset):
         timeline = pd.concat([own_tweets, rts]).dropna(subset=['id_str']).drop_duplicates(subset='id_str').values
         return timeline
 
-    def extract_features(self, dataset="train", with_influencers=True):
+    def extract_features(self, dataset="train", with_influencers=True, fasttext=False):
+        self.fasttext = fasttext
         if self.tweets is None:
             print("--No tweets found")
             return
@@ -256,23 +257,26 @@ class DatasetInfluencersModel(_Dataset):
             dataset = self.test_tweets
             print("Extracting features on test data")
         nrows = len(dataset)
-        nfeats = 0
-        if with_influencers:
-            nfeats = len(self.influencers_ids)
-        if self.lda is not None:
-            X = np.zeros((nrows, nfeats + self.lda.model.num_topics))
-        elif self.tw_lda is not None:
-            nfeatsplus = nfeats + int(self.tw_lda.settings['topics'])
-            X = np.zeros((nrows, nfeatsplus))
-        # elif self.fasttext is not None:
-        #     ft_sentence_vectors = self.fasttext.get_embeddings(dataset)
-        #     X = np.zeros((nrows, nfeats + 300))
+        nfeats = len(self.influencers_ids)
+        offset_columns = 0
+        # if self.lda is not None:
+        #     X = np.zeros((nrows, nfeats + self.lda.model.num_topics))
+        # elif self.tw_lda is not None:
+        #     nfeatsplus = nfeats + int(self.tw_lda.settings['topics'])
+        #     X = np.zeros((nrows, nfeatsplus))
+        if self.fasttext:
+            ft_sentence_vectors = self._get_embeddings_for_tweet(dataset[:, 0])
+            X = np.zeros((nrows, nfeats + 300))
+            for idx, tweet in enumerate(dataset[:, 0]):
+                X[idx, :300] = ft_sentence_vectors[idx].split(" ")
+
+            offset_columns = 301
         else:
             X = np.zeros((nrows, nfeats))
 
         to_process = X.shape[0]
         print('Extracting features X shape is :', X.shape)
-        for j, u in enumerate(self.influencers_ids):
+        for j, u in enumerate(self.influencers_ids, start=offset_columns):
             to_process -= 1
             percentage = 100.0 - ((to_process / X.shape[0]) * 100)
             # print('Avance: %{}'.format(percentage), end='\r')

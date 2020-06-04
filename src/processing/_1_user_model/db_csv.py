@@ -292,6 +292,7 @@ class _DatasetOneUserModel(_Dataset):
         print('Adding fasttext features to dataset : {}'.format(fname_no_ft))
         dataset = pickle.load(open(fname_no_ft, 'rb'))
         (X_train, X_test, X_valid, y_train, y_test, y_valid, X_train_l, X_test_l, X_valid_l) = dataset
+        dataset = list(dataset)
         i = 0
         for ds, labels in zip([X_train, X_test, X_valid], [X_train_l, X_test_l, X_valid_l]):
             nrows = ds.shape[0]
@@ -322,6 +323,7 @@ class _DatasetOneUserModel(_Dataset):
             dataset = pickle.load(open(fname, 'rb'))
             print('LOADED DATASET FROM {fname}'.format(fname=fname))
         elif fasttext and os.path.exists(fname_no_ft):
+            print('Cargado dataset social con exito')
             dataset = self._add_fasttext_features_to_ds(fname_no_ft)
         else:
             raise Exception('NO ERA POR ACA ...')

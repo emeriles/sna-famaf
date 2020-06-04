@@ -43,6 +43,7 @@ if __name__ == '__main__':
 
     delta_minutes = args.delta_minutes if args.delta_minutes != 0 else None
     as_seconds = args.seconds
+    print('delta minutes as seconds? : {}'.format(as_seconds))
 
     if args.data == 'full':
         os.environ.setdefault('DATASET_SIZE_TYPE', 'FULL')
