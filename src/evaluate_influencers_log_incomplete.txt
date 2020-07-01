@@ -1,3 +1,11 @@
+
+
+
+
+MAAAAAAALLLLLLLLL (terminado 5 de marzo. Muy bajo en los tweets de entrenamiento y test .. capaz se comió el filtro de los 10k de 1_user_model...)
+
+
+###################################################################################################################################################
 SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
 CSV_RAW = ../data/raw/csvs/full.csv
 CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
@@ -296,4 +304,14 @@ Results on 300i_social_Nonem dataset with SVM as:
   'probability': True,
   'random_state'
 
+
 [0.59, 0.61, 0.65, 0.67, 0.67, 0.69, 0.70, 0.73]
+
+Relevante
+Relevante
+Relevante
+Relevante
+Relevante
+Relevante
+Relevante
+Relevante

@@ -1,13 +1,14 @@
+delta minutes as seconds? : False
 SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
 CSV_RAW = ../data/raw/csvs/full.csv
 CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
 JSON_TEXTS = ../data/raw/jsons/texts_full.json
-RUNNING evaluate_influencers
+RUNNING evaluate_influencers_ft
 100i_social_540m ['100i_social_540m']
 =======================================================
 File: 100i_social_540m
-(train)Tweets: 62565, Influencers: 100
-(test) Tweets: 20855, Influencers: 100
+(train)Tweets: 62565, Influencers: 400
+(test) Tweets: 20855, Influencers: 400
 =======================================================
 Fitting...
 Predicting...
@@ -15,6 +16,7 @@ Predicting...
 Results on 100i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -31,19 +33,19 @@ Results on 100i_social_540m dataset with SVM as:
 
                 precision    recall  f1-score   support
 
-Insignificante       0.80      0.84      0.82     13876
-     Relevante       0.65      0.59      0.62      6979
+Insignificante       0.82      0.88      0.85     13876
+     Relevante       0.72      0.62      0.67      6979
 
-     micro avg       0.76      0.76      0.76     20855
-     macro avg       0.73      0.71      0.72     20855
-  weighted avg       0.75      0.76      0.75     20855
+      accuracy                           0.79     20855
+     macro avg       0.77      0.75      0.76     20855
+  weighted avg       0.79      0.79      0.79     20855
 
 
 125i_social_540m ['125i_social_540m']
 =======================================================
 File: 125i_social_540m
-(train)Tweets: 62565, Influencers: 125
-(test) Tweets: 20855, Influencers: 125
+(train)Tweets: 62565, Influencers: 425
+(test) Tweets: 20855, Influencers: 425
 =======================================================
 Fitting...
 Predicting...
@@ -51,6 +53,7 @@ Predicting...
 Results on 125i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -67,19 +70,19 @@ Results on 125i_social_540m dataset with SVM as:
 
                 precision    recall  f1-score   support
 
-Insignificante       0.81      0.86      0.84     13876
-     Relevante       0.69      0.61      0.65      6979
+Insignificante       0.83      0.89      0.86     13876
+     Relevante       0.74      0.64      0.69      6979
 
-     micro avg       0.78      0.78      0.78     20855
-     macro avg       0.75      0.74      0.74     20855
-  weighted avg       0.77      0.78      0.77     20855
+      accuracy                           0.81     20855
+     macro avg       0.79      0.76      0.77     20855
+  weighted avg       0.80      0.81      0.80     20855
 
 
 150i_social_540m ['150i_social_540m']
 =======================================================
 File: 150i_social_540m
-(train)Tweets: 62565, Influencers: 150
-(test) Tweets: 20855, Influencers: 150
+(train)Tweets: 62565, Influencers: 450
+(test) Tweets: 20855, Influencers: 450
 =======================================================
 Fitting...
 Predicting...
@@ -87,114 +90,7 @@ Predicting...
 Results on 150i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
-  'cache_size': 200,
-  'class_weight': 'balanced',
-  'coef0': 0.0,
-  'decision_function_shape': 'ovr',
-  'degree': 3,
-  'gamma': 0.22,
-  'kernel': 'rbf',
-  'max_iter': -1,
-  'probability': True,
-  'random_state': None,
-  'shrinking': True,
-  'tol': 0.001,
-  'verbose': False}
-
-                precision    recall  f1-score   support
-
-Insignificante       0.84      0.88      0.86     13876
-     Relevante       0.73      0.67      0.70      6979
-
-     micro avg       0.81      0.81      0.81     20855
-     macro avg       0.79      0.77      0.78     20855
-  weighted avg       0.80      0.81      0.80     20855
-
-
-175i_social_540m ['175i_social_540m']
-=======================================================
-File: 175i_social_540m
-(train)Tweets: 62565, Influencers: 175
-(test) Tweets: 20855, Influencers: 175
-=======================================================
-Fitting...
-Predicting...
-
-Results on 175i_social_540m dataset with SVM as:
-
-{ 'C': 1.25,
-  'cache_size': 200,
-  'class_weight': 'balanced',
-  'coef0': 0.0,
-  'decision_function_shape': 'ovr',
-  'degree': 3,
-  'gamma': 0.22,
-  'kernel': 'rbf',
-  'max_iter': -1,
-  'probability': True,
-  'random_state': None,
-  'shrinking': True,
-  'tol': 0.001,
-  'verbose': False}
-
-                precision    recall  f1-score   support
-
-Insignificante       0.85      0.89      0.87     13876
-     Relevante       0.76      0.69      0.72      6979
-
-     micro avg       0.82      0.82      0.82     20855
-     macro avg       0.80      0.79      0.79     20855
-  weighted avg       0.82      0.82      0.82     20855
-
-
-200i_social_540m ['200i_social_540m']
-=======================================================
-File: 200i_social_540m
-(train)Tweets: 62565, Influencers: 200
-(test) Tweets: 20855, Influencers: 200
-=======================================================
-Fitting...
-Predicting...
-
-Results on 200i_social_540m dataset with SVM as:
-
-{ 'C': 1.25,
-  'cache_size': 200,
-  'class_weight': 'balanced',
-  'coef0': 0.0,
-  'decision_function_shape': 'ovr',
-  'degree': 3,
-  'gamma': 0.22,
-  'kernel': 'rbf',
-  'max_iter': -1,
-  'probability': True,
-  'random_state': None,
-  'shrinking': True,
-  'tol': 0.001,
-  'verbose': False}
-
-                precision    recall  f1-score   support
-
-Insignificante       0.85      0.90      0.87     13876
-     Relevante       0.77      0.69      0.73      6979
-
-     micro avg       0.83      0.83      0.83     20855
-     macro avg       0.81      0.79      0.80     20855
-  weighted avg       0.83      0.83      0.83     20855
-
-
-225i_social_540m ['225i_social_540m']
-=======================================================
-File: 225i_social_540m
-(train)Tweets: 62565, Influencers: 225
-(test) Tweets: 20855, Influencers: 225
-=======================================================
-Fitting...
-Predicting...
-
-Results on 225i_social_540m dataset with SVM as:
-
-{ 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -212,25 +108,26 @@ Results on 225i_social_540m dataset with SVM as:
                 precision    recall  f1-score   support
 
 Insignificante       0.86      0.90      0.88     13876
-     Relevante       0.78      0.72      0.75      6979
+     Relevante       0.78      0.70      0.74      6979
 
-     micro avg       0.84      0.84      0.84     20855
-     macro avg       0.82      0.81      0.81     20855
-  weighted avg       0.83      0.84      0.84     20855
+      accuracy                           0.84     20855
+     macro avg       0.82      0.80      0.81     20855
+  weighted avg       0.83      0.84      0.83     20855
 
 
-250i_social_540m ['250i_social_540m']
+175i_social_540m ['175i_social_540m']
 =======================================================
-File: 250i_social_540m
-(train)Tweets: 62565, Influencers: 250
-(test) Tweets: 20855, Influencers: 250
+File: 175i_social_540m
+(train)Tweets: 62565, Influencers: 475
+(test) Tweets: 20855, Influencers: 475
 =======================================================
 Fitting...
 Predicting...
 
-Results on 250i_social_540m dataset with SVM as:
+Results on 175i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -247,62 +144,27 @@ Results on 250i_social_540m dataset with SVM as:
 
                 precision    recall  f1-score   support
 
-Insignificante       0.87      0.91      0.89     13876
-     Relevante       0.80      0.72      0.76      6979
+Insignificante       0.87      0.92      0.89     13876
+     Relevante       0.82      0.72      0.77      6979
 
-     micro avg       0.85      0.85      0.85     20855
-     macro avg       0.83      0.82      0.82     20855
-  weighted avg       0.84      0.85      0.84     20855
-
-
-275i_social_540m ['275i_social_540m']
-=======================================================
-File: 275i_social_540m
-(train)Tweets: 62565, Influencers: 275
-(test) Tweets: 20855, Influencers: 275
-=======================================================
-Fitting...
-Predicting...
-
-Results on 275i_social_540m dataset with SVM as:
-
-{ 'C': 1.25,
-  'cache_size': 200,
-  'class_weight': 'balanced',
-  'coef0': 0.0,
-  'decision_function_shape': 'ovr',
-  'degree': 3,
-  'gamma': 0.22,
-  'kernel': 'rbf',
-  'max_iter': -1,
-  'probability': True,
-  'random_state': None,
-  'shrinking': True,
-  'tol': 0.001,
-  'verbose': False}
-
-                precision    recall  f1-score   support
-
-Insignificante       0.87      0.91      0.89     13876
-     Relevante       0.80      0.74      0.77      6979
-
-     micro avg       0.85      0.85      0.85     20855
+      accuracy                           0.85     20855
      macro avg       0.84      0.82      0.83     20855
   weighted avg       0.85      0.85      0.85     20855
 
 
-300i_social_540m ['300i_social_540m']
+200i_social_540m ['200i_social_540m']
 =======================================================
-File: 300i_social_540m
-(train)Tweets: 62565, Influencers: 300
-(test) Tweets: 20855, Influencers: 300
+File: 200i_social_540m
+(train)Tweets: 62565, Influencers: 500
+(test) Tweets: 20855, Influencers: 500
 =======================================================
 Fitting...
 Predicting...
 
-Results on 300i_social_540m dataset with SVM as:
+Results on 200i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -319,26 +181,27 @@ Results on 300i_social_540m dataset with SVM as:
 
                 precision    recall  f1-score   support
 
-Insignificante       0.88      0.92      0.90     13876
-     Relevante       0.82      0.75      0.78      6979
+Insignificante       0.87      0.93      0.90     13876
+     Relevante       0.83      0.73      0.78      6979
 
-     micro avg       0.86      0.86      0.86     20855
+      accuracy                           0.86     20855
      macro avg       0.85      0.83      0.84     20855
   weighted avg       0.86      0.86      0.86     20855
 
 
-325i_social_540m ['325i_social_540m']
+225i_social_540m ['225i_social_540m']
 =======================================================
-File: 325i_social_540m
-(train)Tweets: 62565, Influencers: 325
-(test) Tweets: 20855, Influencers: 325
+File: 225i_social_540m
+(train)Tweets: 62565, Influencers: 525
+(test) Tweets: 20855, Influencers: 525
 =======================================================
 Fitting...
 Predicting...
 
-Results on 325i_social_540m dataset with SVM as:
+Results on 225i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -356,18 +219,168 @@ Results on 325i_social_540m dataset with SVM as:
                 precision    recall  f1-score   support
 
 Insignificante       0.88      0.93      0.91     13876
-     Relevante       0.85      0.76      0.80      6979
+     Relevante       0.85      0.75      0.80      6979
 
-     micro avg       0.87      0.87      0.87     20855
+      accuracy                           0.87     20855
      macro avg       0.87      0.84      0.85     20855
   weighted avg       0.87      0.87      0.87     20855
+
+
+250i_social_540m ['250i_social_540m']
+=======================================================
+File: 250i_social_540m
+(train)Tweets: 62565, Influencers: 550
+(test) Tweets: 20855, Influencers: 550
+=======================================================
+Fitting...
+Predicting...
+
+Results on 250i_social_540m dataset with SVM as:
+
+{ 'C': 1.25,
+  'break_ties': False,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.89      0.94      0.91     13876
+     Relevante       0.86      0.76      0.81      6979
+
+      accuracy                           0.88     20855
+     macro avg       0.88      0.85      0.86     20855
+  weighted avg       0.88      0.88      0.88     20855
+
+
+275i_social_540m ['275i_social_540m']
+=======================================================
+File: 275i_social_540m
+(train)Tweets: 62565, Influencers: 575
+(test) Tweets: 20855, Influencers: 575
+=======================================================
+Fitting...
+Predicting...
+
+Results on 275i_social_540m dataset with SVM as:
+
+{ 'C': 1.25,
+  'break_ties': False,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.89      0.94      0.91     13876
+     Relevante       0.86      0.77      0.82      6979
+
+      accuracy                           0.88     20855
+     macro avg       0.88      0.86      0.87     20855
+  weighted avg       0.88      0.88      0.88     20855
+
+
+300i_social_540m ['300i_social_540m']
+=======================================================/users/emeriles/anaconda3/envs/sna-famaf-cd/lib/python3.7/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+
+File: 300i_social_540m
+(train)Tweets: 62565, Influencers: 600
+(test) Tweets: 20855, Influencers: 600
+=======================================================
+Fitting...
+Predicting...
+
+Results on 300i_social_540m dataset with SVM as:
+
+{ 'C': 1.25,
+  'break_ties': False,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.90      0.95      0.92     13876
+     Relevante       0.89      0.79      0.84      6979
+
+      accuracy                           0.90     20855
+     macro avg       0.90      0.87      0.88     20855
+  weighted avg       0.90      0.90      0.89     20855
+
+
+325i_social_540m ['325i_social_540m']
+=======================================================
+File: 325i_social_540m
+(train)Tweets: 62565, Influencers: 625
+(test) Tweets: 20855, Influencers: 625
+=======================================================
+Fitting...
+Predicting...
+
+Results on 325i_social_540m dataset with SVM as:
+
+{ 'C': 1.25,
+  'break_ties': False,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.90      0.96      0.93     13876
+     Relevante       0.90      0.80      0.85      6979
+
+      accuracy                           0.90     20855
+     macro avg       0.90      0.88      0.89     20855
+  weighted avg       0.90      0.90      0.90     20855
 
 
 350i_social_540m ['350i_social_540m']
 =======================================================
 File: 350i_social_540m
-(train)Tweets: 62565, Influencers: 350
-(test) Tweets: 20855, Influencers: 350
+(train)Tweets: 62565, Influencers: 650
+(test) Tweets: 20855, Influencers: 650
 =======================================================
 Fitting...
 Predicting...
@@ -375,6 +388,7 @@ Predicting...
 Results on 350i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -391,19 +405,19 @@ Results on 350i_social_540m dataset with SVM as:
 
                 precision    recall  f1-score   support
 
-Insignificante       0.89      0.92      0.91     13876
-     Relevante       0.84      0.78      0.81      6979
+Insignificante       0.91      0.95      0.93     13876
+     Relevante       0.90      0.81      0.85      6979
 
-     micro avg       0.88      0.88      0.88     20855
-     macro avg       0.87      0.85      0.86     20855
-  weighted avg       0.87      0.88      0.87     20855
+      accuracy                           0.91     20855
+     macro avg       0.90      0.88      0.89     20855
+  weighted avg       0.91      0.91      0.90     20855
 
 
 375i_social_540m ['375i_social_540m']
 =======================================================
 File: 375i_social_540m
-(train)Tweets: 62565, Influencers: 375
-(test) Tweets: 20855, Influencers: 375
+(train)Tweets: 62565, Influencers: 675
+(test) Tweets: 20855, Influencers: 675
 =======================================================
 Fitting...
 Predicting...
@@ -411,6 +425,7 @@ Predicting...
 Results on 375i_social_540m dataset with SVM as:
 
 { 'C': 1.25,
+  'break_ties': False,
   'cache_size': 200,
   'class_weight': 'balanced',
   'coef0': 0.0,
@@ -427,11 +442,17 @@ Results on 375i_social_540m dataset with SVM as:
 
                 precision    recall  f1-score   support
 
-Insignificante       0.90      0.94      0.92     13876
-     Relevante       0.87      0.78      0.83      6979
+Insignificante       0.91      0.96      0.94     13876
+     Relevante       0.91      0.82      0.86      6979
 
-     micro avg       0.89      0.89      0.89     20855
-     macro avg       0.88      0.86      0.87     20855
-  weighted avg       0.89      0.89      0.89     20855
+      accuracy                           0.91     20855
+     macro avg       0.91      0.89      0.90     20855
+  weighted avg       0.91      0.91      0.91     20855
 
 
+prec
+[0.72, 0.74, 0.78, 0.82, 0.83, 0.85, 0.86, 0.86, 0.89, 0.90, 0.90, 0.91]
+reca
+[0.62, 0.64, 0.70, 0.72, 0.73, 0.75, 0.76, 0.77, 0.79, 0.80, 0.81, 0.82]
+f1
+[0.67, 0.69, 0.74, 0.77, 0.78, 0.80, 0.81, 0.82, 0.84, 0.85, 0.85, 0.86]
