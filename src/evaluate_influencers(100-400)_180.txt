@@ -1,0 +1,443 @@
+SQLITE_CONNECTION = sqlite:///../data/processed/twitter_sample_full.db
+CSV_RAW = ../data/raw/csvs/full.csv
+CSV_CUTTED = ../data/raw/csvs/cut1_full.csv
+JSON_TEXTS = ../data/raw/jsons/texts_full.json
+RUNNING evaluate_influencers
+100i_social_180m ['100i_social_180m']
+=======================================================
+File: 100i_social_180m
+(train)Tweets: 18242, Influencers: 100
+(test) Tweets: 6081, Influencers: 100
+=======================================================
+Fitting...
+Predicting...
+
+Results on 100i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.83      0.87      0.85      3871
+     Relevante       0.75      0.68      0.72      2210
+
+     micro avg       0.80      0.80      0.80      6081
+     macro avg       0.79      0.78      0.78      6081
+  weighted avg       0.80      0.80      0.80      6081
+
+
+125i_social_180m ['125i_social_180m']
+=======================================================
+File: 125i_social_180m
+(train)Tweets: 18242, Influencers: 125
+(test) Tweets: 6081, Influencers: 125
+=======================================================
+Fitting...
+Predicting...
+
+Results on 125i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.84      0.91      0.87      3871
+     Relevante       0.81      0.70      0.75      2210
+
+     micro avg       0.83      0.83      0.83      6081
+     macro avg       0.83      0.80      0.81      6081
+  weighted avg       0.83      0.83      0.83      6081
+
+
+150i_social_180m ['150i_social_180m']
+=======================================================
+File: 150i_social_180m
+(train)Tweets: 18242, Influencers: 150
+(test) Tweets: 6081, Influencers: 150
+=======================================================
+Fitting...
+Predicting...
+
+Results on 150i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.85      0.95      0.90      3871
+     Relevante       0.89      0.72      0.79      2210
+
+     micro avg       0.87      0.87      0.87      6081
+     macro avg       0.87      0.83      0.85      6081
+  weighted avg       0.87      0.87      0.86      6081
+
+
+175i_social_180m ['175i_social_180m']
+=======================================================
+File: 175i_social_180m
+(train)Tweets: 18242, Influencers: 175
+(test) Tweets: 6081, Influencers: 175
+=======================================================
+Fitting...
+Predicting...
+
+Results on 175i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.86      0.96      0.91      3871
+     Relevante       0.91      0.73      0.81      2210
+
+     micro avg       0.88      0.88      0.88      6081
+     macro avg       0.89      0.85      0.86      6081
+  weighted avg       0.88      0.88      0.87      6081
+
+
+200i_social_180m ['200i_social_180m']
+=======================================================
+File: 200i_social_180m
+(train)Tweets: 18242, Influencers: 200
+(test) Tweets: 6081, Influencers: 200
+=======================================================
+Fitting...
+Predicting...
+
+Results on 200i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.87      0.95      0.91      3871
+     Relevante       0.90      0.75      0.82      2210
+
+     micro avg       0.88      0.88      0.88      6081
+     macro avg       0.89      0.85      0.86      6081
+  weighted avg       0.88      0.88      0.88      6081
+
+
+225i_social_180m ['225i_social_180m']
+=======================================================
+File: 225i_social_180m
+(train)Tweets: 18242, Influencers: 225
+(test) Tweets: 6081, Influencers: 225
+=======================================================
+Fitting...
+Predicting...
+
+Results on 225i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.89      0.95      0.92      3871
+     Relevante       0.90      0.79      0.84      2210
+
+     micro avg       0.89      0.89      0.89      6081
+     macro avg       0.89      0.87      0.88      6081
+  weighted avg       0.89      0.89      0.89      6081
+
+
+250i_social_180m ['250i_social_180m']
+=======================================================
+File: 250i_social_180m
+(train)Tweets: 18242, Influencers: 250
+(test) Tweets: 6081, Influencers: 250
+=======================================================
+Fitting...
+Predicting...
+
+Results on 250i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.90      0.95      0.92      3871
+     Relevante       0.90      0.81      0.85      2210
+
+     micro avg       0.90      0.90      0.90      6081
+     macro avg       0.90      0.88      0.88      6081
+  weighted avg       0.90      0.90      0.89      6081
+
+
+275i_social_180m ['275i_social_180m']
+=======================================================
+File: 275i_social_180m
+(train)Tweets: 18242, Influencers: 275
+(test) Tweets: 6081, Influencers: 275
+=======================================================
+Fitting...
+Predicting...
+
+Results on 275i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.90      0.95      0.93      3871
+     Relevante       0.91      0.82      0.86      2210
+
+     micro avg       0.90      0.90      0.90      6081
+     macro avg       0.90      0.88      0.89      6081
+  weighted avg       0.90      0.90      0.90      6081
+
+
+300i_social_180m ['300i_social_180m']
+=======================================================
+File: 300i_social_180m
+(train)Tweets: 18242, Influencers: 300
+(test) Tweets: 6081, Influencers: 300
+=======================================================
+Fitting...
+Predicting...
+
+Results on 300i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.91      0.96      0.94      3871
+     Relevante       0.92      0.84      0.88      2210
+
+     micro avg       0.92      0.92      0.92      6081
+     macro avg       0.92      0.90      0.91      6081
+  weighted avg       0.92      0.92      0.92      6081
+
+
+325i_social_180m ['325i_social_180m']
+=======================================================
+File: 325i_social_180m
+(train)Tweets: 18242, Influencers: 325
+(test) Tweets: 6081, Influencers: 325
+=======================================================
+Fitting...
+Predicting...
+
+Results on 325i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.92      0.96      0.94      3871
+     Relevante       0.93      0.86      0.89      2210
+
+     micro avg       0.93      0.93      0.93      6081
+     macro avg       0.93      0.91      0.92      6081
+  weighted avg       0.93      0.93      0.93      6081
+
+
+350i_social_180m ['350i_social_180m']
+=======================================================
+File: 350i_social_180m
+(train)Tweets: 18242, Influencers: 350
+(test) Tweets: 6081, Influencers: 350
+=======================================================
+Fitting...
+Predicting...
+
+Results on 350i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.93      0.96      0.95      3871
+     Relevante       0.93      0.87      0.90      2210
+
+     micro avg       0.93      0.93      0.93      6081
+     macro avg       0.93      0.92      0.92      6081
+  weighted avg       0.93      0.93      0.93      6081
+
+
+375i_social_180m ['375i_social_180m']
+=======================================================
+File: 375i_social_180m
+(train)Tweets: 18242, Influencers: 375
+(test) Tweets: 6081, Influencers: 375
+=======================================================
+Fitting...
+Predicting...
+
+Results on 375i_social_180m dataset with SVM as:
+
+{ 'C': 1.25,
+  'cache_size': 200,
+  'class_weight': 'balanced',
+  'coef0': 0.0,
+  'decision_function_shape': 'ovr',
+  'degree': 3,
+  'gamma': 0.22,
+  'kernel': 'rbf',
+  'max_iter': -1,
+  'probability': True,
+  'random_state': None,
+  'shrinking': True,
+  'tol': 0.001,
+  'verbose': False}
+
+                precision    recall  f1-score   support
+
+Insignificante       0.94      0.97      0.95      3871
+     Relevante       0.95      0.88      0.92      2210
+
+     micro avg       0.94      0.94      0.94      6081
+     macro avg       0.94      0.93      0.94      6081
+  weighted avg       0.94      0.94      0.94      6081
+
+
+f1
+[0.72, 0.75, 0.79, 0.81, 0.82, 0.84, 0.85, 0.86, 0.88, 0.89, 0.90, 0.92]
+prec
+[0.75, 0.81, 0.89, 0.91, 0.90, 0.90, 0.90, 0.91, 0.92, 0.93, 0.93, 0.95]
+reca
+[0.68, 0.70, 0.72, 0.73, 0.75, 0.79, 0.81, 0.82, 0.84, 0.86, 0.87, 0.88]
