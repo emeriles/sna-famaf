@@ -57,15 +57,15 @@ class Experiments(object):
                         suffix += "_{}".format(str(repetitions))
                     x_train, y_train = d.extract_features(dataset="train",
                                                           with_influencers=with_influencers, fasttext=fasttext)
-                    with open('{}/_infl_X_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}_infl_X_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(x_train, save_file)
-                    with open('{}/_infl_y_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}_infl_y_train{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(y_train, save_file)
                     x_test, y_test = d.extract_features(dataset="test",
                                                         with_influencers=with_influencers, fasttext=fasttext)
-                    with open('{}/_infl_X_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}_infl_X_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(x_test, save_file)
-                    with open('{}/_infl_y_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
+                    with open('{}_infl_y_test{}.pickle'.format(folder, suffix), 'wb') as save_file:
                         pickle.dump(y_test, save_file)
                     repetitions += 1
 

@@ -426,3 +426,24 @@ class _DatasetOneUserModel(_Dataset):
 
 
 DatasetOneUserModel = _DatasetOneUserModel()
+
+"""
+
+full df shape:
+(9441950, 9)
+
+sacar promedios de los usuarios
+
+Full dataset: timewindow 0:02:00; shape: (53172, 9)
+Full dataset: timewindow 0:05:00; shape: (97859, 9)
+Full dataset: timewindow 0:15:00; shape: (165574, 9)
+Full dataset: timewindow 1:00:00; shape: (265176, 9)
+Full dataset: timewindow 2:00:00; shape: (324761, 9)
+Full dataset: timewindow 3:00:00; shape: (362241, 9)
+Full dataset: timewindow 4:00:00; shape: (387819, 9)
+Full dataset: timewindow 9:00:00; shape: (457956, 9)
+Full dataset: timewindow SIN; shape: (9441950, 9)
+
+
+
+"""

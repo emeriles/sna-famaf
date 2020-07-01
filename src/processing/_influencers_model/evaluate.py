@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report, roc_curve, roc_auc_score, pre
 
 from processing._influencers_model.grid_searchers import SVM_gridsearch
 from settings import C, GAMMA, EVAL_TRAIN, GRIDSEARCH, MIN_INFLUENCERS, MAX_INFLUENCERS, STEP_INFLUENCERS, \
-    XY_CACHE_FOLDER
+    XY_CACHE_FOLDER, XY_CACHE_FOLDER_FT
 
 pp = pprint.PrettyPrinter(indent=2)
 target_names = ["Insignificante", "Relevante"]
@@ -101,7 +101,7 @@ def results_on_experiment(folder, file_or_files, roc=False, roc_curve_=False):
         return _report_on(file_or_files)
 
 
-def f1_score_by_influencers(folders, delta_minutes):
+def f1_score_by_influencers(folders, delta_minutes, fasttext=False):
     def get_multiple_tries(file, folder):
         from os import listdir
         from os.path import isfile, join
@@ -155,5 +155,6 @@ def f1_score_by_influencers(folders, delta_minutes):
     #      "graph_{}_{}.html".format(GAMMA, C))
 
 
-def evaluate(delta_minutes):
-    f1_score_by_influencers([XY_CACHE_FOLDER], delta_minutes)
+def evaluate(delta_minutes, fasttext=False):
+    folder = XY_CACHE_FOLDER_FT if fasttext else XY_CACHE_FOLDER
+    f1_score_by_influencers([folder], delta_minutes, fasttext=fasttext)

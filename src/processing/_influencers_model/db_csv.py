@@ -227,7 +227,7 @@ class DatasetInfluencersModel(_Dataset):
             own_tweets = pd.DataFrame()
 
         if with_retweets:
-            if filter_timedelta:
+            if self.delta_minutes and filter_timedelta:
                 time_constraint = (tweets.created_at - tweets.retweeted_status__created_at) \
                                   < datetime.timedelta(minutes=self.delta_minutes)
             else:
@@ -265,12 +265,13 @@ class DatasetInfluencersModel(_Dataset):
         #     nfeatsplus = nfeats + int(self.tw_lda.settings['topics'])
         #     X = np.zeros((nrows, nfeatsplus))
         if self.fasttext:
+            print('USING FASTTEXT')
             ft_sentence_vectors = self._get_embeddings_for_tweet(dataset[:, 0])
             X = np.zeros((nrows, nfeats + 300))
             for idx, tweet in enumerate(dataset[:, 0]):
                 X[idx, :300] = ft_sentence_vectors[idx].split(" ")
 
-            offset_columns = 301
+            offset_columns = 300
         else:
             X = np.zeros((nrows, nfeats))
 
@@ -284,10 +285,11 @@ class DatasetInfluencersModel(_Dataset):
             n_tl_filtered = self.get_user_timeline(u, filter_timedelta=True)
             col = np.isin(dataset[:, 0], n_tl_filtered[:, 0])
             #             print(X[:, j].shape, col.reshape((11,1)))
-            # print('SHAPE X[:, j]: {}...'.format(X[:, j].shape))
+            print('SHAPE X: {}...'.format(X.shape)) # JJJJJJJJJJJJJJJJ
+            print('SHAPE X[:, j]: {}...'.format(X[:, j].shape)) # ESTE FALLO
             # print('SHAPE col.reshape((nrows, 1)): {}...'.format(col.reshape((nrows, 1)).shape))
             # print('SHAPE col: {}...'.format(col.shape))
-            X[:, j] = col
+            X[:, j] = col.reshape((nrows))
             # print(X[:, j])
 
         rts_counts = self.df.retweeted_status__id_str.groupby(self.df.retweeted_status__id_str).count()
@@ -364,3 +366,29 @@ class DatasetInfluencersModel(_Dataset):
 
 
 # DatasetInfluencersModel = DatasetInfluencersModel()
+
+"""
+full df shape:
+(9441950, 9)
+
+Full dataset: timewindow 0:15:00; shape: (165574, 9)
+Full dataset: timewindow 1:00:00; shape: (265176, 9)
+Full dataset: timewindow 2:00:00; shape: (324761, 9)
+Full dataset: timewindow 3:00:00; shape: (362241, 9)
+Full dataset: timewindow 4:00:00; shape: (387819, 9)
+Full dataset: timewindow 9:00:00; shape: (457956, 9)
+
+
+df general public (U_G):
+
+Dataset usuarios generales en modelo de influencers (U_G): timewindow 0:15:00; shape: (124044, 9)
+Dataset usuarios generales en modelo de influencers (U_G): timewindow 1:00:00; shape: (199554, 9)
+Dataset usuarios generales en modelo de influencers (U_G): timewindow 2:00:00; shape: (244627, 9)
+Dataset usuarios generales en modelo de influencers (U_G): timewindow 3:00:00; shape: (273217, 9)
+Dataset usuarios generales en modelo de influencers (U_G): timewindow 4:00:00; shape: (292530, 9)
+Dataset usuarios generales en modelo de influencers (U_G): timewindow 9:00:00; shape: (345264, 9)
+Sin ventana: (6062196, 9)
+
+chequear contra los datasets guardados en el sv para correr los evaluate...
+
+"""
