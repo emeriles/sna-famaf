@@ -24,6 +24,7 @@ if __name__ == '__main__':
         'experiment_influencers',
         'experiment_influencers_ft',
         'evaluate_influencers',
+        'evaluate_influencers_ft',
         'develop',
         'build_ftext_features',
         'cross_prediction',
@@ -103,6 +104,8 @@ if __name__ == '__main__':
         Experiments.experiment(delta_minutes=delta_minutes, fasttext=True)
     if args.action == 'evaluate_influencers':
         evaluate(delta_minutes=delta_minutes)
+    if args.action == 'evaluate_influencers_ft':
+        evaluate(delta_minutes=delta_minutes, fasttext=True)
 
     if args.action == 'build_ftext_features':
         FTextActions.build_ftext_features()
