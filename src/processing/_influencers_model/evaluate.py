@@ -34,7 +34,7 @@ def svm_classifier(x_train, x_test, y_train, y_true, gridsearch=False,
     print("")
     pp.pprint(clf.get_params())
     print("")
-    print(classification_report(y_true, y_pred, target_names=target_names))
+    print(classification_report(y_true, y_pred, target_names=target_names, digits=4))
     print("")
     return precision_score(y_true, y_pred, pos_label=1)
     return f1_score(y_true, y_pred, pos_label=1)

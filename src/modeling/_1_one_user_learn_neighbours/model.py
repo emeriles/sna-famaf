@@ -25,11 +25,11 @@ class OneUserModel(object):
 
         print("Detailed classification report:\n")
         print("Scores on training set.\n")
-        print(classification_report(y_true, y_pred))
+        print(classification_report(y_true, y_pred, digits=4))
 
         y_true, y_pred = y_test, clf.predict(X_test)
         print("Scores on test set.\n")
-        print(classification_report(y_true, y_pred))
+        print(classification_report(y_true, y_pred, digits=4))
 
     # @staticmethod
     # def sub_sample_negs_arr(X, y):
@@ -92,14 +92,14 @@ class OneUserModel(object):
             print()
             print("Scores on training set.")
             y_true, y_pred = y_train, clf.predict(X_train)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
 
             print("Scores on test set.")
             print()
             y_true, y_pred = y_test, clf.predict(X_test)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
         print('\t\t\tEND RDF')
@@ -150,14 +150,14 @@ class OneUserModel(object):
             print()
             print("Scores on training set.")
             y_true, y_pred = y_train, clf.predict(X_train)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
 
             print("Scores on test set.")
             print()
             y_true, y_pred = y_test, clf.predict(X_test)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
         print('\t\t\tEND SVC')
@@ -210,14 +210,14 @@ class OneUserModel(object):
             print()
             print("Scores on training set.")
             y_true, y_pred = y_train, clf.predict(X_train)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
 
             print("Scores on test set.")
             print()
             y_true, y_pred = y_test, clf.predict(X_test)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
         print('\t\t\tEND SVC 2')
@@ -267,14 +267,14 @@ class OneUserModel(object):
             print()
             print("Scores on training set.")
             y_true, y_pred = y_train, clf.predict(X_train)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
 
             print("Scores on test set.")
             print()
             y_true, y_pred = y_test, clf.predict(X_test)
-            print(classification_report(y_true, y_pred))
+            print(classification_report(y_true, y_pred, digits=4))
             print()
 
         print('\t\t\tEND SGD')
@@ -342,7 +342,7 @@ class OneUserModel(object):
         result = {}
         y_true, y_pred = y_train, clf.predict(X_train)
         print('Classification report on TRAIN with clf {} predicting on {}'.format(time_clf, time_to_pred))
-        print(classification_report(y_true, y_pred))
+        print(classification_report(y_true, y_pred, digits=4))
         result['f1s_train'] = f1_score(y_true, y_pred)
         result['precisions_train'] = precision_score(y_true, y_pred)
         result['recalls_train'] = recall_score(y_true, y_pred)
