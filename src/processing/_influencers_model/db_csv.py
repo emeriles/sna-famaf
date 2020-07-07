@@ -80,11 +80,14 @@ class DatasetInfluencersModel(_Dataset):
         df_relevant_users = self.df[self.df.user__id_str.isin(self.target_users)]
 
         rts_counts = df_relevant_users.retweeted_status__id_str.groupby(df_relevant_users.retweeted_status__id_str).count()
-        rts_ids_filtered = list(rts_counts[rts_counts > min_rt_allowed].index)
+        rts_ids_filtered = list(rts_counts[rts_counts > (min_rt_allowed - 1)].index)  # minus 1 because not counting original tweet
 
         df_filtered = df_relevant_users[df_relevant_users.retweeted_status__id_str.isin(rts_ids_filtered)]
 
-        self.tweets = np.concatenate((tweets, df_filtered.loc[:, ('retweeted_status__id_str', 'created_at')]))
+        tweets = np.concatenate((tweets, df_filtered.loc[:, ('retweeted_status__id_str', 'created_at')]))
+        _, idxx = np.unique(tweets[:, 0], return_index=True)
+        self.tweets = tweets[idxx, :]
+        # import ipdb; ipdb.set_trace()
 
         # self.tweets = (self.s.query(Tweet)
         #                .join(Tweet.users_retweeted)
@@ -284,6 +287,7 @@ class DatasetInfluencersModel(_Dataset):
 
             n_tl_filtered = self.get_user_timeline(u, filter_timedelta=True)
             col = np.isin(dataset[:, 0], n_tl_filtered[:, 0])
+            # import ipdb; ipdb.set_trace()
             #             print(X[:, j].shape, col.reshape((11,1)))
             print('SHAPE X: {}...'.format(X.shape)) # JJJJJJJJJJJJJJJJ
             print('SHAPE X[:, j]: {}...'.format(X[:, j].shape)) # ESTE FALLO

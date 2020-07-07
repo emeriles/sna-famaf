@@ -1,6 +1,7 @@
 from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV
 
+target_names = ["Insignificante", "Relevante"]
 
 def SVM_gridsearch(x_train, x_test, y_train, y_true, cv=3):
     parameters = [

@@ -12,7 +12,7 @@ pp = pprint.PrettyPrinter(indent=2)
 target_names = ["Insignificante", "Relevante"]
 
 
-def svm_classifier(x_train, x_test, y_train, y_true, gridsearch=False,
+def svm_classifier(x_train, x_test, y_train, y_true, gridsearch=True,
                    file=None, roc=False, roc_curve_=False):
     from sklearn import svm
     if gridsearch:

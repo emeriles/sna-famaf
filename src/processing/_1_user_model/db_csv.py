@@ -337,6 +337,9 @@ class _DatasetOneUserModel(_Dataset):
             neighbours = [u for u in neighbours if u != uid]
 
             tweets = self.get_tweets_universe(uid, neighbours)
+            # import ipdb; ipdb.set_trace()
+            _, idxx = np.unique(tweets[:, 0], return_index=True)
+            tweets = tweets[idxx, :]
 
             X, y = self.extract_features(tweets, neighbours, uid, fasttext=fasttext)
             labels = tweets[:, 0]
