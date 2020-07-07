@@ -75,10 +75,13 @@ class DatasetInfluencersModel(_Dataset):
         if not self.target_users:
             self.load_influencers_id_list(random=False)
 
+        # CHEQUEAR ESTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO . contrastarlo con lo de mati.
+
         tweets = np.empty((0, 2))
 
         df_relevant_users = self.df[self.df.user__id_str.isin(self.target_users)]
 
+        # rts_counts = self.df.retweeted_status__id_str.groupby(self.df.retweeted_status__id_str).count()
         rts_counts = df_relevant_users.retweeted_status__id_str.groupby(df_relevant_users.retweeted_status__id_str).count()
         rts_ids_filtered = list(rts_counts[rts_counts > (min_rt_allowed - 1)].index)  # minus 1 because not counting original tweet
 
@@ -118,7 +121,7 @@ class DatasetInfluencersModel(_Dataset):
         if self.df.empty:
             self._load_df()
         rts_counts = self.df.retweeted_status__id_str.groupby(self.df.retweeted_status__id_str).count()
-        rts_counts_filtered = rts_counts[rts_counts > 4].values
+        rts_counts_filtered = rts_counts[rts_counts > 3].values  # TAL VEZ 4
 
         self.tt_min_score = np.percentile(rts_counts_filtered, 90)
 
@@ -289,8 +292,8 @@ class DatasetInfluencersModel(_Dataset):
             col = np.isin(dataset[:, 0], n_tl_filtered[:, 0])
             # import ipdb; ipdb.set_trace()
             #             print(X[:, j].shape, col.reshape((11,1)))
-            print('SHAPE X: {}...'.format(X.shape)) # JJJJJJJJJJJJJJJJ
-            print('SHAPE X[:, j]: {}...'.format(X[:, j].shape)) # ESTE FALLO
+            # print('SHAPE X: {}...'.format(X.shape)) # JJJJJJJJJJJJJJJJ
+            # print('SHAPE X[:, j]: {}...'.format(X[:, j].shape)) # ESTE FALLO
             # print('SHAPE col.reshape((nrows, 1)): {}...'.format(col.reshape((nrows, 1)).shape))
             # print('SHAPE col: {}...'.format(col.shape))
             X[:, j] = col.reshape((nrows))

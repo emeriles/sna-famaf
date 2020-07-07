@@ -82,9 +82,12 @@ class InfluenceActions(object):
         g = Grafo()
         influence_points = g.get_influence_nodes()
         print("-Calculating influence of each node..")
-        DatasetInfluencersModel._load_df()
-        df = DatasetInfluencersModel.df
-        counts = df.user__id_str.groupby(df.user__id_str).count()
+        ds = DatasetInfluencersModel()
+        ds._load_df()
+        df = ds.df
+        # counts = df.user__id_str.groupby(df.user__id_str).count() # NOT only by tweets...
+        only_rts = df[df.retweeted_status__id_str.notna()]
+        counts = only_rts.user__id_str.groupby(only_rts.user__id_str).count()
         for point in influence_points:
             point.load_user_counts(counts)
         max_activity = max(map(lambda x: x.activity, influence_points))
