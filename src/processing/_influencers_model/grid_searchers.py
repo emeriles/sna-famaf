@@ -1,17 +1,25 @@
 from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV
 
-target_names = ["Insignificante", "Relevante"]
+# target_names = ["Insignificante", "Relevante"]
 
 def SVM_gridsearch(x_train, x_test, y_train, y_true, cv=3):
     parameters = [
         {
          'kernel': ['rbf', 'poly', 'linear'],
-         'gamma': [0.66, 0.77, 0.88, 0.99, 1.5],
-         'C': [0.1, 0.5, 0.8],
+         'gamma': [0.1, 1, 10, 100],
+         'C': [0.01, 0.1, 1, 10, 100],
          'class_weight': ['balanced', None]
         }
     ]
+    # parameters = [
+    #     {
+    #         'kernel': ['rbf', 'poly', 'linear'],
+    #         'gamma': [0.1, 1, 10, 100],
+    #         'C': [0.01, 0.1, 1, 10, 100],
+    #         'class_weight': ['balanced', None]
+    #     }
+    # ]
 
     scores = [
         # 'precision',
@@ -47,6 +55,6 @@ def SVM_gridsearch(x_train, x_test, y_train, y_true, cv=3):
         print("")
         print("Results on test dataset with SVM")
         print("")
-        print(classification_report(y_true, y_pred, target_names=target_names, digits=4))
+        print(classification_report(y_true, y_pred, digits=4))
         print("")
     return clf

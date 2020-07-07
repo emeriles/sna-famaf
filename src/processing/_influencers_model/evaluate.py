@@ -15,8 +15,10 @@ target_names = ["Insignificante", "Relevante"]
 def svm_classifier(x_train, x_test, y_train, y_true, gridsearch=True,
                    file=None, roc=False, roc_curve_=False):
     from sklearn import svm
-    if gridsearch:
+
+    if True:  # gridsearch:
         clf = SVM_gridsearch(x_train, x_test, y_train, y_true)
+        return 0.0
     else:
         clf = svm.SVC(kernel='rbf', C=C, gamma=GAMMA, class_weight='balanced', shrinking=True, probability=True)
         #clf = svm.SVC(kernel='poly', C=0.1, gamma=1, class_weight='balanced')
@@ -79,9 +81,10 @@ def results_on_experiment(folder, file_or_files, roc=False, roc_curve_=False):
         f1 = svm_classifier(x_train, x_test, y_train, y_test, gridsearch=GRIDSEARCH, file=file, roc=roc,
                             roc_curve_=roc_curve_)
         f1_train = f1
-        if EVAL_TRAIN:
-            f1_train = svm_classifier(x_train, x_train, y_train, y_train, gridsearch=False, file=file, roc=roc,
-                                      roc_curve_=roc_curve_)
+        # if EVAL_TRAIN:
+        #     print('EVALL TRAIN, ', EVAL_TRAIN)
+        #     f1_train = svm_classifier(x_train, x_train, y_train, y_train, gridsearch=False, file=file, roc=roc,
+        #                               roc_curve_=roc_curve_)
         # gaussian_truncated_svd(x_train, x_test, y_train, y_true)
         # neigh_classifier(x_train, x_test, y_train, y_true, gridsearch=False)
         return f1, f1_train
