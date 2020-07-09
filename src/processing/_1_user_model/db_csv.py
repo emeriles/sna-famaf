@@ -325,6 +325,7 @@ class _DatasetOneUserModel(_Dataset):
         elif fasttext and os.path.exists(fname_no_ft):
             print('Cargado dataset social con exito')
             dataset = self._add_fasttext_features_to_ds(fname_no_ft)
+            pickle.dump(dataset, open(fname, 'wb'))
         else:
             if fasttext:
                 raise Exception('NO ERA POR ACA ...')
